@@ -15,7 +15,7 @@ noncomputable def childEnds (w : Nat → Bool) (n d : Nat) : Nat :=
   ∑ k ∈ Finset.range n,
     ((factorLanguage w (k + 1)).filter (fun v => truncatedDegree w n (k + 1) v = d)).card
 
-private theorem parent_factor (w : Nat → Bool) (k : Nat) {v : Fin (k + 1) → Bool}
+theorem parent_factor (w : Nat → Bool) (k : Nat) {v : Fin (k + 1) → Bool}
     (h : v ∈ factorLanguage w (k + 1)) : wordPrefix v ∈ factorLanguage w k := by
   rw [← factorLanguage_prefix_image w k]
   exact Finset.mem_image.2 ⟨v, h, rfl⟩
@@ -26,7 +26,7 @@ private theorem special_card_one (w : Nat → Bool) (k : Nat)
   rw [hwidth, hwidth] at h
   omega
 
-private theorem parentEnds_three (w : Nat → Bool) {n : Nat} (hn : 0 < n)
+theorem parentEnds_three (w : Nat → Bool) {n : Nat} (hn : 0 < n)
     (hwidth : ∀ j, complexity w j = j + 1) : parentEnds w n 3 = 2 * (n - 1) := by
   unfold parentEnds
   have he :
@@ -51,7 +51,7 @@ private theorem parentEnds_three (w : Nat → Bool) {n : Nat} (hn : 0 < n)
   conv_lhs => rw [hn', Finset.sum_range_succ']
   simp [Nat.mul_comm]
 
-private theorem childEnds_three (w : Nat → Bool) {n : Nat} (hn : 0 < n)
+theorem childEnds_three (w : Nat → Bool) {n : Nat} (hn : 0 < n)
     (hwidth : ∀ j, complexity w j = j + 1) : childEnds w n 3 = n - 1 := by
   unfold childEnds
   have hn' : n = (n - 1) + 1 := by omega
