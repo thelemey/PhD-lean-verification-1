@@ -10,3 +10,4 @@ import Thesis.FactorTree
 import Thesis.FibonacciIdentities
 import Thesis.PalindromeFactors
 import Thesis.TernaryWord
+import Thesis.FramedFibonacciDensity
