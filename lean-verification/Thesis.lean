@@ -7,3 +7,4 @@ import Thesis.FactorialWord
 import Thesis.PalindromeDensity
 import Thesis.ThueMorseClassification
 import Thesis.FactorTree
+import Thesis.FibonacciIdentities
