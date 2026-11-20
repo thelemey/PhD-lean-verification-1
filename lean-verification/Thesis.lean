@@ -11,3 +11,4 @@ import Thesis.FibonacciIdentities
 import Thesis.PalindromeFactors
 import Thesis.TernaryWord
 import Thesis.FramedFibonacciDensity
+import Thesis.FibonacciTelescoping
