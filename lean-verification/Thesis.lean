@@ -74,3 +74,4 @@ import Thesis.PrimitiveSubstitutionErgodicity
 import Thesis.ThueMorseDynamics
 import Thesis.PalindromicMorphisms
 import Thesis.PalindromicMorphismRichness
+import Thesis.FibonacciRichness
