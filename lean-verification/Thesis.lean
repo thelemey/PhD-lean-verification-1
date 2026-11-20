@@ -62,3 +62,4 @@ import Thesis.SturmianMechanical
 import Thesis.SturmianFactorTree
 import Thesis.SturmianFactorTreeExamples
 import Thesis.OrbitAverageLimits
+import Thesis.WordInvariantMeasures
