@@ -45,3 +45,6 @@ import Thesis.ThueMorseSubstitution
 import Thesis.ThueMorseComplexity
 import Thesis.WordOrbitClosure
 import Thesis.ThueMorseEntropy
+import Thesis.ThueMorseFourier
+import Thesis.ThueMorseFrequency
+import Thesis.ThueMorseSubshift
