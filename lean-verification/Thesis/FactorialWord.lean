@@ -48,7 +48,7 @@ def digits (b n : Nat) : List Nat :=
   else []
 termination_by n
 
-private theorem digits_step {b n : Nat} (hb : 1 < b) (hn : 0 < n) :
+theorem digits_step {b n : Nat} (hb : 1 < b) (hn : 0 < n) :
     digits b n = n % b :: digits b (n / b) := by
   rw [digits, dif_pos hb, dif_pos hn]
 
