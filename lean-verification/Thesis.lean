@@ -35,3 +35,4 @@ import Thesis.MBonacciCharacteristic
 import Thesis.MBonacciPrefixLimit
 import Thesis.PalPrefixRatio
 import Thesis.MBonacciWordDensity
+import Thesis.MBonacciValues
