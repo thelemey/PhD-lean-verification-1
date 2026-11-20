@@ -20,3 +20,4 @@ import Thesis.SymbolicLatticeMetric
 import Thesis.SymbolicLatticeTopology
 import Thesis.FactorialLogarithms
 import Thesis.FactorialCorrelations
+import Thesis.LatticeWordStirling
