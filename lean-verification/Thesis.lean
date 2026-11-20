@@ -66,3 +66,4 @@ import Thesis.WordInvariantMeasures
 import Thesis.UniqueErgodicAverages
 import Thesis.WordUniformFrequencies
 import Thesis.WordCylinderMeasures
+import Thesis.ConstantLengthBlocks
