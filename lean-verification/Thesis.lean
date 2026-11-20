@@ -28,3 +28,4 @@ import Thesis.WeylCriterion
 import Thesis.FactorialWeyl
 import Thesis.SturmianDensityDichotomy
 import Thesis.SturmianConstantTail
+import Thesis.MBonacciDensity
