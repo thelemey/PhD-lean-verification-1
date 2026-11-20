@@ -13,3 +13,6 @@ import Thesis.TernaryWord
 import Thesis.FramedFibonacciDensity
 import Thesis.FibonacciTelescoping
 import Thesis.FactorialLeadingDigits
+import Thesis.FibonacciBinet
+import Thesis.FibonacciSeries
+import Thesis.FibonacciGoldenLimits
