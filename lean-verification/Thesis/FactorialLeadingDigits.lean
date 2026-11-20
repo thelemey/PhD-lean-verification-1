@@ -24,7 +24,7 @@ private theorem extend_digits {b : Nat} (hb : 1 < b) (tail : List Nat)
     refine ⟨v, hv, ?_⟩
     simpa [digits_push hb hn ha, List.append_assoc] using he
 
-private theorem encode_leading_digits {b a : Nat} (hb : 1 < b) (ha : a ≠ 0)
+theorem encode_leading_digits {b a : Nat} (hb : 1 < b) (ha : a ≠ 0)
     (tail : List Nat) (h : ∀ d ∈ a :: tail, d < b) :
     ∃ v > 0, (digits b v).reverse = a :: tail := by
   have hab := h a (by simp)
@@ -36,7 +36,7 @@ private theorem encode_leading_digits {b a : Nat} (hb : 1 < b) (ha : a ≠ 0)
     (fun d hd => h d (List.mem_cons_of_mem _ hd)) a (by omega)
   exact ⟨v, hv, by simpa [he] using hv'⟩
 
-private theorem digits_zero (b : Nat) : digits b 0 = [] := by
+theorem digits_zero (b : Nat) : digits b 0 = [] := by
   rw [digits]
   split <;> simp
 

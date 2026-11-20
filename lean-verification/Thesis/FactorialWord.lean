@@ -6,7 +6,7 @@ def factorial : Nat → Nat
   | 0 => 1
   | n + 1 => (n + 1) * factorial n
 
-private theorem factorial_pos (n : Nat) : 0 < factorial n := by
+theorem factorial_pos (n : Nat) : 0 < factorial n := by
   induction n with
   | zero => decide
   | succ n ih => exact Nat.mul_pos (by omega) ih

@@ -18,3 +18,5 @@ import Thesis.FibonacciSeries
 import Thesis.FibonacciGoldenLimits
 import Thesis.SymbolicLatticeMetric
 import Thesis.SymbolicLatticeTopology
+import Thesis.FactorialLogarithms
+import Thesis.FactorialCorrelations
