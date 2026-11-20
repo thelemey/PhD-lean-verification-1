@@ -51,6 +51,19 @@ private theorem partDen_eq {a : ℝ} (ha : Irrational a) (n : Nat) :
     exact_mod_cast (partialQuotient_eq hs).symm
   simpa only [he] using h
 
+/-- The denominator recurrence with the actual simple continued
+fraction quotients of the slope. -/
+theorem slope_contsAux_den_step {a : ℝ} (ha : Irrational a) (n : Nat) :
+    ((GenContFract.of a).contsAux (n + 2)).b =
+      (partialQuotient a n : ℝ) * ((GenContFract.of a).contsAux (n + 1)).b +
+        ((GenContFract.of a).contsAux n).b := by
+  obtain ⟨s, hs⟩ := stream_succ_some ha n
+  have hg := get?_of_eq_some_of_succ_get?_intFractPair_stream hs
+  have h := GenContFract.contsAux_recurrence hg rfl rfl
+  have hsB : (s.b : ℝ) = (partialQuotient a n : ℝ) := by
+    exact_mod_cast (partialQuotient_eq hs).symm
+  simpa [nextConts, nextDen, hsB, add_comm] using congrArg GenContFract.Pair.b h
+
 private theorem conts_integer {a : ℝ} (ha : Irrational a) (n : Nat) :
     ∃ u v : ℤ, (GenContFract.of a).contsAux n = ⟨(u : ℝ), (v : ℝ)⟩ := by
   induction n using Nat.strong_induction_on with
