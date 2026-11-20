@@ -49,3 +49,6 @@ import Thesis.ThueMorseFourier
 import Thesis.ThueMorseFrequency
 import Thesis.ThueMorseSubshift
 import Thesis.ThueMorseErgodicity
+import Thesis.FactorTreeSpecial
+import Thesis.FactorTreeZagreb
+import Thesis.FactorTreeIncidence
