@@ -78,3 +78,5 @@ import Thesis.FibonacciRichness
 import Thesis.WordPrefixLimits
 import Thesis.TernaryRichness
 import Thesis.PalindromicClosure
+import Thesis.EpisturmianPrefixes
+import Thesis.EpisturmianRecurrence
