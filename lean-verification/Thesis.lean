@@ -29,3 +29,6 @@ import Thesis.FactorialWeyl
 import Thesis.SturmianDensityDichotomy
 import Thesis.SturmianConstantTail
 import Thesis.MBonacciDensity
+import Thesis.RecurrenceStability
+import Thesis.PolynomialRecurrence
+import Thesis.MBonacciCharacteristic
