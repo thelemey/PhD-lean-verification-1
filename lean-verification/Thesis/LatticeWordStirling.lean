@@ -1,6 +1,6 @@
 import Thesis.LatticeWord
 import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Stirling
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 import Mathlib.Tactic.Linarith
 
@@ -141,5 +141,20 @@ theorem central_binomial_stirling
   unfold centralScaled
   rw [length_diagonal_factorial n (by omega)]
   positivity
+
+/-- The classical Stirling limit cited in the proof of `newprove`. -/
+private theorem stirlingRatio_tendsto :
+    Tendsto stirlingRatio atTop (𝓝 (Real.sqrt Real.pi)) :=
+  Stirling.tendsto_stirlingSeq_sqrt_pi
+
+/-- The central binomial asymptotic in `newprove`, with Stirling's theorem
+supplied by mathlib. -/
+theorem central_binomial_asymptotic : Tendsto centralScaled atTop (𝓝 1) :=
+  central_binomial_stirling stirlingRatio_tendsto
+
+/-- The diagonal logarithmic growth claimed in `newprove`. -/
+theorem diagonal_log_growth_stirling :
+    Tendsto (fun n : ℕ => Real.log (word n n).length / (2 * (n : ℝ))) atTop (𝓝 (Real.log 2)) :=
+  diagonal_log_growth stirlingRatio_tendsto
 
 end Thesis.LatticeWord
