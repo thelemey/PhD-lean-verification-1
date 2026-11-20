@@ -37,3 +37,5 @@ import Thesis.PalPrefixRatio
 import Thesis.MBonacciWordDensity
 import Thesis.MBonacciValues
 import Thesis.SturmianDiophantine
+import Thesis.SturmianDensitySpectrum
+import Thesis.SturmianDensityMeasure
