@@ -63,3 +63,5 @@ import Thesis.SturmianFactorTree
 import Thesis.SturmianFactorTreeExamples
 import Thesis.OrbitAverageLimits
 import Thesis.WordInvariantMeasures
+import Thesis.UniqueErgodicAverages
+import Thesis.WordUniformFrequencies
