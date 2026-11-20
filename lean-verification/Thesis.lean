@@ -57,3 +57,4 @@ import Thesis.FactorTreeEdgeCounts
 import Thesis.FactorTreeMixedEdges
 import Thesis.FactorTreeIndices
 import Thesis.FactorTreeDegrees
+import Thesis.FactorTreeTable
