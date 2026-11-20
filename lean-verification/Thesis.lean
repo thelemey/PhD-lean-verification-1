@@ -24,3 +24,5 @@ import Thesis.LatticeWordStirling
 import Thesis.VanDerCorput
 import Thesis.VanDerCorputLimit
 import Thesis.LogOscillationIntegral
+import Thesis.WeylCriterion
+import Thesis.FactorialWeyl

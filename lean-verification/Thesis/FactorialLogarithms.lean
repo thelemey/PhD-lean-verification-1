@@ -155,31 +155,35 @@ theorem leading_prefixes_of_fractional_logs {b : Nat} (hb : 1 < b)
   rw [← hword]
   exact (prefix_iff_fractional_log hb hlo hhi' hnp).2 hhit
 
-/-- The proportion of the first `N` fractional parts in an interval.
-Index zero corresponds to (1!\), so the sequence is the one in the thesis. -/
-noncomputable def fractionalLogFrequency (b : Nat) (α β : ℝ) (N : Nat) : ℝ := by
+/-- The proportion of the first `N` fractional parts in the interval. -/
+noncomputable def fractionalFrequency (x : Nat → ℝ) (α β : ℝ) (N : Nat) : ℝ := by
   classical
-  exact ((Finset.range N).filter (fun n =>
-    Int.fract (logb (b : ℝ) (factorial (n + 1))) ∈ Set.Ico α β)).card / (N : ℝ)
+  exact ((Finset.range N).filter (fun n => Int.fract (x n) ∈ Set.Ico α β)).card / (N : ℝ)
 
-/-- Uniform distribution of `log_b(n!)`, expressed in the interval
-frequency form used in the proof of `lem:logfact`. -/
-def FractionalLogsEquidistributed (b : Nat) : Prop :=
+/-- Index zero corresponds to (1!\), as in the sequence in the thesis. -/
+noncomputable def fractionalLogFrequency (b : Nat) (α β : ℝ) (N : Nat) : ℝ :=
+  fractionalFrequency (fun n => logb (b : ℝ) (factorial (n + 1))) α β N
+
+/-- Uniform distribution modulo one in the interval-frequency form. -/
+def Equidistributed (x : Nat → ℝ) : Prop :=
   ∀ α β : ℝ, 0 ≤ α → α < β → β ≤ 1 →
-    Tendsto (fractionalLogFrequency b α β) atTop (𝓝 (β - α))
+    Tendsto (fractionalFrequency x α β) atTop (𝓝 (β - α))
 
-/-- The final implication of `lem:logfact`: a positive limiting proportion
-forces occurrences beyond every finite index. -/
-theorem fractionalLogHits_of_equidistributed {b : Nat}
-    (h : FractionalLogsEquidistributed b) : FractionalLogHits b := by
+def FractionalLogsEquidistributed (b : Nat) : Prop :=
+  Equidistributed fun n => logb (b : ℝ) (factorial (n + 1))
+
+/-- A positive limiting proportion forces occurrences beyond every finite index,
+as in the last step of `lem:logfact`. -/
+theorem hits_of_equidistributed {x : Nat → ℝ} (h : Equidistributed x)
+    {α β : ℝ} (hα : 0 ≤ α) (hab : α < β) (hβ : β ≤ 1) (minimum : Nat) :
+    ∃ n ≥ minimum, Int.fract (x n) ∈ Set.Ico α β := by
   classical
-  intro α β hα hab hβ minimum
   by_contra hnone
-  have hbound (N : Nat) : fractionalLogFrequency b α β N ≤ (minimum : ℝ) / N := by
-    unfold fractionalLogFrequency
+  have hbound (N : Nat) : fractionalFrequency x α β N ≤ (minimum : ℝ) / N := by
+    unfold fractionalFrequency
     apply div_le_div_of_nonneg_right _ (Nat.cast_nonneg _)
     exact_mod_cast (show ((Finset.range N).filter (fun n =>
-        Int.fract (logb (b : ℝ) (factorial (n + 1))) ∈ Set.Ico α β)).card ≤ minimum from by
+        Int.fract (x n) ∈ Set.Ico α β)).card ≤ minimum from by
       rw [← Finset.card_range minimum]
       apply Finset.card_le_card
       intro n hn
@@ -190,7 +194,7 @@ theorem fractionalLogHits_of_equidistributed {b : Nat}
   let mid := (β - α) / 2
   have hm0 : 0 < mid := by dsimp [mid]; linarith
   have hm1 : mid < β - α := by dsimp [mid]; linarith
-  have hlt : ∀ᶠ N in atTop, mid < fractionalLogFrequency b α β N :=
+  have hlt : ∀ᶠ N in atTop, mid < fractionalFrequency x α β N :=
     (h α β hα hab hβ).eventually (lt_mem_nhds hm1)
   have hgt : ∀ᶠ N : Nat in atTop, (minimum : ℝ) / N < mid :=
     (tendsto_const_div_atTop_nhds_zero_nat (minimum : ℝ)).eventually (gt_mem_nhds hm0)
@@ -199,6 +203,10 @@ theorem fractionalLogHits_of_equidistributed {b : Nat}
     exact (not_lt_of_ge (hbound N)) (hh.trans hl)
   obtain ⟨_, hf⟩ := habs.exists
   exact hf
+
+theorem fractionalLogHits_of_equidistributed {b : Nat}
+    (h : FractionalLogsEquidistributed b) : FractionalLogHits b :=
+  fun _ _ hα hab hβ minimum => hits_of_equidistributed h hα hab hβ minimum
 
 /-- The assertion `mainthm01`, leaving only the equidistribution proof of
 `lem:logfact` as a premise. -/
