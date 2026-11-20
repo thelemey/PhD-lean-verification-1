@@ -79,6 +79,12 @@ private theorem conts_integer {a : ℝ} (ha : Irrational a) (n : Nat) :
       rw [GenContFract.contsAux_recurrence hg huv hUV]
       simp [nextConts, nextNum, nextDen, add_comm]
 
+theorem slope_contsAux_numerator_integer {a : ℝ} (ha : Irrational a) (n : Nat) :
+    ((⌊((GenContFract.of a).contsAux n).a⌋ : ℤ) : ℝ) =
+      ((GenContFract.of a).contsAux n).a := by
+  obtain ⟨p, q, h⟩ := conts_integer ha n
+  simp [h]
+
 private theorem exists_rat_convergent_den {a : ℝ} (ha : Irrational a) (n : Nat) :
     ∃ q : ℚ, (q : ℝ) = (GenContFract.of a).convs n ∧
       (q.den : ℝ) = (GenContFract.of a).dens n := by

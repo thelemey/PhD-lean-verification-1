@@ -87,3 +87,4 @@ import Thesis.SturmianPrefixRatios
 import Thesis.SturmianPalindromeRecords
 import Thesis.RotationRecordBrackets
 import Thesis.RotationRecordEnumeration
+import Thesis.SturmianConvergentErrors
