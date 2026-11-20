@@ -42,3 +42,6 @@ import Thesis.SturmianDensityMeasure
 import Thesis.ThueMorseBlocks
 import Thesis.ThueMorseRecurrence
 import Thesis.ThueMorseSubstitution
+import Thesis.ThueMorseComplexity
+import Thesis.WordOrbitClosure
+import Thesis.ThueMorseEntropy
