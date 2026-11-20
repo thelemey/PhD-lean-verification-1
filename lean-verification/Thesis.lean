@@ -75,3 +75,5 @@ import Thesis.ThueMorseDynamics
 import Thesis.PalindromicMorphisms
 import Thesis.PalindromicMorphismRichness
 import Thesis.FibonacciRichness
+import Thesis.WordPrefixLimits
+import Thesis.TernaryRichness
