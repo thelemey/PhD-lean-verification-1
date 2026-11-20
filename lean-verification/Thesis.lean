@@ -71,3 +71,4 @@ import Thesis.PrimitiveSubstitutionAverages
 import Thesis.AlignedWindowAverages
 import Thesis.PrimitiveFactorCenters
 import Thesis.PrimitiveSubstitutionErgodicity
+import Thesis.ThueMorseDynamics
