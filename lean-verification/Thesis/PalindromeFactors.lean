@@ -514,4 +514,68 @@ theorem rich_of_infix {w v : List α} (hw : Rich w) (hv : v <:+: w) : Rich v := 
   have hvrev := rich_prefix hrev (List.prefix_append v.reverse left.reverse)
   simpa using rich_reverse hvrev
 
+/-- In a rich word, the nonempty palindromic factors whose first letter
+differs from a fixed letter are counted by the positions with that property.
+At each extension exactly one new palindrome appears and ends at the new
+position. -/
+theorem rich_nondistinguished_palindrome_count [DecidableEq α] (a : α) (w : List α)
+    {ps : List (List α)} (hp : Enumerates w ps) (hsize : ps.length = w.length) :
+    (ps.filter fun v => decide (v.head? ≠ some a)).length =
+      (w.filter fun b => decide (b ≠ a)).length := by
+  classical
+  induction w using induct_append_singleton generalizing ps with
+  | h₀ =>
+    have he : ps = [] := List.length_eq_zero_iff.1 hsize
+    simp [he]
+  | hs w b ih =>
+    obtain ⟨qs, hq, hlen⟩ := rich_before_last ⟨ps, hp, hsize⟩
+    have hnew : ∃ v ∈ ps, ¬ PalindromicFactor w v := by
+      apply Classical.byContradiction
+      intro h
+      have hold (v : List α) (hv : v ∈ ps) : PalindromicFactor w v := by
+        apply Classical.byContradiction
+        exact fun hn => h ⟨v, hv, hn⟩
+      have hle := FiniteList.nodup_length_le_of_subset hp.1
+        (fun v hv => (hq.2 v).2 (hold v hv))
+      simp only [hsize, hlen, List.length_append, List.length_cons, List.length_nil] at hle
+      omega
+    obtain ⟨v, hv, hvnew⟩ := hnew
+    have hvpal := (hp.2 v).1 hv
+    have hhead : v.head? = some b := by
+      obtain ⟨l, hl⟩ := new_palindrome_suffix hvpal hvnew
+      have hlast := congrArg List.getLast? hl
+      rw [List.getLast?_append, List.getLast?_append] at hlast
+      rw [← hvpal.2.2, List.head?_reverse]
+      cases he : v.getLast? with
+      | none => exact False.elim (hvpal.1 (List.getLast?_eq_none_iff.1 he))
+      | some c => simpa [he] using hlast
+    have hnodup : (v :: qs).Nodup :=
+      List.nodup_cons.2 ⟨fun hvq => hvnew ((hq.2 v).1 hvq), hq.1⟩
+    have hmem (u : List α) : u ∈ ps ↔ u ∈ v :: qs := by
+      constructor
+      · intro hu
+        by_cases h : PalindromicFactor w u
+        · exact List.mem_cons_of_mem _ ((hq.2 u).2 h)
+        · have he := new_palindrome_unique ((hp.2 u).1 hu) hvpal h hvnew
+          simp [he]
+      · intro hu
+        rcases List.mem_cons.1 hu with (rfl | hu)
+        · exact hv
+        · obtain ⟨hne, hinfix, hpal⟩ := (hq.2 u).1 hu
+          exact (hp.2 u).2 ⟨hne, hinfix.trans (List.prefix_append w [b]).isInfix, hpal⟩
+    let p : List α → Bool := fun v => decide (v.head? ≠ some a)
+    have heq : (ps.filter p).length = ((v :: qs).filter p).length := by
+      apply Nat.le_antisymm
+      · apply FiniteList.nodup_length_le_of_subset (hp.1.filter _)
+        intro u hu
+        obtain ⟨hm, hf⟩ := List.mem_filter.1 hu
+        exact List.mem_filter.2 ⟨(hmem u).1 hm, hf⟩
+      · apply FiniteList.nodup_length_le_of_subset (hnodup.filter _)
+        intro u hu
+        obtain ⟨hm, hf⟩ := List.mem_filter.1 hu
+        exact List.mem_filter.2 ⟨(hmem u).2 hm, hf⟩
+    change (ps.filter p).length = _
+    rw [heq, List.filter_cons, List.filter_append, List.length_append]
+    by_cases h : b = a <;> simp [p, hhead, h, Nat.add_comm] <;> simpa using ih hq hlen
+
 end Thesis.PalindromeFactors
