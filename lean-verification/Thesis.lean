@@ -82,3 +82,4 @@ import Thesis.EpisturmianPrefixes
 import Thesis.EpisturmianRecurrence
 import Thesis.MBonacciClosureDensity
 import Thesis.FibonacciCentralPrefixes
+import Thesis.PalindromePrefixBlocks
