@@ -8,3 +8,5 @@ import Thesis.PalindromeDensity
 import Thesis.ThueMorseClassification
 import Thesis.FactorTree
 import Thesis.FibonacciIdentities
+import Thesis.PalindromeFactors
+import Thesis.TernaryWord

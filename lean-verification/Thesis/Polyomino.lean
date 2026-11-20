@@ -1,4 +1,4 @@
-import Std.Tactic
+import Thesis.FiniteList
 
 namespace Thesis.Polyomino
 
@@ -41,22 +41,6 @@ private theorem uniqueLines_nodup (ls : List Line) : (uniqueLines ls).Nodup := b
     · simpa [uniqueLines, ha] using ih
     · simpa [uniqueLines, ha, List.nodup_cons, mem_uniqueLines] using ih
 
-private theorem length_le_of_subset (ls cuts : List Line) (hd : ls.Nodup)
-    (h : ∀ l ∈ ls, l ∈ cuts) : ls.length ≤ cuts.length := by
-  induction ls generalizing cuts with
-  | nil => simp
-  | cons a ls ih =>
-    have ha : a ∈ cuts := h a (by simp)
-    obtain ⟨hna, hnd⟩ := List.nodup_cons.mp hd
-    have hs (l : Line) (hl : l ∈ ls) : l ∈ cuts.erase a :=
-      (List.mem_erase_of_ne (show l ≠ a from fun he => hna (he ▸ hl))).2
-        (h l (List.mem_cons_of_mem a hl))
-    have hb := ih (cuts.erase a) hnd hs
-    simp only [List.length_erase_of_mem ha] at hb
-    have hp := List.length_pos_of_mem ha
-    simp only [List.length_cons]
-    omega
-
 def internalLines (cells : List Cell) : List Line := uniqueLines (sideLines cells)
 
 /-- The remaining cell-adjacency graph has singleton components precisely
@@ -93,7 +77,7 @@ theorem minimum_cuts (cells : List Cell) :
     ∀ cuts, Separates cells cuts → (internalLines cells).length ≤ cuts.length := by
   refine ⟨⟨internalLines cells, (separates_iff _ _).2 (fun _ h => h), rfl⟩, ?_⟩
   intro cuts h
-  exact length_le_of_subset _ _ (uniqueLines_nodup _) ((separates_iff _ _).1 h)
+  exact FiniteList.nodup_length_le_of_subset (uniqueLines_nodup _) ((separates_iff _ _).1 h)
 
 /-- The `a × b` rectangle based at the origin. -/
 def rectangle (a b : Nat) : List Cell :=
@@ -176,7 +160,7 @@ theorem rectangle_minimum_cuts (a b : Nat) (ha : 0 < a) (hb : 0 < b) :
       have hk' := List.mem_range'_1.mp hk
       have hside := (hminimal (0, (k : Int) - 1) (mem_rectangle.mpr (by omega))).2
       exact hside (mem_rectangle.mpr (by omega)) |> fun h => by simpa using h
-  have hle := length_le_of_subset cuts minimal hd hr
+  have hle := FiniteList.nodup_length_le_of_subset hd hr
   omega
 
 end Thesis.Polyomino
