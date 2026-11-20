@@ -84,3 +84,6 @@ import Thesis.MBonacciClosureDensity
 import Thesis.FibonacciCentralPrefixes
 import Thesis.PalindromePrefixBlocks
 import Thesis.SturmianPrefixRatios
+import Thesis.SturmianPalindromeRecords
+import Thesis.RotationRecordBrackets
+import Thesis.RotationRecordEnumeration
