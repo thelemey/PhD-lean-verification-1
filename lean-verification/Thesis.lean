@@ -56,3 +56,4 @@ import Thesis.FibonacciTableLimit
 import Thesis.FactorTreeEdgeCounts
 import Thesis.FactorTreeMixedEdges
 import Thesis.FactorTreeIndices
+import Thesis.FactorTreeDegrees

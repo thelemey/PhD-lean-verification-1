@@ -13,7 +13,7 @@ noncomputable def edgeDegrees (w : Nat → Bool) (n : Nat) (e : Σ k : Nat, Fin 
 noncomputable def edgeDegreeCount (w : Nat → Bool) (n p c : Nat) : ℤ :=
   ((factorEdges w n).filter (fun e => edgeDegrees w n e = (p, c))).card
 
-private theorem card_filter_factorEdges (w : Nat → Bool) (n : Nat)
+theorem card_filter_factorEdges (w : Nat → Bool) (n : Nat)
     (P : (Σ k : Nat, Fin (k + 1) → Bool) → Prop) [DecidablePred P] :
     ((factorEdges w n).filter P).card =
       ∑ k ∈ Finset.range n, ((factorLanguage w (k + 1)).filter
