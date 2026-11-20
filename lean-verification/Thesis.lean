@@ -16,3 +16,5 @@ import Thesis.FactorialLeadingDigits
 import Thesis.FibonacciBinet
 import Thesis.FibonacciSeries
 import Thesis.FibonacciGoldenLimits
+import Thesis.SymbolicLatticeMetric
+import Thesis.SymbolicLatticeTopology
