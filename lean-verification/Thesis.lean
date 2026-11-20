@@ -77,3 +77,4 @@ import Thesis.PalindromicMorphismRichness
 import Thesis.FibonacciRichness
 import Thesis.WordPrefixLimits
 import Thesis.TernaryRichness
+import Thesis.PalindromicClosure
