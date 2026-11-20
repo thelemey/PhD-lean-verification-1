@@ -32,3 +32,6 @@ import Thesis.MBonacciDensity
 import Thesis.RecurrenceStability
 import Thesis.PolynomialRecurrence
 import Thesis.MBonacciCharacteristic
+import Thesis.MBonacciPrefixLimit
+import Thesis.PalPrefixRatio
+import Thesis.MBonacciWordDensity
