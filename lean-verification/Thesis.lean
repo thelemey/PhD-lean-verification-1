@@ -80,3 +80,4 @@ import Thesis.TernaryRichness
 import Thesis.PalindromicClosure
 import Thesis.EpisturmianPrefixes
 import Thesis.EpisturmianRecurrence
+import Thesis.MBonacciClosureDensity
