@@ -1,0 +1,252 @@
+{
+  "checks_passed": 775,
+  "sturmian_period_cases": [
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 1,
+      "period": 2,
+      "max_length": 5,
+      "exponent": "5/2"
+    },
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 2,
+      "period": 3,
+      "max_length": 9,
+      "exponent": "3"
+    },
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 3,
+      "period": 5,
+      "max_length": 16,
+      "exponent": "16/5"
+    },
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 4,
+      "period": 8,
+      "max_length": 27,
+      "exponent": "27/8"
+    },
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 5,
+      "period": 13,
+      "max_length": 45,
+      "exponent": "45/13"
+    },
+    {
+      "cf_prefix": [
+        2
+      ],
+      "n": 6,
+      "period": 21,
+      "max_length": 74,
+      "exponent": "74/21"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 1,
+      "period": 3,
+      "max_length": 11,
+      "exponent": "11/3"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 2,
+      "period": 7,
+      "max_length": 22,
+      "exponent": "22/7"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 3,
+      "period": 10,
+      "max_length": 35,
+      "exponent": "7/2"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 4,
+      "period": 17,
+      "max_length": 59,
+      "exponent": "59/17"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 5,
+      "period": 27,
+      "max_length": 96,
+      "exponent": "32/9"
+    },
+    {
+      "cf_prefix": [
+        3,
+        2
+      ],
+      "n": 6,
+      "period": 44,
+      "max_length": 157,
+      "exponent": "157/44"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 1,
+      "period": 2,
+      "max_length": 9,
+      "exponent": "9/2"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 2,
+      "period": 7,
+      "max_length": 21,
+      "exponent": "3"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 3,
+      "period": 9,
+      "max_length": 32,
+      "exponent": "32/9"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 4,
+      "period": 16,
+      "max_length": 55,
+      "exponent": "55/16"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 5,
+      "period": 25,
+      "max_length": 89,
+      "exponent": "89/25"
+    },
+    {
+      "cf_prefix": [
+        2,
+        3,
+        1
+      ],
+      "n": 6,
+      "period": 41,
+      "max_length": 146,
+      "exponent": "146/41"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 1,
+      "period": 4,
+      "max_length": 11,
+      "exponent": "11/4"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 2,
+      "period": 5,
+      "max_length": 22,
+      "exponent": "22/5"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 3,
+      "period": 14,
+      "max_length": 45,
+      "exponent": "45/14"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 4,
+      "period": 19,
+      "max_length": 69,
+      "exponent": "69/19"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 5,
+      "period": 33,
+      "max_length": 116,
+      "exponent": "116/33"
+    },
+    {
+      "cf_prefix": [
+        4,
+        1,
+        2
+      ],
+      "n": 6,
+      "period": 52,
+      "max_length": 187,
+      "exponent": "187/52"
+    }
+  ],
+  "scope": "Finite corroboration and text-consistency checks; mathematical proofs are in the TeX documents."
+}

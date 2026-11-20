@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-17",
+  "engine": "XeLaTeX",
+  "finite_checks_passed": 775,
+  "sturmian_period_cases": 24,
+  "documents": {
+    "mathematical_corrections": {
+      "pages": 5,
+      "compilation_issues": [],
+      "text_outside_physical_page": 0,
+      "pdf_sha256": "a439b3d7498a5149d2c9e7442da01db006c80d68e9fffadeb9c965af52fc9ec2",
+      "tex_sha256": "0b639f4cb9992e51f9ae2d780f6da0955f3b0fdafc27f3c5163009911a6e713e"
+    },
+    "thesis_corrected": {
+      "pages": 153,
+      "compilation_issues": [],
+      "text_outside_physical_page": 0,
+      "pdf_sha256": "415e015b8f0f1598045b7d39610d62688cc80af12b0d7647e33c769fb14fc160",
+      "tex_sha256": "97e235bfda7b8c8f372c841434d328814dd83b1c959eb5db02ffac02d89d4311"
+    }
+  }
+}

@@ -1,0 +1,1046 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3012.6" height="1339.02" viewBox="0 0 3012.6 1339.02">
+<rect width="3012.6" height="1339.02" fill="white" /><text x="18" y="29" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#17212B">Зависимости основных утверждений: 52 узла, 42 связи</text><text x="18" y="51" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Сплошная стрелка: используется в доказательстве. Цвет — локальная оценка, не итог всей работы.</text><rect x="18.0" y="72" width="23" height="20" rx="3" fill="#E7F2E9" stroke="#338153" /><text x="24.0" y="87" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">0</text><text x="49.0" y="87" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Ошибок не выявлено</text><rect x="762.15" y="72" width="23" height="20" rx="3" fill="#FFF3C4" stroke="#B78300" /><text x="768.15" y="87" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">1</text><text x="793.15" y="87" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Локальная поправка</text><rect x="1506.3" y="72" width="23" height="20" rx="3" fill="#FFE3AC" stroke="#C47700" /><text x="1512.3" y="87" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">2</text><text x="1537.3" y="87" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Требует восстановления</text><rect x="2250.45" y="72" width="23" height="20" rx="3" fill="#FFD5BD" stroke="#CC5200" /><text x="2256.45" y="87" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">3</text><text x="2281.45" y="87" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Неверное утверждение / формула</text><rect x="18.0" y="100" width="23" height="20" rx="3" fill="#FBC9D0" stroke="#B51F37" /><text x="24.0" y="115" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">4</text><text x="49.0" y="115" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Противоречивое определение</text><rect x="762.15" y="100" width="23" height="20" rx="3" fill="#E9DDF6" stroke="#8054A6" /><text x="768.15" y="115" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">Н</text><text x="793.15" y="115" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Новизна / статус, не ложность</text><rect x="1506.3" y="100" width="23" height="20" rx="3" fill="#EEF1F5" stroke="#748193" /><text x="1512.3" y="115" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="normal" fill="#17212B">И</text><text x="1537.3" y="115" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="normal" fill="#17212B">Внешнее основание</text><g transform="translate(0 138)"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.8 1190.22)">
+<title>dependencies</title>
+<g id="clust1" class="cluster">
+<title>cluster_factorials</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M482,-226C482,-226 1012,-226 1012,-226 1018,-226 1024,-232 1024,-238 1024,-238 1024,-528 1024,-528 1024,-534 1018,-540 1012,-540 1012,-540 482,-540 482,-540 476,-540 470,-534 470,-528 470,-528 470,-238 470,-238 470,-232 476,-226 482,-226" />
+<text text-anchor="middle" x="633.5" y="-521.6" font-family="DejaVu Sans" font-size="18.00">2.2  Конкатенация факториалов</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_prelim</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M1578,-274C1578,-274 2166,-274 2166,-274 2172,-274 2178,-280 2178,-286 2178,-286 2178,-480 2178,-480 2178,-486 2172,-492 2166,-492 2166,-492 1578,-492 1578,-492 1572,-492 1566,-486 1566,-480 1566,-480 1566,-286 1566,-286 1566,-280 1572,-274 1578,-274" />
+<text text-anchor="middle" x="1768" y="-473.6" font-family="DejaVu Sans" font-size="18.00">3.1  Ошибки предварительного раздела</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_fibonacci</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M12,-836C12,-836 768,-836 768,-836 774,-836 780,-842 780,-848 780,-848 780,-1167.42 780,-1167.42 780,-1173.42 774,-1179.42 768,-1179.42 768,-1179.42 12,-1179.42 12,-1179.42 6,-1179.42 0,-1173.42 0,-1167.42 0,-1167.42 0,-848 0,-848 0,-842 6,-836 12,-836" />
+<text text-anchor="middle" x="262" y="-1161.02" font-family="DejaVu Sans" font-size="18.00">3.4–3.5  Буквы, механическое описание, обрамления</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_palindromes</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M800,-548C800,-548 1482,-548 1482,-548 1488,-548 1494,-554 1494,-560 1494,-560 1494,-1046.71 1494,-1046.71 1494,-1052.71 1488,-1058.71 1482,-1058.71 1482,-1058.71 800,-1058.71 800,-1058.71 794,-1058.71 788,-1052.71 788,-1046.71 788,-1046.71 788,-560 788,-560 788,-554 794,-548 800,-548" />
+<text text-anchor="middle" x="878" y="-1040.31" font-family="DejaVu Sans" font-size="18.00">3.6  Палиндромы</text>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_twisted</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M1514,-608C1514,-608 2231,-608 2231,-608 2237,-608 2243,-614 2243,-620 2243,-620 2243,-1106.71 2243,-1106.71 2243,-1112.71 2237,-1118.71 2231,-1118.71 2231,-1118.71 1514,-1118.71 1514,-1118.71 1508,-1118.71 1502,-1112.71 1502,-1106.71 1502,-1106.71 1502,-620 1502,-620 1502,-614 1508,-608 1514,-608" />
+<text text-anchor="middle" x="1692" y="-1100.31" font-family="DejaVu Sans" font-size="18.00">3.8  Скрученные повторы и динамика</text>
+</g>
+<g id="clust19" class="cluster">
+<title>cluster_trees</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M2263,-752C2263,-752 2979,-752 2979,-752 2985,-752 2991,-758 2991,-764 2991,-764 2991,-962.71 2991,-962.71 2991,-968.71 2985,-974.71 2979,-974.71 2979,-974.71 2263,-974.71 2263,-974.71 2257,-974.71 2251,-968.71 2251,-962.71 2251,-962.71 2251,-764 2251,-764 2251,-758 2257,-752 2263,-752" />
+<text text-anchor="middle" x="2372.5" y="-956.31" font-family="DejaVu Sans" font-size="18.00">5.1  Деревья и индексы</text>
+</g>
+<g id="clust22" class="cluster">
+<title>cluster_metrics</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M639,0C639,0 855,0 855,0 861,0 867,-6 867,-12 867,-12 867,-206 867,-206 867,-212 861,-218 855,-218 855,-218 639,-218 639,-218 633,-218 627,-212 627,-206 627,-206 627,-12 627,-12 627,-6 633,0 639,0" />
+<text text-anchor="middle" x="715.5" y="-199.6" font-family="DejaVu Sans" font-size="18.00">3.7–3.8  Метрика</text>
+</g>
+<g id="clust23" class="cluster">
+<title>cluster_polyomino</title>
+<path fill="transparent" stroke="#c8d1da" stroke-width="0.8" d="M2498,-278C2498,-278 2743,-278 2743,-278 2749,-278 2755,-284 2755,-290 2755,-290 2755,-475.71 2755,-475.71 2755,-481.71 2749,-487.71 2743,-487.71 2743,-487.71 2498,-487.71 2498,-487.71 2492,-487.71 2486,-481.71 2486,-475.71 2486,-475.71 2486,-290 2486,-290 2486,-284 2492,-278 2498,-278" />
+<text text-anchor="middle" x="2620.5" y="-469.31" font-family="DejaVu Sans" font-size="18.00">4.2  Разрезание полимино</text>
+</g>
+
+<g id="edge-F1-F2" class="edge">
+<title>F1-&gt;F2</title>
+<g id="a_edge-F1-F2"><a xlink:title="Дробные части логарифма определяют ведущие цифры.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M762.39,-431.91C782.43,-423.15 804.23,-413.62 824.59,-404.72" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="825.53,-406.79 830.58,-402.1 823.71,-402.62 825.53,-406.79" />
+</a>
+</g>
+</g>
+
+<g id="edge-F2-F5" class="edge">
+<title>F2-&gt;F5</title>
+<g id="a_edge-F2-F5"><a xlink:title="Ненулевой хвост заданного фактора помещается в начало (n+1)!.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M835.73,-335.91C817.33,-327.26 797.33,-317.86 778.6,-309.06" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="779.15,-306.81 772.3,-306.1 777.22,-310.93 779.15,-306.81" />
+</a>
+</g>
+</g>
+
+<g id="edge-F3-F5" class="edge">
+<title>F3-&gt;F5</title>
+<g id="a_edge-F3-F5"><a xlink:title="Начальные нули фактора берутся из конца предыдущего факториала.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M704,-335.91C704,-328.58 704,-320.71 704,-313.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="706.28,-312.76 704,-306.26 701.73,-312.76 706.28,-312.76" />
+</a>
+</g>
+</g>
+
+<g id="edge-F4-F5" class="edge">
+<title>F4-&gt;F5</title>
+<g id="a_edge-F4-F5"><a xlink:title="Часть (ii) следует из части (i) и p≤a≤b^k.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M589.9,-342.31C606.85,-332.17 626.61,-320.34 644.87,-309.4" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="646.08,-311.33 650.49,-306.04 643.75,-307.42 646.08,-311.33" />
+</a>
+</g>
+</g>
+
+<g id="edge-E3-A1" class="edge">
+<title>E3-&gt;A1</title>
+<g id="a_edge-E3-A1"><a xlink:title="Определение задаёт объект леммы; требуется восстановление.">
+<path fill="none" stroke="#c47700" stroke-width="1.6" stroke-dasharray="5,2" d="M1873,-383.91C1873,-376.58 1873,-368.71 1873,-361.13" />
+<polygon fill="#c47700" stroke="#c47700" stroke-width="1.6" points="1875.28,-360.76 1873,-354.26 1870.73,-360.76 1875.28,-360.76" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-B0-B5" class="edge">
+<title>B0-&gt;B5</title>
+<g id="a_edge-B0-B5"><a xlink:title="Количества букв удовлетворяют рекурсии Фибоначчи; обрамление добавляет по одной букве.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M644.99,-1067.05C652.81,-1052.66 661.37,-1035.83 668.43,-1020.98" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="670.66,-1021.59 671.36,-1014.74 666.54,-1019.66 670.66,-1021.59" />
+</a>
+</g>
+</g>
+
+<g id="edge-B0-C1" class="edge">
+<title>B0-&gt;C1</title>
+<g id="a_edge-B0-C1"><a xlink:title="Индукция по рекурсии конечных слов.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M751.84,-1086.67C861.71,-1074.39 1002,-1058.71 1002,-1058.71 1002,-1058.71 1024.55,-1038.69 1046.55,-1019.15" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1048.18,-1020.75 1051.53,-1014.74 1045.16,-1017.35 1048.18,-1020.75" />
+</a>
+</g>
+</g>
+
+<g id="edge-B0-C4" class="edge">
+<title>B0-&gt;C4</title>
+<g id="a_edge-B0-C4"><a xlink:title="Сравнение рекурсий и переименование букв.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M762.62,-1094.21C1006.86,-1082.23 1486,-1058.71 1486,-1058.71 1486,-1058.71 1486,-946 1486,-946 1486,-946 1464.14,-933.33 1440.17,-919.45" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1441.15,-917.38 1434.38,-916.09 1438.86,-921.32 1441.15,-917.38" />
+</a>
+</g>
+</g>
+
+<g id="edge-B1-B2" class="edge">
+<title>B1-&gt;B2</title>
+<g id="a_edge-B1-B2"><a xlink:title="Телескопическая сумма механических букв.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M249.3,-1068.96C237.03,-1063.06 228,-1058.71 228,-1058.71 228,-1058.71 200.34,-1038.21 173.69,-1018.45" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="174.96,-1016.56 168.38,-1014.52 172.25,-1020.21 174.96,-1016.56" />
+</a>
+</g>
+</g>
+
+<g id="edge-B1-B3" class="edge">
+<title>B1-&gt;B3</title>
+<g id="a_edge-B1-B3"><a xlink:title="Разность целых частей для произвольного окна.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M314.65,-1068.94C314.02,-1054.16 313.28,-1036.5 312.63,-1021" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="314.9,-1020.9 312.35,-1014.51 310.35,-1021.1 314.9,-1020.9" />
+</a>
+</g>
+</g>
+
+<g id="edge-B1-B4" class="edge">
+<title>B1-&gt;B4</title>
+<g id="a_edge-B1-B4"><a xlink:title="Лемма 3.5.1 выводится из механического описания; из неё следует 3.5.2.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M375.12,-1068.96C386,-1063.06 394,-1058.71 394,-1058.71 394,-1058.71 420.63,-1038.38 446.4,-1018.7" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="448.1,-1020.27 451.88,-1014.52 445.33,-1016.65 448.1,-1020.27" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-B5-B7" class="edge">
+<title>B5-&gt;B7</title>
+<g id="a_edge-B5-B7"><a xlink:title="Исходная точная дробь для плотности.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M678.99,-948.27C676.98,-940.07 674.54,-931.16 671.99,-922.67" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="674.11,-921.82 670.03,-916.27 669.76,-923.15 674.11,-921.82" />
+</a>
+</g>
+</g>
+
+<g id="edge-B6-B7" class="edge">
+<title>B6-&gt;B7</title>
+<g id="a_edge-B6-B7"><a xlink:title="Тождество Бине даёт остаток и его знак.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M42.33,-1068.96C30.62,-1063.06 22,-1058.71 22,-1058.71 22,-1058.71 22,-946 22,-946 22,-946 356.07,-913.33 539.21,-895.42" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="539.68,-897.66 545.93,-894.76 539.24,-893.13 539.68,-897.66" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-C1-C3" class="edge">
+<title>C1-&gt;C3</title>
+<g id="a_edge-C1-C3"><a xlink:title="Даёт верхнюю оценку limsup отношений длин.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1061.68,-948.27C1051.31,-937.25 1039.3,-924.97 1028.28,-914.11" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1029.86,-912.48 1023.63,-909.55 1026.68,-915.73 1029.86,-912.48" />
+</a>
+</g>
+</g>
+
+<g id="edge-C2-C3" class="edge">
+<title>C2-&gt;C3</title>
+<g id="a_edge-C2-C3"><a xlink:title="Даёт противоположную оценку.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M930.63,-948.27C941.4,-937.35 953.39,-925.19 964.03,-914.4" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="965.86,-915.78 968.8,-909.55 962.62,-912.59 965.86,-915.78" />
+</a>
+</g>
+</g>
+
+<g id="edge-C2-C11" class="edge">
+<title>C2-&gt;C11</title>
+<g id="a_edge-C2-C11"><a xlink:title="Верхняя оценка 1/φ в пункте (1) следствия.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M887.82,-948.15C863.91,-879.3 810,-724 810,-724 810,-724 810,-658 810,-658 810,-658 904.76,-637.46 985.19,-620.02" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="986.07,-622.16 991.94,-618.56 985.1,-617.71 986.07,-622.16" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-C4-C7" class="edge">
+<title>C4-&gt;C7</title>
+<g id="a_edge-C4-C7"><a xlink:title="Структура бесконечного слова y.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1296.19,-849.91C1264.16,-837.5 1232.74,-825.32 1219.24,-820.02" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1220.02,-817.88 1213.14,-817.59 1218.34,-822.11 1220.02,-817.88" />
+</a>
+</g>
+</g>
+
+<g id="edge-C4-C9" class="edge">
+<title>C4-&gt;C9</title>
+<g id="a_edge-C4-C9"><a xlink:title="Представление yₙ через слова Фибоначчи.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1403.33,-849.91C1414.79,-834.78 1426,-820 1426,-820 1426,-820 1426,-754 1426,-754 1426,-754 1268.36,-724.38 1170.99,-706.09" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1171.18,-703.81 1164.38,-704.85 1170.34,-708.28 1171.18,-703.81" />
+</a>
+</g>
+</g>
+
+<g id="edge-C5-C6" class="edge">
+<title>C5-&gt;C6</title>
+<g id="a_edge-C5-C6"><a xlink:title="Аффинная замена длин сохраняет limsup отношений.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1098.73,-849.91C1084.35,-841.41 1068.75,-832.19 1054.08,-823.52" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1055.05,-821.45 1048.3,-820.1 1052.74,-825.37 1055.05,-821.45" />
+</a>
+</g>
+</g>
+
+<g id="edge-C5-C7" class="edge">
+<title>C5-&gt;C7</title>
+<g id="a_edge-C5-C7"><a xlink:title="Преобразование полного списка длин.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1148.9,-849.91C1147.97,-842.58 1146.96,-834.71 1145.99,-827.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1148.2,-826.42 1145.12,-820.26 1143.68,-827 1148.2,-826.42" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-C8-C9" class="edge">
+<title>C8-&gt;C9</title>
+<g id="a_edge-C8-C9"><a xlink:title="Удвоение числа палиндромов в слове с разделителями.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1241.56,-753.91C1218.49,-744.1 1193.14,-733.32 1170.16,-723.54" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1170.93,-721.4 1164.06,-720.95 1169.15,-725.58 1170.93,-721.4" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-C10-C11" class="edge">
+<title>C10-&gt;C11</title>
+<g id="a_edge-C10-C11"><a xlink:title="Анализ ограниченности неполных частных; для остальных пунктов используются также внешние классические факты.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M977.44,-657.91C993.86,-649.34 1011.69,-640.03 1028.42,-631.29" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1029.82,-633.13 1034.53,-628.1 1027.71,-629.09 1029.82,-633.13" />
+</a>
+</g>
+</g>
+
+<g id="edge-C12-C7" class="edge">
+<title>C12-&gt;C7</title>
+<g id="a_edge-C12-C7"><a xlink:title="Полный список палиндромных префиксов f.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1293.77,-947.05C1276.69,-931.34 1260,-916 1260,-916 1260,-916 1241,-836 1241,-836 1241,-836 1229.14,-830.31 1213.58,-822.84" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1214.55,-820.78 1207.7,-820.02 1212.58,-824.88 1214.55,-820.78" />
+</a>
+</g>
+</g>
+
+<g id="edge-C12-C9" class="edge">
+<title>C12-&gt;C9</title>
+<g id="a_edge-C12-C9"><a xlink:title="Богатство исходных штурмовых факторов.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1299.12,-946.67C1284.84,-931.1 1271,-916 1271,-916 1271,-916 1271,-836 1271,-836 1271,-836 1415,-820 1415,-820 1415,-820 1415,-754 1415,-754 1415,-754 1264.71,-724.79 1170.45,-706.47" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1170.86,-704.23 1164.04,-705.22 1169.99,-708.7 1170.86,-704.23" />
+</a>
+</g>
+</g>
+
+<g id="edge-D0-D1" class="edge">
+<title>D0-&gt;D1</title>
+<g id="a_edge-D0-D1"><a xlink:title="Повторы выражаются через разности сумм цифр.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1651.26,-1014.79C1675.44,-1003.79 1704.1,-990.77 1730.2,-978.91" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1731.45,-980.84 1736.42,-976.08 1729.57,-976.7 1731.45,-980.84" />
+</a>
+</g>
+</g>
+
+<g id="edge-D0-D2" class="edge">
+<title>D0-&gt;D2</title>
+<g id="a_edge-D0-D2"><a xlink:title="Двоичное арифметическое представление.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1600.04,-1014.79C1601.97,-1005 1604.22,-993.6 1606.34,-982.85" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1608.61,-983.07 1607.64,-976.25 1604.15,-982.19 1608.61,-983.07" />
+</a>
+</g>
+</g>
+
+<g id="edge-D0-D5" class="edge">
+<title>D0-&gt;D5</title>
+<g id="a_edge-D0-D5"><a xlink:title="Блочная структура и примитивность подстановки.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1658.85,-1014.85C1671.52,-1009.79 1681,-1006 1681,-1006 1681,-1006 1910,-976 1910,-976 1910,-976 1926,-910 1926,-910 1926,-910 1963.59,-896.68 2003.93,-882.39" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2005.06,-884.4 2010.42,-880.09 2003.54,-880.12 2005.06,-884.4" />
+</a>
+</g>
+</g>
+
+<g id="edge-D0-D6" class="edge">
+<title>D0-&gt;D6</title>
+<g id="a_edge-D0-D6"><a xlink:title="Независимая блочная оценка p(k)&lt;N²bk.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1566.53,-1014.55C1546.78,-996.65 1524,-976 1524,-976 1524,-976 1524,-910 1524,-910 1524,-910 1525,-814 1525,-814 1525,-814 1689.75,-737.44 1789.88,-690.91" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1790.85,-692.97 1795.79,-688.16 1788.93,-688.84 1790.85,-692.97" />
+</a>
+</g>
+</g>
+
+<g id="edge-D1-E5" class="edge">
+<title>D1-&gt;E5</title>
+<g id="a_edge-D1-E5"><a xlink:title="Ограничение и построение постоянных окон cₘ.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1826.8,-909.91C1831.51,-902.28 1836.57,-894.07 1841.43,-886.2" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1843.62,-886.99 1845.09,-880.26 1839.74,-884.6 1843.62,-886.99" />
+</a>
+</g>
+</g>
+
+<g id="edge-D2-D3" class="edge">
+<title>D2-&gt;D3</title>
+<g id="a_edge-D2-D3"><a xlink:title="Редукция к нечётной длине и противоречие для m≥3.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1618.1,-909.91C1619.03,-902.58 1620.04,-894.71 1621.01,-887.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1623.32,-887 1621.88,-880.26 1618.8,-886.42 1623.32,-887" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-E5-D4" class="edge">
+<title>E5-&gt;D4</title>
+<g id="a_edge-E5-D4"><a xlink:title="Конечность κ исключает финальную периодичность.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1870.01,-813.91C1870.25,-806.58 1870.31,-798.71 1870.18,-791.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1872.45,-790.7 1870.01,-784.26 1867.9,-790.82 1872.45,-790.7" />
+</a>
+</g>
+</g>
+
+<g id="edge-E5-D7" class="edge">
+<title>E5-&gt;D7</title>
+<g id="a_edge-E5-D7"><a xlink:title="Граница отсутствующих повторов.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1941.12,-813.91C1961.91,-805.15 1984.52,-795.62 2005.64,-786.72" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2006.74,-788.72 2011.84,-784.1 2004.97,-784.53 2006.74,-788.72" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-D4-D6" class="edge">
+<title>D4-&gt;D6</title>
+<g id="a_edge-D4-D6"><a xlink:title="Непериодичность.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1870.01,-717.91C1870.25,-710.58 1870.31,-702.71 1870.18,-695.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1872.45,-694.7 1870.01,-688.26 1867.9,-694.82 1872.45,-694.7" />
+</a>
+</g>
+</g>
+
+<g id="edge-D5-D7" class="edge">
+<title>D5-&gt;D7</title>
+<g id="a_edge-D5-D7"><a xlink:title="Минимальность даёт совпадение языков.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2096.56,-813.91C2095.55,-806.58 2094.46,-798.71 2093.41,-791.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2095.61,-790.39 2092.46,-784.26 2091.1,-791.01 2095.61,-790.39" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-D8-D5" class="edge">
+<title>D8-&gt;D5</title>
+<g id="a_edge-D8-D5"><a xlink:title="Стандартная теорема о примитивных подстановках.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2115.99,-1007.05C2136.73,-991.34 2157,-976 2157,-976 2157,-976 2157,-910 2157,-910 2157,-910 2146.41,-898.27 2134.44,-885.02" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2136.03,-883.39 2129.98,-880.09 2132.65,-886.44 2136.03,-883.39" />
+</a>
+</g>
+</g>
+
+<g id="edge-D8-D6" class="edge">
+<title>D8-&gt;D6</title>
+<g id="a_edge-D8-D6"><a xlink:title="Нижняя оценка Морса–Хедлунда.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2117.54,-1007.42C2139.44,-991.59 2161,-976 2161,-976 2161,-976 2221,-880 2221,-880 2221,-880 2221,-814 2221,-814 2221,-814 2179,-718 2179,-718 2179,-718 2055.73,-693.66 1963.66,-675.48" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1963.91,-673.21 1957.09,-674.18 1963.02,-677.67 1963.91,-673.21" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-D9-N1" class="edge">
+<title>D9-&gt;N1</title>
+<g id="a_edge-D9-N1"><a xlink:title="Сопоставить с известной полной функцией.">
+<path fill="none" stroke="#8054a6" stroke-width="1.5" stroke-dasharray="1,5" d="M1865.63,-1014.53C1894.38,-1003.5 1927.79,-990.46 1957.71,-978.61" />
+<polygon fill="#8054a6" stroke="#8054a6" stroke-width="1.5" points="1958.83,-980.61 1964.03,-976.1 1957.15,-976.38 1958.83,-980.61" />
+</a>
+</g>
+</g>
+
+<g id="edge-G0-G3" class="edge">
+<title>G0-&gt;G3</title>
+<g id="a_edge-G0-G3"><a xlink:title="Подсчёт степеней и смежности специальных факторов.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2830,-861.84C2830,-854.4 2830,-846.48 2830,-838.89" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2832.28,-838.52 2830,-832.02 2827.73,-838.52 2832.28,-838.52" />
+</a>
+</g>
+</g>
+
+<g id="edge-G1-G2" class="edge">
+<title>G1-&gt;G2</title>
+<g id="a_edge-G1-G2"><a xlink:title="Для дерева, не являющегося путём, Δ≥3.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2615.99,-864.27C2617.92,-853.94 2620.06,-842.5 2621.99,-832.16" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2624.27,-832.36 2623.23,-825.55 2619.8,-831.53 2624.27,-832.36" />
+</a>
+</g>
+</g>
+
+
+<g id="edge-G4-N2" class="edge">
+<title>G4-&gt;N2</title>
+<g id="a_edge-G4-N2"><a xlink:title="Доказывает гипотезу суммированием по n−1 рёбрам.">
+<path fill="none" stroke="#8054a6" stroke-width="1.5" stroke-dasharray="1,5" d="M2406.06,-861.84C2406.27,-854.4 2406.31,-846.48 2406.16,-838.89" />
+<polygon fill="#8054a6" stroke="#8054a6" stroke-width="1.5" points="2408.43,-838.46 2405.98,-832.02 2403.88,-838.58 2408.43,-838.46" />
+</a>
+</g>
+</g>
+
+<g id="edge-N3-M1" class="edge">
+<title>N3-&gt;M1</title>
+<g id="a_edge-N3-M1"><a xlink:title="Используется определение d_SL; свойство компактности для оценки не требуется.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M747,-109.91C747,-102.58 747,-94.71 747,-87.13" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="749.28,-86.76 747,-80.26 744.73,-86.76 749.28,-86.76" />
+</a>
+</g>
+</g>
+
+<g id="edge-Q0-Q1" class="edge">
+<title>Q0-&gt;Q1</title>
+<g id="a_edge-Q0-Q1"><a xlink:title="Каждая линия, несущая внутреннее ребро, необходима и достаточна.">
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M2620,-374.87C2620,-367.29 2620,-359.3 2620,-351.81" />
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="2622.28,-351.6 2620,-345.1 2617.73,-351.6 2622.28,-351.6" />
+</a>
+</g>
+</g>
+
+<g id="node-E1" class="node">
+<title>E1</title>
+<g id="a_node-E1"><a xlink:title="Утверждение неверно. Для любого фиксированного b&gt;1 дробные части log_b(n!) равномерно распределены. В доказательстве леммы 2.2.1 это отрицательное утверждение не используется. | с. 43; строка 924 TeX">
+<path fill="#ffd5bd" stroke="#cc5200" stroke-width="1.15" d="M998,-498C998,-498 818,-498 818,-498 812,-498 806,-492 806,-486 806,-486 806,-444 806,-444 806,-438 812,-432 818,-432 818,-432 998,-432 998,-432 1004,-432 1010,-438 1010,-444 1010,-444 1010,-486 1010,-486 1010,-492 1004,-498 998,-498" />
+<text text-anchor="middle" x="908" y="-481.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[3] Текст перед леммой 2.2.1</text>
+<text text-anchor="middle" x="908" y="-468.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">«log(n!) не равномерно</text>
+<text text-anchor="middle" x="908" y="-455.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">распределён mod 1»</text>
+<text text-anchor="middle" x="908" y="-442.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43</text>
+</a>
+</g>
+</g>
+
+<g id="node-F1" class="node">
+<title>F1</title>
+<g id="a_node-F1"><a xlink:title="Лемма 2.2.1 | с. 43–44">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M781,-498C781,-498 597,-498 597,-498 591,-498 585,-492 585,-486 585,-486 585,-444 585,-444 585,-438 591,-432 597,-432 597,-432 781,-432 781,-432 787,-432 793,-438 793,-444 793,-444 793,-486 793,-486 793,-492 787,-498 781,-498" />
+<text text-anchor="middle" x="689" y="-481.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.1</text>
+<text text-anchor="middle" x="689" y="-468.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Бесконечно много попаданий</text>
+<text text-anchor="middle" x="689" y="-455.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в каждый интервал mod 1</text>
+<text text-anchor="middle" x="689" y="-442.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43–44</text>
+</a>
+</g>
+</g>
+
+<g id="node-F2" class="node">
+<title>F2</title>
+<g id="a_node-F2"><a xlink:title="Лемма 2.2.2 | с. 44">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M998,-402C998,-402 810,-402 810,-402 804,-402 798,-396 798,-390 798,-390 798,-348 798,-348 798,-342 804,-336 810,-336 810,-336 998,-336 998,-336 1004,-336 1010,-342 1010,-348 1010,-348 1010,-390 1010,-390 1010,-396 1004,-402 998,-402" />
+<text text-anchor="middle" x="904" y="-385.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.2</text>
+<text text-anchor="middle" x="904" y="-372.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Заданный ненулевой префикс</text>
+<text text-anchor="middle" x="904" y="-359.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в записи n!</text>
+<text text-anchor="middle" x="904" y="-346.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
+</a>
+</g>
+</g>
+
+<g id="node-F3" class="node">
+<title>F3</title>
+<g id="a_node-F3"><a xlink:title="Лемма 2.2.3 | с. 44">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M773,-402C773,-402 635,-402 635,-402 629,-402 623,-396 623,-390 623,-390 623,-348 623,-348 623,-342 629,-336 635,-336 635,-336 773,-336 773,-336 779,-336 785,-342 785,-348 785,-348 785,-390 785,-390 785,-396 779,-402 773,-402" />
+<text text-anchor="middle" x="704" y="-385.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.3</text>
+<text text-anchor="middle" x="704" y="-372.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Произвольно длинный</text>
+<text text-anchor="middle" x="704" y="-359.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">концевой блок нулей</text>
+<text text-anchor="middle" x="704" y="-346.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
+</a>
+</g>
+</g>
+
+<g id="node-F4" class="node">
+<title>F4</title>
+<g id="a_node-F4"><a xlink:title="Предл. 2.2.2 | с. 45">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M598,-395.5C598,-395.5 496,-395.5 496,-395.5 490,-395.5 484,-389.5 484,-383.5 484,-383.5 484,-354.5 484,-354.5 484,-348.5 490,-342.5 496,-342.5 496,-342.5 598,-342.5 598,-342.5 604,-342.5 610,-348.5 610,-354.5 610,-354.5 610,-383.5 610,-383.5 610,-389.5 604,-395.5 598,-395.5" />
+<text text-anchor="middle" x="547" y="-378.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 2.2.2</text>
+<text text-anchor="middle" x="547" y="-365.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">p(k) ≤ a(k) ≤ b^k</text>
+<text text-anchor="middle" x="547" y="-352.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 45</text>
+</a>
+</g>
+</g>
+
+<g id="node-F5" class="node">
+<title>F5</title>
+<g id="a_node-F5"><a xlink:title="Теорема 2.2.3 | с. 45–46">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M791.5,-306C791.5,-306 616.5,-306 616.5,-306 610.5,-306 604.5,-300 604.5,-294 604.5,-294 604.5,-252 604.5,-252 604.5,-246 610.5,-240 616.5,-240 616.5,-240 791.5,-240 791.5,-240 797.5,-240 803.5,-246 803.5,-252 803.5,-252 803.5,-294 803.5,-294 803.5,-300 797.5,-306 791.5,-306" />
+<text text-anchor="middle" x="704" y="-289.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 2.2.3</text>
+<text text-anchor="middle" x="704" y="-276.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Полная факторная и</text>
+<text text-anchor="middle" x="704" y="-263.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">арифметическая сложность</text>
+<text text-anchor="middle" x="704" y="-250.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 45–46</text>
+</a>
+</g>
+</g>
+
+<g id="node-E2" class="node">
+<title>E2</title>
+<g id="a_node-E2"><a xlink:title="При F0=0, F1=1 две напечатанные суммы дают при n=3 значения 2 и 3. Это локальная ошибка индексации. В показанных доказательствах используется отдельная рекурсия / формула Бине. | с. 49; формула (3.4)">
+<path fill="#fff3c4" stroke="#b78300" stroke-width="1.15" d="M2151.5,-450C2151.5,-450 1978.5,-450 1978.5,-450 1972.5,-450 1966.5,-444 1966.5,-438 1966.5,-438 1966.5,-396 1966.5,-396 1966.5,-390 1972.5,-384 1978.5,-384 1978.5,-384 2151.5,-384 2151.5,-384 2157.5,-384 2163.5,-390 2163.5,-396 2163.5,-396 2163.5,-438 2163.5,-438 2163.5,-444 2157.5,-450 2151.5,-450" />
+<text text-anchor="middle" x="2065" y="-433.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[1] Формула (3.4)</text>
+<text text-anchor="middle" x="2065" y="-420.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Вторая сумма равна F(n+1),</text>
+<text text-anchor="middle" x="2065" y="-407.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">а не F(n)</text>
+<text text-anchor="middle" x="2065" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 49</text>
+</a>
+</g>
+</g>
+
+<g id="node-E3" class="node">
+<title>E3</title>
+<g id="a_node-E3"><a xlink:title="Начальные условия (3.8) противоречат друг другу. Объект в напечатанном определении не существует для этих разрешённых параметров. Уровень 4 относится к этому определению, а не ко всей диссертации. | с. 49; формулы (3.7), (3.8)">
+<path fill="#fbc9d0" stroke="#b51f37" stroke-width="1.15" d="M1941,-450C1941,-450 1805,-450 1805,-450 1799,-450 1793,-444 1793,-438 1793,-438 1793,-396 1793,-396 1793,-390 1799,-384 1805,-384 1805,-384 1941,-384 1941,-384 1947,-384 1953,-390 1953,-396 1953,-396 1953,-438 1953,-438 1953,-444 1947,-450 1941,-450" />
+<text text-anchor="middle" x="1873" y="-433.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[4] Определение 3.1.2</text>
+<text text-anchor="middle" x="1873" y="-420.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">При k=3, p=1:</text>
+<text text-anchor="middle" x="1873" y="-407.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">F₁¹(t,3)=0 и F₁¹(t,3)=1</text>
+<text text-anchor="middle" x="1873" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 49</text>
+</a>
+</g>
+</g>
+
+<g id="node-A1" class="node">
+<title>A1</title>
+<g id="a_node-A1"><a xlink:title="Формула относится к последовательности из противоречивого определения. До исправления определения утверждение нельзя принимать в текущей форме. Это не самостоятельное доказательство ложности формулы после восстановления правильных условий. | с. 50; формула (3.11)">
+<path fill="#ffe3ac" stroke="#c47700" stroke-width="1.15" d="M1967.5,-354C1967.5,-354 1778.5,-354 1778.5,-354 1772.5,-354 1766.5,-348 1766.5,-342 1766.5,-342 1766.5,-300 1766.5,-300 1766.5,-294 1772.5,-288 1778.5,-288 1778.5,-288 1967.5,-288 1967.5,-288 1973.5,-288 1979.5,-294 1979.5,-300 1979.5,-300 1979.5,-342 1979.5,-342 1979.5,-348 1973.5,-354 1967.5,-354" />
+<text text-anchor="middle" x="1873" y="-337.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[2] Лемма 3.1.1</text>
+<text text-anchor="middle" x="1873" y="-324.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Производящая функция (3.11)</text>
+<text text-anchor="middle" x="1873" y="-311.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">для объекта из опр. 3.1.2</text>
+<text text-anchor="middle" x="1873" y="-298.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 50</text>
+</a>
+</g>
+</g>
+
+<g id="node-E4" class="node">
+<title>E4</title>
+<g id="a_node-E4"><a xlink:title="ind и ind* не определены. Если ind* означает асимптотический критический показатель, множитель 2 ошибочен: нужен 2+limsup. Для Фибоначчи получаются 2φ и 2+φ соответственно. Эту формулу последующие показанные доказательства не используют. | с. 50–51; формула (3.13)">
+<path fill="#ffd5bd" stroke="#cc5200" stroke-width="1.15" d="M1768,-450C1768,-450 1592,-450 1592,-450 1586,-450 1580,-444 1580,-438 1580,-438 1580,-396 1580,-396 1580,-390 1586,-384 1592,-384 1592,-384 1768,-384 1768,-384 1774,-384 1780,-390 1780,-396 1780,-396 1780,-438 1780,-438 1780,-444 1774,-450 1768,-450" />
+<text text-anchor="middle" x="1680" y="-433.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[3] Теорема 3.1.1</text>
+<text text-anchor="middle" x="1680" y="-420.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">(3.13): 2·limsup[…] вместо</text>
+<text text-anchor="middle" x="1680" y="-407.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">2 + limsup[…] при смысле E*</text>
+<text text-anchor="middle" x="1680" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 50–51</text>
+</a>
+</g>
+</g>
+
+<g id="node-B0" class="node">
+<title>B0</title>
+<g id="a_node-B0"><a xlink:title="Фиксированное исходное определение классического слова, использованное в разных частях текста.">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="623" cy="-1102.07" rx="142.67" ry="35.21" />
+<text text-anchor="middle" x="623" y="-1111.27" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Рекурсия слова Фибоначчи</text>
+<text text-anchor="middle" x="623" y="-1099.27" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">s₀=0, s₁=01;</text>
+<text text-anchor="middle" x="623" y="-1087.27" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">sₙ=sₙ₋₁sₙ₋₂</text>
+</a>
+</g>
+</g>
+
+<g id="node-B1" class="node">
+<title>B1</title>
+<g id="a_node-B1"><a xlink:title="Предл. 3.4.1 | с. 57">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M409.5,-1135.07C409.5,-1135.07 222.5,-1135.07 222.5,-1135.07 216.5,-1135.07 210.5,-1129.07 210.5,-1123.07 210.5,-1123.07 210.5,-1081.07 210.5,-1081.07 210.5,-1075.07 216.5,-1069.07 222.5,-1069.07 222.5,-1069.07 409.5,-1069.07 409.5,-1069.07 415.5,-1069.07 421.5,-1075.07 421.5,-1081.07 421.5,-1081.07 421.5,-1123.07 421.5,-1123.07 421.5,-1129.07 415.5,-1135.07 409.5,-1135.07" />
+<text text-anchor="middle" x="316" y="-1118.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.4.1</text>
+<text text-anchor="middle" x="316" y="-1105.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Механическое представление</text>
+<text text-anchor="middle" x="316" y="-1092.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">букв слова Фибоначчи</text>
+<text text-anchor="middle" x="316" y="-1079.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 57</text>
+</a>
+</g>
+</g>
+
+<g id="node-B2" class="node">
+<title>B2</title>
+<g id="a_node-B2"><a xlink:title="Теорема 3.4.2 | с. 57–58">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M209,-1014.36C209,-1014.36 41,-1014.36 41,-1014.36 35,-1014.36 29,-1008.36 29,-1002.36 29,-1002.36 29,-960.36 29,-960.36 29,-954.36 35,-948.36 41,-948.36 41,-948.36 209,-948.36 209,-948.36 215,-948.36 221,-954.36 221,-960.36 221,-960.36 221,-1002.36 221,-1002.36 221,-1008.36 215,-1014.36 209,-1014.36" />
+<text text-anchor="middle" x="125" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.4.2</text>
+<text text-anchor="middle" x="125" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Точный подсчёт букв</text>
+<text text-anchor="middle" x="125" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и оптимальное отклонение</text>
+<text text-anchor="middle" x="125" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 57–58</text>
+</a>
+</g>
+</g>
+
+<g id="node-B3" class="node">
+<title>B3</title>
+<g id="a_node-B3"><a xlink:title="Предл. 3.4.3 | с. 59–60">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M375.5,-1014.36C375.5,-1014.36 246.5,-1014.36 246.5,-1014.36 240.5,-1014.36 234.5,-1008.36 234.5,-1002.36 234.5,-1002.36 234.5,-960.36 234.5,-960.36 234.5,-954.36 240.5,-948.36 246.5,-948.36 246.5,-948.36 375.5,-948.36 375.5,-948.36 381.5,-948.36 387.5,-954.36 387.5,-960.36 387.5,-960.36 387.5,-1002.36 387.5,-1002.36 387.5,-1008.36 381.5,-1014.36 375.5,-1014.36" />
+<text text-anchor="middle" x="311" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.4.3</text>
+<text text-anchor="middle" x="311" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Сбалансированность</text>
+<text text-anchor="middle" x="311" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">всех факторов</text>
+<text text-anchor="middle" x="311" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 59–60</text>
+</a>
+</g>
+</g>
+
+<g id="node-B4" class="node">
+<title>B4</title>
+<g id="a_node-B4"><a xlink:title="Леммы 3.5.1 → 3.5.2 | с. 66–67">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M575,-1014.36C575,-1014.36 413,-1014.36 413,-1014.36 407,-1014.36 401,-1008.36 401,-1002.36 401,-1002.36 401,-960.36 401,-960.36 401,-954.36 407,-948.36 413,-948.36 413,-948.36 575,-948.36 575,-948.36 581,-948.36 587,-954.36 587,-960.36 587,-960.36 587,-1002.36 587,-1002.36 587,-1008.36 581,-1014.36 575,-1014.36" />
+<text text-anchor="middle" x="494" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Леммы 3.5.1 → 3.5.2</text>
+<text text-anchor="middle" x="494" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Позиции Битти;</text>
+<text text-anchor="middle" x="494" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">запрет факторов 11 и 000</text>
+<text text-anchor="middle" x="494" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 66–67</text>
+</a>
+</g>
+</g>
+
+<g id="node-B5" class="node">
+<title>B5</title>
+<g id="a_node-B5"><a xlink:title="Предл. 3.5.3 → 3.5.4 | с. 69">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M753.5,-1014.36C753.5,-1014.36 612.5,-1014.36 612.5,-1014.36 606.5,-1014.36 600.5,-1008.36 600.5,-1002.36 600.5,-1002.36 600.5,-960.36 600.5,-960.36 600.5,-954.36 606.5,-948.36 612.5,-948.36 612.5,-948.36 753.5,-948.36 753.5,-948.36 759.5,-948.36 765.5,-954.36 765.5,-960.36 765.5,-960.36 765.5,-1002.36 765.5,-1002.36 765.5,-1008.36 759.5,-1014.36 753.5,-1014.36" />
+<text text-anchor="middle" x="683" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.5.3 → 3.5.4</text>
+<text text-anchor="middle" x="683" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Количество букв</text>
+<text text-anchor="middle" x="683" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в uₘ и qₘ=a uₘ b</text>
+<text text-anchor="middle" x="683" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 69</text>
+</a>
+</g>
+</g>
+
+<g id="node-B6" class="node">
+<title>B6</title>
+<g id="a_node-B6"><a xlink:title="Лемма 3.1.2 | с. 52">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M185.5,-1135.07C185.5,-1135.07 26.5,-1135.07 26.5,-1135.07 20.5,-1135.07 14.5,-1129.07 14.5,-1123.07 14.5,-1123.07 14.5,-1081.07 14.5,-1081.07 14.5,-1075.07 20.5,-1069.07 26.5,-1069.07 26.5,-1069.07 185.5,-1069.07 185.5,-1069.07 191.5,-1069.07 197.5,-1075.07 197.5,-1081.07 197.5,-1081.07 197.5,-1123.07 197.5,-1123.07 197.5,-1129.07 191.5,-1135.07 185.5,-1135.07" />
+<text text-anchor="middle" x="106" y="-1118.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.1.2</text>
+<text text-anchor="middle" x="106" y="-1105.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Тождества Бине</text>
+<text text-anchor="middle" x="106" y="-1092.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и предельные отношения</text>
+<text text-anchor="middle" x="106" y="-1079.47" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 52</text>
+</a>
+</g>
+</g>
+
+<g id="node-B7" class="node">
+<title>B7</title>
+<g id="a_node-B7"><a xlink:title="Теорема 3.5.5 | с. 70">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M754,-916C754,-916 558,-916 558,-916 552,-916 546,-910 546,-904 546,-904 546,-862 546,-862 546,-856 552,-850 558,-850 558,-850 754,-850 754,-850 760,-850 766,-856 766,-862 766,-862 766,-904 766,-904 766,-910 760,-916 754,-916" />
+<text text-anchor="middle" x="656" y="-899.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.5.5</text>
+<text text-anchor="middle" x="656" y="-886.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Точная погрешность плотности</text>
+<text text-anchor="middle" x="656" y="-873.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в обрамлённых словах</text>
+<text text-anchor="middle" x="656" y="-860.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 70</text>
+</a>
+</g>
+</g>
+
+<g id="node-C1" class="node">
+<title>C1</title>
+<g id="a_node-C1"><a xlink:title="Лемма 3.6.1 | с. 74–75">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1155.5,-1014.36C1155.5,-1014.36 1020.5,-1014.36 1020.5,-1014.36 1014.5,-1014.36 1008.5,-1008.36 1008.5,-1002.36 1008.5,-1002.36 1008.5,-960.36 1008.5,-960.36 1008.5,-954.36 1014.5,-948.36 1020.5,-948.36 1020.5,-948.36 1155.5,-948.36 1155.5,-948.36 1161.5,-948.36 1167.5,-954.36 1167.5,-960.36 1167.5,-960.36 1167.5,-1002.36 1167.5,-1002.36 1167.5,-1008.36 1161.5,-1014.36 1155.5,-1014.36" />
+<text text-anchor="middle" x="1088" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.6.1</text>
+<text text-anchor="middle" x="1088" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Явные палиндромные</text>
+<text text-anchor="middle" x="1088" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">префиксы Фибоначчи</text>
+<text text-anchor="middle" x="1088" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 74–75</text>
+</a>
+</g>
+</g>
+
+<g id="node-C2" class="node">
+<title>C2</title>
+<g id="a_node-C2"><a xlink:title="Теорема 3.6.2 (Фишлер) | с. 74">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M983.5,-1014.36C983.5,-1014.36 814.5,-1014.36 814.5,-1014.36 808.5,-1014.36 802.5,-1008.36 802.5,-1002.36 802.5,-1002.36 802.5,-960.36 802.5,-960.36 802.5,-954.36 808.5,-948.36 814.5,-948.36 814.5,-948.36 983.5,-948.36 983.5,-948.36 989.5,-948.36 995.5,-954.36 995.5,-960.36 995.5,-960.36 995.5,-1002.36 995.5,-1002.36 995.5,-1008.36 989.5,-1014.36 983.5,-1014.36" />
+<text text-anchor="middle" x="899" y="-997.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.2 (Фишлер)</text>
+<text text-anchor="middle" x="899" y="-984.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(w) ≤ 1/φ</text>
+<text text-anchor="middle" x="899" y="-971.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">для непериодического w</text>
+<text text-anchor="middle" x="899" y="-958.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 74</text>
+</a>
+</g>
+</g>
+
+<g id="node-C3" class="node">
+<title>C3</title>
+<g id="a_node-C3"><a xlink:title="Теорема 3.6.3 | с. 75">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1046.5,-909.5C1046.5,-909.5 941.5,-909.5 941.5,-909.5 935.5,-909.5 929.5,-903.5 929.5,-897.5 929.5,-897.5 929.5,-868.5 929.5,-868.5 929.5,-862.5 935.5,-856.5 941.5,-856.5 941.5,-856.5 1046.5,-856.5 1046.5,-856.5 1052.5,-856.5 1058.5,-862.5 1058.5,-868.5 1058.5,-868.5 1058.5,-897.5 1058.5,-897.5 1058.5,-903.5 1052.5,-909.5 1046.5,-909.5" />
+<text text-anchor="middle" x="994" y="-892.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.3</text>
+<text text-anchor="middle" x="994" y="-879.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(f)=1/φ</text>
+<text text-anchor="middle" x="994" y="-866.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 75</text>
+</a>
+</g>
+</g>
+
+<g id="node-C4" class="node">
+<title>C4</title>
+<g id="a_node-C4"><a xlink:title="Обнаружена дополнительная граничная неточность: y₀=01 не является префиксом y₁=02. Утверждение о вложенности верно для n≥1. Предельное кодирование y=ι₀(ρ(f)) сохраняется; в доказательстве богатства y₀ нужно рассмотреть отдельно или использовать, что s₋₁=1 является фактором f. | с. 77–78; лемма 3.6.2">
+<path fill="#fff3c4" stroke="#b78300" stroke-width="1.15" d="M1468.5,-916C1468.5,-916 1289.5,-916 1289.5,-916 1283.5,-916 1277.5,-910 1277.5,-904 1277.5,-904 1277.5,-862 1277.5,-862 1277.5,-856 1283.5,-850 1289.5,-850 1289.5,-850 1468.5,-850 1468.5,-850 1474.5,-850 1480.5,-856 1480.5,-862 1480.5,-862 1480.5,-904 1480.5,-904 1480.5,-910 1474.5,-916 1468.5,-916" />
+<text text-anchor="middle" x="1379" y="-899.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[1] Лемма 3.6.2</text>
+<text text-anchor="middle" x="1379" y="-886.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">y = ι₀(ρ(f))</text>
+<text text-anchor="middle" x="1379" y="-873.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[1: вложенность лишь с n=1]</text>
+<text text-anchor="middle" x="1379" y="-860.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 77–78</text>
+</a>
+</g>
+</g>
+
+<g id="node-C5" class="node">
+<title>C5</title>
+<g id="a_node-C5"><a xlink:title="Лемма 3.6.3 | с. 78">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1222.5,-916C1222.5,-916 1083.5,-916 1083.5,-916 1077.5,-916 1071.5,-910 1071.5,-904 1071.5,-904 1071.5,-862 1071.5,-862 1071.5,-856 1077.5,-850 1083.5,-850 1083.5,-850 1222.5,-850 1222.5,-850 1228.5,-850 1234.5,-856 1234.5,-862 1234.5,-862 1234.5,-904 1234.5,-904 1234.5,-910 1228.5,-916 1222.5,-916" />
+<text text-anchor="middle" x="1153" y="-899.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.6.3</text>
+<text text-anchor="middle" x="1153" y="-886.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Длины палиндромных</text>
+<text text-anchor="middle" x="1153" y="-873.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">префиксов: m → 2m+1</text>
+<text text-anchor="middle" x="1153" y="-860.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 78</text>
+</a>
+</g>
+</g>
+
+<g id="node-C6" class="node">
+<title>C6</title>
+<g id="a_node-C6"><a xlink:title="Предл. 3.6.7 | с. 78–79">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1043.5,-820C1043.5,-820 944.5,-820 944.5,-820 938.5,-820 932.5,-814 932.5,-808 932.5,-808 932.5,-766 932.5,-766 932.5,-760 938.5,-754 944.5,-754 944.5,-754 1043.5,-754 1043.5,-754 1049.5,-754 1055.5,-760 1055.5,-766 1055.5,-766 1055.5,-808 1055.5,-808 1055.5,-814 1049.5,-820 1043.5,-820" />
+<text text-anchor="middle" x="994" y="-803.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.6.7</text>
+<text text-anchor="middle" x="994" y="-790.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Вставка нуля</text>
+<text text-anchor="middle" x="994" y="-777.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">сохраняет densₚ</text>
+<text text-anchor="middle" x="994" y="-764.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 78–79</text>
+</a>
+</g>
+</g>
+
+<g id="node-C7" class="node">
+<title>C7</title>
+<g id="a_node-C7"><a xlink:title="Теорема 3.6.8 | с. 79">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1201,-820C1201,-820 1081,-820 1081,-820 1075,-820 1069,-814 1069,-808 1069,-808 1069,-766 1069,-766 1069,-760 1075,-754 1081,-754 1081,-754 1201,-754 1201,-754 1207,-754 1213,-760 1213,-766 1213,-766 1213,-808 1213,-808 1213,-814 1207,-820 1201,-820" />
+<text text-anchor="middle" x="1141" y="-803.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.8</text>
+<text text-anchor="middle" x="1141" y="-790.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Префиксы y: 2Fₖ−3;</text>
+<text text-anchor="middle" x="1141" y="-777.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(y)=1/φ</text>
+<text text-anchor="middle" x="1141" y="-764.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79</text>
+</a>
+</g>
+</g>
+
+<g id="node-C8" class="node">
+<title>C8</title>
+<g id="a_node-C8"><a xlink:title="Лемма 3.6.4 | с. 79–80">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1396,-820C1396,-820 1238,-820 1238,-820 1232,-820 1226,-814 1226,-808 1226,-808 1226,-766 1226,-766 1226,-760 1232,-754 1238,-754 1238,-754 1396,-754 1396,-754 1402,-754 1408,-760 1408,-766 1408,-766 1408,-808 1408,-808 1408,-814 1402,-820 1396,-820" />
+<text text-anchor="middle" x="1317" y="-803.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.6.4</text>
+<text text-anchor="middle" x="1317" y="-790.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Подсчёт палиндромов</text>
+<text text-anchor="middle" x="1317" y="-777.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">при вставке разделителя</text>
+<text text-anchor="middle" x="1317" y="-764.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79–80</text>
+</a>
+</g>
+</g>
+
+<g id="node-C9" class="node">
+<title>C9</title>
+<g id="a_node-C9"><a xlink:title="Теорема 3.6.10 | с. 80">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1152,-724C1152,-724 1040,-724 1040,-724 1034,-724 1028,-718 1028,-712 1028,-712 1028,-670 1028,-670 1028,-664 1034,-658 1040,-658 1040,-658 1152,-658 1152,-658 1158,-658 1164,-664 1164,-670 1164,-670 1164,-712 1164,-712 1164,-718 1158,-724 1152,-724" />
+<text text-anchor="middle" x="1096" y="-707.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.10</text>
+<text text-anchor="middle" x="1096" y="-694.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Богатство yₙ</text>
+<text text-anchor="middle" x="1096" y="-681.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и всех факторов y</text>
+<text text-anchor="middle" x="1096" y="-668.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 80</text>
+</a>
+</g>
+</g>
+
+<g id="node-C10" class="node">
+<title>C10</title>
+<g id="a_node-C10"><a xlink:title="Теоремы 3.6.12 → 3.6.13 | с. 81">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1003,-724C1003,-724 829,-724 829,-724 823,-724 817,-718 817,-712 817,-712 817,-670 817,-670 817,-664 823,-658 829,-658 829,-658 1003,-658 1003,-658 1009,-658 1015,-664 1015,-670 1015,-670 1015,-712 1015,-712 1015,-718 1009,-724 1003,-724" />
+<text text-anchor="middle" x="916" y="-707.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теоремы 3.6.12 → 3.6.13</text>
+<text text-anchor="middle" x="916" y="-694.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Список префиксов;</text>
+<text text-anchor="middle" x="916" y="-681.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">формула Фишлера через CF</text>
+<text text-anchor="middle" x="916" y="-668.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 81</text>
+</a>
+</g>
+</g>
+
+<g id="node-C11" class="node">
+<title>C11</title>
+<g id="a_node-C11"><a xlink:title="Предл. 3.6.14; след. 3.6.15 | с. 81–83">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1188,-628C1188,-628 1004,-628 1004,-628 998,-628 992,-622 992,-616 992,-616 992,-574 992,-574 992,-568 998,-562 1004,-562 1004,-562 1188,-562 1188,-562 1194,-562 1200,-568 1200,-574 1200,-574 1200,-616 1200,-616 1200,-622 1194,-628 1188,-628" />
+<text text-anchor="middle" x="1096" y="-611.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.6.14; след. 3.6.15</text>
+<text text-anchor="middle" x="1096" y="-598.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Дихотомия плотности</text>
+<text text-anchor="middle" x="1096" y="-585.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и её следствия</text>
+<text text-anchor="middle" x="1096" y="-572.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 81–83</text>
+</a>
+</g>
+</g>
+
+<g id="node-C12" class="node">
+<title>C12</title>
+<g id="a_node-C12"><a xlink:title="Полнота списка префиксов берётся из классической литературы, а не из одной леммы 3.6.1.">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="1330" cy="-981.36" rx="149.81" ry="35.21" />
+<text text-anchor="middle" x="1330" y="-990.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Классические факты</text>
+<text text-anchor="middle" x="1330" y="-978.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Все палиндромные префиксы f;</text>
+<text text-anchor="middle" x="1330" y="-966.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">богатство штурмовых факторов</text>
+</a>
+</g>
+</g>
+
+<g id="node-D0" class="node">
+<title>D0</title>
+<g id="a_node-D0"><a xlink:title="Предл. 3.8.1 / 3.8.4 | с. 90–91, 93">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1662.5,-1067.86C1662.5,-1067.86 1527.5,-1067.86 1527.5,-1067.86 1521.5,-1067.86 1515.5,-1061.86 1515.5,-1055.86 1515.5,-1055.86 1515.5,-1026.86 1515.5,-1026.86 1515.5,-1020.86 1521.5,-1014.86 1527.5,-1014.86 1527.5,-1014.86 1662.5,-1014.86 1662.5,-1014.86 1668.5,-1014.86 1674.5,-1020.86 1674.5,-1026.86 1674.5,-1026.86 1674.5,-1055.86 1674.5,-1055.86 1674.5,-1061.86 1668.5,-1067.86 1662.5,-1067.86" />
+<text text-anchor="middle" x="1595" y="-1051.26" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.8.1 / 3.8.4</text>
+<text text-anchor="middle" x="1595" y="-1038.26" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">W[n]=s_b(n) mod N</text>
+<text text-anchor="middle" x="1595" y="-1025.26" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 90–91, 93</text>
+</a>
+</g>
+</g>
+
+<g id="node-D1" class="node">
+<title>D1</title>
+<g id="a_node-D1"><a xlink:title="Лемма 3.8.4 | с. 93–94">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1891.5,-976C1891.5,-976 1722.5,-976 1722.5,-976 1716.5,-976 1710.5,-970 1710.5,-964 1710.5,-964 1710.5,-922 1710.5,-922 1710.5,-916 1716.5,-910 1722.5,-910 1722.5,-910 1891.5,-910 1891.5,-910 1897.5,-910 1903.5,-916 1903.5,-922 1903.5,-922 1903.5,-964 1903.5,-964 1903.5,-970 1897.5,-976 1891.5,-976" />
+<text text-anchor="middle" x="1807" y="-959.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.8.4</text>
+<text text-anchor="middle" x="1807" y="-946.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Повторы ↔ постоянство cₘ;</text>
+<text text-anchor="middle" x="1807" y="-933.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">арифметика переносов</text>
+<text text-anchor="middle" x="1807" y="-920.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 93–94</text>
+</a>
+</g>
+</g>
+
+<g id="node-D2" class="node">
+<title>D2</title>
+<g id="a_node-D2"><a xlink:title="Леммы 3.8.1–3.8.3 | с. 91–92">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1685.5,-976C1685.5,-976 1542.5,-976 1542.5,-976 1536.5,-976 1530.5,-970 1530.5,-964 1530.5,-964 1530.5,-922 1530.5,-922 1530.5,-916 1536.5,-910 1542.5,-910 1542.5,-910 1685.5,-910 1685.5,-910 1691.5,-910 1697.5,-916 1697.5,-922 1697.5,-922 1697.5,-964 1697.5,-964 1697.5,-970 1691.5,-976 1685.5,-976" />
+<text text-anchor="middle" x="1614" y="-959.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Леммы 3.8.1–3.8.3</text>
+<text text-anchor="middle" x="1614" y="-946.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Двоичный случай:</text>
+<text text-anchor="middle" x="1614" y="-933.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">редукция длины блока</text>
+<text text-anchor="middle" x="1614" y="-920.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 91–92</text>
+</a>
+</g>
+</g>
+
+<g id="node-D3" class="node">
+<title>D3</title>
+<g id="a_node-D3"><a xlink:title="Теорема 3.8.2 | с. 92">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1708.5,-880C1708.5,-880 1543.5,-880 1543.5,-880 1537.5,-880 1531.5,-874 1531.5,-868 1531.5,-868 1531.5,-826 1531.5,-826 1531.5,-820 1537.5,-814 1543.5,-814 1543.5,-814 1708.5,-814 1708.5,-814 1714.5,-814 1720.5,-820 1720.5,-826 1720.5,-826 1720.5,-868 1720.5,-868 1720.5,-874 1714.5,-880 1708.5,-880" />
+<text text-anchor="middle" x="1626" y="-863.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.8.2</text>
+<text text-anchor="middle" x="1626" y="-850.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Классификация</text>
+<text text-anchor="middle" x="1626" y="-837.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">скрученных кубов при b=2</text>
+<text text-anchor="middle" x="1626" y="-824.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 92</text>
+</a>
+</g>
+</g>
+
+<g id="node-E5" class="node">
+<title>E5</title>
+<g id="a_node-E5"><a xlink:title="В конце шага 2 при j'≥b неверно написано floor(2b/j')≤1; нужно ≤2. Значение κ=max{2,floor(2b/j')} и вывод теоремы сохраняются. | с. 94–95; последняя строка доказательства">
+<path fill="#fff3c4" stroke="#b78300" stroke-width="1.15" d="M1962.5,-880C1962.5,-880 1767.5,-880 1767.5,-880 1761.5,-880 1755.5,-874 1755.5,-868 1755.5,-868 1755.5,-826 1755.5,-826 1755.5,-820 1761.5,-814 1767.5,-814 1767.5,-814 1962.5,-814 1962.5,-814 1968.5,-814 1974.5,-820 1974.5,-826 1974.5,-826 1974.5,-868 1974.5,-868 1974.5,-874 1968.5,-880 1962.5,-880" />
+<text text-anchor="middle" x="1865" y="-863.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[1] Теорема 3.8.5</text>
+<text text-anchor="middle" x="1865" y="-850.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Полная классификация κ</text>
+<text text-anchor="middle" x="1865" y="-837.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[1: поправка в доказательстве]</text>
+<text text-anchor="middle" x="1865" y="-824.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 94–95</text>
+</a>
+</g>
+</g>
+
+<g id="node-D4" class="node">
+<title>D4</title>
+<g id="a_node-D4"><a xlink:title="Следствие 3.8.6 | с. 95–96">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1964.5,-784C1964.5,-784 1765.5,-784 1765.5,-784 1759.5,-784 1753.5,-778 1753.5,-772 1753.5,-772 1753.5,-730 1753.5,-730 1753.5,-724 1759.5,-718 1765.5,-718 1765.5,-718 1964.5,-718 1964.5,-718 1970.5,-718 1976.5,-724 1976.5,-730 1976.5,-730 1976.5,-772 1976.5,-772 1976.5,-778 1970.5,-784 1964.5,-784" />
+<text text-anchor="middle" x="1865" y="-767.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Следствие 3.8.6</text>
+<text text-anchor="middle" x="1865" y="-754.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Непериодичность;</text>
+<text text-anchor="middle" x="1865" y="-741.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">частные случаи классификации</text>
+<text text-anchor="middle" x="1865" y="-728.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 95–96</text>
+</a>
+</g>
+</g>
+
+<g id="node-D5" class="node">
+<title>D5</title>
+<g id="a_node-D5"><a xlink:title="Теорема 3.8.7 (1,2,4,5) | с. 96–97">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2202,-880C2202,-880 2000,-880 2000,-880 1994,-880 1988,-874 1988,-868 1988,-868 1988,-826 1988,-826 1988,-820 1994,-814 2000,-814 2000,-814 2202,-814 2202,-814 2208,-814 2214,-820 2214,-826 2214,-826 2214,-868 2214,-868 2214,-874 2208,-880 2202,-880" />
+<text text-anchor="middle" x="2101" y="-863.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.8.7 (1,2,4,5)</text>
+<text text-anchor="middle" x="2101" y="-850.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Примитивность, минимальность,</text>
+<text text-anchor="middle" x="2101" y="-837.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">частоты, строгая эргодичность</text>
+<text text-anchor="middle" x="2101" y="-824.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 96–97</text>
+</a>
+</g>
+</g>
+
+<g id="node-D6" class="node">
+<title>D6</title>
+<g id="a_node-D6"><a xlink:title="Теорема 3.8.7 (3) | с. 96–97">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1945,-688C1945,-688 1785,-688 1785,-688 1779,-688 1773,-682 1773,-676 1773,-676 1773,-634 1773,-634 1773,-628 1779,-622 1785,-622 1785,-622 1945,-622 1945,-622 1951,-622 1957,-628 1957,-634 1957,-634 1957,-676 1957,-676 1957,-682 1951,-688 1945,-688" />
+<text text-anchor="middle" x="1865" y="-671.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.8.7 (3)</text>
+<text text-anchor="middle" x="1865" y="-658.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Непериодичность,</text>
+<text text-anchor="middle" x="1865" y="-645.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">линейная сложность, h=0</text>
+<text text-anchor="middle" x="1865" y="-632.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 96–97</text>
+</a>
+</g>
+</g>
+
+<g id="node-D7" class="node">
+<title>D7</title>
+<g id="a_node-D7"><a xlink:title="Следствие 3.8.8 | с. 97">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2160.5,-784C2160.5,-784 2015.5,-784 2015.5,-784 2009.5,-784 2003.5,-778 2003.5,-772 2003.5,-772 2003.5,-730 2003.5,-730 2003.5,-724 2009.5,-718 2015.5,-718 2015.5,-718 2160.5,-718 2160.5,-718 2166.5,-718 2172.5,-724 2172.5,-730 2172.5,-730 2172.5,-772 2172.5,-772 2172.5,-778 2166.5,-784 2160.5,-784" />
+<text text-anchor="middle" x="2088" y="-767.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Следствие 3.8.8</text>
+<text text-anchor="middle" x="2088" y="-754.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Запрет повторов</text>
+<text text-anchor="middle" x="2088" y="-741.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">на всём подсдвиге X_W</text>
+<text text-anchor="middle" x="2088" y="-728.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 97</text>
+</a>
+</g>
+</g>
+
+<g id="node-N1" class="node">
+<title>N1</title>
+<g id="a_node-N1"><a xlink:title="Полная факторная сложность s₂(n) mod N вычислена Tromp–Shallit (1995). Требуется сопоставление с известной формулой; вычислительное наблюдение само по себе не объявляется ложным. | с. 93, 98, 134">
+<path fill="#e9ddf6" stroke="#8054a6" stroke-width="1.15" d="M2138,-976C2138,-976 1944,-976 1944,-976 1938,-976 1932,-970 1932,-964 1932,-964 1932,-922 1932,-922 1932,-916 1938,-910 1944,-910 1944,-910 2138,-910 2138,-910 2144,-910 2150,-916 2150,-922 2150,-922 2150,-964 2150,-964 2150,-970 2144,-976 2138,-976" />
+<text text-anchor="middle" x="2041" y="-959.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н] Наблюдение 3.8.3</text>
+<text text-anchor="middle" x="2041" y="-946.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Точная закономерность p(n)</text>
+<text text-anchor="middle" x="2041" y="-933.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">оставлена открытым вопросом</text>
+<text text-anchor="middle" x="2041" y="-920.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 93, 98, 134</text>
+</a>
+</g>
+</g>
+
+<g id="node-D8" class="node">
+<title>D8</title>
+<g id="a_node-D8"><a xlink:title="Внешние классические факты">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="2072" cy="-1041.36" rx="156.96" ry="35.21" />
+<text text-anchor="middle" x="2072" y="-1050.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Внешние классические факты</text>
+<text text-anchor="middle" x="2072" y="-1038.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Примитивные подстановки;</text>
+<text text-anchor="middle" x="2072" y="-1026.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">теорема Морса–Хедлунда</text>
+</a>
+</g>
+</g>
+
+<g id="node-D9" class="node">
+<title>D9</title>
+<g id="a_node-D9"><a xlink:title="Tromp–Shallit, 1995">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="1795" cy="-1041.36" rx="107.46" ry="35.21" />
+<text text-anchor="middle" x="1795" y="-1050.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Tromp–Shallit, 1995</text>
+<text text-anchor="middle" x="1795" y="-1038.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Факторная сложность</text>
+<text text-anchor="middle" x="1795" y="-1026.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">s₂(n) mod N</text>
+</a>
+</g>
+</g>
+
+<g id="node-G0" class="node">
+<title>G0</title>
+<g id="a_node-G0"><a xlink:title="Штурмов язык">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="2830" cy="-897.36" rx="147.16" ry="35.21" />
+<text text-anchor="middle" x="2830" y="-906.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Штурмов язык</text>
+<text text-anchor="middle" x="2830" y="-894.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">p(k)=k+1;</text>
+<text text-anchor="middle" x="2830" y="-882.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">правый специальный фактор rₖ</text>
+</a>
+</g>
+</g>
+
+<g id="node-G1" class="node">
+<title>G1</title>
+<g id="a_node-G1"><a xlink:title="Предл. 5.1.1 | с. 126">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2658,-930.36C2658,-930.36 2562,-930.36 2562,-930.36 2556,-930.36 2550,-924.36 2550,-918.36 2550,-918.36 2550,-876.36 2550,-876.36 2550,-870.36 2556,-864.36 2562,-864.36 2562,-864.36 2658,-864.36 2658,-864.36 2664,-864.36 2670,-870.36 2670,-876.36 2670,-876.36 2670,-918.36 2670,-918.36 2670,-924.36 2664,-930.36 2658,-930.36" />
+<text text-anchor="middle" x="2610" y="-913.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 5.1.1</text>
+<text text-anchor="middle" x="2610" y="-900.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Нижняя оценка</text>
+<text text-anchor="middle" x="2610" y="-887.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">irr₂(T) ≥ Δ(Δ²−1)</text>
+<text text-anchor="middle" x="2610" y="-874.76" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 126</text>
+</a>
+</g>
+</g>
+
+<g id="node-G2" class="node">
+<title>G2</title>
+<g id="a_node-G2"><a xlink:title="Предл. 5.1.2 | с. 126">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2698.5,-825.5C2698.5,-825.5 2557.5,-825.5 2557.5,-825.5 2551.5,-825.5 2545.5,-819.5 2545.5,-813.5 2545.5,-813.5 2545.5,-784.5 2545.5,-784.5 2545.5,-778.5 2551.5,-772.5 2557.5,-772.5 2557.5,-772.5 2698.5,-772.5 2698.5,-772.5 2704.5,-772.5 2710.5,-778.5 2710.5,-784.5 2710.5,-784.5 2710.5,-813.5 2710.5,-813.5 2710.5,-819.5 2704.5,-825.5 2698.5,-825.5" />
+<text text-anchor="middle" x="2628" y="-808.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 5.1.2</text>
+<text text-anchor="middle" x="2628" y="-795.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Путь минимизирует irr₂</text>
+<text text-anchor="middle" x="2628" y="-782.9" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 126</text>
+</a>
+</g>
+</g>
+
+<g id="node-G3" class="node">
+<title>G3</title>
+<g id="a_node-G3"><a xlink:title="Теорема 5.1.3 | с. 128–129">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2913.5,-832C2913.5,-832 2746.5,-832 2746.5,-832 2740.5,-832 2734.5,-826 2734.5,-820 2734.5,-820 2734.5,-778 2734.5,-778 2734.5,-772 2740.5,-766 2746.5,-766 2746.5,-766 2913.5,-766 2913.5,-766 2919.5,-766 2925.5,-772 2925.5,-778 2925.5,-778 2925.5,-820 2925.5,-820 2925.5,-826 2919.5,-832 2913.5,-832" />
+<text text-anchor="middle" x="2830" y="-815.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 5.1.3</text>
+<text text-anchor="middle" x="2830" y="-802.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Индексы дерева факторов</text>
+<text text-anchor="middle" x="2830" y="-789.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">штурмова слова</text>
+<text text-anchor="middle" x="2830" y="-776.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 128–129</text>
+</a>
+</g>
+</g>
+
+<g id="node-N2" class="node">
+<title>N2</title>
+<g id="a_node-N2"><a xlink:title="Утверждение истинно: каждое ребро даёт не более Δ²−1, а для незвезды Δ≤n−2. Требуется заменить гипотезу предложением. Это замечание к статусу, не контрпример. | с. 126–127, заключение">
+<path fill="#e9ddf6" stroke="#8054a6" stroke-width="1.15" d="M2520,-832C2520,-832 2282,-832 2282,-832 2276,-832 2270,-826 2270,-820 2270,-820 2270,-778 2270,-778 2270,-772 2276,-766 2282,-766 2282,-766 2520,-766 2520,-766 2526,-766 2532,-772 2532,-778 2532,-778 2532,-820 2532,-820 2532,-826 2526,-832 2520,-832" />
+<text text-anchor="middle" x="2401" y="-815.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н] Гипотеза 1</text>
+<text text-anchor="middle" x="2401" y="-802.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Звезда максимизирует irr₂</text>
+<text text-anchor="middle" x="2401" y="-789.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н: уже есть простое доказательство]</text>
+<text text-anchor="middle" x="2401" y="-776.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 126–127, заключение</text>
+</a>
+</g>
+</g>
+
+<g id="node-G4" class="node">
+<title>G4</title>
+<g id="a_node-G4"><a xlink:title="Рассуждение рецензента">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="2401" cy="-897.36" rx="135.53" ry="35.21" />
+<text text-anchor="middle" x="2401" y="-906.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Рассуждение рецензента</text>
+<text text-anchor="middle" x="2401" y="-894.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Незвезда: Δ≤n−2;</text>
+<text text-anchor="middle" x="2401" y="-882.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">|d(u)²−d(v)²|≤Δ²−1</text>
+</a>
+</g>
+</g>
+
+<g id="node-N3" class="node">
+<title>N3</title>
+<g id="a_node-N3"><a xlink:title="Неверного утверждения не установлено. Суммируемая взвешенная метрика конечного произведения и компактность стандартны; самостоятельный новый результат не обоснован. | с. 88–89">
+<path fill="#e9ddf6" stroke="#8054a6" stroke-width="1.15" d="M841,-176C841,-176 653,-176 653,-176 647,-176 641,-170 641,-164 641,-164 641,-122 641,-122 641,-116 647,-110 653,-110 653,-110 841,-110 841,-110 847,-110 853,-116 853,-122 853,-122 853,-164 853,-164 853,-170 847,-176 841,-176" />
+<text text-anchor="middle" x="747" y="-159.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н] Предл. 3.7.1</text>
+<text text-anchor="middle" x="747" y="-146.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Компактность и метрика</text>
+<text text-anchor="middle" x="747" y="-133.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н: стандартная конструкция]</text>
+<text text-anchor="middle" x="747" y="-120.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 88–89</text>
+</a>
+</g>
+</g>
+
+<g id="node-M1" class="node">
+<title>M1</title>
+<g id="a_node-M1"><a xlink:title="Предл. 3.8.9 | с. 98">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M803.5,-80C803.5,-80 690.5,-80 690.5,-80 684.5,-80 678.5,-74 678.5,-68 678.5,-68 678.5,-26 678.5,-26 678.5,-20 684.5,-14 690.5,-14 690.5,-14 803.5,-14 803.5,-14 809.5,-14 815.5,-20 815.5,-26 815.5,-26 815.5,-68 815.5,-68 815.5,-74 809.5,-80 803.5,-80" />
+<text text-anchor="middle" x="747" y="-63.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.8.9</text>
+<text text-anchor="middle" x="747" y="-50.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Сдвиг 2-липшицев</text>
+<text text-anchor="middle" x="747" y="-37.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в метрике d_SL</text>
+<text text-anchor="middle" x="747" y="-24.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 98</text>
+</a>
+</g>
+</g>
+
+<g id="node-Q0" class="node">
+<title>Q0</title>
+<g id="a_node-Q0"><a xlink:title="Модель разрезания">
+<ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="2620" cy="-410.36" rx="120.42" ry="35.21" />
+<text text-anchor="middle" x="2620" y="-419.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Модель разрезания</text>
+<text text-anchor="middle" x="2620" y="-407.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Полные линии сетки;</text>
+<text text-anchor="middle" x="2620" y="-395.56" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">без перемещения частей</text>
+</a>
+</g>
+</g>
+
+<g id="node-Q1" class="node">
+<title>Q1</title>
+<g id="a_node-Q1"><a xlink:title="Теорема 4.2.1 | с. 107–108">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2698,-345C2698,-345 2542,-345 2542,-345 2536,-345 2530,-339 2530,-333 2530,-333 2530,-304 2530,-304 2530,-298 2536,-292 2542,-292 2542,-292 2698,-292 2698,-292 2704,-292 2710,-298 2710,-304 2710,-304 2710,-333 2710,-333 2710,-339 2704,-345 2698,-345" />
+<text text-anchor="middle" x="2620" y="-328.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 4.2.1</text>
+<text text-anchor="middle" x="2620" y="-315.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Минимум разрезов = λ(P)</text>
+<text text-anchor="middle" x="2620" y="-302.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 107–108</text>
+</a>
+</g>
+</g>
+</g>
+</g></svg>

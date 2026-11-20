@@ -1,0 +1,337 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\cyrillicfont{Liberation Serif}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[unicode,hidelinks]{hyperref}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{definition}{Определение}[section]
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{3pt}
+\linespread{1.05}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Исправленные формулировки и доказательства\par}
+\medskip
+{\large Комбинаторика слов и символическая динамика\par}
+\medskip
+17 ноября 2026 года
+\end{center}
+Этот текст содержит законченные замены красных, оранжевых и янтарных
+узлов экспертной карты. Они также внесены в полную исправленную
+редакцию диссертации. Номера утверждений в этом отдельном документе
+локальны; соответствие исходной рукописи указано в заголовках разделов.
+Исправление определения семейства не единственно: выбрана нормировка,
+сохраняющая при $p=1$ исходную производящую функцию и порядок $k$.
+Классическая классификация штурмовых степеней явно указана как
+внешний результат; вывод асимптотического показателя из неё дан ниже.
+\section{Равномерное распределение: исходная лемма 2.2.1}
+\begin{theorem}[Критерий Вейля]
+Последовательность $(x_n)$ равномерно распределена по модулю $1$
+тогда и только тогда, когда для каждого целого $h\ne0$
+$N^{-1}\sum_{n=1}^N\exp(2\pi\mathrm i h x_n)\to0$.
+\end{theorem}
+Последовательность логарифмов факториалов обладает более сильным
+свойством, чем плотность множества её дробных частей: она равномерно
+распределена по модулю $1$. Для десятичного основания это классический
+результат о ведущих цифрах факториалов~\cite{Diaconis1977};
+ниже приведено доказательство для любого фиксированного основания.
+
+\begin{lemma}\label{lem:logfact}
+Пусть $b>1$. Последовательность $(\log_b(n!))_{n\ge1}$
+равномерно распределена по модулю $1$. В частности, для каждого
+$[\alpha,\beta)\subseteq[0,1)$ при $\alpha<\beta$ существует
+бесконечно много $n$ таких, что
+$\{\log_b(n!)\}\in[\alpha,\beta)$.
+\end{lemma}
+\begin{proof}
+Зафиксируем целое $h\ne0$ и положим
+\[
+ u_n=\exp(2\pi\mathrm i h\log_b(n!)),\qquad
+ \tau=\frac{2\pi h}{\log b}\ne0.
+\]
+Для каждого фиксированного целого $r\ge1$ имеем
+\[
+ u_{n+r}\overline{u_n}
+ =\exp\left(\mathrm i\tau\sum_{j=1}^r\log(n+j)\right)
+ =n^{\mathrm i\tau r}+O_{b,h,r}(n^{-1}).
+\]
+Здесь использовано равенство
+$\log(n+j)=\log n+O_r(n^{-1})$.
+Для фиксированного вещественного $a$ сравнение суммы с интегралом даёт
+\[
+ \sum_{n=1}^M n^{\mathrm i a}
+ =\frac{M^{1+\mathrm i a}}{1+\mathrm i a}+O_a(1+\log M).
+\]
+Действительно, ошибка сравнения ограничена величиной
+$1+\int_1^M |(x^{\mathrm i a})'|\,dx
+\le1+|a|\log M$, а интеграл вычисляется непосредственно.
+Следовательно, для
+$C_N(r)=\sum_{n=1}^{N-r}u_{n+r}\overline{u_n}$ получаем
+\[
+ \limsup_{N\to\infty}\frac{|C_N(r)|}{N}
+ =\frac1{\sqrt{1+\tau^2r^2}}.
+\]
+
+Приведём необходимую оценку средних, чтобы явно указать все шаги.
+Продолжим $u_n$ нулями за пределы $1\le n\le N$.
+Для фиксированного целого $H\ge2$ имеем
+\[
+ H\sum_{n=1}^N u_n
+ =\sum_{m=1}^{N+H-1}\sum_{j=0}^{H-1}u_{m-j}.
+\]
+Неравенство Коши--Буняковского и раскрытие квадрата дают
+\[
+ H^2\left|\sum_{n=1}^N u_n\right|^2
+ \le (N+H-1)\left(
+ HN+2\sum_{r=1}^{H-1}(H-r)\operatorname{Re}C_N(r)\right).
+\]
+Разделив на $H^2N^2$ и сначала переходя к верхнему пределу по $N$,
+получаем
+\[
+\begin{aligned}
+ \limsup_{N\to\infty}
+ \left|\frac1N\sum_{n=1}^N u_n\right|^2
+ &\le \frac1H+
+ \frac2H\sum_{r=1}^{H-1}
+ \left(1-\frac rH\right)\frac1{\sqrt{1+\tau^2r^2}}\\
+ &\le \frac1H+\frac{2}{|\tau|H}\sum_{r=1}^{H-1}\frac1r
+ \xrightarrow[H\to\infty]{}0.
+\end{aligned}
+\]
+По критерию Вейля последовательность равномерно распределена.
+Доля попаданий в интервал положительной длины стремится к
+$\beta-\alpha>0$, поэтому число таких попаданий бесконечно.
+\end{proof}
+\section{Согласованная рекурсия: исходное определение 3.1.2}
+Семейства обобщённых последовательностей Фибоначчи, зависящие
+от параметров, рассматриваются, например, в~\cite{Mehraban2006Gulliver}.
+Чтобы однозначно зафиксировать индексацию, в настоящей работе
+используется следующая нормировка. Она выбрана так, чтобы при $p=1$
+порядок рекурсии был равен $k$.
+
+\begin{definition}\label{defn1pil}
+Пусть $k\ge2$, $p\ge1$, $t\ge1$ --- целые числа и $r=k+p-1$.
+Обобщённая $(t,k)$-$p$-последовательность
+$(F_n^p(t,k))_{n\ge0}$ определяется равенствами
+\begin{equation}
+ F_n^p(t,k)=tF_{n-1}^p(t,k)
+       +\sum_{j=p+1}^{r}F_{n-j}^p(t,k),
+ \qquad n\ge r,
+\end{equation}
+и начальными условиями
+\begin{equation}
+ F_0^p(t,k)=\cdots=F_{r-2}^p(t,k)=0,
+ \qquad F_{r-1}^p(t,k)=1.
+\end{equation}
+При необходимости полагаем $F_n^p(t,k)=0$ для $n<0$.
+\end{definition}
+
+Начальные условия задают ровно $r$ первых членов, а рекурсия
+определяет каждый следующий член через ранее заданные.
+По индукции последовательность существует и единственна.
+В частности, при $p=1$ начальные условия имеют вид
+$F_0^1=\cdots=F_{k-2}^1=0$, $F_{k-1}^1=1$, и
+\[
+ F_n^1(t,k)=tF_{n-1}^1(t,k)+F_{n-2}^1(t,k)+\cdots+F_{n-k}^1(t,k)
+ \qquad(n\ge k).
+\]
+При $t=1$, $k=2$, $p=1$ получается обычная последовательность
+Фибоначчи с $F_0=0$, $F_1=1$.
+\section{Производящая функция: исходная лемма 3.1.1}
+\begin{lemma}\label{lemgenn1}
+Для последовательности из определения~\ref{defn1pil}, при $r=k+p-1$,
+формальная производящая функция равна
+\[
+ \sum_{n\ge0}F_n^p(t,k)x^n
+ =\frac{x^{r-1}}{1-tx-\sum_{j=p+1}^{r}x^j}.
+\]
+В частности, при $p=1$
+\begin{equation}
+ g_{F_n^1(t,k)}(x)
+ =\sum_{n\ge0}F_n^1(t,k)x^n
+ =\frac{x^{k-1}}{1-tx-x^2-\cdots-x^k}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Положим $G(x)=\sum_{n\ge0}F_n^p(t,k)x^n$ и
+$D(x)=1-tx-\sum_{j=p+1}^{r}x^j$.
+Соглашение о нулевых членах с отрицательными индексами даёт
+\[
+ [x^n](D(x)G(x))
+ =F_n^p(t,k)-tF_{n-1}^p(t,k)
+       -\sum_{j=p+1}^{r}F_{n-j}^p(t,k).
+\]
+При $n<r-1$ этот коэффициент равен $0$ по начальным условиям;
+при $n=r-1$ он равен $1$; при $n\ge r$ он равен $0$
+по рекурсии. Поэтому $D(x)G(x)=x^{r-1}$.
+Свободный член $D$ равен $1$, следовательно, $D$ обратим
+в кольце формальных степенных рядов. Это доказывает общую формулу.
+При $p=1$ имеем $r=k$, что даёт указанное частное выражение.
+\end{proof}
+\section{Индексы штурмовых слов: исходная теорема 3.1.1}
+Зафиксируем используемые понятия индекса. Если $v$ --- непустое
+конечное слово и $s\ge1$ --- рациональное число с $s|v|\in\mathbb N$,
+то $v^s$ означает префикс слова $v^\omega$ длины $s|v|$.
+Для бесконечного слова $u$ положим
+\[
+ \operatorname{ind}_u(v)
+ =\sup\{s\in\mathbb Q:\ s\ge1,\ s|v|\in\mathbb N,\ v^s\in\mathcal L_u\},
+ \]
+ \[
+ E(u)=\sup_{v\in\mathcal L_u\setminus\{\varepsilon\}}\operatorname{ind}_u(v).
+\]
+Асимптотический критический показатель определяется как
+\[
+ E^*(u)=\lim_{M\to\infty}
+ \sup_{\substack{v\in\mathcal L_u\\ |v|\ge M}}\operatorname{ind}_u(v).
+\]
+Предел существует в $[1,+\infty]$, поскольку выражение под
+пределом не возрастает по $M$. В дальнейшем запись
+$\operatorname{ind}(u)$ означает $E(u)$, а
+$\operatorname{ind}^*(u)$ --- именно $E^*(u)$.
+
+Перестановка букв сохраняет показатели $E$ и $E^*$.
+Поэтому для штурмова слова с угловым коэффициентом $\alpha$
+можно нормировать алфавит так, чтобы используемый коэффициент
+был $\beta=\min\{\alpha,1-\alpha\}<1/2$.
+В следующем утверждении $\varphi=(1+\sqrt5)/2$.
+
+\begin{theorem}[Классические формулы для штурмовых слов
+{\cite{DamanikLenz2002,Peltomaki2015,AdamczewskiAllouche2007}}]\label{thmconsn1}
+Пусть $u$ --- штурмово слово с угловым коэффициентом
+$\alpha\in(0,1)\setminus\mathbb Q$.
+Положим $\beta=\min\{\alpha,1-\alpha\}=[0;a_1,a_2,\ldots]$,
+$q_{-1}=0$, $q_0=1$ и
+$q_{n+1}=a_{n+1}q_n+q_{n-1}$.
+Тогда
+\begin{align}
+ E(u)&=\max\left\{a_1,\
+       \sup_{n\ge1}\left(2+a_{n+1}+\frac{q_{n-1}-2}{q_n}\right)\right\},
+       \label{eq:correct-index}\\
+ E^*(u)&=2+\limsup_{n\to\infty}\frac{q_{n+1}}{q_n}
+       =2+\limsup_{n\to\infty}[a_n;a_{n-1},\ldots,a_1].
+       \label{eq:correct-asymptotic-index}
+\end{align}
+В частности, $E^*(u)\ge2+\varphi$.
+\end{theorem}
+\begin{proof}
+Поскольку обмен букв не меняет показатели, работаем с нормированным
+языком углового коэффициента $\beta<1/2$.
+Используем следующую классическую структурную информацию о степенях
+в штурмовом языке
+\cite[теорема~4.5, следствие~4.6 и доказательство теоремы~4.7]{Peltomaki2015}:
+\begin{itemize}
+ \item если примитивное слово $v$ (не являющееся нетривиальной
+ степенью более короткого слова) удовлетворяет
+ $v^3\in\mathcal L_u$, то либо $v=0$, либо $|v|=q_n$
+ для некоторого $n\ge1$;
+ \item $\operatorname{ind}_u(0)=a_1$, а наибольший дробный показатель
+ среди примитивных факторов длины $q_n$ равен
+ \[
+ e_n=2+a_{n+1}+\frac{q_{n-1}-2}{q_n}
+     =2+\frac{q_{n+1}}{q_n}-\frac2{q_n}.
+ \]
+ Для каждого $n\ge1$ соответствующий фактор и его степень
+ действительно встречаются.
+\end{itemize}
+Это используемый внешний комбинаторный результат; последующий вывод
+асимптотической формулы приводится полностью.
+
+Сначала заметим, что
+$L=\limsup_{n\to\infty}q_{n+1}/q_n\ge\varphi$.
+Если бы $L<\varphi$, можно было бы выбрать $c$ с
+$L<c<\varphi$. Для всех достаточно больших $n$
+$q_{n+1}/q_n\le c$, но рекурсия тогда даёт
+\[
+ \frac{q_{n+2}}{q_{n+1}}
+ =a_{n+2}+\frac{q_n}{q_{n+1}}
+ \ge1+\frac1c>c,
+\]
+что противоречит выбору $c$. Поэтому, поскольку $q_n\to\infty$,
+\[
+ \limsup_{n\to\infty}e_n=2+L\ge2+\varphi>3.
+\]
+
+Каждое непустое слово $w$ единственным образом записывается
+$w=v^t$, где $v$ примитивно, а $t\ge1$ --- целое.
+Из определения степеней следует
+$\operatorname{ind}_u(w)\le\operatorname{ind}_u(v)/t$.
+Если $\operatorname{ind}_u(w)>3$, то $v^3$ встречается.
+По структурному результату $v=0$ или $|v|=q_n$;
+показатель не превосходит соответственно $a_1$ или $e_n$.
+Показатели $\le3$ не могут увеличить супремум, поскольку
+$\sup e_n>3$. Обратные оценки обеспечиваются существованием
+$0^{a_1}$ и степеней с показателями $e_n$.
+Это доказывает~\eqref{eq:correct-index}.
+
+Для асимптотической формулы существование степеней с корнями
+длины $q_n\to\infty$ даёт
+$E^*(u)\ge\limsup e_n=2+L$.
+Если $L=+\infty$, равенство уже доказано.
+В противном случае рассмотрим любую последовательность факторов
+$w_j$ с $|w_j|\to\infty$ и показателями, стремящимися к $E^*(u)$.
+Достаточно рассматривать показатели $>3$.
+Для примитивного корня $v_j$ слова $w_j$ тогда имеем
+либо $v_j=0$, либо $|v_j|=q_{n_j}$.
+Первый случай не может встречаться при неограниченных $|w_j|$:
+длина постоянного фактора не превосходит $a_1$.
+Если индексы $n_j$ ограничены, то для каждого такого индекса
+показатель примитивного корня конечен, и условие
+$\operatorname{ind}_u(w_j)>3$ ограничивает также
+$t_j=|w_j|/|v_j|$ величиной $e_{n_j}/3$.
+Это вновь противоречит $|w_j|\to\infty$.
+Следовательно, $n_j\to\infty$ после выбора подпоследовательности, и
+\[
+ \limsup_j\operatorname{ind}_u(w_j)
+ \le\limsup_j e_{n_j}\le2+L.
+\]
+Таким образом, $E^*(u)=2+L$.
+Наконец, рекурсия знаменателей даёт зеркальную формулу
+$q_{n+1}/q_n=[a_{n+1};a_n,\ldots,a_1]$;
+сдвиг индекса верхнего предела доказывает последнее равенство
+в~\eqref{eq:correct-asymptotic-index}.
+\end{proof}
+
+\noindent Для слова Фибоначчи
+$\beta=\varphi^{-2}=[0;2,1,1,\ldots]$ и $q_n=F_{n+2}$.
+Из формулы Бине
+$F_{n+3}-\varphi F_{n+2}=\psi^{n+2}$, где $\psi=-\varphi^{-1}$,
+следует
+\[
+ e_n=2+\varphi+\frac{\psi^{n+2}-2}{F_{n+2}}<2+\varphi,
+ \qquad e_n\longrightarrow2+\varphi.
+\]
+Поэтому $E(\mathbf f)=E^*(\mathbf f)=2+\varphi$.
+Показатель $1$ не является возможным значением $E^*$ штурмова слова.
+\begin{thebibliography}{9}
+
+\bibitem{Diaconis1977}
+Diaconis P. The distribution of leading digits and uniform distribution mod~1 //
+Ann. Probab. 1977. Vol.~5, No.~1. P.~72--81. DOI: 10.1214/aop/1176995891.
+\bibitem{DamanikLenz2002}
+Damanik D., Lenz D. The index of Sturmian sequences //
+European J. Combin. 2002. Vol.~23. P.~23--29. DOI: 10.1006/eujc.2000.0496.
+\bibitem{Peltomaki2015}
+Peltomäki J. Characterization of repetitions in Sturmian words: A new proof //
+Inform. Process. Lett. 2015. Vol.~115, No.~11. P.~886--891.
+DOI: 10.1016/j.ipl.2015.05.011.
+\bibitem{AdamczewskiAllouche2007}
+Adamczewski B., Allouche J.-P. Reversals and palindromes in continued fractions //
+Theoret. Comput. Sci. 2007. Vol.~380. P.~220--237.
+DOI: 10.1016/j.tcs.2007.03.017.
+\bibitem{TrompShallit1995}
+Tromp J., Shallit J. Subword complexity of a generalized Thue--Morse word //
+Inform. Process. Lett. 1995. Vol.~54, No.~6. P.~313--316.
+DOI: 10.1016/0020-0190(95)00074-M.
+\bibitem{Mehraban2006Gulliver}Mehraban E., Gulliver T.A., Hincal E. Blind signatures from the generalized $(t,k)$-Fibonacci $p$-sequences // J. Dyn. Games. 2026. Vol.~13. P.~193--203. DOI: 10.3934/jdg.2025022.
+\end{thebibliography}
+\end{document}
