@@ -60,3 +60,4 @@ import Thesis.FactorTreeDegrees
 import Thesis.FactorTreeTable
 import Thesis.SturmianMechanical
 import Thesis.SturmianFactorTree
+import Thesis.SturmianFactorTreeExamples

@@ -20,6 +20,14 @@ deffSturmiann1. The letters 0 and 1 are represented by false and true. -/
 noncomputable def characteristicWord (a : ℝ) : Nat → Bool :=
   mechanicalLetter a a
 
+theorem characteristic_letter_floor_eq (a : ℝ) (i : Nat) :
+    characteristicWord a i =
+      decide (⌊((i : ℝ) + 2) * a⌋ = ⌊((i : ℝ) + 1) * a⌋ + 1) := by
+  unfold characteristicWord mechanicalLetter mechanicalFloor
+  push_cast
+  congr 1
+  congr 1 <;> ring_nf
+
 private theorem floor_step (a t : ℝ) (j : Nat) (ha : 0 < a) (ha' : a < 1) :
     mechanicalFloor a t j ≤ mechanicalFloor a t (j + 1) ∧
       mechanicalFloor a t (j + 1) ≤ mechanicalFloor a t j + 1 := by
