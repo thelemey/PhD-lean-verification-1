@@ -21,3 +21,6 @@ import Thesis.SymbolicLatticeTopology
 import Thesis.FactorialLogarithms
 import Thesis.FactorialCorrelations
 import Thesis.LatticeWordStirling
+import Thesis.VanDerCorput
+import Thesis.VanDerCorputLimit
+import Thesis.LogOscillationIntegral
