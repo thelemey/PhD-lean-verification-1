@@ -128,4 +128,111 @@ theorem densities (u v : Nat) :
   · rw [Nat.mul_add, Nat.mul_add, ← h]
     ac_rfl
 
+private theorem choose_pascal (n k : Nat) :
+    choose (n + 1) (k + 1) = choose n k + choose n (k + 1) := rfl
+
+private theorem choose_pos_of_le (n k : Nat) (h : k ≤ n) : 0 < choose n k := by
+  induction n generalizing k with
+  | zero =>
+    have hk : k = 0 := by omega
+    subst k
+    decide
+  | succ n ih =>
+    cases k with
+    | zero => simp
+    | succ k =>
+      rw [choose]
+      have hp := ih k (by omega)
+      omega
+
+private theorem choose_le_succ_of_below_middle (n k : Nat) (h : 2 * k < n) :
+    choose n k ≤ choose n (k + 1) := by
+  induction n generalizing k with
+  | zero => omega
+  | succ n ih =>
+    cases k with
+    | zero =>
+      rw [choose_zero_right]
+      exact choose_pos_of_le (n + 1) 1 (by omega)
+    | succ k =>
+      by_cases he : 2 * (k + 1) = n
+      · have hsym := choose_symm (k + 1) (k + 2)
+        rw [show k + 1 + (k + 2) = n + 1 by omega] at hsym
+        exact Nat.le_of_eq hsym
+      · have h₁ := ih k (by omega)
+        have h₂ := ih (k + 1) (by omega)
+        rw [choose_pascal n k, choose_pascal n (k + 1)]
+        omega
+
+private theorem choose_le_central_left (n k : Nat) (h : k ≤ n) :
+    choose (2 * n) k ≤ choose (2 * n) n := by
+  by_cases he : k = n
+  · simp [he]
+  · exact Nat.le_trans (choose_le_succ_of_below_middle (2 * n) k (by omega))
+      (choose_le_central_left n (k + 1) (by omega))
+termination_by n - k
+
+private theorem choose_le_central (n k : Nat) (h : k ≤ 2 * n) :
+    choose (2 * n) k ≤ choose (2 * n) n := by
+  by_cases hk : k ≤ n
+  · exact choose_le_central_left n k hk
+  · have hs := choose_symm k (2 * n - k)
+    rw [show k + (2 * n - k) = 2 * n by omega] at hs
+    rw [hs]
+    exact choose_le_central_left n (2 * n - k) (by omega)
+
+private def partialRow (n : Nat) : Nat → Nat
+  | 0 => 0
+  | k + 1 => partialRow n k + choose n k
+
+private theorem partialRow_step (n k : Nat) :
+    partialRow n (k + 1) = partialRow n k + choose n k := rfl
+
+private theorem partialRow_pascal (n k : Nat) :
+    partialRow (n + 1) (k + 1) = partialRow n (k + 1) + partialRow n k := by
+  induction k with
+  | zero => simp [partialRow]
+  | succ k ih =>
+    rw [partialRow, ih, choose_pascal n k]
+    simp only [partialRow]
+    omega
+
+private theorem completeRow_sum (n : Nat) : partialRow n (n + 1) = 2 ^ n := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    rw [partialRow_pascal, partialRow_step n (n + 1), choose_above n (n + 1) (by omega), ih,
+      Nat.pow_succ, Nat.mul_comm, Nat.two_mul]
+    omega
+
+private theorem partialRow_le (n k m : Nat) (h : ∀ i < k, choose n i ≤ m) :
+    partialRow n k ≤ k * m := by
+  induction k with
+  | zero => simp [partialRow]
+  | succ k ih =>
+    rw [partialRow, Nat.succ_mul]
+    exact Nat.add_le_add (ih fun i hi => h i (by omega)) (h k (by omega))
+
+private theorem choose_le_partialRow (n i k : Nat) (h : i < k) :
+    choose n i ≤ partialRow n k := by
+  induction k with
+  | zero => omega
+  | succ k ih =>
+    rw [partialRow]
+    by_cases he : i = k
+    · rw [he]
+      exact Nat.le_add_left _ _
+    · exact Nat.le_trans (ih (by omega)) (Nat.le_add_right _ _)
+
+/-- The elementary central-binomial squeeze for the diagonal length in
+`newprove`. The lower bound is expressed without division. -/
+theorem diagonal_length_bounds (n : Nat) (hn : 0 < n) :
+    4 ^ n ≤ (2 * n + 1) * (word n n).length ∧ (word n n).length ≤ 4 ^ n := by
+  rw [length_word n n (by omega), ← Nat.two_mul n]
+  have hpow : 2 ^ (2 * n) = 4 ^ n := by
+    rw [Nat.pow_mul]
+  rw [← hpow, ← completeRow_sum]
+  exact ⟨partialRow_le _ _ _ (fun i hi => choose_le_central n i (by omega)),
+    choose_le_partialRow _ _ _ (by omega)⟩
+
 end Thesis.LatticeWord
