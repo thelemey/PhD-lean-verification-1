@@ -18,6 +18,7 @@ omit [DiscreteTopology A] [MeasurableSpace A] [BorelSpace A] [Fintype A] in
 theorem continuous_window (k i : Nat) : Continuous (fun x : Nat → A => window x k i) :=
   continuous_pi fun j => continuous_apply (i + j.val)
 
+omit [MeasurableSpace A] [BorelSpace A] [Fintype A] in
 theorem isClopen_prefixCylinder {k : Nat} (u : Fin k → A) :
     IsClopen (prefixCylinder u) :=
   (isClopen_discrete ({u} : Set (Fin k → A))).preimage (continuous_window k 0)
@@ -28,6 +29,7 @@ private noncomputable def prefixObservable (w : Nat → A) {k : Nat} (u : Fin k 
     ((isClopen_prefixCylinder u).preimage continuous_subtype_val).continuous_indicator
       continuous_const⟩
 
+omit [MeasurableSpace A] [BorelSpace A] [Fintype A] in
 private theorem frequency_eq_birkhoff (w : Nat → A) {k : Nat} (u : Fin k → A)
     (x : WordSubshift w) (i n : Nat) :
     factorFrequency x.val u i n =
