@@ -116,3 +116,4 @@ import Thesis.SturmianStandardLimit
 import Thesis.ThinkingWelch
 import Thesis.StudySlopeInteraction
 import Thesis.PolyominoCutExamples
+import Thesis.NumbersANCOVA

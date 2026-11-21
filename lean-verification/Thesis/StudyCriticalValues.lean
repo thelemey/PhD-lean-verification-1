@@ -59,7 +59,7 @@ theorem odd_reference_scaled (n : ℕ) {d : ℝ} (hd : 0 < d) (hs : d^2 = 2*n+1)
 /-- For the 81 residual degrees of freedom the scale is exactly 9. Each
 comparison below is a decision on rationals after substituting the proved
 bounds for arctan and π in the reduction of the Student integral. -/
-private theorem reference81 (t l u : ℚ) (ht : 0 ≤ t) (hl : l ≤ 1) (hu : u ≤ 1)
+theorem reference81 (t l u : ℚ) (ht : 0 ≤ t) (hl : l ≤ 1) (hu : u ≤ 1)
     (lower : studentReduction (t/9) (quintic (t/9)) 40 ≤
       (1-l) * studentReduction 0 (3.141592/2) 40)
     (upper : (1-u) * studentReduction 0 (3.141593/2) 40 ≤

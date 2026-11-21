@@ -25,7 +25,7 @@ private theorem sum_centered (hn : 0 < n) (x : Fin n → ℝ) : ∑ i, centered 
   have hnR : (n : ℝ) ≠ 0 := Nat.cast_ne_zero.2 hn.ne'
   rw [mul_div_cancel₀ _ hnR, sub_self]
 
-private theorem mean_sub (x y : Fin n → ℝ) :
+theorem mean_sub (x y : Fin n → ℝ) :
     mean (fun i => y i - x i) = mean y - mean x := by
   unfold mean
   rw [Finset.sum_sub_distrib, sub_div]
