@@ -35,7 +35,7 @@ private theorem liminf_inverseRatios_nonneg {L : Nat → Nat} (hL : StrictMono L
 
 /-- On an infinite set of prefix lengths, the reciprocal limsup in the
 definition agrees with the liminf of inverse ratios. -/
-private theorem reciprocal_limsup_eq_liminf {L : Nat → Nat} (hL : StrictMono L) :
+theorem reciprocal_limsup_eq_liminf {L : Nat → Nat} (hL : StrictMono L) :
     ((limsup (fun i => (L (i + 1) : ℝ≥0∞) / L i) atTop)⁻¹).toReal =
       liminf (fun i => (L i : ℝ) / L (i + 1)) atTop := by
   let r := fun i => (L i : ℝ) / L (i + 1)

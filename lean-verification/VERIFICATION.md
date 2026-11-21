@@ -70,6 +70,7 @@
 - [FibonacciRichness.lean](Thesis/FibonacciRichness.lean) — богатство конечных слов Фибоначчи.
 - [FibonacciCompletePrefixes.lean](Thesis/FibonacciCompletePrefixes.lean) — отождествление рекурсивного слова Фибоначчи с бинарным стандартным эпиштурмовым словом и полный список палиндромных префиксов.
 - [FibonacciPalindromeDensity.lean](Thesis/FibonacciPalindromeDensity.lean) — плотность слова Фибоначчи из полного списка и перенос длин и плотности на трёхбуквенное слово.
+- [FischlerBound.lean](Thesis/FischlerBound.lean) — общая оценка Фишлера через периоды перекрывающихся палиндромных префиксов. Из неё следуют верхние границы для слова Фибоначчи и для характеристических штурмовых слов.
 - [FibonacciCentralPrefixes.lean](Thesis/FibonacciCentralPrefixes.lean) — доказательство леммы о центральных палиндромах по двум разложениям из TeX.
 - [WordPrefixLimits.lean](Thesis/WordPrefixLimits.lean) и [TernaryRichness.lean](Thesis/TernaryRichness.lean) — предел вложенных конечных слов и богатство каждого фактора бесконечного трёхбуквенного слова.
 - [PalindromeDensity.lean](Thesis/PalindromeDensity.lean) — инвариантность палиндромной плотности.

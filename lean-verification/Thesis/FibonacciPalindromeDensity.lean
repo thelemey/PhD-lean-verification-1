@@ -1,5 +1,6 @@
 import Thesis.FibonacciCompletePrefixes
-import Thesis.PalindromicDensityReal
+import Thesis.FischlerBound
+import Thesis.FibonacciMechanical
 import Thesis.TernaryRichness
 
 open Filter Topology
@@ -94,13 +95,21 @@ theorem one_div_gold_le_palindromicDensity : 1 / φ ≤ palindromicDensity infin
       (by rintro _ ⟨k, rfl⟩; exact central_palPrefix k)
   · exact fun _ => eventually_inverse_prefix_ratios_ge
 
-/-- The density in `thm:palFib`. The reverse inequality uses the complete
-prefix list stated in the preceding remark. -/
+/-- The upper bound in `thm:palFib` is Fischler's theorem applied to the
+aperiodic Fibonacci word. The lower bound uses the explicit central prefixes. -/
 theorem infiniteWord_palindromicDensity : palindromicDensity infiniteWord = 1 / φ := by
-  refine le_antisymm ?_ one_div_gold_le_palindromicDensity
-  exact (palindromicDensity_eq_of_cut (by positivity) fun _ _ hq =>
-    belowPalDensity_iff_of_ratio_limit central_length_strictMono infiniteWord_palPrefix_iff
-      central_inverse_ratios_tendsto hq).le
+  refine le_antisymm (palindromicDensity_le_inv_golden ?_) one_div_gold_le_palindromicDensity
+  rintro ⟨d, hd, hper⟩
+  apply FactorTree.characteristic_not_eventually_periodic mechanicalSlope_pos
+    mechanicalSlope_lt_one mechanicalSlope_irrational
+  refine ⟨0, d, hd, ?_⟩
+  intro t
+  simp only [Nat.zero_add]
+  have he := hper t
+  rw [infiniteWord_eq_mechanicalWord] at he
+  unfold mechanicalWord at he
+  cases h₁ : FactorTree.characteristicWord mechanicalSlope (t + d) <;>
+    cases h₂ : FactorTree.characteristicWord mechanicalSlope t <;> simp_all
 
 end Thesis.Fibonacci
 

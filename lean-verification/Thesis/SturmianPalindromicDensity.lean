@@ -1,4 +1,4 @@
-import Thesis.PalindromicDensityReal
+import Thesis.FischlerBound
 import Thesis.SturmianMetricConsequences
 
 open Set Filter MeasureTheory Topology
@@ -38,9 +38,16 @@ theorem characteristic_palindromicDensity_bounds {a : ℝ} (ha : 0 < a) (ha' : a
       palindromicDensity (FactorTree.characteristicWord a) ≤ 1 / goldenRatio ∧
       (palindromicDensity (FactorTree.characteristicWord a) = 1 / 2 ↔
         ¬ (slopeFractions a hirr).BoundedQuotients) := by
-  rw [characteristic_palindromicDensity ha ha' hirr]
-  obtain ⟨hlo, hhi⟩ := density_bounds (slopeFractions a hirr)
-  exact ⟨hlo, hhi, density_eq_half_iff _⟩
+  have hupper : palindromicDensity (FactorTree.characteristicWord a) ≤ 1 / goldenRatio := by
+    apply palindromicDensity_le_inv_golden
+    rintro ⟨d, hd, hper⟩
+    exact FactorTree.characteristic_not_eventually_periodic ha ha' hirr
+      ⟨0, d, hd, fun t => hper (0 + t)⟩
+  refine ⟨?_, hupper, ?_⟩
+  · rw [characteristic_palindromicDensity ha ha' hirr]
+    exact half_le_density _
+  · rw [characteristic_palindromicDensity ha ha' hirr]
+    exact density_eq_half_iff _
 
 /-- The almost-everywhere equality in cor:palSturm (2). -/
 theorem characteristic_palindromicDensity_ae_eq_half :
