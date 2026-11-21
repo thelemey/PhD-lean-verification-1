@@ -27,6 +27,7 @@ import Thesis.VanDerCorputLimit
 import Thesis.LogOscillationIntegral
 import Thesis.WeylCriterion
 import Thesis.FactorialWeyl
+import Thesis.FactorialInfiniteWord
 import Thesis.SturmianDensityDichotomy
 import Thesis.SturmianConstantTail
 import Thesis.MBonacciDensity

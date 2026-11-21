@@ -280,7 +280,7 @@ private theorem digit_lt {b : Nat} (hb : 1 < b) (n d : Nat)
 termination_by n
 decreasing_by exact Nat.div_lt_self hn hb
 
-private theorem digit_of_concatenation {b : Nat} (hb : 1 < b) (n d : Nat)
+theorem digit_of_concatenation {b : Nat} (hb : 1 < b) (n d : Nat)
     (hd : d ∈ concatenation b n) : d < b := by
   induction n with
   | zero => exact False.elim (List.not_mem_nil hd)
