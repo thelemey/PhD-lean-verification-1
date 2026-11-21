@@ -15,6 +15,7 @@ HERE = Path(__file__).resolve().parent
 LEAN = HERE.parent
 TEX = LEAN.parent / "corrected_thesis" / "thesis_corrected.tex"
 TEX_LINK = "../../corrected_thesis/thesis_corrected.tex"
+CLAIM_FILL = "#FFEB80"
 
 # Each entry gives the text label, border colour and meaning of a status.
 STATUSES = {
@@ -166,7 +167,9 @@ def make_dot(nodes, keys, title, coverage, *, direction, pack=False):
         '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="6">'
         f'<TR><TD COLSPAN="5"><FONT POINT-SIZE="19"><B>{escape(title)}</B></FONT></TD></TR>'
         '<TR><TD COLSPAN="5">Исправленная диссертация · стрелка ведёт от предпосылки к результату</TD></TR>'
-        f'<TR>{legend}</TR></TABLE>'
+        f'<TR>{legend}</TR>'
+        f'<TR><TD COLSPAN="5" BGCOLOR="{CLAIM_FILL}" CELLPADDING="4">'
+        'Жёлтый фон — научная новизна или положение, вынесенное на защиту</TD></TR></TABLE>'
     )
     layout = f"rankdir={direction}, " + ('pack=true, packmode="array3", ' if pack else "")
     dot = [
@@ -187,13 +190,15 @@ def make_dot(nodes, keys, title, coverage, *, direction, pack=False):
             node = nodes[key]
             status, color, _ = STATUSES[node["status"]]
             title_lines = wrap(node["title"], 32, break_long_words=False, break_on_hyphens=False)
-            subtitle = " · ".join([node["caption"], *tags(node)])
+            claim_tags = tags(node)
+            subtitle = " · ".join([node["caption"], *claim_tags])
+            fill = f'fillcolor="{CLAIM_FILL}", ' if claim_tags else ""
             label = (f'<FONT POINT-SIZE="9">{escape(subtitle)}</FONT><BR/><B>'
                      + "<BR/>".join(map(escape, title_lines))
                      + f'</B><BR/><FONT POINT-SIZE="9">{status}</FONT>')
             tip = f"{node['caption']}. {node['title']}. {status}. " + node.get("note", "")
             dot.append(f'{dot_string(key)} [id="{anchor(key)}", label=<{label}>, color="{color}", '
-                       f'URL="{coverage}#{anchor(key)}", tooltip={dot_string(tip)}];')
+                       f'{fill}URL="{coverage}#{anchor(key)}", tooltip={dot_string(tip)}];')
         dot.append("}")
     selected = set(keys)
     for target in keys:
@@ -230,7 +235,9 @@ def report(nodes):
            "Стрелка ведёт от предпосылки к утверждению, которое на неё опирается. "
            "В карту входят все теоремы, леммы, предложения, следствия и наблюдения TeX, "
            "используемые определения, отдельные шаги доказательств и выводы эксперимента. "
-           "Цвет относится к формулировке узла. Если доказательству достаточно частного случая "
+           "Жёлтым фоном выделены утверждения из разделов введения «Научная новизна работы» и "
+           "«Положения, выносимые на защиту». Цвет рамки показывает статус проверки в Lean. "
+           "Если доказательству достаточно частного случая "
            "более общей предпосылки, это указано в таблице. Номера новизны и защиты следуют введению. "
            f"[Исправленный TeX]({TEX_LINK}) · [Полный граф (SVG)](verification_graph.svg)", "",
            "## Цвет рамки", "",
