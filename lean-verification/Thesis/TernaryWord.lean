@@ -35,6 +35,26 @@ theorem length_word (n : Nat) : (word n).length = 2 * Fibonacci.fib (n + 1) := b
   | zero => rfl
   | succ n => rw [word_succ_eq_interleave, length_interleave, Fibonacci.word_length]
 
+/-- In the separate initial case y₀ = 01 the only nonempty palindromic
+factors are its two individual letters, as counted directly in §3.6. -/
+theorem word_zero_enumeration :
+    Enumerates (word 0) [[none], [some Fibonacci.Letter.b]] := by
+  refine ⟨by decide, ?_⟩
+  intro v
+  cases v with
+  | nil => simp [PalindromicFactor]
+  | cons a v =>
+    cases v with
+    | nil => simp [word, PalindromicFactor, List.infix_cons_iff]
+    | cons b v =>
+      cases v with
+      | nil =>
+        simp [word, PalindromicFactor, List.infix_cons_iff]
+        rintro rfl rfl
+        decide
+      | cons c v =>
+        simp [word, PalindromicFactor, List.infix_cons_iff]
+
 /-- The ternary richness deduction in `thm:Yrich`, using the classical
 richness of finite Fibonacci words as its only word-specific premise. -/
 theorem rich_word_of_fibonacci (hFib : ∀ n, Rich (Fibonacci.word n)) (n : Nat) :
@@ -44,7 +64,7 @@ theorem rich_word_of_fibonacci (hFib : ∀ n, Rich (Fibonacci.word n)) (n : Nat)
     exact rich_of_infix ((rich_framed_iff _).2 (hFib k))
       (List.prefix_append _ _).isInfix
   cases n with
-  | zero => exact rich_of_infix (hpos 1) (show word 0 <:+: word 2 from ⟨word 1, [], by simp [word]⟩)
+  | zero => exact ⟨_, word_zero_enumeration, rfl⟩
   | succ n => exact hpos n
 
 theorem factor_count_of_fibonacci (hFib : ∀ n, Rich (Fibonacci.word n)) (n : Nat) :

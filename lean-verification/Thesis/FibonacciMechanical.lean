@@ -189,24 +189,28 @@ private theorem image_prefix (n : Nat) :
       rw [prefix_succ, image_initial_letter n]
       rfl
 
+/-- The finite Fibonacci words are prefixes of the golden-slope coding. -/
+theorem word_eq_mechanical_prefix (n : Nat) :
+    word n = List.ofFn (fun j : Fin (word n).length => mechanicalWord j) := by
+  change word n = letterPrefix mechanicalWord (word n).length
+  induction n with
+  | zero =>
+    have h0 := image_initial_letter 0
+    rw [imageOffset_zero] at h0
+    change [.a] = letterPrefix mechanicalWord 1
+    rw [prefix_succ, h0]
+    rfl
+  | succ n ih =>
+    have hc : word (n + 1) = letterPrefix mechanicalWord (imageOffset (word n).length) := by
+      rw [word_succ_eq_morphism, ← image_prefix, ← ih]
+    have hl := congrArg List.length hc
+    rw [prefix_length] at hl
+    simpa only [← hl] using hc
+
 /-- Proposition prop:mech for the word defined by the finite recurrence. -/
 theorem infiniteWord_eq_mechanicalWord : infiniteWord = mechanicalWord := by
-  have hprefix (n : Nat) : word n = letterPrefix mechanicalWord (word n).length := by
-    induction n with
-    | zero =>
-      have h0 := image_initial_letter 0
-      rw [imageOffset_zero] at h0
-      change [.a] = letterPrefix mechanicalWord 1
-      rw [prefix_succ, h0]
-      rfl
-    | succ n ih =>
-      have hc : word (n + 1) = letterPrefix mechanicalWord (imageOffset (word n).length) := by
-        rw [word_succ_eq_morphism, ← image_prefix, ← ih]
-      have hl := congrArg List.length hc
-      rw [prefix_length] at hl
-      simpa only [← hl] using hc
   funext i
-  have he := congrArg (fun xs : List Letter => xs[i]?) (hprefix i)
+  have he := congrArg (fun xs : List Letter => xs[i]?) (word_eq_mechanical_prefix i)
   have hi := word_covers i
   have hr : i < (letterPrefix mechanicalWord (word i).length).length := by
     rw [prefix_length]

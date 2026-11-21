@@ -7,7 +7,7 @@ open Thesis.ThueMorse (mem_factorLanguage window)
 namespace Thesis.FactorTree
 
 /-- The cumulative floor function of the lower mechanical word. -/
-private noncomputable def mechanicalFloor (a t : ℝ) (j : Nat) : ℤ :=
+noncomputable def mechanicalFloor (a t : ℝ) (j : Nat) : ℤ :=
   ⌊t + (j : ℝ) * a⌋
 
 /-- A letter of the lower mechanical word of slope a and intercept t.
@@ -51,7 +51,7 @@ theorem mechanicalFloor_step_eq (a t : ℝ) (j : Nat) (ha : 0 < a) (ha' : a < 1)
   · simp only [he, decide_false, Bool.false_eq_true, if_false, add_zero]
     omega
 
-private theorem mechanicalLetter_int_shift (a t : ℝ) (q : ℤ) (j : Nat) :
+theorem mechanicalLetter_int_shift (a t : ℝ) (q : ℤ) (j : Nat) :
     mechanicalLetter a (t + q) j = mechanicalLetter a t j := by
   unfold mechanicalLetter mechanicalFloor
   have he (l : Nat) : t + q + (l : ℝ) * a = (t + (l : ℝ) * a) + q := by ring

@@ -1,4 +1,5 @@
-import Thesis.FibonacciRichness
+import Thesis.FibonacciMechanical
+import Thesis.SturmianFactorRichness
 import Thesis.FibonacciCentralPrefixes
 import Thesis.TernaryWord
 import Thesis.WordPrefixLimits
@@ -7,13 +8,30 @@ namespace Thesis.TernaryWord
 
 open PalindromeFactors WordPrefixLimits
 
+/-- The proof of thm:Yrich invokes the general Sturmian richness theorem
+for a Fibonacci prefix, with its two symbols renamed. -/
+theorem rich_fibonacci_prefix (n : Nat) : Rich (Fibonacci.word n) := by
+  let e : Bool ≃ Fibonacci.Letter :=
+    ⟨fun b => if b then .b else .a, fun x => match x with | .a => false | .b => true,
+      fun b => by cases b <;> rfl, fun x => by cases x <;> rfl⟩
+  have h := FactorTree.characteristicWord_infiniteRich Fibonacci.mechanicalSlope_pos
+    Fibonacci.mechanicalSlope_lt_one Fibonacci.mechanicalSlope_irrational 0 (Fibonacci.word n).length
+  have he : (factorList (FactorTree.characteristicWord Fibonacci.mechanicalSlope) 0
+      (Fibonacci.word n).length).map e = Fibonacci.word n := by
+    conv_rhs => rw [Fibonacci.word_eq_mechanical_prefix n]
+    apply List.ext_getElem (by simp [factorList])
+    intro j _ _
+    simp only [List.getElem_map, factorList, List.getElem_ofFn, Nat.zero_add]
+    rfl
+  exact he ▸ rich_rename e h
+
 /-- The finite assertion of thm:Yrich, via its original separator proof. -/
 theorem rich_word (n : Nat) : Rich (word n) :=
-  rich_word_of_fibonacci Fibonacci.rich_word n
+  rich_word_of_fibonacci rich_fibonacci_prefix n
 
 theorem palindromic_factor_count (n : Nat) :
     ∃ ps, Enumerates (word n) ps ∧ ps.length = 2 * Fibonacci.fib (n + 1) :=
-  factor_count_of_fibonacci Fibonacci.rich_word n
+  factor_count_of_fibonacci rich_fibonacci_prefix n
 
 private theorem word_length_pos : ∀ n, 0 < (word n).length
   | 0 => by decide
@@ -89,6 +107,6 @@ theorem factor_infiniteWord_iff (v : List (Option Fibonacci.Letter)) :
 theorem rich_factor_infiniteWord (v : List (Option Fibonacci.Letter))
     (hv : ∃ i : Nat, v = List.ofFn (fun j : Fin v.length => infiniteWord (i + j.val))) :
     Rich v :=
-  rich_factor_of_fibonacci Fibonacci.rich_word v ((factor_infiniteWord_iff v).1 hv)
+  rich_factor_of_fibonacci rich_fibonacci_prefix v ((factor_infiniteWord_iff v).1 hv)
 
 end Thesis.TernaryWord

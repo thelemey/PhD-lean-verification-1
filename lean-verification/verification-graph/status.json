@@ -413,6 +413,9 @@
     "lean": {
       "SturmianMechanical": [
         "characteristicWord"
+      ],
+      "SturmianFactorRichness": [
+        "upperMechanicalLetter"
       ]
     }
   },
@@ -558,27 +561,41 @@
   },
   "thm:Yrich": {
     "status": "verified",
-    "note": "Доказано богатство каждого конечного yₙ и всех факторов бесконечного y.",
+    "note": "Для y₀ перечислены два односимвольных палиндрома. При n ≥ 1 проверен авторский переход от общего богатства штурмовых факторов через переименование префикса Фибоначчи, обрамление и наследование богатства. Все факторы предела богаты.",
     "lean": {
       "TernaryRichness": [
+        "rich_fibonacci_prefix",
         "rich_word",
         "palindromic_factor_count",
         "rich_factor_infiniteWord"
+      ],
+      "TernaryWord": [
+        "word_zero_enumeration",
+        "rich_word_of_fibonacci"
       ]
     }
   },
   "sturmian-rich": {
-    "status": "partial",
+    "status": "verified",
     "lean": {
       "FibonacciRichness": [
         "rich_word",
         "rich_factor"
+      ],
+      "SturmianRichness": [
+        "characteristic_leftMorphism_prefix",
+        "characteristicWord_infiniteRich"
+      ],
+      "SturmianFactorRichness": [
+        "lower_prefix_mem_characteristic",
+        "mechanicalLetter_infiniteRich",
+        "upperMechanicalLetter_infiniteRich"
       ]
     },
-    "note": "В Lean доказан случай факторов слова Фибоначчи, достаточный для теоремы о y."
+    "note": "Богатство всех конечных факторов доказано для обеих механических форм из определения §3.6, при любом иррациональном наклоне и любом сдвиге."
   },
   "rich-interleave": {
-    "status": "partial",
+    "status": "verified",
     "lean": {
       "PalindromeFactors": [
         "rich_framed_iff",
@@ -586,9 +603,14 @@
       ],
       "TernaryRichness": [
         "rich_factor_infiniteWord"
+      ],
+      "InfiniteRichness": [
+        "infiniteRich_iff_prefixes",
+        "framed_prefix_eq",
+        "infiniteRich_insertSeparator_iff"
       ]
     },
-    "note": "Проверена эквивалентность для конечного обрамления и случай предела y. Общее бесконечное слово из следствия остаётся открытым."
+    "note": "Доказано для любого богатого бесконечного слова и любого алфавита с новым разделителем."
   },
   "ct:palprefSturm": {
     "status": "verified",
