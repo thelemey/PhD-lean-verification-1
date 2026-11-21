@@ -1,12 +1,49 @@
 import Thesis.ThueMorse
 import Mathlib.RingTheory.Multiplicity
 import Mathlib.Data.Int.ModEq
+import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic.Ring
 
 namespace Thesis.ThueMorse
 
 /-- The signed difference of digit sums, denoted by (c_m(n)) in the thesis. -/
 def digitDelta (b m n : Nat) : ℤ := (digitSum b (n + m) : ℤ) - digitSum b n
+
+/-- One comparison of the residue word is the congruence for the
+corresponding signed digit-sum difference. -/
+theorem word_step_iff_digitDelta (b N n m j : Nat) :
+    word b N (n + m) = (word b N n + j) % N ↔ digitDelta b m n ≡ (j : ℤ) [ZMOD (N : ℤ)] := by
+  unfold word digitDelta
+  rw [Nat.mod_add_mod]
+  change digitSum b (n + m) ≡ digitSum b n + j [MOD N] ↔ _
+  rw [← Int.natCast_modEq_iff, Nat.cast_add]
+  exact ⟨fun h => by simpa using Int.ModEq.sub_right (digitSum b n : ℤ) h,
+    fun h => by simpa only [sub_add_cancel, add_comm (j : ℤ)] using
+      Int.ModEq.add_right (digitSum b n : ℤ) h⟩
+
+/-- The period of the multiples of the carry coefficient modulo N. -/
+theorem carryPeriod_dvd_iff {N : Nat} (hN : 0 < N) (a t : Nat) :
+    N ∣ a * t ↔ N / N.gcd a ∣ t := by
+  let d := N.gcd a
+  have hd : 0 < d := Nat.gcd_pos_of_pos_left a hN
+  have hNd : d * (N / d) = N := by rw [Nat.mul_comm, Nat.div_mul_cancel (Nat.gcd_dvd_left N a)]
+  have had : d * (a / d) = a := by rw [Nat.mul_comm, Nat.div_mul_cancel (Nat.gcd_dvd_right N a)]
+  have hco : (N / d).Coprime (a / d) := Nat.coprime_div_gcd_div_gcd hd
+  have hcancel : N ∣ a * t ↔ N / d ∣ (a / d) * t := by
+    have h := Nat.mul_dvd_mul_iff_left (a := d) (b := N / d) (c := (a / d) * t) hd
+    rw [← Nat.mul_assoc, hNd, had] at h
+    exact h
+  rw [hcancel]
+  exact ⟨hco.dvd_of_dvd_mul_left, fun h => dvd_mul_of_dvd_right h _⟩
+
+theorem two_le_carryPeriod {N a : Nat} (hN : 0 < N) (hna : ¬ N ∣ a) : 2 ≤ N / N.gcd a := by
+  have hd := Nat.gcd_pos_of_pos_left a hN
+  have hprod := Nat.div_mul_cancel (Nat.gcd_dvd_left N a)
+  have hg := Nat.div_pos (Nat.le_of_dvd hN (Nat.gcd_dvd_left N a)) hd
+  by_contra! hlt
+  have he : N / N.gcd a = 1 := by omega
+  rw [he, Nat.one_mul] at hprod
+  exact hna (hprod ▸ Nat.gcd_dvd_right N a)
 
 /-- Removing one trailing zero lowers the exponent of divisibility by
 one. The base need not be prime. -/

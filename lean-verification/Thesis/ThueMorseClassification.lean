@@ -1,80 +1,39 @@
-import Thesis.ThueMorse
+import Thesis.ThueMorseCarries
+import Mathlib.Data.Int.GCD
 
 namespace Thesis.ThueMorse
-
-private theorem digitSum_maximal_digits {b : Nat} (hb : 1 < b) (e : Nat) :
-    digitSum b (b ^ e - 1) = (b - 1) * e := by
-  induction e with
-  | zero => simp
-  | succ e ih =>
-    have hp : 0 < b ^ e := Nat.pow_pos (by omega)
-    have he : b ^ (e + 1) - 1 = b * (b ^ e - 1) + (b - 1) := by
-      rw [Nat.pow_succ', Nat.mul_sub, Nat.mul_one]
-      have hle : b ≤ b * b ^ e := by
-        simpa using Nat.mul_le_mul_left b (show 1 ≤ b ^ e by omega)
-      omega
-    rw [he, digitSum_block hb _ _ (by omega), ih, Nat.mul_succ]
-
-private theorem digitSum_power_of_base {b : Nat} (hb : 1 < b) (e : Nat) :
-    digitSum b (b ^ e) = 1 := by
-  induction e with
-  | zero => simpa using digitSum_block hb 0 1 hb
-  | succ e ih =>
-    rw [Nat.pow_succ']
-    simpa using (digitSum_block hb (b ^ e) 0 (show 0 < b by omega)).trans (by simpa using ih)
 
 private theorem word_step_no_carry {b N q r m j : Nat} (hb : 1 < b)
     (hr : r + m < b) (hj : m % N = j % N) :
     word b N (b * q + r + m) = (word b N (b * q + r) + j) % N := by
-  simp only [Nat.add_assoc, word, digitSum_block hb q (r + m) hr,
-    digitSum_block hb q r (by omega : r < b), Nat.mod_add_mod]
-  simp only [← Nat.add_assoc]
-  calc
-    _ = (digitSum b q + r + m % N) % N := (Nat.add_mod_mod _ _ _).symm
-    _ = (digitSum b q + r + j % N) % N := by rw [hj]
-    _ = _ := Nat.add_mod_mod _ _ _
-
-private theorem cancel_mod_add {N a c : Nat} (hN : 0 < N) (d : Nat)
-    (h : (a + d) % N = (c + d) % N) : a % N = c % N := by
-  have he := congrArg (fun x : Nat => (x + (N - d % N)) % N) h
-  have hd' : d % N ≤ N := Nat.le_of_lt (Nat.mod_lt _ hN)
-  have hd : d % N + (N - d % N) = N := by omega
-  rw [← Nat.add_mod_mod a d N, ← Nat.add_mod_mod c d N] at he
-  simpa only [Nat.mod_add_mod, Nat.add_assoc, hd, Nat.add_mod_right] using he
+  apply (word_step_iff_digitDelta _ _ _ _ _).2
+  rw [digitDelta_small_no_carry hb hr]
+  exact Int.natCast_modEq_iff.2 hj
 
 private theorem word_step_carry {b N e r m j : Nat} (hb : 1 < b)
-    (hN : 0 < N) (hr : r < b) (hm : m < b) (hc : b ≤ r + m)
+    (hr : r < b) (hm : m < b) (hc : b ≤ r + m)
     (hj : (j + (b - 1) * (e + 1)) % N = m % N) :
     word b N (b * (b ^ e - 1) + r + m) =
       (word b N (b * (b ^ e - 1) + r) + j) % N := by
+  apply (word_step_iff_digitDelta _ _ _ _ _).2
   have hp : 0 < b ^ e := Nat.pow_pos (by omega)
-  have hmove : b * (b ^ e - 1) + r + m = b * b ^ e + (r + m - b) := by
-    rw [Nat.mul_sub, Nat.mul_one]
-    have H : b ≤ b * b ^ e := by
-      simpa using Nat.mul_le_mul_left b (show 1 ≤ b ^ e by omega)
-    omega
-  simp only [hmove, word, digitSum_block hb (b ^ e) _ (by omega : r + m - b < b),
-    digitSum_block hb (b ^ e - 1) r hr, digitSum_power_of_base hb,
-    digitSum_maximal_digits hb, Nat.mod_add_mod]
-  have hbalance : (1 + (r + m - b)) + (b - 1) * (e + 1) = r + m + (b - 1) * e := by
-    rw [Nat.mul_succ]
-    omega
-  apply cancel_mod_add hN ((b - 1) * (e + 1))
-  rw [hbalance]
-  have he : (b - 1) * e + r + j + (b - 1) * (e + 1) =
-      (r + (b - 1) * e) + (j + (b - 1) * (e + 1)) := by ac_rfl
-  rw [he, ← Nat.add_mod_mod _ (j + (b - 1) * (e + 1)) N, hj, Nat.add_mod_mod]
-  congr 1
-  ac_rfl
+  rw [digitDelta_small_carry hb hr hm hc, Nat.sub_add_cancel hp,
+    multiplicity_pow_self (by omega : b ≠ 0) (by rw [Nat.isUnit_iff]; omega)]
+  have h := Int.natCast_modEq_iff.2 (show j + (b - 1) * (e + 1) ≡ m [MOD N] from hj)
+  push_cast [Nat.cast_sub (show 1 ≤ b by omega)] at h
+  simpa only [add_comm (1 : ℤ) (e : ℤ), add_sub_cancel_right] using
+    Int.ModEq.sub_right (((b : ℤ) - 1) * ((e : ℤ) + 1)) h.symm
 
 /-- The witness in step 2 of `tw:main`, with the length bound cleared of
 division. A carry across a block of maximal digits contributes a multiple
-of `N` by choosing that block to have length `N - 1`. -/
+of `N` by choosing its length to be one less than the carry period. -/
 theorem repeat_of_length_bound {b N k j m : Nat} (hb : 1 < b) (hN : 0 < N)
     (hm : 0 < m) (hmb : m < b) (hj : m % N = j % N) (hlen : k * m ≤ 2 * b) :
     StrongRepeat b N k j := by
-  let q := b ^ (N - 1) - 1
-  have hp : 0 < b ^ (N - 1) := Nat.pow_pos (by omega)
+  let g := N / N.gcd (b - 1)
+  let q := b ^ (g - 1) - 1
+  have hg : 0 < g := Nat.div_pos (Nat.le_of_dvd hN (Nat.gcd_dvd_left _ _))
+    (Nat.gcd_pos_of_pos_left _ hN)
   have hshift : b * q + b = b * (q + 1) := by rw [Nat.mul_succ]
   have hk : (k - 1) * m ≤ 2 * b - m := by
     cases k with
@@ -83,57 +42,70 @@ theorem repeat_of_length_bound {b N k j m : Nat} (hb : 1 < b) (hN : 0 < N)
       rw [Nat.succ_mul] at hlen
       simp only [Nat.succ_sub_one]
       omega
-  have hcarry : (j + (b - 1) * (N - 1 + 1)) % N = m % N := by
-    rw [show N - 1 + 1 = N by omega, Nat.add_mul_mod_self_right, hj]
+  have hcarry : (j + (b - 1) * (g - 1 + 1)) % N = m % N := by
+    obtain ⟨t, ht⟩ := (carryPeriod_dvd_iff hN (b - 1) g).2 (dvd_refl g)
+    rw [Nat.sub_add_cancel hg, ht, Nat.add_mul_mod_self_left, hj]
   refine ⟨b * q, m, hm, ?_⟩
   intro t ht
   by_cases ht' : t < b
   · by_cases hr : t + m < b
     · exact word_step_no_carry hb hr hj
-    · exact word_step_carry hb hN ht' hmb (by omega) hcarry
+    · exact word_step_carry hb ht' hmb (by omega) hcarry
   · have hrt : t - b + m < b := by omega
     have he : b * q + t = b * (q + 1) + (t - b) := by rw [← hshift]; omega
     rw [he]
     exact word_step_no_carry hb hrt hj
 
-/-- Every twist has a strong square, as in step 0 of `tw:main`. -/
+/-- Every twist has a strong square, using the representative modulo the
+gcd and the carry congruence of step 0 in `tw:main`. -/
 theorem twisted_square {b N : Nat} (hb : 1 < b) (hN : 0 < N) (j : Nat) :
     StrongRepeat b N 2 j := by
-  let d := b - 1
-  have hd : 0 < d := by dsimp [d]; omega
-  let q := (j + N - 1) / d
-  let m := (j + N - 1) % d + 1
+  let a := b - 1
+  let d := N.gcd a
+  have hd : 0 < d := Nat.gcd_pos_of_pos_left a hN
+  have hda : d ≤ a := Nat.le_of_dvd (by dsimp [a]; omega) (Nat.gcd_dvd_right _ _)
+  let q := (j + d - 1) / d
+  let m := (j + d - 1) % d + 1
   have hm : 0 < m := by dsimp [m]; omega
-  have hmb : m < b := by
-    have h := Nat.mod_lt (j + N - 1) hd
-    dsimp [m, d] at *
-    omega
-  have hdecomp : j + N = m + d * q := by
-    have h := Nat.mod_add_div (j + N - 1) d
+  have hmd : m ≤ d := by have h := Nat.mod_lt (j + d - 1) hd; dsimp [m]; omega
+  have hmb : m < b := by dsimp [a] at hda; omega
+  have hdq : j + d = m + d * q := by
+    have h := Nat.mod_add_div (j + d - 1) d
     dsimp [m, q]
     omega
-  let E := N * (q + 1) - q
-  have hmul : q + 1 ≤ N * (q + 1) := by
-    simpa using Nat.mul_le_mul_right (q + 1) (show 1 ≤ N by omega)
-  have hE : E - 1 + 1 = E := by dsimp [E]; omega
-  have hEq : q + E = N * (q + 1) := by dsimp [E]; omega
-  have hcarry : (j + (b - 1) * (E - 1 + 1)) % N = m % N := by
-    change (j + d * (E - 1 + 1)) % N = m % N
-    rw [hE]
-    calc
-      _ = (j + d * E + N) % N := by rw [Nat.add_mod_right]
-      _ = (m + d * (q + E)) % N := by
-        rw [Nat.mul_add, ← Nat.add_assoc, ← hdecomp]
-        congr 1
-        ac_rfl
-      _ = _ := by
-        rw [hEq, show d * (N * (q + 1)) = N * (d * (q + 1)) by ac_rfl,
-          Nat.add_mul_mod_self_left]
+  let t₀ : ℤ := Nat.gcdB N a * (1 - (q : ℤ))
+  have hdiff : (m : ℤ) - j = (d : ℤ) * (1 - (q : ℤ)) := by
+    have hh := congrArg (fun n : Nat => (n : ℤ)) hdq
+    push_cast at hh
+    rw [mul_sub, mul_one]
+    omega
+  have hsol : (a : ℤ) * t₀ ≡ (m : ℤ) - j [ZMOD (N : ℤ)] := by
+    apply Int.modEq_iff_dvd.2
+    refine ⟨Nat.gcdA N a * (1 - (q : ℤ)), ?_⟩
+    rw [hdiff, show (d : ℤ) = (N : ℤ) * Nat.gcdA N a + (a : ℤ) * Nat.gcdB N a from
+      Nat.gcd_eq_gcd_ab N a]
+    dsimp [t₀]
+    ring
+  let E : Nat := (t₀ % (N : ℤ)).toNat + N
+  have hE : 0 < E := by dsimp [E]; omega
+  have hcast : ((t₀ % (N : ℤ)).toNat : ℤ) = t₀ % (N : ℤ) :=
+    Int.toNat_of_nonneg (Int.emod_nonneg _ (by exact_mod_cast hN.ne'))
+  have hEeq : (E : ℤ) ≡ t₀ [ZMOD (N : ℤ)] := by
+    change ((E : ℤ) % (N : ℤ)) = t₀ % (N : ℤ)
+    dsimp [E]
+    rw [Nat.cast_add, hcast, Int.add_emod_right, Int.emod_emod]
+  have hcarry : (j + a * (E - 1 + 1)) % N = m % N := by
+    rw [Nat.sub_add_cancel hE]
+    apply Int.natCast_modEq_iff.1
+    push_cast
+    have hh := ((hEeq.mul_left (a : ℤ)).trans hsol).add_left (j : ℤ)
+    have he : (j : ℤ) + ((m : ℤ) - j) = m := by ring
+    simpa only [he] using hh
   refine ⟨b * (b ^ (E - 1) - 1) + (b - m), m, hm, ?_⟩
   intro t ht
   simp only [Nat.reduceSub, Nat.one_mul] at ht
   simp only [Nat.add_assoc (b * (b ^ (E - 1) - 1)) (b - m) t]
-  exact word_step_carry hb hN (by omega) hmb (by omega) hcarry
+  exact word_step_carry hb (by omega) hmb (by omega) hcarry
 
 /-- The positive representative `j'` used in `tw:main`. -/
 def positiveTwist (N j : Nat) : Nat :=
@@ -165,84 +137,36 @@ private theorem block_decomposition (b n : Nat) :
     b * (n / b) + n % b = n := by
   rw [Nat.add_comm, Nat.mod_add_div]
 
-private theorem digit_step_no_carry {b x : Nat} (hb : 1 < b) (hr : x % b ≠ 0) :
-    digitSum b x = digitSum b (x - 1) + 1 := by
-  have hrb := Nat.mod_lt x (show 0 < b by omega)
-  have hdecomp := block_decomposition b x
-  have hp : x - 1 = b * (x / b) + (x % b - 1) := by omega
-  calc
-    digitSum b x = digitSum b (x / b) + x % b := by
-      simpa only [hdecomp] using digitSum_block hb (x / b) (x % b) hrb
-    _ = digitSum b (x - 1) + 1 := by
-      rw [hp, digitSum_block hb _ _ (by omega : x % b - 1 < b)]
-      omega
-
-private theorem digit_zero_last {b q : Nat} (hb : 1 < b) :
-    digitSum b (b * q) = digitSum b q := by
-  simpa using digitSum_block hb q 0 (show 0 < b by omega)
-
-private theorem digit_step_one_carry {b y : Nat} (hb : 1 < b) (hy : y % b ≠ 0) :
-    digitSum b (b * y - 1) + 1 = digitSum b (b * y) + (b - 1) := by
-  have hy0 : 0 < y := by
-    by_cases h : y = 0
-    · simp [h] at hy
-    · omega
-  have hmul : b * y = b * (y - 1) + b := by
-    rw [← Nat.mul_succ]
-    exact congrArg (b * ·) (by omega)
-  have hpred : b * y - 1 = b * (y - 1) + (b - 1) := by omega
-  rw [hpred, digitSum_block hb _ _ (by omega : b - 1 < b),
-    digit_zero_last hb, digit_step_no_carry hb hy]
-  omega
-
-private theorem digit_window {b N j i m L : Nat} (h : Window b N j i m L)
-    {t : Nat} (ht : t < L) :
-    digitSum b (i + t + m) % N = (digitSum b (i + t) + j) % N := by
-  simpa only [word, Nat.mod_add_mod] using h t ht
-
-private theorem step_agreement {b N j i m L t : Nat} (h : Window b N j i m L)
-    (ht : t + 1 < L) :
-    (digitSum b (i + t + m + 1) + digitSum b (i + t)) % N =
-      (digitSum b (i + t + m) + digitSum b (i + t + 1)) % N := by
-  have h0 := digit_window h (show t < L by omega)
-  have h1 := digit_window h ht
-  simp only [← Nat.add_assoc] at h1
-  rw [show i + t + 1 + m = i + t + m + 1 by omega] at h1
-  calc
-    _ = ((digitSum b (i + t + m + 1) % N) + digitSum b (i + t)) % N :=
-      (Nat.mod_add_mod _ _ _).symm
-    _ = (digitSum b (i + t + 1) + j + digitSum b (i + t)) % N := by
-      rw [h1, Nat.mod_add_mod]
-    _ = (digitSum b (i + t) + j + digitSum b (i + t + 1)) % N := by
-      congr 1
-      ac_rfl
-    _ = _ := by rw [← Nat.mod_add_mod _ N _, ← h0, Nat.mod_add_mod]
-
-/-- A transition across a multiple of the base but not its square
-cannot occur within the comparison window of a reduced repeat. -/
+/-- Every multiple of the base in the transition window must also be
+a multiple of its square, by the carry-period congruence in step 1. -/
 private theorem no_single_carry_transition {b N j i m L t y : Nat}
     (hb : 1 < b) (hN : 0 < N) (haper : ¬ N ∣ b - 1) (hm : m % b ≠ 0)
     (h : Window b N j i m L) (ht : t + 1 < L) (hy : i + t + 1 = b * y) :
     y % b = 0 := by
-  by_cases hq : y % b = 0
-  · exact hq
-  · exfalso
-    have hmod : (i + t + m + 1) % b ≠ 0 := by
-      rw [show i + t + m + 1 = i + t + 1 + m by omega, hy, Nat.mul_add_mod]
-      exact hm
-    have hnc := digit_step_no_carry hb hmod
-    simp only [Nat.add_sub_cancel] at hnc
-    have hc := digit_step_one_carry hb hq
-    rw [← hy, Nat.add_sub_cancel] at hc
-    have ha := step_agreement h ht
-    rw [hnc] at ha
-    have hadd : digitSum b (i + t + m) + 1 + digitSum b (i + t) =
-        (b - 1) + (digitSum b (i + t + m) + digitSum b (i + t + 1)) := by omega
-    rw [hadd] at ha
-    have hz := cancel_mod_add (a := b - 1) (c := 0) hN _ (by simpa only [Nat.zero_add] using ha)
-    exact haper (Nat.dvd_iff_mod_eq_zero.mpr (by simpa using hz))
+  have hz : ¬ b ∣ i + t + m + 1 := by
+    rw [show i + t + m + 1 = i + t + 1 + m by omega, hy, Nat.dvd_iff_mod_eq_zero, Nat.mul_add_mod]
+    exact hm
+  have h0 := (word_step_iff_digitDelta b N (i + t) m j).1 (h t (by omega))
+  have h1 := (word_step_iff_digitDelta b N (i + t + 1) m j).1 (by
+    simpa only [Nat.add_assoc] using h (t + 1) ht)
+  have hc := h1.sub h0
+  rw [digitDelta_succ_sub hb, sub_self, multiplicity_eq_zero.2 hz, Nat.cast_zero, zero_sub,
+    neg_mul_neg] at hc
+  have hmod : (b - 1) * multiplicity b (i + t + 1) ≡ 0 [MOD N] := by
+    apply Int.natCast_modEq_iff.1
+    simpa only [Nat.cast_mul, Nat.cast_sub (show 1 ≤ b by omega), Nat.cast_one, Nat.cast_zero] using hc
+  have hd := (carryPeriod_dvd_iff hN (b - 1) _).1 (Nat.modEq_zero_iff_dvd.1 hmod)
+  have hpos : 0 < multiplicity b (i + t + 1) := by
+    apply Nat.pos_of_ne_zero
+    intro hzero
+    exact (multiplicity_eq_zero.1 hzero) ⟨y, hy⟩
+  have ht₂ := (two_le_carryPeriod hN haper).trans (Nat.le_of_dvd hpos hd)
+  have hf : FiniteMultiplicity b (i + t + 1) := Nat.finiteMultiplicity_iff.2 ⟨by omega, by omega⟩
+  have hsq := hf.pow_dvd_iff_le_multiplicity.2 ht₂
+  rw [hy, pow_succ', Nat.mul_dvd_mul_iff_left (show 0 < b by omega), pow_one] at hsq
+  exact Nat.dvd_iff_mod_eq_zero.1 hsq
 
-private theorem reduced_window {b N j k : Nat} (hb : 1 < b) (hN : 0 < N)
+private theorem reduced_window {b N j k : Nat} (hb : 1 < b)
     (m : Nat) (hm : 0 < m) (i : Nat) (h : Window b N j i m ((k - 1) * m)) :
     ∃ i' m', 0 < m' ∧ m' % b ≠ 0 ∧ Window b N j i' m' ((k - 1) * m') := by
   by_cases hd : m % b = 0
@@ -252,27 +176,32 @@ private theorem reduced_window {b N j k : Nat} (hb : 1 < b) (hN : 0 < N)
       intro hz
       rw [hz, Nat.mul_zero] at hmd
       omega
-    apply reduced_window hb hN (m / b) hp (i / b)
+    let q := if i % b = 0 then i / b else i / b + 1
+    let lead := if i % b = 0 then 0 else b - i % b
+    have hrem : i % b < b := Nat.mod_lt _ (by omega)
+    have hdecomp := block_decomposition b i
+    have hlead : lead < b := by dsimp [lead]; split <;> omega
+    have hs : i + lead = b * q := by
+      dsimp [lead, q]
+      split
+      · rename_i h
+        simp at hdecomp ⊢
+        omega
+      · rw [Nat.mul_succ]
+        omega
+    apply reduced_window hb (m / b) hp q
     intro t ht
-    have ht' : b * t < (k - 1) * m := by
-      have hlt := Nat.mul_lt_mul_of_pos_left ht (show 0 < b by omega)
-      calc
-        _ < b * ((k - 1) * (m / b)) := hlt
+    have ht' : lead + b * t < (k - 1) * m := by
+      have hle := Nat.mul_le_mul_left b (Nat.succ_le_of_lt ht)
+      have hsize : b * ((k - 1) * (m / b)) = (k - 1) * m := calc
         _ = (k - 1) * (b * (m / b)) := by ac_rfl
         _ = _ := by rw [hmd]
-    have hr := Nat.mod_lt i (show 0 < b by omega)
-    have h0 : i + b * t = b * (i / b + t) + i % b := by
-      rw [Nat.mul_add]
-      have := block_decomposition b i
+      rw [Nat.mul_succ, hsize] at hle
       omega
-    have h1 : i + b * t + m = b * (i / b + t + m / b) + i % b := by
-      rw [Nat.mul_add, hmd]; omega
-    have hw := digit_window h ht'
-    rw [h1, h0, digitSum_block hb _ _ hr, digitSum_block hb _ _ hr] at hw
-    unfold word
-    rw [Nat.mod_add_mod]
-    apply cancel_mod_add hN (i % b)
-    simpa only [Nat.add_assoc, Nat.add_comm (i % b) j] using hw
+    have hsample := (word_step_iff_digitDelta _ _ _ _ _).1 (h _ ht')
+    have he : i + (lead + b * t) = b * (q + t) + 0 := by rw [Nat.mul_add]; omega
+    rw [he, ← hmd, digitDelta_scale hb _ _ _ (by omega)] at hsample
+    exact (word_step_iff_digitDelta _ _ _ _ _).2 hsample
   · exact ⟨i, m, hm, hd, h⟩
 termination_by m
 decreasing_by exact Nat.div_lt_self hm hb
@@ -305,16 +234,13 @@ private theorem reduced_length_le {b N j i m L : Nat} (hb : 1 < b)
     exact False.elim (not_both_divisible hb hz hz')
 
 private theorem twist_eq_of_noncarry {b N j i m L : Nat}
-    (hb : 1 < b) (hN : 0 < N) (hm : m < b) (hL : m < L)
+    (hb : 1 < b) (hm : m < b) (hL : m < L)
     (h : Window b N j i m L) : m % N = j % N := by
   have hnoncarry (t q r : Nat) (ht : t < L) (he : i + t = b * q + r)
       (hr : r + m < b) : m % N = j % N := by
-    have hh := digit_window h ht
-    rw [he, Nat.add_assoc (b * q) r m,
-      digitSum_block hb q (r + m) hr,
-      digitSum_block hb q r (by omega : r < b)] at hh
-    apply cancel_mod_add hN (digitSum b q + r)
-    simpa only [Nat.add_comm m, Nat.add_comm j, Nat.add_assoc] using hh
+    have hh := (word_step_iff_digitDelta _ _ _ _ _).1 (h t ht)
+    rw [he, digitDelta_small_no_carry hb hr] at hh
+    exact Int.natCast_modEq_iff.1 hh
   by_cases hr : i % b + m < b
   · exact hnoncarry 0 (i / b) (i % b) (by omega)
       (by simpa using (block_decomposition b i).symm) hr
@@ -331,25 +257,20 @@ private theorem no_single_carry_position {b N j i m L t q r : Nat}
     (hm : m < b) (hj : m % N = j % N) (h : Window b N j i m L)
     (ht : t < L) (he : i + t = b * q + r) (hr : r < b) (hc : b ≤ r + m) :
     (q + 1) % b = 0 := by
-  by_cases hdiv : (q + 1) % b = 0
-  · exact hdiv
-  · exfalso
-    have hmove : i + t + m = b * (q + 1) + (r + m - b) := by
-      rw [he, Nat.mul_succ]
-      omega
-    have hstep := digit_step_no_carry hb hdiv
-    simp only [Nat.add_sub_cancel] at hstep
-    have hsum : digitSum b (i + t + m) + (b - 1) = digitSum b (i + t) + m := by
-      rw [hmove, he, digitSum_block hb q r hr,
-        digitSum_block hb (q + 1) _ (by omega : r + m - b < b), hstep]
-      omega
-    have hwin := digit_window h ht
-    have hmod : (digitSum b (i + t + m) + (b - 1)) % N =
-        digitSum b (i + t + m) % N := by
-      rw [hsum, ← Nat.add_mod_mod _ m N, hj, Nat.add_mod_mod, ← hwin]
-    have hz := cancel_mod_add (a := b - 1) (c := 0) hN (digitSum b (i + t + m))
-      (by simpa only [Nat.zero_add, Nat.add_comm (b - 1)] using hmod)
-    exact haper (Nat.dvd_iff_mod_eq_zero.mpr (by simpa using hz))
+  have hwin := (word_step_iff_digitDelta b N (i + t) m j).1 (h t ht)
+  rw [he, digitDelta_small_carry hb hr hm hc] at hwin
+  have hmod := (Int.natCast_modEq_iff.2 hj).sub hwin
+  have hz : (b - 1) * (1 + multiplicity b (q + 1)) ≡ 0 [MOD N] := by
+    apply Int.natCast_modEq_iff.1
+    push_cast [Nat.cast_sub (show 1 ≤ b by omega)]
+    have he : (m : ℤ) - ((m : ℤ) - ((b : ℤ) - 1) * (1 + multiplicity b (q + 1))) =
+        ((b : ℤ) - 1) * (1 + multiplicity b (q + 1)) := by ring
+    simpa only [he, sub_self] using hmod
+  have hd := (carryPeriod_dvd_iff hN (b - 1) _).1 (Nat.modEq_zero_iff_dvd.1 hz)
+  have hh := (two_le_carryPeriod hN haper).trans (Nat.le_of_dvd (by omega) hd)
+  have hf : FiniteMultiplicity b (q + 1) := Nat.finiteMultiplicity_iff.2 ⟨by omega, by omega⟩
+  have hdiv := hf.pow_dvd_iff_le_multiplicity.2 (show 1 ≤ multiplicity b (q + 1) by omega)
+  exact Nat.dvd_iff_mod_eq_zero.1 (by simpa using hdiv)
 
 private theorem short_carry_window {b N j i m L : Nat}
     (hb : 1 < b) (hN : 0 < N) (haper : ¬ N ∣ b - 1)
@@ -378,14 +299,14 @@ theorem critical_bound_of_repeat {b N k j : Nat} (hb : 1 < b) (hN : 0 < N)
   by_cases hk : k ≤ 2
   · exact Nat.le_trans hk (Nat.le_max_left _ _)
   · obtain ⟨i, m, hm, hw⟩ := h
-    obtain ⟨i, m, hm, hmnd, hw⟩ := reduced_window hb hN m hm i hw
+    obtain ⟨i, m, hm, hmnd, hw⟩ := reduced_window hb m hm i hw
     have hlen := reduced_length_le hb hN haper hmnd hw
     have h2 := Nat.mul_le_mul_right m (show 2 ≤ k - 1 by omega)
     have hmb : m < b := by
       have hle : m ≤ b := by omega
       have hne : m ≠ b := by intro he; simp [he] at hmnd
       omega
-    have hj := twist_eq_of_noncarry hb hN hmb (by omega) hw
+    have hj := twist_eq_of_noncarry hb hmb (by omega) hw
     have hs := short_carry_window hb hN haper hm hmb hj hw
     have hkm : k * m ≤ 2 * b := by
       have he : k * m = (k - 1) * m + m := by

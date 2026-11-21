@@ -200,8 +200,8 @@
   },
   "E5": {
     "status": "qualified",
-    "note": "Доказаны периодический и непериодический случаи с поправкой из исправленного TeX. При j' ≥ b частное в формуле не превосходит 2.",
-    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_periodic_case", "wordOnCycle_twisted_critical_exponent"]}
+    "note": "Доказаны оба случая из исправленного TeX. В непериодическом случае использованы прореживание окна, период переносов N/gcd(N,b−1) и оба свидетеля существования из доказательства. При j' ≥ b частное не превосходит 2.",
+    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_periodic_case", "wordOnCycle_twisted_critical_exponent"], "ThueMorseClassification": ["twisted_square", "repeat_of_length_bound", "critical_bound_of_repeat"], "ThueMorseCarries": ["carryPeriod_dvd_iff"]}
   },
   "D4": {
     "status": "verified",
