@@ -21,7 +21,7 @@ theorem cellCenter_mem_interior {cells : List Cell} (p : CellIn cells) :
     (axisCoord p.val a : ℝ) + 1 / 2 < (axisCoord p.val a : ℝ) + 1
   constructor <;> linarith
 
-private theorem cell_coord_unique {j k : ℤ} {x : ℝ}
+theorem cell_coord_unique {j k : ℤ} {x : ℝ}
     (hx : x ∈ Ioo (k : ℝ) ((k : ℝ) + 1)) (hj : x ∈ Icc (j : ℝ) ((j : ℝ) + 1)) :
     j = k := by
   have h₁ : j < k + 1 := by exact_mod_cast hj.1.trans_lt hx.2

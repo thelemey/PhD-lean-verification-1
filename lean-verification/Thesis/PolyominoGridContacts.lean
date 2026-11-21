@@ -15,7 +15,7 @@ instance (p q : Cell) : Decidable (DiagonalContact p q) := by
 
 def contactVertex (p q : Cell) : Plane := fun a => (max (axisCoord p a) (axisCoord q a) : ℤ)
 
-private theorem contact_coordinate {u v : ℤ} {z : ℝ}
+theorem contact_coordinate {u v : ℤ} {z : ℝ}
     (hu : z ∈ Icc (u:ℝ) (u+1)) (hv : z ∈ Icc (v:ℝ) (v+1)) :
     u+1 = v ∨ v+1 = u ∨ u = v := by
   have huv : u ≤ v+1 := by exact_mod_cast hu.1.trans hv.2

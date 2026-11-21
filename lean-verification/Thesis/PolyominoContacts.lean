@@ -4,7 +4,7 @@ open Set
 
 namespace Thesis.Polyomino
 
-private theorem isClosed_cellSquare (p : Cell) : IsClosed (cellSquare p) := by
+theorem isClosed_cellSquare (p : Cell) : IsClosed (cellSquare p) := by
   have he : cellSquare p = ⋂ a : Bool, (fun z : Plane => z a) ⁻¹'
       Icc (axisCoord p a : ℝ) ((axisCoord p a : ℝ)+1) := by
     ext

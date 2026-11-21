@@ -118,7 +118,7 @@ theorem geomSeparated_iff_components {cells : List Cell} {cuts : List Line} :
       omega
     exact Subtype.ext (Prod.ext (eq_coord false) (eq_coord true))
 
-private theorem positiveSide_axis {p q : Cell} {l : Line} (h : PositiveSide p q l) :
+theorem positiveSide_axis {p q : Cell} {l : Line} (h : PositiveSide p q l) :
     ∃ a : Bool, l = axisLine a (axisCoord p a + 1) ∧
       ∀ d : Bool, axisCoord q d = axisCoord p d + if d = a then 1 else 0 := by
   rcases h with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
