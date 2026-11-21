@@ -107,6 +107,7 @@
 - [FactorTreeIndices.lean](Thesis/FactorTreeIndices.lean) — формулы числа вершин и всех четырёх индексов дерева факторов при F1 и F2.
 - [FactorTreeGraph.lean](Thesis/FactorTreeGraph.lean) — граф с рёбрами по дописыванию одной буквы, связность, число рёбер и свойство дерева.
 - [TreeIrregularity.lean](Thesis/TreeIrregularity.lean) — оценки квадратичного индекса на рёбрах, формула для звезды и строгая максимальность по исправленному предложению.
+- [TreeIrregularityLower.lean](Thesis/TreeIrregularityLower.lean) — нижняя оценка по рёберно непересекающимся путям к листьям и полный критерий равенства.
 - [FactorTreeGraphIndices.lean](Thesis/FactorTreeGraphIndices.lean) — перенос четырёх формул индексов на степени вершин `SimpleGraph`.
 - [FactorTreeDegrees.lean](Thesis/FactorTreeDegrees.lean) — степень вершины как мощность множества инцидентных рёбер.
 - [FactorTreeTable.lean](Thesis/FactorTreeTable.lean) — проверка всех четырёх строк таблицы для глубины 8.

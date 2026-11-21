@@ -68,6 +68,7 @@ import Thesis.FactorTreeTable
 import Thesis.SturmianMechanical
 import Thesis.SturmianFactorTree
 import Thesis.TreeIrregularity
+import Thesis.TreeIrregularityLower
 import Thesis.FactorTreeGraphIndices
 import Thesis.SturmianFactorTreeExamples
 import Thesis.OrbitAverageLimits
