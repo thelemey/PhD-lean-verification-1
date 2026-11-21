@@ -121,3 +121,4 @@ import Thesis.StudySummaryPrecision
 import Thesis.ThinkingGainComparison
 import Thesis.PolyominoInteriorConnectivity
 import Thesis.StudyDesign
+import Thesis.ThinkingRanks
