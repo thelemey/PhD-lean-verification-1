@@ -18,8 +18,8 @@
 | <a name="node-f1"></a> **F1** Лемма 2.2.1 | Доказано | Доказаны равномерное распределение и попадания в любой полуинтервал положительной длины за любой заданной границей. [`factorial_logs_equidistributed`](../Thesis/FactorialWeyl.lean#L49), [`factorial_logs_hit_interval`](../Thesis/FactorialWeyl.lean#L56) |
 | <a name="node-f2"></a> **F2** Лемма 2.2.2 | Доказано | Любой допустимый префикс с ненулевой первой цифрой появляется в сколь угодно поздних факториалах. [`factorial_leading_prefixes`](../Thesis/FactorialWeyl.lean#L63) |
 | <a name="node-f3"></a> **F3** Лемма 2.2.3 | Доказано | Проверены точная формула через показатели простых, монотонность и стремление числа концевых нулей к бесконечности. [`factorial_trailingZeroCount_eq_min`](../Thesis/FactorialWord.lean#L150), [`factorial_trailingZeroCount_monotone`](../Thesis/FactorialWord.lean#L181), [`factorial_trailingZeroCount_tendsto_atTop`](../Thesis/FactorialInfiniteWord.lean#L40) |
-| <a name="node-f4"></a> **F4** Предл. 2.2.2 | Частично | Для произвольного слова доказано включение языка факторов в язык арифметических факторов. Общая цепочка неравенств для мощностей в отдельную теорему не собрана. [`factorLanguage_subset_arithmeticLanguage`](../Thesis/FactorialInfiniteWord.lean#L93) |
-| <a name="node-f5"></a> **F5** Теорема 2.2.3 | Доказано | Обе сложности бесконечной конкатенации над Fin b равны b^k. [`infiniteWord_full_complexities`](../Thesis/FactorialInfiniteWord.lean#L135) |
+| <a name="node-f4"></a> **F4** Предл. 2.2.2 | Доказано | Для произвольного слова над конечным алфавитом доказана цепочка p(k) ≤ a(k) ≤ &#124;A&#124;^k через прогрессии шага один и включение в множество всех слов длины k. [`complexity_le_arithmeticLanguage_card_le`](../Thesis/FactorialInfiniteWord.lean#L103) |
+| <a name="node-f5"></a> **F5** Теорема 2.2.3 | Доказано | Обе сложности бесконечной конкатенации над Fin b равны b^k. [`infiniteWord_full_complexities`](../Thesis/FactorialInfiniteWord.lean#L147) |
 
 ## 3.1  Ошибки предварительного раздела
 

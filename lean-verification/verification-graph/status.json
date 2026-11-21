@@ -23,9 +23,9 @@
     }
   },
   "F4": {
-    "status": "partial",
-    "note": "Для произвольного слова доказано включение языка факторов в язык арифметических факторов. Общая цепочка неравенств для мощностей в отдельную теорему не собрана.",
-    "lean": {"FactorialInfiniteWord": ["factorLanguage_subset_arithmeticLanguage"]}
+    "status": "verified",
+    "note": "Для произвольного слова над конечным алфавитом доказана цепочка p(k) ≤ a(k) ≤ |A|^k через прогрессии шага один и включение в множество всех слов длины k.",
+    "lean": {"FactorialInfiniteWord": ["complexity_le_arithmeticLanguage_card_le"]}
   },
   "F5": {
     "status": "verified",

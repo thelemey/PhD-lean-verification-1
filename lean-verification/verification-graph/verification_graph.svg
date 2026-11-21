@@ -15,8 +15,8 @@
 <text text-anchor="middle" x="1509" y="-1283.65" font-family="DejaVu Sans" font-size="18.00">Строка Lean — доказано · с уточнением · частично · определение · без отметки</text>
 <g id="clust1" class="cluster">
 <title>cluster_factorials</title>
-<path fill="white" stroke="#c8d1da" stroke-width="0.8" d="M482,-242C482,-242 1012,-242 1012,-242 1018,-242 1024,-248 1024,-254 1024,-254 1024,-568 1024,-568 1024,-574 1018,-580 1012,-580 1012,-580 482,-580 482,-580 476,-580 470,-574 470,-568 470,-568 470,-254 470,-254 470,-248 476,-242 482,-242"/>
-<text text-anchor="middle" x="633.5" y="-561.6" font-family="DejaVu Sans" font-size="18.00">2.2 &#160;Конкатенация факториалов</text>
+<path fill="white" stroke="#c8d1da" stroke-width="0.8" d="M480,-242C480,-242 1014,-242 1014,-242 1020,-242 1026,-248 1026,-254 1026,-254 1026,-568 1026,-568 1026,-574 1020,-580 1014,-580 1014,-580 480,-580 480,-580 474,-580 468,-574 468,-568 468,-568 468,-254 468,-254 468,-248 474,-242 480,-242"/>
+<text text-anchor="middle" x="631.5" y="-561.6" font-family="DejaVu Sans" font-size="18.00">2.2 &#160;Конкатенация факториалов</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_prelim</title>
@@ -57,8 +57,8 @@
 <g id="edge&#45;F1&#45;F2" class="edge">
 <title>F1&#45;&gt;F2</title>
 <g id="a_edge&#45;F1&#45;F2"><a xlink:title="Дробные части логарифма определяют ведущие цифры.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M765.1,-463.9C783.45,-455.19 803.12,-445.86 821.73,-437.03"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="823.1,-438.9 828,-434.06 821.15,-434.79 823.1,-438.9"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M767.1,-463.9C785.45,-455.19 805.12,-445.86 823.73,-437.03"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="825.1,-438.9 830,-434.06 823.15,-434.79 825.1,-438.9"/>
 </a>
 </g>
 </g>
@@ -66,8 +66,8 @@
 <g id="edge&#45;F2&#45;F5" class="edge">
 <title>F2&#45;&gt;F5</title>
 <g id="a_edge&#45;F2&#45;F5"><a xlink:title="Ненулевой хвост заданного фактора помещается в начало (n+1)!.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M833.21,-359.9C816.14,-351.19 797.84,-341.86 780.53,-333.03"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="781.52,-330.98 774.7,-330.06 779.46,-335.04 781.52,-330.98"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M835.21,-359.9C818.14,-351.19 799.84,-341.86 782.53,-333.03"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="783.52,-330.98 776.7,-330.06 781.46,-335.04 783.52,-330.98"/>
 </a>
 </g>
 </g>
@@ -75,8 +75,8 @@
 <g id="edge&#45;F3&#45;F5" class="edge">
 <title>F3&#45;&gt;F5</title>
 <g id="a_edge&#45;F3&#45;F5"><a xlink:title="Начальные нули фактора берутся из конца предыдущего факториала.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M704,-359.75C704,-352.39 704,-344.57 704,-337"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="706.28,-336.63 704,-330.13 701.73,-336.63 706.28,-336.63"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M706,-359.75C706,-352.39 706,-344.57 706,-337"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="708.28,-336.63 706,-330.13 703.73,-336.63 708.28,-336.63"/>
 </a>
 </g>
 </g>
@@ -84,8 +84,8 @@
 <g id="edge&#45;F4&#45;F5" class="edge">
 <title>F4&#45;&gt;F5</title>
 <g id="a_edge&#45;F4&#45;F5"><a xlink:title="Часть (ii) следует из части (i) и p≤a≤b^k.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M593.26,-365.95C608.78,-355.86 626.33,-344.46 642.82,-333.75"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="644.15,-335.59 648.36,-330.15 641.67,-331.78 644.15,-335.59"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M593.85,-365.95C609.56,-355.86 627.35,-344.46 644.04,-333.75"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="645.41,-335.57 649.66,-330.15 642.96,-331.74 645.41,-335.57"/>
 </a>
 </g>
 </g>
@@ -446,12 +446,12 @@
 <g id="node&#45;E1" class="node">
 <title>E1</title>
 <g id="a_node&#45;E1"><a xlink:href="coverage.md#node-e1" xlink:title="Lean: С уточнением. Для любого основания b &gt; 1 доказано равномерное распределение дробных частей log_b(n!), то есть исправленная формулировка. | Утверждение неверно. Для любого фиксированного b&gt;1 дробные части log_b(n!) равномерно распределены. В доказательстве леммы 2.2.1 это отрицательное утверждение не используется. | с. 43; строка 924 TeX">
-<path fill="#ffd5bd" stroke="#cc5200" stroke-width="1.15" d="M998,-538C998,-538 818,-538 818,-538 812,-538 806,-532 806,-526 806,-526 806,-476 806,-476 806,-470 812,-464 818,-464 818,-464 998,-464 998,-464 1004,-464 1010,-470 1010,-476 1010,-476 1010,-526 1010,-526 1010,-532 1004,-538 998,-538"/>
-<text text-anchor="start" x="816" y="-522.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[3] Текст перед леммой 2.2.1</text>
-<text text-anchor="start" x="835.5" y="-510.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">«log(n!) не равномерно</text>
-<text text-anchor="start" x="841.5" y="-498.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">распределён mod 1»</text>
-<text text-anchor="start" x="893" y="-486.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43</text>
-<text text-anchor="start" x="839.5" y="-474.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#613c88">Lean: С уточнением</text>
+<path fill="#ffd5bd" stroke="#cc5200" stroke-width="1.15" d="M1000,-538C1000,-538 820,-538 820,-538 814,-538 808,-532 808,-526 808,-526 808,-476 808,-476 808,-470 814,-464 820,-464 820,-464 1000,-464 1000,-464 1006,-464 1012,-470 1012,-476 1012,-476 1012,-526 1012,-526 1012,-532 1006,-538 1000,-538"/>
+<text text-anchor="start" x="818" y="-522.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[3] Текст перед леммой 2.2.1</text>
+<text text-anchor="start" x="837.5" y="-510.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">«log(n!) не равномерно</text>
+<text text-anchor="start" x="843.5" y="-498.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">распределён mod 1»</text>
+<text text-anchor="start" x="895" y="-486.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43</text>
+<text text-anchor="start" x="841.5" y="-474.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#613c88">Lean: С уточнением</text>
 </a>
 </g>
 </g>
@@ -459,12 +459,12 @@
 <g id="node&#45;F1" class="node">
 <title>F1</title>
 <g id="a_node&#45;F1"><a xlink:href="coverage.md#node-f1" xlink:title="Lean: Доказано. Доказаны равномерное распределение и попадания в любой полуинтервал положительной длины за любой заданной границей. | Лемма 2.2.1 | с. 43–44">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M781,-538C781,-538 597,-538 597,-538 591,-538 585,-532 585,-526 585,-526 585,-476 585,-476 585,-470 591,-464 597,-464 597,-464 781,-464 781,-464 787,-464 793,-470 793,-476 793,-476 793,-526 793,-526 793,-532 787,-538 781,-538"/>
-<text text-anchor="start" x="640.5" y="-522.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.1</text>
-<text text-anchor="start" x="595" y="-510.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Бесконечно много попаданий</text>
-<text text-anchor="start" x="606" y="-498.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в каждый интервал mod 1</text>
-<text text-anchor="start" x="663.5" y="-486.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43–44</text>
-<text text-anchor="start" x="634.5" y="-474.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M783,-538C783,-538 599,-538 599,-538 593,-538 587,-532 587,-526 587,-526 587,-476 587,-476 587,-470 593,-464 599,-464 599,-464 783,-464 783,-464 789,-464 795,-470 795,-476 795,-476 795,-526 795,-526 795,-532 789,-538 783,-538"/>
+<text text-anchor="start" x="642.5" y="-522.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.1</text>
+<text text-anchor="start" x="597" y="-510.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Бесконечно много попаданий</text>
+<text text-anchor="start" x="608" y="-498.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в каждый интервал mod 1</text>
+<text text-anchor="start" x="665.5" y="-486.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 43–44</text>
+<text text-anchor="start" x="636.5" y="-474.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
@@ -472,12 +472,12 @@
 <g id="node&#45;F2" class="node">
 <title>F2</title>
 <g id="a_node&#45;F2"><a xlink:href="coverage.md#node-f2" xlink:title="Lean: Доказано. Любой допустимый префикс с ненулевой первой цифрой появляется в сколь угодно поздних факториалах. | Лемма 2.2.2 | с. 44">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M998,-434C998,-434 810,-434 810,-434 804,-434 798,-428 798,-422 798,-422 798,-372 798,-372 798,-366 804,-360 810,-360 810,-360 998,-360 998,-360 1004,-360 1010,-366 1010,-372 1010,-372 1010,-422 1010,-422 1010,-428 1004,-434 998,-434"/>
-<text text-anchor="start" x="855.5" y="-418.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.2</text>
-<text text-anchor="start" x="808" y="-406.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Заданный ненулевой префикс</text>
-<text text-anchor="start" x="869" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в записи n!</text>
-<text text-anchor="start" x="889" y="-382.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
-<text text-anchor="start" x="849.5" y="-370.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1000,-434C1000,-434 812,-434 812,-434 806,-434 800,-428 800,-422 800,-422 800,-372 800,-372 800,-366 806,-360 812,-360 812,-360 1000,-360 1000,-360 1006,-360 1012,-366 1012,-372 1012,-372 1012,-422 1012,-422 1012,-428 1006,-434 1000,-434"/>
+<text text-anchor="start" x="857.5" y="-418.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.2</text>
+<text text-anchor="start" x="810" y="-406.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Заданный ненулевой префикс</text>
+<text text-anchor="start" x="871" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">в записи n!</text>
+<text text-anchor="start" x="891" y="-382.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
+<text text-anchor="start" x="851.5" y="-370.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
@@ -485,24 +485,24 @@
 <g id="node&#45;F3" class="node">
 <title>F3</title>
 <g id="a_node&#45;F3"><a xlink:href="coverage.md#node-f3" xlink:title="Lean: Доказано. Проверены точная формула через показатели простых, монотонность и стремление числа концевых нулей к бесконечности. | Лемма 2.2.3 | с. 44">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M773,-434C773,-434 635,-434 635,-434 629,-434 623,-428 623,-422 623,-422 623,-372 623,-372 623,-366 629,-360 635,-360 635,-360 773,-360 773,-360 779,-360 785,-366 785,-372 785,-372 785,-422 785,-422 785,-428 779,-434 773,-434"/>
-<text text-anchor="start" x="655.5" y="-418.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.3</text>
-<text text-anchor="start" x="633" y="-406.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Произвольно длинный</text>
-<text text-anchor="start" x="636.5" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">концевой блок нулей</text>
-<text text-anchor="start" x="689" y="-382.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
-<text text-anchor="start" x="649.5" y="-370.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M775,-434C775,-434 637,-434 637,-434 631,-434 625,-428 625,-422 625,-422 625,-372 625,-372 625,-366 631,-360 637,-360 637,-360 775,-360 775,-360 781,-360 787,-366 787,-372 787,-372 787,-422 787,-422 787,-428 781,-434 775,-434"/>
+<text text-anchor="start" x="657.5" y="-418.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 2.2.3</text>
+<text text-anchor="start" x="635" y="-406.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Произвольно длинный</text>
+<text text-anchor="start" x="638.5" y="-394.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">концевой блок нулей</text>
+<text text-anchor="start" x="691" y="-382.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 44</text>
+<text text-anchor="start" x="651.5" y="-370.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
 <!-- F4 -->
 <g id="node&#45;F4" class="node">
 <title>F4</title>
-<g id="a_node&#45;F4"><a xlink:href="coverage.md#node-f4" xlink:title="Lean: Частично. Для произвольного слова доказано включение языка факторов в язык арифметических факторов. Общая цепочка неравенств для мощностей в отдельную теорему не собрана. | Предл. 2.2.2 | с. 45">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M598,-428C598,-428 496,-428 496,-428 490,-428 484,-422 484,-416 484,-416 484,-378 484,-378 484,-372 490,-366 496,-366 496,-366 598,-366 598,-366 604,-366 610,-372 610,-378 610,-378 610,-416 610,-416 610,-422 604,-428 598,-428"/>
+<g id="a_node&#45;F4"><a xlink:href="coverage.md#node-f4" xlink:title="Lean: Доказано. Для произвольного слова над конечным алфавитом доказана цепочка p(k) ≤ a(k) ≤ |A|^k через прогрессии шага один и включение в множество всех слов длины k. | Предл. 2.2.2 | с. 45">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M599.5,-428C599.5,-428 494.5,-428 494.5,-428 488.5,-428 482.5,-422 482.5,-416 482.5,-416 482.5,-378 482.5,-378 482.5,-372 488.5,-366 494.5,-366 494.5,-366 599.5,-366 599.5,-366 605.5,-366 611.5,-372 611.5,-378 611.5,-378 611.5,-416 611.5,-416 611.5,-422 605.5,-428 599.5,-428"/>
 <text text-anchor="start" x="498" y="-412.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 2.2.2</text>
 <text text-anchor="start" x="494" y="-400.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">p(k) ≤ a(k) ≤ b^k</text>
 <text text-anchor="start" x="532" y="-388.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 45</text>
-<text text-anchor="start" x="494" y="-376.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<text text-anchor="start" x="492.5" y="-376.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
@@ -510,12 +510,12 @@
 <g id="node&#45;F5" class="node">
 <title>F5</title>
 <g id="a_node&#45;F5"><a xlink:href="coverage.md#node-f5" xlink:title="Lean: Доказано. Обе сложности бесконечной конкатенации над Fin b равны b^k. | Теорема 2.2.3 | с. 45–46">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M791.5,-330C791.5,-330 616.5,-330 616.5,-330 610.5,-330 604.5,-324 604.5,-318 604.5,-318 604.5,-268 604.5,-268 604.5,-262 610.5,-256 616.5,-256 616.5,-256 791.5,-256 791.5,-256 797.5,-256 803.5,-262 803.5,-268 803.5,-268 803.5,-318 803.5,-318 803.5,-324 797.5,-330 791.5,-330"/>
-<text text-anchor="start" x="649.5" y="-314.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 2.2.3</text>
-<text text-anchor="start" x="638" y="-302.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Полная факторная и</text>
-<text text-anchor="start" x="614.5" y="-290.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">арифметическая сложность</text>
-<text text-anchor="start" x="678.5" y="-278.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 45–46</text>
-<text text-anchor="start" x="649.5" y="-266.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M793.5,-330C793.5,-330 618.5,-330 618.5,-330 612.5,-330 606.5,-324 606.5,-318 606.5,-318 606.5,-268 606.5,-268 606.5,-262 612.5,-256 618.5,-256 618.5,-256 793.5,-256 793.5,-256 799.5,-256 805.5,-262 805.5,-268 805.5,-268 805.5,-318 805.5,-318 805.5,-324 799.5,-330 793.5,-330"/>
+<text text-anchor="start" x="651.5" y="-314.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 2.2.3</text>
+<text text-anchor="start" x="640" y="-302.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Полная факторная и</text>
+<text text-anchor="start" x="616.5" y="-290.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">арифметическая сложность</text>
+<text text-anchor="start" x="680.5" y="-278.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 45–46</text>
+<text text-anchor="start" x="651.5" y="-266.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

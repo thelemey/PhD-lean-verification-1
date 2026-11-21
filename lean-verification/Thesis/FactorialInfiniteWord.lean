@@ -98,6 +98,18 @@ theorem factorLanguage_subset_arithmeticLanguage {A : Type*} [Fintype A] (w : Na
   simp only [arithmeticLanguage, Finset.mem_filter, Finset.mem_univ, true_and]
   exact ⟨i, 1, by decide, fun j => by simp [ThueMorse.window]⟩
 
+/-- The general language bounds in p03. Ordinary factors are
+progressions of step one, and every progression gives a word of length k. -/
+theorem complexity_le_arithmeticLanguage_card_le {A : Type*} [Fintype A]
+    (w : Nat → A) (k : Nat) :
+    ThueMorse.complexity w k ≤ (arithmeticLanguage w k).card ∧
+      (arithmeticLanguage w k).card ≤ Fintype.card A ^ k := by
+  classical
+  refine ⟨Finset.card_le_card (factorLanguage_subset_arithmeticLanguage w k), ?_⟩
+  calc
+    _ ≤ (Finset.univ : Finset (Fin k → A)).card := Finset.card_le_card (Finset.subset_univ _)
+    _ = _ := by simp [Fintype.card_fun]
+
 theorem factorial_factorLanguage_univ {b : Nat} (hb : 1 < b) (k : Nat) :
     ThueMorse.factorLanguage (infiniteWord b hb) k = Finset.univ := by
   classical
