@@ -134,7 +134,67 @@ theorem positiveTwist_residue_spec {N : Nat} (hN : 0 < N) (j : ℤ) :
   change (twistResidue N j : ℤ) % (N : ℤ) = j % (N : ℤ)
   rw [twistResidue_cast hN, Int.emod_emod]
 
+theorem positiveTwist_residue_unique {N k : Nat} (hN : 0 < N) (j : ℤ)
+    (hk₁ : 0 < k) (hk₂ : k ≤ N) (hk : (k : ℤ) ≡ j [ZMOD (N : ℤ)]) :
+    k = positiveTwist N (twistResidue N j) := by
+  let r := positiveTwist N (twistResidue N j)
+  have ⟨hr₁, hr₂, hr⟩ := positiveTwist_residue_spec hN j
+  change 0 < r at hr₁
+  change r ≤ N at hr₂
+  change (r : ℤ) ≡ j [ZMOD (N : ℤ)] at hr
+  have h := Int.natCast_modEq_iff.1 (hk.trans hr.symm)
+  change k % N = r % N at h
+  change k = r
+  rcases eq_or_lt_of_le hk₂ with rfl | hkl
+  · rcases eq_or_lt_of_le hr₂ with he | hrl
+    · exact he.symm
+    · rw [Nat.mod_self, Nat.mod_eq_of_lt hrl] at h
+      omega
+  · rcases eq_or_lt_of_le hr₂ with he | hrl
+    · rw [Nat.mod_eq_of_lt hkl, he, Nat.mod_self] at h
+      omega
+    · simpa only [Nat.mod_eq_of_lt hkl, Nat.mod_eq_of_lt hrl] using h
+
 include hσ
+
+/-- The residue numbering σ^t(a₀) used in the thesis. -/
+noncomputable def cycleAlphabetEquiv : Fin (Fintype.card A) ≃ A :=
+  Equiv.ofBijective (fun t => (σ ^ t.val) a₀) ⟨by
+    intro r s h
+    have hmod := (hσ.pow_apply_eq_pow_apply (Finset.mem_univ a₀)).1 h
+    change r.val % (Finset.univ : Finset A).card =
+      s.val % (Finset.univ : Finset A).card at hmod
+    apply Fin.ext
+    simpa only [Finset.card_univ, Nat.mod_eq_of_lt r.isLt, Nat.mod_eq_of_lt s.isLt] using hmod, by
+    intro a
+    obtain ⟨i, hi, he⟩ := hσ.exists_pow_eq (Finset.mem_univ a₀) (Finset.mem_univ a)
+    exact ⟨⟨i, by simpa only [Finset.card_univ] using hi⟩, he⟩⟩
+
+theorem cycleAlphabetEquiv_finiteWord (b n : Nat) :
+    cycleAlphabetEquiv hσ a₀ (finiteWord b (Fintype.card A) (card_pos_of_letter a₀) n) =
+      wordOnCycle σ a₀ b n := by
+  change (σ ^ (digitSum b n % Fintype.card A)) a₀ = (σ ^ digitSum b n) a₀
+  rw [hσ.pow_apply_eq_pow_apply (Finset.mem_univ a₀), Finset.card_univ]
+  exact Nat.mod_mod _ _
+
+/-- The primitivity assertion in thm:dynWb(1) on the original alphabet. -/
+theorem iterate_cycleSubstitution_contains_letter {b : Nat} (hb : 1 < b)
+    (k : Nat) (hk : Fintype.card A - 1 ≤ k) (a c : A) :
+    ∃ i : Fin (b ^ k), iterateSubstitution (zero_lt_one.trans hb) (cycleSubstitution σ b) k a i = c := by
+  obtain ⟨j, hj, hjc⟩ := hσ.exists_pow_eq (Finset.mem_univ a) (Finset.mem_univ c)
+  have hj' : j < Fintype.card A := by simpa only [Finset.card_univ] using hj
+  let start : Fin (Fintype.card A) := ⟨0, card_pos_of_letter a⟩
+  let target : Fin (Fintype.card A) := ⟨j, hj'⟩
+  obtain ⟨i, hi⟩ :=
+    iterate_digitSubstitution_contains_letter hb (card_pos_of_letter a) k hk start target
+  have hsum : digitSum b i.val % Fintype.card A = j := by
+    have hi' := congrArg Fin.val hi
+    rw [iterate_digitSubstitution hb (card_pos_of_letter a)] at hi'
+    simpa only [start, target, Nat.zero_add] using hi'
+  refine ⟨i, ?_⟩
+  rw [iterate_cycleSubstitution σ a hb, ← hjc, wordOnCycle,
+    hσ.pow_apply_eq_pow_apply (Finset.mem_univ a), Finset.card_univ]
+  exact hsum.trans (Nat.mod_eq_of_lt hj').symm
 
 private theorem zpow_apply_residue (j : ℤ) (a : A) :
     (σ ^ j) a = (σ ^ twistResidue (Fintype.card A) j) a := by
@@ -196,6 +256,35 @@ theorem wordOnCycle_binary_avoidance (hN : 2 ≤ Fintype.card A) (j : ℤ) :
   rw [h1, ← twistResidue_cast hpos]
   exact not_congr (by exact_mod_cast (Iff.rfl :
     twistResidue (Fintype.card A) j = 1 ↔ twistResidue (Fintype.card A) j = 1))
+
+/-- The full binary threshold in tw:cor, for every admissible k. -/
+theorem wordOnCycle_binary_threshold (hN : 2 ≤ Fintype.card A) {k : Nat}
+    (hk : 2 ≤ k) (j : ℤ) :
+    StrongBlockRepeat (wordOnCycle σ a₀ 2) (σ ^ j) k ↔
+      k ≤ if j ≡ 1 [ZMOD (Fintype.card A : ℤ)] then 4 else 2 := by
+  have hp : 0 < Fintype.card A := by omega
+  have hnonperiodic : ¬ Fintype.card A ∣ 2 - 1 := by
+    intro h
+    have := Nat.le_of_dvd (by decide : 0 < 2 - 1) h
+    omega
+  rw [wordOnCycle_twisted_critical_exponent hσ a₀ (by decide) hk hnonperiodic]
+  let r := positiveTwist (Fintype.card A) (twistResidue (Fintype.card A) j)
+  change (k ≤ max 2 (4 / r)) ↔ _
+  by_cases hj : j ≡ 1 [ZMOD (Fintype.card A : ℤ)]
+  · have hr : r = 1 :=
+      (positiveTwist_residue_unique (k := 1) hp j (by decide) (by omega) hj.symm).symm
+    simp [hr, hj]
+  · have ⟨hpos, _, hres⟩ := positiveTwist_residue_spec hp j
+    change 0 < r at hpos
+    change (r : ℤ) ≡ j [ZMOD (Fintype.card A : ℤ)] at hres
+    have hne : r ≠ 1 := by
+      intro he
+      rw [he] at hres
+      exact hj hres.symm
+    have hr : 4 / r ≤ 2 := by
+      apply (Nat.div_le_iff_le_mul hpos).2
+      omega
+    simp [hj, max_eq_left hr]
 
 end Cyclic
 
