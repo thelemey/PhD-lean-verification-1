@@ -612,13 +612,13 @@
 <!-- B3 -->
 <g id="node&#45;B3" class="node">
 <title>B3</title>
-<g id="a_node&#45;B3"><a xlink:href="coverage.md#node-b3" xlink:title="Lean: Без отметки. | Предл. 3.4.3 | с. 59–60">
+<g id="a_node&#45;B3"><a xlink:href="coverage.md#node-b3" xlink:title="Lean: Доказано. Для каждого окна доказаны формула разности целых частей, два возможных подсчёта каждой буквы и строгие оценки обеих плотностей при положительной длине. | Предл. 3.4.3 | с. 59–60">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M375.5,-1096.01C375.5,-1096.01 246.5,-1096.01 246.5,-1096.01 240.5,-1096.01 234.5,-1090.01 234.5,-1084.01 234.5,-1084.01 234.5,-1034.01 234.5,-1034.01 234.5,-1028.01 240.5,-1022.01 246.5,-1022.01 246.5,-1022.01 375.5,-1022.01 375.5,-1022.01 381.5,-1022.01 387.5,-1028.01 387.5,-1034.01 387.5,-1034.01 387.5,-1084.01 387.5,-1084.01 387.5,-1090.01 381.5,-1096.01 375.5,-1096.01"/>
 <text text-anchor="start" x="262" y="-1080.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.4.3</text>
 <text text-anchor="start" x="244.5" y="-1068.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Сбалансированность</text>
 <text text-anchor="start" x="264" y="-1056.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">всех факторов</text>
 <text text-anchor="start" x="285.5" y="-1044.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 59–60</text>
-<text text-anchor="start" x="247.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="256.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

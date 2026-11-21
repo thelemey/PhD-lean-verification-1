@@ -217,4 +217,107 @@ theorem infiniteWord_letter_floor (i : Nat) :
   rw [infiniteWord_eq_mechanicalWord]
   simp [mechanicalWord, FactorTree.characteristic_letter_floor_eq]
 
+/-- The length-`k` factor starting at position `i` (zero based). -/
+def factorWindow (i k : Nat) : List Letter := letterPrefix (fun j => infiniteWord (i + j)) k
+
+@[simp] theorem factorWindow_length (i k : Nat) : (factorWindow i k).length = k :=
+  prefix_length _ _
+
+private theorem factorWindow_count_complement (i k : Nat) :
+    (factorWindow i k).count .a + (factorWindow i k).count .b = k := by
+  have h (xs : List Letter) : xs.count .a + xs.count .b = xs.length := by
+    induction xs with
+    | nil => rfl
+    | cons x xs ih => cases x <;> simp [List.count_cons] <;> omega
+  simpa using h (factorWindow i k)
+
+/-- Telescoping the mechanical letters over a finite window. -/
+theorem factorWindow_count_b (i k : Nat) :
+    ((factorWindow i k).count .b : ℤ) =
+      ⌊((i : ℝ) + 1) * mechanicalSlope + (k : ℝ) * mechanicalSlope⌋ -
+        ⌊((i : ℝ) + 1) * mechanicalSlope⌋ := by
+  have hcount : ((factorWindow i k).count .b : ℤ) = mechanicalCount (i + k) - mechanicalCount i := by
+    induction k with
+    | zero => simp [factorWindow, letterPrefix]
+    | succ k ih =>
+      have hs : factorWindow i (k + 1) = factorWindow i k ++ [infiniteWord (i + k)] :=
+        prefix_succ _ _
+      rw [hs, List.count_append, Nat.cast_add, ih, ← Nat.add_assoc, mechanicalCount_step,
+        infiniteWord_eq_mechanicalWord]
+      cases h : mechanicalWord (i + k) <;> (simp [h] <;> omega)
+  rw [hcount]
+  unfold mechanicalCount
+  push_cast
+  rw [show ((i : ℝ) + (k : ℝ) + 1) * mechanicalSlope =
+      ((i : ℝ) + 1) * mechanicalSlope + (k : ℝ) * mechanicalSlope by ring]
+
+private theorem floor_sub_mem (x y : ℝ) (hy : Irrational y) :
+    ⌊x + y⌋ - ⌊x⌋ = ⌊y⌋ ∨ ⌊x + y⌋ - ⌊x⌋ = ⌈y⌉ := by
+  have hc : ⌈y⌉ = ⌊y⌋ + 1 := by
+    apply Int.ceil_eq_iff.2
+    push_cast
+    exact ⟨by
+      have h := lt_of_le_of_ne (Int.floor_le y) (Ne.symm (hy.ne_int ⌊y⌋))
+      linarith, (Int.lt_floor_add_one y).le⟩
+  have hlo := Int.le_floor_add x y
+  have hhi := Int.le_floor_add_floor x y
+  omega
+
+/-- Complementary counts transfer floor and ceiling by exchanging the two. -/
+private theorem floor_ceil_complement (k : ℤ) (x : ℝ) :
+    ⌊(k : ℝ) - x⌋ = k - ⌈x⌉ ∧ ⌈(k : ℝ) - x⌉ = k - ⌊x⌋ := by
+  constructor
+  · rw [sub_eq_add_neg, Int.floor_intCast_add, Int.floor_neg]
+    ring
+  · rw [sub_eq_add_neg, add_comm, Int.ceil_add_intCast, Int.ceil_neg]
+    ring
+
+/-- The two possible counts of each letter in a factor, as in `prop:balance`. -/
+theorem factorWindow_counts_balanced (i k : Nat) :
+    let b : ℤ := (factorWindow i k).count .b
+    let a : ℤ := (factorWindow i k).count .a
+    (b = ⌊(k : ℝ) * mechanicalSlope⌋ ∨ b = ⌈(k : ℝ) * mechanicalSlope⌉) ∧
+    (a = ⌊(k : ℝ) * φ⁻¹⌋ ∨ a = ⌈(k : ℝ) * φ⁻¹⌉) := by
+  dsimp only
+  by_cases hk : k = 0
+  · subst k
+    simp [factorWindow, letterPrefix]
+  have hb := floor_sub_mem (((i : ℝ) + 1) * mechanicalSlope) ((k : ℝ) * mechanicalSlope)
+    (mechanicalSlope_irrational.natCast_mul hk)
+  rw [← factorWindow_count_b i k] at hb
+  refine ⟨hb, ?_⟩
+  have hs := congrArg (fun n : Nat => (n : ℤ)) (factorWindow_count_complement i k)
+  push_cast at hs
+  have he : (k : ℝ) * φ⁻¹ = ((k : ℤ) : ℝ) - (k : ℝ) * mechanicalSlope := by
+    push_cast
+    have hc : φ⁻¹ = 1 - mechanicalSlope := by linarith [slope_complement]
+    rw [hc]
+    ring
+  rw [he]
+  obtain ⟨hfloor, hceil⟩ := floor_ceil_complement (k : ℤ) ((k : ℝ) * mechanicalSlope)
+  rw [hfloor, hceil]
+  omega
+
+private theorem abs_sub_lt_one_of_floor_or_ceil {z : ℤ} {x : ℝ}
+    (hz : z = ⌊x⌋ ∨ z = ⌈x⌉) : |(z : ℝ) - x| < 1 := by
+  rw [abs_lt]
+  rcases hz with rfl | rfl
+  · constructor <;> linarith [Int.floor_le x, Int.lt_floor_add_one x]
+  · constructor <;> linarith [Int.le_ceil x, Int.ceil_lt_add_one x]
+
+private theorem frequency_error {m : Nat} (hm : 0 < m) {z : ℤ} {slope : ℝ}
+    (hz : z = ⌊(m : ℝ) * slope⌋ ∨ z = ⌈(m : ℝ) * slope⌉) :
+    |(z : ℝ) / m - slope| < 1 / (m : ℝ) := by
+  have hreal : (0 : ℝ) < m := by exact_mod_cast hm
+  have he : (z : ℝ) / m - slope = ((z : ℝ) - (m : ℝ) * slope) / m := by
+    field_simp
+  rw [he, abs_div, abs_of_pos hreal, div_lt_div_iff_of_pos_right hreal]
+  exact abs_sub_lt_one_of_floor_or_ceil hz
+
+theorem factorWindow_density_errors (i k : Nat) (hk : 0 < k) :
+    |((factorWindow i k).count .b : ℝ) / k - mechanicalSlope| < 1 / (k : ℝ) ∧
+    |((factorWindow i k).count .a : ℝ) / k - φ⁻¹| < 1 / (k : ℝ) := by
+  have h := factorWindow_counts_balanced i k
+  exact ⟨by simpa using frequency_error hk h.1, by simpa using frequency_error hk h.2⟩
+
 end Thesis.Fibonacci

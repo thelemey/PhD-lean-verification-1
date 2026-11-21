@@ -47,6 +47,17 @@
       ]
     }
   },
+  "B3": {
+    "status": "verified",
+    "note": "Для каждого окна доказаны формула разности целых частей, два возможных подсчёта каждой буквы и строгие оценки обеих плотностей при положительной длине.",
+    "lean": {
+      "FibonacciMechanical": [
+        "factorWindow_count_b",
+        "factorWindow_counts_balanced",
+        "factorWindow_density_errors"
+      ]
+    }
+  },
   "B5": {
     "status": "verified",
     "note": "Проверены длины и оба подсчёта букв для исходных и обрамлённых конечных слов.",
