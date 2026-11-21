@@ -26,8 +26,8 @@
 | Узел | Статус Lean | Покрытие и ссылки |
 |---|---|---|
 | <a name="node-e2"></a> **E2** Формула (3.4) | Без отметки | — |
-| <a name="node-e3"></a> **E3** Определение 3.1.2 | Без отметки | — |
-| <a name="node-a1"></a> **A1** Лемма 3.1.1 | Без отметки | — |
+| <a name="node-e3"></a> **E3** Определение 3.1.2 | С уточнением | Для исправленной нормировки r = k + p − 1 доказаны существование и единственность рекурсии с единицей на позиции r−1. [`generalizedTerm_spec`](../Thesis/GeneralizedFibonacciSeries.lean#L39), [`generalizedFib_existsUnique`](../Thesis/GeneralizedFibonacciSeries.lean#L47) |
+| <a name="node-a1"></a> **A1** Лемма 3.1.1 | С уточнением | Производящая функция проверена для исправленной последовательности из E3. Умножение рядов проверено по коэффициентам в трёх диапазонах, затем использована обратимость знаменателя; включён случай p = 1. [`generalizedSeries_mul_denominator`](../Thesis/GeneralizedFibonacciSeries.lean#L79), [`generalizedTerm_generating_function`](../Thesis/GeneralizedFibonacciSeries.lean#L139), [`generalizedSeries_p_one`](../Thesis/GeneralizedFibonacciSeries.lean#L146) |
 | <a name="node-e4"></a> **E4** Теорема 3.1.1 | Без отметки | — |
 
 ## 3.4–3.5  Буквы, механическое описание, обрамления

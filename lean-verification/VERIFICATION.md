@@ -62,6 +62,7 @@
 - [PalindromeFactors.lean](Thesis/PalindromeFactors.lean) — классификация и подсчёт факторов при вставке разделителя, верхняя граница числа палиндромных факторов и наследование богатства.
 - [TernaryWord.lean](Thesis/TernaryWord.lean) — рекурсия трёхбуквенного слова и вывод богатства из богатства конечных слов Фибоначчи.
 - [PalindromicMorphisms.lean](Thesis/PalindromicMorphisms.lean) и [PalindromicMorphismRichness.lean](Thesis/PalindromicMorphismRichness.lean) — подсчёт палиндромов при морфизме и сохранение богатства.
+- [GeneralizedFibonacciSeries.lean](Thesis/GeneralizedFibonacciSeries.lean) — исправленные начальные условия и формальная производящая функция по коэффициентам.
 - [FibonacciMechanical.lean](Thesis/FibonacciMechanical.lean) — механическое представление слова Фибоначчи, телескопический подсчёт и сбалансированность каждого фактора, предельные плотности букв и оптимальные границы отклонений в префиксах.
 - [FibonacciBeatty.lean](Thesis/FibonacciBeatty.lean) — позиции обеих букв по Битти, промежутки между единицами и классификация факторов длины три.
 - [FibonacciRichness.lean](Thesis/FibonacciRichness.lean) — богатство конечных слов Фибоначчи.

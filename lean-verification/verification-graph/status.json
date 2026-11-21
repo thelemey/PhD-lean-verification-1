@@ -32,6 +32,16 @@
     "note": "Обе сложности бесконечной конкатенации над Fin b равны b^k.",
     "lean": {"FactorialInfiniteWord": ["infiniteWord_full_complexities"]}
   },
+  "E3": {
+    "status": "qualified",
+    "note": "Для исправленной нормировки r = k + p − 1 доказаны существование и единственность рекурсии с единицей на позиции r−1.",
+    "lean": {"GeneralizedFibonacciSeries": ["generalizedTerm_spec", "generalizedFib_existsUnique"]}
+  },
+  "A1": {
+    "status": "qualified",
+    "note": "Производящая функция проверена для исправленной последовательности из E3. Умножение рядов проверено по коэффициентам в трёх диапазонах, затем использована обратимость знаменателя; включён случай p = 1.",
+    "lean": {"GeneralizedFibonacciSeries": ["generalizedSeries_mul_denominator", "generalizedTerm_generating_function", "generalizedSeries_p_one"]}
+  },
   "B0": {
     "status": "definition",
     "note": "Заданы конечные рекурсивные слова и их бесконечный предел.",
