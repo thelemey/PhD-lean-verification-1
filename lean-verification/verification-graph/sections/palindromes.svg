@@ -81,12 +81,12 @@
 <!-- lemmanovelwordn1 -->
 <g id="node&#45;lemmanovelwordn1" class="node">
 <title>lemmanovelwordn1</title>
-<g id="a_node&#45;lemmanovelwordn1"><a xlink:href="../coverage.md#node-lemmanovelwordn1" xlink:title="Предложение 3.6.4. Длина и три счётчика букв конечного yₙ. Частично. Проверены формула длины и используемый предел отношений Фибоначчи. Для трёх счётчиков yₙ нет полного свидетельства.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M1279,-343C1279,-343 1112,-343 1112,-343 1106,-343 1100,-337 1100,-331 1100,-331 1100,-303 1100,-303 1100,-297 1106,-291 1112,-291 1112,-291 1279,-291 1279,-291 1285,-291 1291,-297 1291,-303 1291,-303 1291,-331 1291,-331 1291,-337 1285,-343 1279,-343"/>
+<g id="a_node&#45;lemmanovelwordn1"><a xlink:href="../coverage.md#node-lemmanovelwordn1" xlink:title="Предложение 3.6.4. Длина и три счётчика букв конечного yₙ. Доказано. Три счётчика и длина доказаны по конкатенации и двум начальным словам, включая F₋₁ = 1. Проверен предел отношения длин.">
+<path fill="white" stroke="#228044" stroke-width="3" d="M1279,-343C1279,-343 1112,-343 1112,-343 1106,-343 1100,-337 1100,-331 1100,-331 1100,-303 1100,-303 1100,-297 1106,-291 1112,-291 1112,-291 1279,-291 1279,-291 1285,-291 1291,-297 1291,-303 1291,-303 1291,-331 1291,-331 1291,-337 1285,-343 1279,-343"/>
 <text text-anchor="start" x="1148.5" y="-330.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Предложение 3.6.4</text>
 <text text-anchor="start" x="1109" y="-320.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Длина и три счётчика букв</text>
 <text text-anchor="start" x="1154" y="-309.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">конечного yₙ</text>
-<text text-anchor="start" x="1173" y="-299.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<text text-anchor="start" x="1173.5" y="-299.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
@@ -99,12 +99,12 @@
 <!-- eq1densityn1 -->
 <g id="node&#45;eq1densityn1" class="node">
 <title>eq1densityn1</title>
-<g id="a_node&#45;eq1densityn1"><a xlink:href="../coverage.md#node-eq1densityn1" xlink:title="Следствие 3.6.5. Три плотности в конечных словах yₙ и их пределы. Без проверки Lean. ">
-<path fill="white" stroke="#c43735" stroke-width="3" d="M1571,-412C1571,-412 1361,-412 1361,-412 1355,-412 1349,-406 1349,-400 1349,-400 1349,-372 1349,-372 1349,-366 1355,-360 1361,-360 1361,-360 1571,-360 1571,-360 1577,-360 1583,-366 1583,-372 1583,-372 1583,-400 1583,-400 1583,-406 1577,-412 1571,-412"/>
+<g id="a_node&#45;eq1densityn1"><a xlink:href="../coverage.md#node-eq1densityn1" xlink:title="Следствие 3.6.5. Три плотности в конечных словах yₙ и их пределы. Доказано. Доказаны все три конечные частоты и пределы частот букв 1 и 2.">
+<path fill="white" stroke="#228044" stroke-width="3" d="M1571,-412C1571,-412 1361,-412 1361,-412 1355,-412 1349,-406 1349,-400 1349,-400 1349,-372 1349,-372 1349,-366 1355,-360 1361,-360 1361,-360 1571,-360 1571,-360 1577,-360 1583,-366 1583,-372 1583,-372 1583,-400 1583,-400 1583,-406 1577,-412 1571,-412"/>
 <text text-anchor="start" x="1427" y="-399.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Следствие 3.6.5</text>
 <text text-anchor="start" x="1358" y="-389.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Три плотности в конечных словах</text>
 <text text-anchor="start" x="1414.5" y="-378.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">yₙ и их пределы</text>
-<text text-anchor="start" x="1422" y="-368.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Без проверки Lean</text>
+<text text-anchor="start" x="1444" y="-368.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
@@ -343,12 +343,12 @@
 <!-- proirrationaln1 -->
 <g id="node&#45;proirrationaln1" class="node">
 <title>proirrationaln1</title>
-<g id="a_node&#45;proirrationaln1"><a xlink:href="../coverage.md#node-proirrationaln1" xlink:title="Предложение 3.6.1. Стандартные слова сходятся к характеристическому. Частично. Доказано совпадение при наклоне 1/φ². Общая формула предела стандартных слов для всех наклонов остаётся без отдельного доказательства.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M456,-989C456,-989 263,-989 263,-989 257,-989 251,-983 251,-977 251,-977 251,-949 251,-949 251,-943 257,-937 263,-937 263,-937 456,-937 456,-937 462,-937 468,-943 468,-949 468,-949 468,-977 468,-977 468,-983 462,-989 456,-989"/>
+<g id="a_node&#45;proirrationaln1"><a xlink:href="../coverage.md#node-proirrationaln1" xlink:title="Предложение 3.6.1. Стандартные слова сходятся к характеристическому. Доказано. Для каждого иррационального наклона доказано совпадение предела стандартных слов с нижним механическим словом при сдвиге, равном наклону. Частные берутся из цепной дроби числа. При первом частном 1 вложенность рассматривается с положительных стадий.">
+<path fill="white" stroke="#228044" stroke-width="3" d="M456,-989C456,-989 263,-989 263,-989 257,-989 251,-983 251,-977 251,-977 251,-949 251,-949 251,-943 257,-937 263,-937 263,-937 456,-937 456,-937 462,-937 468,-943 468,-949 468,-949 468,-977 468,-977 468,-983 462,-989 456,-989"/>
 <text text-anchor="start" x="312.5" y="-976.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Предложение 3.6.1</text>
 <text text-anchor="start" x="260" y="-966.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Стандартные слова сходятся к</text>
 <text text-anchor="start" x="289" y="-955.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">характеристическому</text>
-<text text-anchor="start" x="337" y="-945.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<text text-anchor="start" x="337.5" y="-945.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>

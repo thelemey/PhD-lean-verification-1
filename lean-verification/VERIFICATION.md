@@ -118,6 +118,8 @@
 - [FactorTreeTable.lean](Thesis/FactorTreeTable.lean) — проверка всех четырёх строк таблицы для глубины 8.
 - [SturmianMechanical.lean](Thesis/SturmianMechanical.lean) — механическое определение характеристического слова, его апериодичность и описание правых специальных факторов обращением префиксов.
 - [SturmianRichness.lean](Thesis/SturmianRichness.lean), [SturmianFactorRichness.lean](Thesis/SturmianFactorRichness.lean) и [InfiniteRichness.lean](Thesis/InfiniteRichness.lean) — доказательство цитируемого результата о богатстве факторов штурмовых слов и следствие о вставке разделителя.
+- [SturmianStandardLimit.lean](Thesis/SturmianStandardLimit.lean) — рекурсия стандартных слов по неполным частным и сходимость к характеристическому слову для всех иррациональных наклонов.
+- [TernaryLetterCounts.lean](Thesis/TernaryLetterCounts.lean) — три счётчика букв, отношение длин и предельные частоты тернарного слова.
 - [SturmianFactorTree.lean](Thesis/SturmianFactorTree.lean) — сложность k+1 и теорема о числе вершин и индексах для характеристического слова иррационального наклона.
 - [SturmianFactorTreeExamples.lean](Thesis/SturmianFactorTreeExamples.lean) — частный случай слова Фибоначчи и явные иррациональные наклоны для всех строк таблицы.
 - [SymbolicLatticeMetric.lean](Thesis/SymbolicLatticeMetric.lean) и [SymbolicLatticeTopology.lean](Thesis/SymbolicLatticeTopology.lean) — метрика, оценки на конечных окнах, компактность и липшицевость.

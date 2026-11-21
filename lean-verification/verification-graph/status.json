@@ -420,13 +420,19 @@
     }
   },
   "proirrationaln1": {
-    "status": "partial",
+    "status": "verified",
     "lean": {
       "FibonacciMechanical": [
         "infiniteWord_eq_mechanicalWord"
+      ],
+      "SturmianStandardLimit": [
+        "continuedWord_zero",
+        "continuedWord_one",
+        "continuedWord_step",
+        "continuedWord_tendsto_characteristic"
       ]
     },
-    "note": "Доказано совпадение при наклоне 1/φ². Общая формула предела стандартных слов для всех наклонов остаётся без отдельного доказательства."
+    "note": "Для каждого иррационального наклона доказано совпадение предела стандартных слов с нижним механическим словом при сдвиге, равном наклону. Частные берутся из цепной дроби числа. При первом частном 1 вложенность рассматривается с положительных стадий."
   },
   "ThmplinDENSN1": {
     "status": "verified",
@@ -478,19 +484,31 @@
     }
   },
   "lemmanovelwordn1": {
-    "status": "partial",
+    "status": "verified",
     "lean": {
       "TernaryWord": [
         "length_word"
       ],
       "FibonacciTableLimit": [
         "golden_fibonacci_ratio_limits"
+      ],
+      "TernaryLetterCounts": [
+        "precedingFib",
+        "letter_counts",
+        "length_ratio_tendsto"
       ]
     },
-    "note": "Проверены формула длины и используемый предел отношений Фибоначчи. Для трёх счётчиков yₙ нет полного свидетельства."
+    "note": "Три счётчика и длина доказаны по конкатенации и двум начальным словам, включая F₋₁ = 1. Проверен предел отношения длин."
   },
   "eq1densityn1": {
-    "status": "unmarked"
+    "status": "verified",
+    "lean": {
+      "TernaryLetterCounts": [
+        "frequency_formulas",
+        "frequency_limits"
+      ]
+    },
+    "note": "Доказаны все три конечные частоты и пределы частот букв 1 и 2."
   },
   "lem:Ystructure": {
     "status": "verified",
