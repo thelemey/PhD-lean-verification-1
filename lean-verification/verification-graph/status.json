@@ -70,6 +70,20 @@
       ]
     }
   },
+  "B4": {
+    "status": "verified",
+    "note": "Обе последовательности позиций получены из механической формулы и теоремы Битти. Из промежутков 2 и 3 между единицами выведены запрещённые блоки и точный список факторов длины три.",
+    "lean": {
+      "FibonacciBeatty": [
+        "infiniteWord_b_iff_beatty",
+        "infiniteWord_a_iff_beatty",
+        "golden_beatty_gaps",
+        "infiniteWord_no_bb",
+        "infiniteWord_has_b_in_three",
+        "length_three_factors"
+      ]
+    }
+  },
   "B5": {
     "status": "verified",
     "note": "Проверены длины и оба подсчёта букв для исходных и обрамлённых конечных слов.",

@@ -13,7 +13,7 @@ namespace Thesis.Fibonacci
 
 noncomputable def mechanicalSlope : ℝ := 1 / φ ^ 2
 
-private theorem slope_complement : mechanicalSlope + φ⁻¹ = 1 := by
+theorem mechanicalSlope_add_inv_gold : mechanicalSlope + φ⁻¹ = 1 := by
   rw [mechanicalSlope, one_div, ← inv_pow,
     golden_inverse_square gold_add_goldConj gold_mul_goldConj, inv_gold]
   linarith [gold_add_goldConj]
@@ -22,10 +22,10 @@ theorem mechanicalSlope_pos : 0 < mechanicalSlope := by unfold mechanicalSlope; 
 
 theorem mechanicalSlope_lt_one : mechanicalSlope < 1 := by
   have h := inv_pos.2 gold_pos
-  linarith [slope_complement]
+  linarith [mechanicalSlope_add_inv_gold]
 
 theorem mechanicalSlope_irrational : Irrational mechanicalSlope := by
-  rw [show mechanicalSlope = 1 - φ⁻¹ by linarith [slope_complement]]
+  rw [show mechanicalSlope = 1 - φ⁻¹ by linarith [mechanicalSlope_add_inv_gold]]
   simpa using gold_irrational.inv.ratCast_sub 1
 
 /-- The characteristic mechanical word for the golden slope,
@@ -83,7 +83,7 @@ private theorem counts_complement (n : Nat) :
   have hu : y < (complementCount n : ℝ) + 1 := Nat.lt_floor_add_one _
   have he : ((n : ℝ) + 1) * mechanicalSlope + y = (n : ℝ) + 1 := by
     dsimp [y]
-    rw [← mul_add, slope_complement, mul_one]
+    rw [← mul_add, mechanicalSlope_add_inv_gold, mul_one]
   apply Int.floor_eq_iff.2
   push_cast
   exact ⟨by linarith, by linarith⟩
@@ -125,7 +125,7 @@ private theorem count_at_imageOffset (n j : Nat) (hj : j ≤ 1) :
     push_cast
     dsimp only [r, y]
     linear_combination ((n : ℝ) + 1) * hscale -
-      (((n : ℝ) + 1) * φ⁻¹ - complementCount n) * slope_complement
+      (((n : ℝ) + 1) * φ⁻¹ - complementCount n) * mechanicalSlope_add_inv_gold
   unfold mechanicalCount
   rw [he]
   apply Int.floor_eq_iff.2
@@ -134,7 +134,7 @@ private theorem count_at_imageOffset (n j : Nat) (hj : j ≤ 1) :
   have hu := mul_le_mul_of_nonneg_right hjR hα.le
   have hr := mul_nonneg hr₀ hβ.le
   have hjα := mul_nonneg (Nat.cast_nonneg j) hα.le
-  exact ⟨by linarith, by linarith [slope_complement]⟩
+  exact ⟨by linarith, by linarith [mechanicalSlope_add_inv_gold]⟩
 
 private theorem image_initial_letter (n : Nat) : mechanicalWord (imageOffset n) = .a := by
   have h := mechanicalCount_step (imageOffset n)
@@ -293,7 +293,7 @@ theorem factorWindow_counts_balanced (i k : Nat) :
   push_cast at hs
   have he : (k : ℝ) * φ⁻¹ = ((k : ℤ) : ℝ) - (k : ℝ) * mechanicalSlope := by
     push_cast
-    have hc : φ⁻¹ = 1 - mechanicalSlope := by linarith [slope_complement]
+    have hc : φ⁻¹ = 1 - mechanicalSlope := by linarith [mechanicalSlope_add_inv_gold]
     rw [hc]
     ring
   rw [he]
@@ -361,12 +361,12 @@ theorem prefix_discrepancy (n : Nat) :
   have hlt := Int.fract_lt_one (((n : ℝ) + 1) * mechanicalSlope)
   have hb : -φ⁻¹ < prefixDeviation n ∧ prefixDeviation n < mechanicalSlope := by
     rw [prefixDeviation_eq_fract]
-    constructor <;> linarith [slope_complement]
+    constructor <;> linarith [mechanicalSlope_add_inv_gold]
   refine ⟨hb, ?_⟩
   have hs := congrArg (fun m : Nat => (m : ℝ)) (factorWindow_count_complement 0 n)
   push_cast at hs
   have he : ((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹ = -prefixDeviation n := by
-    have hprod := congrArg (fun x : ℝ => (n : ℝ) * x) slope_complement
+    have hprod := congrArg (fun x : ℝ => (n : ℝ) * x) mechanicalSlope_add_inv_gold
     unfold prefixDeviation
     linarith only [hs, hprod]
   rw [he]
@@ -406,7 +406,7 @@ theorem prefix_discrepancy_sharp :
     · intro t ht
       have hbound : max 0 (mechanicalSlope - t) < 1 := by
         apply max_lt zero_lt_one
-        linarith [slope_complement]
+        linarith [mechanicalSlope_add_inv_gold]
       obtain ⟨n, hn⟩ := fract_succ_mul_hits mechanicalSlope_irrational
         (le_max_left _ _) le_rfl hbound
       refine ⟨prefixDeviation n, mem_range_self _, ?_⟩

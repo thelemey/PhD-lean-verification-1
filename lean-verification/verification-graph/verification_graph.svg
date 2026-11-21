@@ -625,13 +625,13 @@
 <!-- B4 -->
 <g id="node&#45;B4" class="node">
 <title>B4</title>
-<g id="a_node&#45;B4"><a xlink:href="coverage.md#node-b4" xlink:title="Lean: Без отметки. | Леммы 3.5.1 → 3.5.2 | с. 66–67">
+<g id="a_node&#45;B4"><a xlink:href="coverage.md#node-b4" xlink:title="Lean: Доказано. Обе последовательности позиций получены из механической формулы и теоремы Битти. Из промежутков 2 и 3 между единицами выведены запрещённые блоки и точный список факторов длины три. | Леммы 3.5.1 → 3.5.2 | с. 66–67">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M575,-1096.01C575,-1096.01 413,-1096.01 413,-1096.01 407,-1096.01 401,-1090.01 401,-1084.01 401,-1084.01 401,-1034.01 401,-1034.01 401,-1028.01 407,-1022.01 413,-1022.01 413,-1022.01 575,-1022.01 575,-1022.01 581,-1022.01 587,-1028.01 587,-1034.01 587,-1034.01 587,-1084.01 587,-1084.01 587,-1090.01 581,-1096.01 575,-1096.01"/>
 <text text-anchor="start" x="421" y="-1080.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Леммы 3.5.1 → 3.5.2</text>
 <text text-anchor="start" x="444.5" y="-1068.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Позиции Битти;</text>
 <text text-anchor="start" x="411" y="-1056.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">запрет факторов 11 и 000</text>
 <text text-anchor="start" x="468.5" y="-1044.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 66–67</text>
-<text text-anchor="start" x="430.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="439.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

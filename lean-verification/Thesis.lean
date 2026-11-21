@@ -92,6 +92,7 @@ import Thesis.MBonacciClosureDensity
 import Thesis.MBonacciPalindromicDensity
 import Thesis.FibonacciCentralPrefixes
 import Thesis.FibonacciMechanical
+import Thesis.FibonacciBeatty
 import Thesis.FibonacciPalindromeDensity
 import Thesis.PalindromePrefixBlocks
 import Thesis.SturmianPrefixRatios

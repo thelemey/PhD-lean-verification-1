@@ -61,6 +61,7 @@
 - [TernaryWord.lean](Thesis/TernaryWord.lean) — рекурсия трёхбуквенного слова и вывод богатства из богатства конечных слов Фибоначчи.
 - [PalindromicMorphisms.lean](Thesis/PalindromicMorphisms.lean) и [PalindromicMorphismRichness.lean](Thesis/PalindromicMorphismRichness.lean) — подсчёт палиндромов при морфизме и сохранение богатства.
 - [FibonacciMechanical.lean](Thesis/FibonacciMechanical.lean) — механическое представление слова Фибоначчи, телескопический подсчёт и сбалансированность каждого фактора, предельные плотности букв и оптимальные границы отклонений в префиксах.
+- [FibonacciBeatty.lean](Thesis/FibonacciBeatty.lean) — позиции обеих букв по Битти, промежутки между единицами и классификация факторов длины три.
 - [FibonacciRichness.lean](Thesis/FibonacciRichness.lean) — богатство конечных слов Фибоначчи.
 - [FibonacciCompletePrefixes.lean](Thesis/FibonacciCompletePrefixes.lean) — отождествление рекурсивного слова Фибоначчи с бинарным стандартным эпиштурмовым словом и полный список палиндромных префиксов.
 - [FibonacciPalindromeDensity.lean](Thesis/FibonacciPalindromeDensity.lean) — плотность слова Фибоначчи из полного списка и перенос длин и плотности на трёхбуквенное слово.
