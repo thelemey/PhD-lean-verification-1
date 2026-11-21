@@ -34,6 +34,7 @@ import Thesis.PolynomialRecurrence
 import Thesis.MBonacciCharacteristic
 import Thesis.MBonacciPrefixLimit
 import Thesis.PalPrefixRatio
+import Thesis.PalindromicDensityReal
 import Thesis.MBonacciWordDensity
 import Thesis.MBonacciValues
 import Thesis.SturmianDiophantine
