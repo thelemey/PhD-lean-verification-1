@@ -157,4 +157,28 @@ theorem diagonal_log_growth_stirling :
     Tendsto (fun n : ℕ => Real.log (word n n).length / (2 * (n : ℝ))) atTop (𝓝 (Real.log 2)) :=
   diagonal_log_growth stirlingRatio_tendsto
 
+/-- The finite part of newprove in the source's binomial-coefficient
+and real-density notation, with both indices starting at one. -/
+theorem binomial_counts_and_densities {u v : Nat} (hu : 0 < u) (hv : 0 < v) :
+    (word u v).length = (u + v).choose u ∧
+      (word u v).count .a = (u + v - 1).choose u ∧
+      (word u v).count .b = (u + v - 1).choose v ∧
+      ((word u v).count .a : ℝ) / (word u v).length = (v : ℝ) / (u + v) ∧
+      ((word u v).count .b : ℝ) / (word u v).length = (u : ℝ) / (u + v) := by
+  have hlen : (word u v).length = (u + v).choose u := by
+    rw [length_word u v (by omega), choose_eq_natChoose]
+  have ha : (word u v).count .a = (u + v - 1).choose u := by
+    obtain ⟨v', rfl⟩ := Nat.exists_eq_succ_of_ne_zero hv.ne'
+    rw [count_a, choose_eq_natChoose, show u + (v' + 1) - 1 = u + v' by omega]
+  have hb : (word u v).count .b = (u + v - 1).choose v := by
+    obtain ⟨u', rfl⟩ := Nat.exists_eq_succ_of_ne_zero hu.ne'
+    rw [count_b, choose_eq_natChoose, show u' + 1 + v - 1 = u' + v by omega]
+  have hpos : 0 < (word u v).length := hlen ▸ Nat.choose_pos (Nat.le_add_right _ _)
+  have hlenR : (0 : ℝ) < (word u v).length := by exact_mod_cast hpos
+  have huv : (0 : ℝ) < (u : ℝ) + v := by positivity
+  refine ⟨hlen, ha, hb, (div_eq_div_iff hlenR.ne' huv.ne').2 ?_,
+    (div_eq_div_iff hlenR.ne' huv.ne').2 ?_⟩
+  · exact_mod_cast (densities u v).1
+  · exact_mod_cast (densities u v).2
+
 end Thesis.LatticeWord

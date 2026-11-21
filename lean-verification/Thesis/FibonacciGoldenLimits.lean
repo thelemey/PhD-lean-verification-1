@@ -40,6 +40,26 @@ theorem even_shift_limit (r : Nat) (hr : 0 < r) :
     one_lt_gold r hr ε hε
   exact ⟨K, fun N hN => by simpa only [Real.dist_eq] using hK N hN⟩
 
+/-- The exact two densities in thm1Asymptotic, with the actual roots φ
+and ψ and the normalization of F used in the source. -/
+theorem golden_framed_densities_exact (m : Nat) (hm : 0 < m) :
+    let densityA := ((framed m).count .a : ℝ) / (framed m).length
+    let densityB := ((framed m).count .b : ℝ) / (framed m).length
+    densityA = ((fib (m + 1) : ℝ) + 1) / ((fib (m + 2) : ℝ) + 2) ∧
+      densityA = 1 / φ - (φ⁻¹ ^ 2 + ψ ^ (m + 1)) / (φ * ((fib (m + 2) : ℝ) + 2)) ∧
+      densityB = 1 - densityA ∧ densityA < 1 / φ := by
+  dsimp only
+  refine ⟨?_, ?_, framed_density_complement m,
+    framed_density_lt gold_add_goldConj gold_mul_goldConj one_lt_gold hm⟩
+  · rw [framed_count_a, framed_length]
+    push_cast
+    rfl
+  · have he := congrArg (fun x : ℝ => x + 1 / φ)
+      (framed_density_error_real gold_add_goldConj gold_mul_goldConj one_lt_gold m)
+    dsimp only at he
+    rw [sub_add_cancel] at he
+    rw [he, neg_div, add_comm, sub_eq_add_neg]
+
 /-- The infinite sum in thm:millin, indexed from k = 1 in the source. -/
 theorem millin_hasSum (m : Nat) (hm : 0 < m) :
     HasSum (fun i : Nat => (1 : ℝ) / fib (m * 2 ^ (i + 1)))
