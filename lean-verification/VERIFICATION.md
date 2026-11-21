@@ -81,7 +81,7 @@
 - [RecurrenceStability.lean](Thesis/RecurrenceStability.lean) — сходимость при разностном уравнении с корнем модуля меньше единицы.
 - [PolynomialRecurrence.lean](Thesis/PolynomialRecurrence.lean) — переход от факторизации характеристического многочлена к коэффициенту доминирующей экспоненты.
 - [MBonacciPrefixLimit.lean](Thesis/MBonacciPrefixLimit.lean) — рост разностей, положительный доминирующий коэффициент и предел отношений длин.
-- [PalindromicDensityReal.lean](Thesis/PalindromicDensityReal.lean) — вещественная плотность как обратная к верхнему пределу отношений длин, совместимость с рациональными сечениями, инвариантность вставки.
+- [PalindromicDensityReal.lean](Thesis/PalindromicDensityReal.lean) — вещественная плотность как обратная к верхнему пределу отношений длин для любой возрастающей нумерации палиндромных префиксов. Доказаны принадлежность отрезку [0,1], совместимость с рациональными сечениями и инвариантность вставки.
 - [PalPrefixRatio.lean](Thesis/PalPrefixRatio.lean) — строгое рациональное сечение плотности через предел или верхний предел отношений длин.
 - [MBonacciWordDensity.lean](Thesis/MBonacciWordDensity.lean) — вывод плотности 1/βₘ из перечисления префиксов и цитируемой рекурсии.
 - [PalindromicClosure.lean](Thesis/PalindromicClosure.lean) — кратчайшее палиндромное замыкание и его длина через наибольший палиндромный суффикс.

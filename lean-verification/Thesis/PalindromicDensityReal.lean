@@ -82,6 +82,17 @@ theorem palindromicDensity_nonneg (w : Nat → α) : 0 ≤ palindromicDensity w 
   · exact ENNReal.toReal_nonneg
   · rfl
 
+theorem palindromicDensity_le_one (w : Nat → α) : palindromicDensity w ≤ 1 := by
+  classical
+  by_cases h : {n | PalPrefix w n}.Infinite
+  · have hL := Nat.nth_strictMono h
+    simp only [palindromicDensity, if_pos h, reciprocal_limsup_eq_liminf hL]
+    exact liminf_le_of_frequently_le
+      (Eventually.of_forall fun i => (inverseRatios_bounds hL i).2).frequently
+      (isBoundedUnder_of_eventually_ge (Eventually.of_forall fun i => (inverseRatios_bounds hL i).1))
+  · rw [palindromicDensity_of_finite (not_infinite.1 h)]
+    exact zero_le_one
+
 private theorem exists_nat_ratio_between {x y : ℝ} (hx : 0 ≤ x) (hxy : x < y) :
     ∃ p q : Nat, 0 < q ∧ x < (p : ℝ) / q ∧ (p : ℝ) / q < y := by
   obtain ⟨s, hxs, hsy⟩ := exists_rat_btwn hxy
@@ -104,6 +115,16 @@ theorem palindromicDensity_eq_of_cut {w : Nat → α} {d : ℝ} (hd : 0 ≤ d)
   · by_contra! hlt
     obtain ⟨p, q, hq, hlo, hhi⟩ := exists_nat_ratio_between (palindromicDensity_nonneg w) hlt
     exact (not_lt_of_ge hlo.le) ((belowPalDensity_iff_lt_palindromicDensity w hq).1 ((h p q hq).2 hhi))
+
+/-- Any increasing enumeration of the palindromic prefix lengths can
+be used to evaluate the density defined by the canonical enumeration. -/
+theorem palindromicDensity_eq_reciprocal_limsup {w : Nat → α} {L : Nat → Nat}
+    (hL : StrictMono L) (henum : ∀ k, PalPrefix w k ↔ ∃ i, L i = k) :
+    palindromicDensity w =
+      ((limsup (fun i => (L (i + 1) : ℝ≥0∞) / L i) atTop)⁻¹).toReal := by
+  rw [reciprocal_limsup_eq_liminf hL]
+  exact palindromicDensity_eq_of_cut (liminf_inverseRatios_nonneg hL)
+    fun _ _ hq => belowPalDensity_iff_of_ratio_liminf hL henum hq
 
 /-- Insertion preserves the real-valued density, including the finite case. -/
 theorem palindromicDensity_insert (w : Nat → α) :
