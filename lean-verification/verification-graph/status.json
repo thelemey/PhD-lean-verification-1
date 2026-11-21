@@ -1013,8 +1013,13 @@
     }
   },
   "tab:descriptive": {
-    "status": "unmarked",
-    "note": "Опубликованные средние и стандартные отклонения служат входными данными расчёта."
+    "status": "partial",
+    "note": "Для 12-балльного теста из округления средних и стандартных отклонений доказаны точные суммы, суммы квадратов до и после обучения и по два кандидата для сумм квадратов приростов. Исходные наблюдения не опубликованы.",
+    "lean": {
+      "StudyIntegerMoments": [
+        "thinking_integer_moments"
+      ]
+    }
   },
   "study-welch": {
     "status": "partial",
@@ -1047,9 +1052,18 @@
       "StudySignificance": [
         "ancovaSquaredT_eq_fitted_statistic",
         "study_summary_from_paired_scores"
+      ],
+      "StudyCriticalValues": [
+        "thinking_ancova_probability_and_interval",
+        "numbers_ancova_probability_of_interval"
+      ],
+      "ThinkingANCOVA": [
+        "thinking_pooled_moments",
+        "thinking_exact_ancova",
+        "thinking_adjusted_table_roundings"
       ]
     },
-    "note": "Статистика восстановлена из парных приростов и отождествлена со статистикой метода наименьших квадратов. Обе скорректированные вероятности больше 0,05. Точные напечатанные значения p и диагностика остатков отдельно не проверены."
+    "note": "Для целочисленного теста на мышление из описательной таблицы и двух парных t восстановлены вся строка ANCOVA, включая p = 0,102 и обе границы 95% ДИ. Для шкалы 0–100 p = 0,109 следует из округления контраста и ДИ той же строки. Диагностика модели и исходные измерения остаются открытыми."
   },
   "study-summary": {
     "status": "qualified",
@@ -1066,6 +1080,10 @@
       "StudySignificance": [
         "ancovaSquaredT_eq_fitted_statistic",
         "study_summary_from_paired_scores"
+      ],
+      "StudyCriticalValues": [
+        "thinking_ancova_probability_and_interval",
+        "numbers_ancova_probability_of_interval"
       ]
     },
     "note": "Для любых 42 пар наблюдений в каждой группе, согласующихся со сводками, доказаны оба исходных преимущества B, нескорректированное итоговое различие только по числам, близость приростов и оба решения ANCOVA при уровне 0,05. Сами измерения и эмпирические допущения модели по опубликованным таблицам не проверяются."
