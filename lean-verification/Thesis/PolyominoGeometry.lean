@@ -192,6 +192,33 @@ private theorem centers_straddling_cut {cells : List Cell} {cuts : List Line} {p
   obtain ⟨z, hz, he⟩ := hC.intermediate_value hp hq hcont.continuousOn hc
   exact (hsub hz).2 a c hcut he
 
+/-- Two cells sharing a side remain in the same geometric component
+exactly when the line of that side is left uncut. -/
+theorem same_geometricPart_iff_uncut_side {cells : List Cell} {cuts : List Line}
+    {p q : CellIn cells} {l : Line} (hside : SharedSide p.val q.val l) :
+    cellCenter q.val ∈ connectedComponentIn (remaining cells cuts) (cellCenter p.val) ↔
+      l ∉ cuts := by
+  have forward {u v : CellIn cells} (h : PositiveSide u.val v.val l)
+      (hv : cellCenter v.val ∈ connectedComponentIn (remaining cells cuts) (cellCenter u.val)) :
+      l ∉ cuts := by
+    intro hcut
+    obtain ⟨a, rfl, hcoord⟩ := positiveSide_axis h
+    have hl : axisCoord u.val a < axisCoord u.val a + 1 := by omega
+    have hh : axisCoord u.val a + 1 ≤ axisCoord v.val a := by
+      simp only [hcoord, if_true, le_refl]
+    exact centers_straddling_cut isPreconnected_connectedComponentIn
+      (connectedComponentIn_subset _ _)
+      (mem_connectedComponentIn (cellCenter_mem_remaining cuts u)) hv hcut hl hh
+  have reverse {u v : CellIn cells}
+      (hv : cellCenter v.val ∈ connectedComponentIn (remaining cells cuts) (cellCenter u.val)) :
+      cellCenter u.val ∈ connectedComponentIn (remaining cells cuts) (cellCenter v.val) := by
+    rw [← connectedComponentIn_eq hv]
+    exact mem_connectedComponentIn (cellCenter_mem_remaining cuts u)
+  rcases hside with h | h
+  · exact ⟨forward h, same_geometricPart_of_uncut_positiveSide h⟩
+  · exact ⟨fun hv => forward h (reverse hv),
+      fun hcut => reverse (same_geometricPart_of_uncut_positiveSide h hcut)⟩
+
 /-- The source's criterion for full cuts, on the actual union of squares.
 For sufficiency, a side path in the original polyomino supplies an
 internal cut between any two distinct cell centers. -/
@@ -203,16 +230,18 @@ theorem geometricallySeparated_iff {cells : List Cell} (hconn : SideConnected ce
     · intro hq
       by_contra hc
       let q : CellIn cells := ⟨(p.1 + 1, p.2), hq⟩
-      have hsame := same_geometricPart_of_uncut_positiveSide
-        (p := ⟨p, hp⟩) (q := q) (Or.inl ⟨rfl, rfl⟩) hc
+      have hside : SharedSide p q.val (.vertical (p.1 + 1)) := Or.inl (Or.inl ⟨rfl, rfl⟩)
+      have hsame := (same_geometricPart_iff_uncut_side
+        (p := ⟨p, hp⟩) (q := q) hside).2 hc
       have he := congrArg (fun x : CellIn cells => x.val.1) (h _ _ hsame)
       change p.1 = p.1 + 1 at he
       omega
     · intro hq
       by_contra hc
       let q : CellIn cells := ⟨(p.1, p.2 + 1), hq⟩
-      have hsame := same_geometricPart_of_uncut_positiveSide
-        (p := ⟨p, hp⟩) (q := q) (Or.inr ⟨rfl, rfl⟩) hc
+      have hside : SharedSide p q.val (.horizontal (p.2 + 1)) := Or.inl (Or.inr ⟨rfl, rfl⟩)
+      have hsame := (same_geometricPart_iff_uncut_side
+        (p := ⟨p, hp⟩) (q := q) hside).2 hc
       have he := congrArg (fun x : CellIn cells => x.val.2) (h _ _ hsame)
       change p.2 = p.2 + 1 at he
       omega
