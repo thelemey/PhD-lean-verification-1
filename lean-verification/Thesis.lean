@@ -120,3 +120,4 @@ import Thesis.NumbersANCOVA
 import Thesis.StudySummaryPrecision
 import Thesis.ThinkingGainComparison
 import Thesis.PolyominoInteriorConnectivity
+import Thesis.StudyDesign
