@@ -20,6 +20,17 @@
 | Полная факторная и арифметическая сложность конкатенации факториалов | Новизна 6, защита 4, §2.2 | F1–F5 | Доказаны `lem:logfact`, `lem:lead`, `lem:trail` и обе формулы сложности `mainthm01`. Доказательство равномерного распределения использует корреляции, сравнение суммы с интегралом, оба предельных перехода и формализованный критерий Вейля |
 | Квазиэксперимент, нескорректированные и скорректированные результаты | Новизна 7, §4.3 | — | Из опубликованных средних и стандартных отклонений, включая стандартные отклонения парных приростов, восстановлены интервальные оценки для критериев Уэлча и ANCOVA с общим наклоном. При допуске исходного округления обе скорректированные статистики удовлетворяют $\lvert t\rvert<1{,}8$. Для воспроизведения точных p-значений, ранговых тестов и диагностики допущений модели нужны исходные парные оценки |
 
+## Положения, выносимые на защиту
+
+| Положение в TeX | Итоговые теоремы Lean |
+|---|---|
+| 1. Скрученные повторы и динамика | [`twisted_critical_exponent`](Thesis/ThueMorseClassification.lean), [`binary_twist_iff`](Thesis/ThueMorse.lean), [`finiteWord_dynamics`](Thesis/ThueMorseDynamics.lean) |
+| 2. Богатство и палиндромная плотность | [`rich_factor_infiniteWord`](Thesis/TernaryRichness.lean), [`palindromicDensity_insert`](Thesis/PalindromicDensityReal.lean), [`characteristic_palindromicDensity_gt_half_iff`, границы, спектральный разрыв и постоянный хвост](Thesis/SturmianPalindromicDensity.lean), [`standardWord_palindromicDensity`](Thesis/MBonacciPalindromicDensity.lean) |
+| 3. Индексы дерева факторов | [`characteristic_factor_tree_indices`](Thesis/SturmianFactorTree.lean) |
+| 4. Факторная и арифметическая сложность слова факториалов | [`full_complexities`](Thesis/FactorialWeyl.lean) |
+
+Команда `#print axioms` для этих теорем выводит только стандартные аксиомы Lean `propext`, `Quot.sound` и, где используется классическая логика, `Classical.choice`.
+
 ## Файлы Lean
 
 - [ThueMorse.lean](Thesis/ThueMorse.lean) — неподвижная точка, периодический случай и бинарный критерий.
