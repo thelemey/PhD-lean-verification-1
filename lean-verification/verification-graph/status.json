@@ -1,0 +1,217 @@
+{
+  "E1": {
+    "status": "qualified",
+    "note": "Для любого основания b > 1 доказано равномерное распределение дробных частей log_b(n!), то есть исправленная формулировка.",
+    "lean": {"FactorialWeyl": ["factorial_logs_equidistributed"]}
+  },
+  "F1": {
+    "status": "verified",
+    "note": "Доказаны равномерное распределение и попадания в любой полуинтервал положительной длины за любой заданной границей.",
+    "lean": {"FactorialWeyl": ["factorial_logs_equidistributed", "factorial_logs_hit_interval"]}
+  },
+  "F2": {
+    "status": "verified",
+    "note": "Любой допустимый префикс с ненулевой первой цифрой появляется в сколь угодно поздних факториалах.",
+    "lean": {"FactorialWeyl": ["factorial_leading_prefixes"]}
+  },
+  "F3": {
+    "status": "verified",
+    "note": "Проверены точная формула через показатели простых, монотонность и стремление числа концевых нулей к бесконечности.",
+    "lean": {
+      "FactorialWord": ["factorial_trailingZeroCount_eq_min", "factorial_trailingZeroCount_monotone"],
+      "FactorialInfiniteWord": ["factorial_trailingZeroCount_tendsto_atTop"]
+    }
+  },
+  "F4": {
+    "status": "partial",
+    "note": "Для произвольного слова доказано включение языка факторов в язык арифметических факторов. Общая цепочка неравенств для мощностей в отдельную теорему не собрана.",
+    "lean": {"FactorialInfiniteWord": ["factorLanguage_subset_arithmeticLanguage"]}
+  },
+  "F5": {
+    "status": "verified",
+    "note": "Обе сложности бесконечной конкатенации над Fin b равны b^k.",
+    "lean": {"FactorialInfiniteWord": ["infiniteWord_full_complexities"]}
+  },
+  "B0": {
+    "status": "definition",
+    "note": "Заданы конечные рекурсивные слова и их бесконечный предел.",
+    "lean": {"Fibonacci": ["word"], "FibonacciCentralPrefixes": ["infiniteWord"]}
+  },
+  "B5": {
+    "status": "verified",
+    "note": "Проверены длины и оба подсчёта букв для исходных и обрамлённых конечных слов.",
+    "lean": {"Fibonacci": ["word_length", "word_count_a", "word_count_b", "framed_length", "framed_count_a", "framed_count_b"]}
+  },
+  "B6": {
+    "status": "partial",
+    "note": "Проверены тождества Бине и оценка отношений, используемая в дальнейших доказательствах. Весь набор пределов из узла отдельно не отмечен.",
+    "lean": {"FibonacciBinet": ["binet", "fib_next_sub_phi_mul", "previousRatio_binet"]}
+  },
+  "B7": {
+    "status": "verified",
+    "note": "Проверены точные плотности, знак погрешности, пределы и обе скорости из thm1Asymptotic.",
+    "lean": {"FibonacciGoldenLimits": ["golden_framed_densities_exact", "golden_framed_density_limits", "golden_framed_density_rates"]}
+  },
+  "C1": {
+    "status": "verified",
+    "note": "Центральные слова палиндромны и дают указанные длины префиксов. Полнота списка относится к C12.",
+    "lean": {"FibonacciCentralPrefixes": ["central_reverse", "central_length", "central_palPrefix"]}
+  },
+  "C2": {
+    "status": "unmarked",
+    "note": "Узел относится к общей теореме Фишлера для произвольного непериодического слова. В C11 проверена оценка для характеристических штурмовых слов."
+  },
+  "C3": {
+    "status": "partial",
+    "note": "Есть точное значение 1/φ для стандартного двухбуквенного эпиштурмова слова и явные центральные префиксы рекурсивного слова Фибоначчи. Узел о плотности рекурсивного слова по доказательству TeX целиком не отмечен.",
+    "lean": {
+      "MBonacciPalindromicDensity": ["standardWord_palindromicDensity_fibonacci"],
+      "FibonacciCentralPrefixes": ["central_palPrefix"]
+    }
+  },
+  "C4": {
+    "status": "partial",
+    "note": "Проверены кодирование конечных слов и вложенность с n ≥ 1. Равенство бесконечных слов целиком в этом узле не отмечено.",
+    "lean": {"TernaryWord": ["word_succ_eq_interleave", "word_prefix_succ"], "TernaryRichness": ["infiniteWord"]}
+  },
+  "C5": {
+    "status": "verified",
+    "note": "Получено точное соответствие длин m ↦ 2m+1 и исключены положительные чётные длины.",
+    "lean": {"Palindrome": ["palPrefix_insert_iff", "not_palPrefix_insert_even"]}
+  },
+  "C6": {
+    "status": "verified",
+    "note": "Доказано равенство вещественных палиндромных плотностей после вставки, включая случай конечного числа префиксов.",
+    "lean": {"PalindromicDensityReal": ["palindromicDensity_insert"]}
+  },
+  "C7": {
+    "status": "partial",
+    "note": "Проверено преобразование длин при вставке. Полный список длин 2Fₖ−3 и численное значение плотности именно для трёхбуквенного слова остаются без полной отметки.",
+    "lean": {"Palindrome": ["palPrefix_insert_iff"], "PalindromicDensityReal": ["palindromicDensity_insert"]}
+  },
+  "C8": {
+    "status": "verified",
+    "note": "Проверено соответствие палиндромных факторов и формула 2P+1 для числа палиндромов при вставке с двумя граничными разделителями.",
+    "lean": {"PalindromeFactors": ["palindromicFactor_framed_iff", "framed_factor_count"]}
+  },
+  "C9": {
+    "status": "verified",
+    "note": "Доказано богатство каждого конечного yₙ и всех факторов бесконечного y.",
+    "lean": {"TernaryRichness": ["rich_word", "palindromic_factor_count", "rich_factor_infiniteWord"]}
+  },
+  "C10": {
+    "status": "partial",
+    "note": "Формула Фишлера доказана для характеристического слова. Критерий длин через блоки континуантов сформулирован начиная с явного порога, поэтому узел о полном списке длин отмечен частично.",
+    "lean": {
+      "SturmianPalindromicDensity": ["characteristic_palindromicDensity"],
+      "SturmianSemiconvergentRecords": ["characteristic_palPrefix_iff_continuant_block"]
+    }
+  },
+  "C11": {
+    "status": "verified",
+    "note": "Проверены дихотомия, обе границы, критерий максимума, постоянный хвост, эффект вставки и теоретико-мерные следствия.",
+    "lean": {
+      "SturmianPalindromicDensity": ["characteristic_palindromicDensity_bounded", "characteristic_palindromicDensity_unbounded", "characteristic_palindromicDensity_gt_half_iff", "characteristic_palindromicDensity_bounds", "characteristic_palindromicDensity_ae_eq_half", "characteristic_palindromicDensity_exceptional_eq", "characteristic_palindromicDensity_exceptional_measure_and_dimension", "characteristic_palindromicDensity_spectrum", "characteristic_palindromicDensity_constant_tail"],
+      "SturmianConstantTail": ["density_ones_tail", "density_twos_tail", "constant_tail_values_tendsto_half", "constant_tail_values_strictAnti"],
+      "PalindromicDensityReal": ["palindromicDensity_insert"]
+    }
+  },
+  "C12": {
+    "status": "partial",
+    "note": "Проверены богатство конечных слов Фибоначчи и его наследование факторами. Общий результат о штурмовых факторах и полный список префиксов рекурсивного слова Фибоначчи здесь не отмечены.",
+    "lean": {"FibonacciRichness": ["rich_word", "rich_factor"]}
+  },
+  "D0": {
+    "status": "verified",
+    "note": "Доказана формула цифр и соответствие конечных итераций подстановки префиксам неподвижного слова.",
+    "lean": {"ThueMorseCyclicAlphabet": ["iterate_cycleSubstitution", "cycleAlphabetEquiv_finiteWord", "wordOnCycle_unique_fixedPoint"]}
+  },
+  "D1": {
+    "status": "partial",
+    "note": "Проверены переход к сравнению соседних блоков и используемая в классификации арифметика переносов. Все формулы узла с явной функцией показателя делимости не отмечены.",
+    "lean": {
+      "ThueMorseCyclicAlphabet": ["strongBlockRepeat_iff_adjacent", "strongBlockRepeat_wordOnCycle_iff"],
+      "ThueMorseClassification": ["repeat_of_critical_bound", "critical_bound_of_repeat"]
+    }
+  },
+  "D2": {
+    "status": "partial",
+    "note": "Редукция окна и двоичное ограничение входят в доказательство необходимости. Весь пакет отдельных лемм 3.8.1–3.8.3 в исходных формулировках не отмечен.",
+    "lean": {"ThueMorse": ["binary_twist_necessary"]}
+  },
+  "D3": {
+    "status": "verified",
+    "note": "Бинарный критерий избегания доказан на исходном алфавите для любого целого показателя перестановки.",
+    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_binary_avoidance"]}
+  },
+  "E5": {
+    "status": "qualified",
+    "note": "Доказаны периодический и непериодический случаи с поправкой из исправленного TeX. При j' ≥ b частное в формуле не превосходит 2.",
+    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_periodic_case", "wordOnCycle_twisted_critical_exponent"]}
+  },
+  "D4": {
+    "status": "verified",
+    "note": "Проверены отсутствие финального периода и бинарные частные случаи через явный порог 2 или 4.",
+    "lean": {"ThueMorseRecurrence": ["not_eventually_periodic_word"], "ThueMorseCyclicAlphabet": ["wordOnCycle_binary_threshold"]}
+  },
+  "D5": {
+    "status": "verified",
+    "note": "Проверены пункты (1), (2), (4) и (5) для одностороннего замыкания орбиты.",
+    "lean": {"ThueMorseDynamics": ["finiteWord_dynamics"], "ThueMorseCyclicAlphabet": ["iterate_cycleSubstitution_contains_letter"]}
+  },
+  "D6": {
+    "status": "verified",
+    "note": "Проверены пункт (3), обе границы сложности при положительной длине и нулевая энтропия.",
+    "lean": {"ThueMorseDynamics": ["finiteWord_dynamics"]}
+  },
+  "D7": {
+    "status": "verified",
+    "note": "Запрет перенесён на всё замыкание орбиты по равенству языков факторов.",
+    "lean": {"ThueMorseSubshift": ["orbitClosure_factorLanguage_eq", "orbitClosure_no_long_twisted_repeat"]}
+  },
+  "D8": {
+    "status": "partial",
+    "note": "Проверены используемый случай строгой эргодичности для примитивных подстановок постоянной длины и нижняя оценка Морса–Хедлунда.",
+    "lean": {
+      "PrimitiveSubstitutionErgodicity": ["primitive_constantLength_unique_measure"],
+      "ThueMorseComplexity": ["complexity_ge_of_not_eventually_periodic"]
+    }
+  },
+  "G0": {
+    "status": "verified",
+    "note": "Для характеристического слова проверены p(k)=k+1 и идентификация правого специального фактора с обращением префикса. Число специальных факторов следует из разности сложностей.",
+    "lean": {
+      "SturmianFactorTree": ["characteristic_complexity"],
+      "SturmianMechanical": ["characteristic_rightSpecial_eq_reversedPrefix"],
+      "FactorTreeSpecial": ["complexity_succ_eq_add_rightSpecials"]
+    }
+  },
+  "G3": {
+    "status": "verified",
+    "note": "Проверены число вершин и все четыре индекса для дерева в SimpleGraph.",
+    "lean": {"FactorTreeGraphIndices": ["characteristic_factorGraph_indices"]}
+  },
+  "N3": {
+    "status": "verified",
+    "note": "Для замкнутых подсдвигов доказаны метрические свойства, согласованность с топологией произведения, компактность, полнота и липшицева оценка для отображения.",
+    "lean": {
+      "SymbolicLatticeMetric": ["distance_nonneg", "distance_comm", "distance_triangle", "eq_of_distance_eq_zero"],
+      "SymbolicLatticeTopology": ["isOpen_iff_distance", "compact_and_complete_of_closed", "embedding_lipschitz"]
+    }
+  },
+  "M1": {
+    "status": "verified",
+    "note": "Доказана липшицевость сдвига с константой 2.",
+    "lean": {"SymbolicLatticeTopology": ["shift_lipschitz"]}
+  },
+  "Q0": {
+    "status": "definition",
+    "note": "Задана геометрическая модель полного удаления линий из объединения квадратов.",
+    "lean": {"PolyominoGeometry": ["cellSquare", "remaining", "GeometricallySeparated"]}
+  },
+  "Q1": {
+    "status": "qualified",
+    "note": "Формула доказана для полимино, связного по общим сторонам, включая прямоугольник. Для касания только в вершине проверен контрпример.",
+    "lean": {"PolyominoGeometry": ["minimum_geometric_cuts", "rectangle_minimum_geometric_cuts", "corner_contact_counterexample"]}
+  }
+}
