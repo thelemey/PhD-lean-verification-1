@@ -46,7 +46,7 @@ theorem cross_eq_of_gain (x y : Fin n → ℝ) :
 noncomputable def loss (xA yA xB yB : Fin n → ℝ) (a g b : ℝ) : ℝ :=
   (∑ i, (yA i - (a + b * xA i)) ^ 2) + ∑ i, (yB i - (a + g + b * xB i)) ^ 2
 
-private theorem group_loss (hn : 0 < n) (x y : Fin n → ℝ) (a b : ℝ) :
+theorem group_loss (hn : 0 < n) (x y : Fin n → ℝ) (a b : ℝ) :
     ∑ i, (y i - (a + b * x i)) ^ 2 =
       ss y - 2 * b * cross x y + b ^ 2 * ss x +
         n * (mean y - a - b * mean x) ^ 2 := by

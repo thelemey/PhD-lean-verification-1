@@ -1090,9 +1090,17 @@
         "thinking_pooled_moments",
         "thinking_exact_ancova",
         "thinking_adjusted_table_roundings"
+      ],
+      "StudySlopeInteraction": [
+        "slopeInteraction_eq_nested",
+        "separate_regression_residual",
+        "thinking_slope_interaction_probability",
+        "numbers_slope_interaction",
+        "thinking_baseline_correlations",
+        "numbers_slope_probability_bound"
       ]
     },
-    "note": "Для целочисленного теста на мышление из описательной таблицы и двух парных t восстановлены вся строка ANCOVA, включая p = 0,102 и обе границы 95% ДИ. Для шкалы 0–100 p = 0,109 следует из округления контраста и ДИ той же строки. Диагностика модели и исходные измерения остаются открытыми."
+    "note": "Для теста на мышление описательная таблица и два парных t дают всю строку ANCOVA, p = 0,61 для взаимодействия группы с исходным баллом и обе корреляции. Для шкалы 0–100 p = 0,109 следует из округления контраста и доверительного интервала той же строки. Для взаимодействия во втором тесте описательные сводки дают p ≥ 0,92. Для проверки распределения остатков нужны исходные наблюдения."
   },
   "study-summary": {
     "status": "qualified",
@@ -1121,6 +1129,10 @@
       "ThinkingWelch": [
         "thinking_welch_probabilities",
         "thinking_welch_intervals"
+      ],
+      "StudySlopeInteraction": [
+        "thinking_slope_interaction_probability",
+        "numbers_slope_interaction"
       ]
     },
     "note": "Для любых 42 пар наблюдений в каждой группе, согласующихся со сводками, доказаны оба исходных преимущества B, нескорректированное итоговое различие только по числам, близость приростов и оба решения ANCOVA при уровне 0,05. Сами измерения и эмпирические допущения модели по опубликованным таблицам не проверяются."
