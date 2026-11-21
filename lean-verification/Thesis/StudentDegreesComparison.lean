@@ -126,6 +126,44 @@ theorem continuous_studentProbability {v : ℝ} (hv : 1 ≤ v) : Continuous (stu
   apply continuous_const.sub
   exact (intervalIntegral.continuous_primitive (fun a b => hc.intervalIntegrable a b) 0).comp continuous_abs
 
+/-- If the same constant bounds the density ratio from below on the
+central interval and from above on the tail, normalization preserves the
+tail comparison. Both Student comparisons use this argument. -/
+theorem normalized_tail_compare {f g : ℝ → ℝ} {k t : ℝ} (ht : 0 < t)
+    (hf : Integrable f) (hg : Integrable g) (fc : Continuous f) (gc : Continuous g)
+    (fp : ∀ x, 0 < f x) (gp : ∀ x, 0 < g x)
+    (central : ∀ x ∈ Icc 0 t, k*f x ≤ g x) (tail : ∀ x ∈ Ioi t, g x ≤ k*f x) :
+    (∫ x in Ioi t, g x)/(∫ x in Ioi 0, g x) ≤ (∫ x in Ioi t, f x)/(∫ x in Ioi 0, f x) := by
+  let C (w : ℝ → ℝ) := ∫ x in Ioc 0 t, w x
+  let T (w : ℝ → ℝ) := ∫ x in Ioi t, w x
+  have hT : T g ≤ k*T f := by
+    simpa only [T,MeasureTheory.integral_const_mul] using
+      setIntegral_mono_on hg.integrableOn (hf.const_mul k).integrableOn measurableSet_Ioi tail
+  have hC : k*C f ≤ C g := by
+    simpa only [C,MeasureTheory.integral_const_mul] using setIntegral_mono_on
+      (hf.const_mul k).integrableOn hg.integrableOn measurableSet_Ioc (fun x hx => central x ⟨hx.1.le,hx.2⟩)
+  have split (w : ℝ → ℝ) (hw : Integrable w) : (∫ x in Ioi 0, w x) = C w + T w := by
+    rw [← Ioc_union_Ioi_eq_Ioi ht.le]
+    exact setIntegral_union (disjoint_left.2 (fun _ hx hy => (not_lt_of_ge hx.2) hy)) measurableSet_Ioi
+      hw.integrableOn hw.integrableOn
+  have pos (w : ℝ → ℝ) (wc : Continuous w) (wp : ∀ x, 0 < w x) : 0 < C w := by
+    dsimp [C]
+    rw [← intervalIntegral.integral_of_le ht.le]
+    exact intervalIntegral_pos_of_pos (wc.intervalIntegrable _ _) wp ht
+  have cf := pos f fc fp
+  have cg := pos g gc gp
+  have tf : 0 ≤ T f := integral_nonneg (fun x => (fp x).le)
+  have tg : 0 ≤ T g := integral_nonneg (fun x => (gp x).le)
+  rw [split f hf,split g hg]
+  change T g/(C g+T g) ≤ T f/(C f+T f)
+  apply (div_le_div_iff₀ (by linarith) (by linarith)).2
+  have prod : T g*C f ≤ T f*C g := calc
+    _ ≤ (k*T f)*C f := mul_le_mul_of_nonneg_right hT cf.le
+    _ = T f*(k*C f) := by ring
+    _ ≤ _ := mul_le_mul_of_nonneg_left hC tf
+  linarith only [prod]
+
+
 /-- For the Welch tests in §4.3, an odd integer on either side of the real
 Welch degrees of freedom gives a rigorous bound for the two-sided p value.
 On the central interval the density ratio is at least its value at t, and
@@ -154,38 +192,9 @@ theorem student_probability_antitone_degrees {a b t : ℝ} (ha : 79 ≤ a) (hab 
   have tail (x : ℝ) (hx : x ∈ Ioi t) : studentKernel b x ≤ k*studentKernel a x := by
     have h : R x ≤ R t := anti (by change 1 ≤ t; linarith) (by change 1 ≤ x; linarith [hx.out]) hx.le
     exact (div_le_iff₀ (studentKernel_pos ha' _)).1 ((he x) ▸ exp_le_exp.2 h)
-  have intA := integrable_studentKernel (show 1 ≤ a by linarith)
-  have intB := integrable_studentKernel (show 1 ≤ b by linarith)
-  have hT : studentTail b t ≤ k*studentTail a t := by
-    simpa only [studentTail, MeasureTheory.integral_const_mul] using
-      setIntegral_mono_on intB.integrableOn (intA.const_mul k).integrableOn measurableSet_Ioi tail
-  let C := fun v => ∫ x in Ioc (0:ℝ) t, studentKernel v x
-  have hC : k*C a ≤ C b := by
-    simpa only [C, MeasureTheory.integral_const_mul] using setIntegral_mono_on
-      (intA.const_mul k).integrableOn intB.integrableOn measurableSet_Ioc (fun x hx => central x ⟨hx.1.le,hx.2⟩)
-  have split (v : ℝ) (hv : Integrable (studentKernel v)) : studentTail v 0 = C v + studentTail v t := by
-    unfold studentTail C
-    rw [← Ioc_union_Ioi_eq_Ioi ht']
-    exact setIntegral_union (disjoint_left.2 (fun _ hx hy => (not_lt_of_ge hx.2) hy))
-      measurableSet_Ioi hv.integrableOn hv.integrableOn
-  have positive (v : ℝ) (hv : 0 < v) : 0 < C v := by
-    dsimp only [C]
-    rw [← intervalIntegral.integral_of_le ht']
-    exact intervalIntegral_pos_of_pos ((continuous_studentKernel hv).intervalIntegrable _ _)
-      (studentKernel_pos hv) (by linarith)
-  have sA := split a intA
-  have sB := split b intB
-  have pa := positive a ha'
-  have pb := positive b hb'
-  have ta := studentTail_nonneg ha' t
-  have tb := studentTail_nonneg hb' t
-  simp only [studentTwoSidedP, abs_of_nonneg ht']
-  apply (div_le_div_iff₀ (by linarith) (by linarith)).2
-  have hprod : studentTail b t*C a ≤ studentTail a t*C b := calc
-    _ ≤ (k*studentTail a t)*C a := mul_le_mul_of_nonneg_right hT pa.le
-    _ = studentTail a t*(k*C a) := by ring
-    _ ≤ _ := mul_le_mul_of_nonneg_left hC ta
-  rw [sA,sB]
-  linarith only [hprod]
+  simp only [studentTwoSidedP,abs_of_nonneg ht',studentTail]
+  exact normalized_tail_compare (by linarith) (integrable_studentKernel (by linarith))
+    (integrable_studentKernel (by linarith)) (continuous_studentKernel ha') (continuous_studentKernel hb')
+    (studentKernel_pos ha') (studentKernel_pos hb') central tail
 
 end Thesis.StudyANCOVA

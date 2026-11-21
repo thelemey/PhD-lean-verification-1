@@ -118,3 +118,4 @@ import Thesis.StudySlopeInteraction
 import Thesis.PolyominoCutExamples
 import Thesis.NumbersANCOVA
 import Thesis.StudySummaryPrecision
+import Thesis.ThinkingGainComparison
