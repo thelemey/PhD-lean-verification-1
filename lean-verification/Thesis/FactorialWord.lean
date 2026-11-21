@@ -33,6 +33,11 @@ theorem prime_factorization_factorial_ge_div {p n : Nat} (hp : p.Prime) :
   rw [factorial_eq_nat]
   exact (hp.pow_dvd_iff_le_factorization (Nat.factorial_ne_zero n)).1 h
 
+private theorem factorization_pos_of_mem {b p : Nat} (hp : p ∈ b.primeFactors) :
+    0 < b.factorization p := by
+  rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
+  exact Nat.pos_of_ne_zero hp
+
 /-- A sufficient uniform threshold, using the bounds on each prime
 valuation of the base as in lem:trail. -/
 theorem pow_dvd_factorial {b : Nat} (hb : 0 < b) (k n : Nat) (hn : b * k ≤ n) :
@@ -46,16 +51,11 @@ theorem pow_dvd_factorial {b : Nat} (hb : 0 < b) (k n : Nat) (hn : b * k ≤ n) 
     have he : p ^ b.factorization p ≤ b :=
       Nat.le_of_dvd hb ((hprime.pow_dvd_iff_le_factorization hb.ne').2 le_rfl)
     have he' : p * b.factorization p ≤ b := by
+      have hf := factorization_pos_of_mem hp
       have hd : b.factorization p ≤ p ^ (b.factorization p - 1) := by
-        have hf : 0 < b.factorization p := by
-          rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
-          exact Nat.pos_of_ne_zero hp
-        have hd : b.factorization p - 1 < 2 ^ (b.factorization p - 1) := Nat.lt_two_pow_self
+        have hlt : b.factorization p - 1 < 2 ^ (b.factorization p - 1) := Nat.lt_two_pow_self
         exact (by omega : b.factorization p ≤ 2 ^ (b.factorization p - 1)).trans
           (Nat.pow_le_pow_left hprime.two_le _)
-      have hf : 0 < b.factorization p := by
-        rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
-        exact Nat.pos_of_ne_zero hp
       calc
         _ ≤ p * (p ^ (b.factorization p - 1)) := Nat.mul_le_mul_left _ hd
         _ = p ^ b.factorization p := by
@@ -145,11 +145,6 @@ private theorem le_length_takeWhile_zero {xs : List Nat} {k : Nat} :
 theorem le_trailingZeroCount_iff_dvd {b n : Nat} (hb : 1 < b) (hn : 0 < n) (k : Nat) :
     k ≤ trailingZeroCount b n ↔ b ^ k ∣ n :=
   le_length_takeWhile_zero.trans ⟨dvd_of_zero_prefix hb k n hn, zero_prefix hb k n hn⟩
-
-private theorem factorization_pos_of_mem {b p : Nat} (hp : p ∈ b.primeFactors) :
-    0 < b.factorization p := by
-  rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
-  exact Nat.pos_of_ne_zero hp
 
 /-- The prime valuation minimum in the source's proof of lem:trail. -/
 theorem factorial_trailingZeroCount_eq_min {b : Nat} (hb : 1 < b) (n : Nat) :

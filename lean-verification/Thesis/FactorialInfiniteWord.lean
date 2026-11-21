@@ -4,7 +4,7 @@ import Thesis.WordPrefixLimits
 
 namespace Thesis.FactorialWord
 
-open WordPrefixLimits
+open WordPrefixLimits Filter
 
 private theorem prefix_covers {b : Nat} (hb : 1 < b) (j : Nat) :
     j < (concatenation b (j + 1)).length :=
@@ -22,6 +22,28 @@ theorem infiniteDigits_eq_getElem {b n j : Nat} (hb : 1 < b)
   | succ n =>
     exact prefixLimit_eq_getElem _ (prefix_covers hb)
       (fun n => concatenation_prefix b (n + 1)) hj
+
+/-- The n-th factorial begins immediately after the first n factorial blocks. -/
+theorem infiniteDigits_factorial_block {b : Nat} (hb : 1 < b) (n : Nat) {j : Nat}
+    (hj : j < ((digits b (factorial n)).reverse).length) :
+    infiniteDigits b hb ((concatenation b n).length + j) =
+      ((digits b (factorial n)).reverse)[j] := by
+  have hi : (concatenation b n).length + j < (concatenation b (n + 1)).length := by
+    rw [concatenation, List.length_append]
+    exact Nat.add_lt_add_left hj _
+  rw [infiniteDigits_eq_getElem hb hi]
+  simp only [concatenation, List.getElem_append_right (Nat.le_add_right _ _),
+    Nat.add_sub_cancel_left]
+
+/-- The count in lem:trail tends to infinity, as witnessed by the
+prime-valuation threshold. -/
+theorem factorial_trailingZeroCount_tendsto_atTop {b : Nat} (hb : 1 < b) :
+    Tendsto (fun n => trailingZeroCount b (factorial n)) atTop atTop := by
+  apply tendsto_atTop.2
+  intro k
+  filter_upwards [eventually_ge_atTop (b * k)] with n hn
+  exact (le_trailingZeroCount_iff_dvd hb (factorial_pos n) k).2
+    (pow_dvd_factorial (zero_lt_one.trans hb) k n hn)
 
 /-- The same word as an element of the product of the base-b alphabet. -/
 def infiniteWord (b : Nat) (hb : 1 < b) (j : Nat) : Fin b :=
