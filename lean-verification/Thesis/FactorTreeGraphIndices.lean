@@ -1,4 +1,5 @@
 import Thesis.FactorTreeGraph
+import Thesis.TreeIrregularity
 import Thesis.SturmianFactorTree
 
 open scoped BigOperators
@@ -60,7 +61,12 @@ noncomputable def graphAlbertson (w : Nat → Bool) (n : Nat) : ℤ :=
   graphEdgeDegreeSum w n ⟨fun p c => |(p : ℤ) - c|, fun _ _ => abs_sub_comm _ _⟩
 
 noncomputable def graphQuadraticAlbertson (w : Nat → Bool) (n : Nat) : ℤ :=
-  graphEdgeDegreeSum w n ⟨fun p c => |(p : ℤ) ^ 2 - (c : ℤ) ^ 2|, fun _ _ => abs_sub_comm _ _⟩
+  TreeIrregularity.quadraticIrregularity (factorGraph w n)
+
+private theorem graphQuadraticAlbertson_eq_edgeDegreeSum (w : Nat → Bool) (n : Nat) :
+    graphQuadraticAlbertson w n =
+      graphEdgeDegreeSum w n ⟨fun p c => |(p : ℤ) ^ 2 - (c : ℤ) ^ 2|, fun _ _ => abs_sub_comm _ _⟩ :=
+  rfl
 
 noncomputable def graphSecondZagreb (w : Nat → Bool) (n : Nat) : ℤ :=
   graphEdgeDegreeSum w n ⟨fun p c => (p : ℤ) * c, fun _ _ => mul_comm _ _⟩
@@ -80,7 +86,8 @@ theorem characteristic_factorGraph_indices {a : ℝ}
     graphSecondZagreb w n = 2 * (n : ℤ) ^ 2 + 10 * n - 11 + d := by
   intro w
   refine ⟨factorGraph_isTree w n, ?_⟩
-  rw [Fintype.card_coe, graphFirstZagreb_eq, graphAlbertson, graphQuadraticAlbertson,
+  rw [Fintype.card_coe, graphFirstZagreb_eq, graphAlbertson,
+    graphQuadraticAlbertson_eq_edgeDegreeSum,
     graphSecondZagreb, graphEdgeDegreeSum_eq, graphEdgeDegreeSum_eq, graphEdgeDegreeSum_eq]
   exact characteristic_factor_tree_indices ha ha' hirr hd hn x hrun hchange
 

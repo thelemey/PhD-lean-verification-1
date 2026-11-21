@@ -7,26 +7,31 @@ open scoped BigOperators
 
 namespace Thesis.TreeIrregularity
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
-variable (G : SimpleGraph V) [DecidableRel G.Adj]
+variable {V : Type*}
+
+section
+variable (G : SimpleGraph V) [∀ v, Fintype (G.neighborSet v)]
 
 /-- The quadratic contribution of one undirected edge. -/
 def quadraticEdgeWeight : Sym2 V → ℤ :=
   Sym2.lift ⟨fun u v => |(G.degree u : ℤ) ^ 2 - (G.degree v : ℤ) ^ 2|,
     fun _ _ => abs_sub_comm _ _⟩
 
-omit [DecidableEq V] in
 @[simp] theorem quadraticEdgeWeight_pair (u v : V) :
     quadraticEdgeWeight G s(u, v) = |(G.degree u : ℤ) ^ 2 - (G.degree v : ℤ) ^ 2| := rfl
 
 /-- The quadratic irregularity index from Section 5.1. -/
-def quadraticIrregularity : ℤ :=
+def quadraticIrregularity [Fintype G.edgeSet] : ℤ :=
   ∑ e ∈ G.edgeFinset, quadraticEdgeWeight G e
 
-omit [DecidableEq V] in
 theorem quadraticEdgeWeight_nonneg (e : Sym2 V) : 0 ≤ quadraticEdgeWeight G e := by
   induction e using Sym2.inductionOn with
   | _ u v => exact abs_nonneg _
+
+end
+
+variable [Fintype V] [DecidableEq V]
+variable (G : SimpleGraph V) [DecidableRel G.Adj]
 
 /-- A star on a finite vertex set with prescribed centre. -/
 def starGraph (c : V) : SimpleGraph V where
