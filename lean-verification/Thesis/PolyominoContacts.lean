@@ -12,7 +12,7 @@ theorem isClosed_cellSquare (p : Cell) : IsClosed (cellSquare p) := by
   rw [he]
   exact isClosed_iInter fun a => isClosed_Icc.preimage (continuous_apply a)
 
-private theorem center_in_square (p : Cell) : cellCenter p ∈ cellSquare p := by
+theorem center_in_square (p : Cell) : cellCenter p ∈ cellSquare p := by
   intro a
   simp only [cellCenter, mem_Icc]
   constructor <;> linarith
@@ -60,7 +60,7 @@ theorem geometricallySeparated_iff_unique_square {cells : List Cell} {cuts : Lis
     · exact hnp (h ▸ hr)
     · exact hno (mem_iUnion.2 ⟨⟨r, h⟩, hr⟩)
 
-private theorem line_at_shared_point {p q : Cell} {l : Line} (h : SharedSide p q l)
+theorem line_at_shared_point {p q : Cell} {l : Line} (h : SharedSide p q l)
     {z : Plane} (hp : z ∈ cellSquare p) (hq : z ∈ cellSquare q) :
     ∃ a c, l = axisLine a c ∧ z a = (c : ℝ) := by
   have forward {u v : Cell} (hu : z ∈ cellSquare u) (hv : z ∈ cellSquare v)

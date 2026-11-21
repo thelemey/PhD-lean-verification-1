@@ -80,8 +80,8 @@
 </g>
 <g id="clust11" class="cluster">
 <title>cluster_4.2</title>
-<path fill="white" stroke="#c8d0d5" d="M2644,-2212C2644,-2212 3328,-2212 3328,-2212 3334,-2212 3340,-2218 3340,-2224 3340,-2224 3340,-2368 3340,-2368 3340,-2374 3334,-2380 3328,-2380 3328,-2380 2644,-2380 2644,-2380 2638,-2380 2632,-2374 2632,-2368 2632,-2368 2632,-2224 2632,-2224 2632,-2218 2638,-2212 2644,-2212"/>
-<text text-anchor="middle" x="2652" y="-2368" font-family="DejaVu Sans" font-size="10.00">§ 4.2</text>
+<path fill="white" stroke="#c8d0d5" d="M2623,-2183C2623,-2183 3348,-2183 3348,-2183 3354,-2183 3360,-2189 3360,-2195 3360,-2195 3360,-2398 3360,-2398 3360,-2404 3354,-2410 3348,-2410 3348,-2410 2623,-2410 2623,-2410 2617,-2410 2611,-2404 2611,-2398 2611,-2398 2611,-2195 2611,-2195 2611,-2189 2617,-2183 2623,-2183"/>
+<text text-anchor="middle" x="2631" y="-2398" font-family="DejaVu Sans" font-size="10.00">§ 4.2</text>
 </g>
 <g id="clust12" class="cluster">
 <title>cluster_4.3</title>
@@ -1191,7 +1191,7 @@
 </g>
 </g>
 <!-- deffSturmiann1&#45;&gt;factor&#45;complexity -->
-<g id="edge146" class="edge">
+<g id="edge147" class="edge">
 <title>deffSturmiann1&#45;&gt;factor&#45;complexity</title>
 <path fill="none" stroke="#72818b" d="M148.64,-400.89C194.85,-367.03 275.28,-308.1 324.13,-272.31"/>
 <polygon fill="#72818b" stroke="#72818b" points="325.73,-273.96 329.63,-268.28 323.04,-270.29 325.73,-273.96"/>
@@ -1209,7 +1209,7 @@
 </g>
 </g>
 <!-- deffSturmiann1&#45;&gt;reversed&#45;prefix -->
-<g id="edge147" class="edge">
+<g id="edge148" class="edge">
 <title>deffSturmiann1&#45;&gt;reversed&#45;prefix</title>
 <path fill="none" stroke="#72818b" d="M119.28,-400.76C131.81,-354.28 164.43,-257.61 229,-207 232.9,-203.94 237.04,-201.16 241.35,-198.62"/>
 <polygon fill="#72818b" stroke="#72818b" points="242.75,-200.45 247.34,-195.31 240.55,-196.47 242.75,-200.45"/>
@@ -2122,84 +2122,102 @@
 <g id="node&#45;cut&#45;model" class="node">
 <title>cut&#45;model</title>
 <g id="a_node&#45;cut&#45;model"><a xlink:href="coverage.md#node-cut-model" xlink:title="Определение. Полные линии разреза и внутренние рёбра. Определено. Задана геометрическая модель полного удаления линий из объединения квадратов.">
-<path fill="white" stroke="#629740" stroke-width="3" d="M2810,-2312C2810,-2312 2658,-2312 2658,-2312 2652,-2312 2646,-2306 2646,-2300 2646,-2300 2646,-2272 2646,-2272 2646,-2266 2652,-2260 2658,-2260 2658,-2260 2810,-2260 2810,-2260 2816,-2260 2822,-2266 2822,-2272 2822,-2272 2822,-2300 2822,-2300 2822,-2306 2816,-2312 2810,-2312"/>
-<text text-anchor="start" x="2702" y="-2299.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Определение</text>
-<text text-anchor="start" x="2655" y="-2289.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Полные линии разреза и</text>
-<text text-anchor="start" x="2676.5" y="-2278.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">внутренние рёбра</text>
-<text text-anchor="start" x="2705" y="-2268.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Определено</text>
+<path fill="white" stroke="#629740" stroke-width="3" d="M2789,-2342C2789,-2342 2637,-2342 2637,-2342 2631,-2342 2625,-2336 2625,-2330 2625,-2330 2625,-2302 2625,-2302 2625,-2296 2631,-2290 2637,-2290 2637,-2290 2789,-2290 2789,-2290 2795,-2290 2801,-2296 2801,-2302 2801,-2302 2801,-2330 2801,-2330 2801,-2336 2795,-2342 2789,-2342"/>
+<text text-anchor="start" x="2681" y="-2329.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Определение</text>
+<text text-anchor="start" x="2634" y="-2319.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Полные линии разреза и</text>
+<text text-anchor="start" x="2655.5" y="-2308.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">внутренние рёбра</text>
+<text text-anchor="start" x="2684" y="-2298.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Определено</text>
 </a>
 </g>
 </g>
 <!-- thm:min&#45;dissection&#45;path -->
 <g id="node&#45;thm&#45;min&#45;dissection&#45;path" class="node">
 <title>thm:min&#45;dissection&#45;path</title>
-<g id="a_node&#45;thm&#45;min&#45;dissection&#45;path"><a xlink:href="coverage.md#node-thm-min-dissection-path" xlink:title="Теорема 4.2.1. Минимум разрезов равен λ(P), включая прямоугольники. С уточнением. Формула доказана при связности по сторонам. Доказано, что это равносильно связности внутренности непустой фигуры. Для произвольного объединения дан конечный критерий: каждая общая сторона разрезана и через каждое диагональное касание проходит хотя бы одна выбранная линия. У двух квадратов, соприкасающихся только углами, λ=0, а минимум равен 1. Буквальное определение из §4.2 допускает этот пример.">
-<path fill="#ffeb80" stroke="#a68812" stroke-width="3" d="M3066,-2278C3066,-2278 2876,-2278 2876,-2278 2870,-2278 2864,-2272 2864,-2266 2864,-2266 2864,-2238 2864,-2238 2864,-2232 2870,-2226 2876,-2226 2876,-2226 3066,-2226 3066,-2226 3072,-2226 3078,-2232 3078,-2238 3078,-2238 3078,-2266 3078,-2266 3078,-2272 3072,-2278 3066,-2278"/>
-<text text-anchor="start" x="2909" y="-2265.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Теорема 4.2.1 · Новизна 5</text>
-<text text-anchor="start" x="2873" y="-2255.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Минимум разрезов равен λ(P),</text>
-<text text-anchor="start" x="2889.5" y="-2244.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">включая прямоугольники</text>
-<text text-anchor="start" x="2938" y="-2234.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">С уточнением</text>
+<g id="a_node&#45;thm&#45;min&#45;dissection&#45;path"><a xlink:href="coverage.md#node-thm-min-dissection-path" xlink:title="Теорема 4.2.1. Минимум разрезов равен λ(P), включая прямоугольники. С уточнением. Формула доказана при связности по сторонам. Доказано, что это равносильно связности внутренности непустой фигуры. Для произвольного объединения дан конечный критерий: каждая общая сторона разрезана и через каждое диагональное касание проходит хотя бы одна выбранная линия. У двух квадратов, соприкасающихся только углами, λ=0, а минимум равен 1. Буквальное определение из §4.2 допускает этот пример. Для любой промежуточной последовательности разрезов каждая геометрическая часть описана путями по сохранившимся сторонам и вершинам.">
+<path fill="#ffeb80" stroke="#a68812" stroke-width="3" d="M3045,-2308C3045,-2308 2855,-2308 2855,-2308 2849,-2308 2843,-2302 2843,-2296 2843,-2296 2843,-2268 2843,-2268 2843,-2262 2849,-2256 2855,-2256 2855,-2256 3045,-2256 3045,-2256 3051,-2256 3057,-2262 3057,-2268 3057,-2268 3057,-2296 3057,-2296 3057,-2302 3051,-2308 3045,-2308"/>
+<text text-anchor="start" x="2888" y="-2295.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Теорема 4.2.1 · Новизна 5</text>
+<text text-anchor="start" x="2852" y="-2285.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Минимум разрезов равен λ(P),</text>
+<text text-anchor="start" x="2868.5" y="-2274.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">включая прямоугольники</text>
+<text text-anchor="start" x="2917" y="-2264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">С уточнением</text>
 </a>
 </g>
 </g>
 <!-- cut&#45;model&#45;&gt;thm:min&#45;dissection&#45;path -->
 <g id="edge125" class="edge">
 <title>cut&#45;model&#45;&gt;thm:min&#45;dissection&#45;path</title>
-<path fill="none" stroke="#72818b" d="M2822.17,-2273.39C2833.63,-2271.73 2845.51,-2270.01 2857.32,-2268.3"/>
-<polygon fill="#72818b" stroke="#72818b" points="2857.76,-2270.54 2863.87,-2267.35 2857.11,-2266.03 2857.76,-2270.54"/>
+<path fill="none" stroke="#72818b" d="M2801.17,-2303.39C2812.63,-2301.73 2824.51,-2300.01 2836.32,-2298.3"/>
+<polygon fill="#72818b" stroke="#72818b" points="2836.76,-2300.54 2842.87,-2297.35 2836.11,-2296.03 2836.76,-2300.54"/>
 </g>
 <!-- unit&#45;edge&#45;remark -->
 <g id="node&#45;unit&#45;edge&#45;remark" class="node">
 <title>unit&#45;edge&#45;remark</title>
 <g id="a_node&#45;unit&#45;edge&#45;remark"><a xlink:href="coverage.md#node-unit-edge-remark" xlink:title="Замечание. По одному внутреннему ребру за раз: минимум и критерий дерева. Доказано. Для непустой фигуры, связной по сторонам, доказан критерий N−1. Квадрат 2×2 требует четырёх единичных разрезов или двух полных линий.">
-<path fill="white" stroke="#228044" stroke-width="3" d="M3075,-2347C3075,-2347 2867,-2347 2867,-2347 2861,-2347 2855,-2341 2855,-2335 2855,-2335 2855,-2307 2855,-2307 2855,-2301 2861,-2295 2867,-2295 2867,-2295 3075,-2295 3075,-2295 3081,-2295 3087,-2301 3087,-2307 3087,-2307 3087,-2335 3087,-2335 3087,-2341 3081,-2347 3075,-2347"/>
-<text text-anchor="start" x="2945" y="-2334.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Замечание</text>
-<text text-anchor="start" x="2864" y="-2324.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">По одному внутреннему ребру за</text>
-<text text-anchor="start" x="2865.5" y="-2313.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">раз: минимум и критерий дерева</text>
-<text text-anchor="start" x="2949" y="-2303.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
+<path fill="white" stroke="#228044" stroke-width="3" d="M3054,-2377C3054,-2377 2846,-2377 2846,-2377 2840,-2377 2834,-2371 2834,-2365 2834,-2365 2834,-2337 2834,-2337 2834,-2331 2840,-2325 2846,-2325 2846,-2325 3054,-2325 3054,-2325 3060,-2325 3066,-2331 3066,-2337 3066,-2337 3066,-2365 3066,-2365 3066,-2371 3060,-2377 3054,-2377"/>
+<text text-anchor="start" x="2924" y="-2364.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Замечание</text>
+<text text-anchor="start" x="2843" y="-2354.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">По одному внутреннему ребру за</text>
+<text text-anchor="start" x="2844.5" y="-2343.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">раз: минимум и критерий дерева</text>
+<text text-anchor="start" x="2928" y="-2333.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
 <!-- cut&#45;model&#45;&gt;unit&#45;edge&#45;remark -->
 <g id="edge126" class="edge">
 <title>cut&#45;model&#45;&gt;unit&#45;edge&#45;remark</title>
-<path fill="none" stroke="#72818b" d="M2822.17,-2298.98C2830.79,-2300.27 2839.64,-2301.59 2848.53,-2302.91"/>
-<polygon fill="#72818b" stroke="#72818b" points="2848.23,-2305.16 2855,-2303.87 2848.9,-2300.66 2848.23,-2305.16"/>
+<path fill="none" stroke="#72818b" d="M2801.17,-2328.98C2809.79,-2330.27 2818.64,-2331.59 2827.53,-2332.91"/>
+<polygon fill="#72818b" stroke="#72818b" points="2827.23,-2335.16 2834,-2333.87 2827.9,-2330.66 2827.23,-2335.16"/>
+</g>
+<!-- square&#45;cut&#45;examples -->
+<g id="node&#45;square&#45;cut&#45;examples" class="node">
+<title>square&#45;cut&#45;examples</title>
+<g id="a_node&#45;square&#45;cut&#45;examples"><a xlink:href="coverage.md#node-square-cut-examples" xlink:title="Пример. Минимальные разрезы квадратов 2 × 2 и 3 × 3. Доказано. Указанные полные линии дают минимумы 2 и 4. Оба числа меньше N−1.">
+<path fill="white" stroke="#228044" stroke-width="3" d="M3334,-2249C3334,-2249 3111,-2249 3111,-2249 3105,-2249 3099,-2243 3099,-2237 3099,-2237 3099,-2209 3099,-2209 3099,-2203 3105,-2197 3111,-2197 3111,-2197 3334,-2197 3334,-2197 3340,-2197 3346,-2203 3346,-2209 3346,-2209 3346,-2237 3346,-2237 3346,-2243 3340,-2249 3334,-2249"/>
+<text text-anchor="start" x="3204" y="-2236.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Пример</text>
+<text text-anchor="start" x="3108" y="-2226.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Минимальные разрезы квадратов 2</text>
+<text text-anchor="start" x="3189" y="-2215.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">× 2 и 3 × 3</text>
+<text text-anchor="start" x="3200.5" y="-2205.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
+</a>
+</g>
+</g>
+<!-- thm:min&#45;dissection&#45;path&#45;&gt;square&#45;cut&#45;examples -->
+<g id="edge127" class="edge">
+<title>thm:min&#45;dissection&#45;path&#45;&gt;square&#45;cut&#45;examples</title>
+<path fill="none" stroke="#72818b" d="M3057.13,-2258.85C3069.85,-2256.08 3082.93,-2253.22 3095.89,-2250.4"/>
+<polygon fill="#72818b" stroke="#72818b" points="3096.38,-2252.62 3102.25,-2249.01 3095.41,-2248.17 3096.38,-2252.62"/>
 </g>
 <!-- ex1 -->
 <g id="node&#45;ex1" class="node">
 <title>ex1</title>
 <g id="a_node&#45;ex1"><a xlink:href="coverage.md#node-ex1" xlink:title="Пример. Домино: один полный разрез. Доказано. ">
-<path fill="white" stroke="#228044" stroke-width="3" d="M3314,-2269.5C3314,-2269.5 3132,-2269.5 3132,-2269.5 3126,-2269.5 3120,-2263.5 3120,-2257.5 3120,-2257.5 3120,-2240.5 3120,-2240.5 3120,-2234.5 3126,-2228.5 3132,-2228.5 3132,-2228.5 3314,-2228.5 3314,-2228.5 3320,-2228.5 3326,-2234.5 3326,-2240.5 3326,-2240.5 3326,-2257.5 3326,-2257.5 3326,-2263.5 3320,-2269.5 3314,-2269.5"/>
-<text text-anchor="start" x="3204.5" y="-2257.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Пример</text>
-<text text-anchor="start" x="3129" y="-2246.7" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Домино: один полный разрез</text>
-<text text-anchor="start" x="3201" y="-2237.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
+<path fill="white" stroke="#228044" stroke-width="3" d="M3313.5,-2307.5C3313.5,-2307.5 3131.5,-2307.5 3131.5,-2307.5 3125.5,-2307.5 3119.5,-2301.5 3119.5,-2295.5 3119.5,-2295.5 3119.5,-2278.5 3119.5,-2278.5 3119.5,-2272.5 3125.5,-2266.5 3131.5,-2266.5 3131.5,-2266.5 3313.5,-2266.5 3313.5,-2266.5 3319.5,-2266.5 3325.5,-2272.5 3325.5,-2278.5 3325.5,-2278.5 3325.5,-2295.5 3325.5,-2295.5 3325.5,-2301.5 3319.5,-2307.5 3313.5,-2307.5"/>
+<text text-anchor="start" x="3204" y="-2295.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Пример</text>
+<text text-anchor="start" x="3128.5" y="-2284.7" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Домино: один полный разрез</text>
+<text text-anchor="start" x="3200.5" y="-2275.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
 <!-- thm:min&#45;dissection&#45;path&#45;&gt;ex1 -->
-<g id="edge127" class="edge">
+<g id="edge128" class="edge">
 <title>thm:min&#45;dissection&#45;path&#45;&gt;ex1</title>
-<path fill="none" stroke="#72818b" d="M3078.02,-2250.73C3089.59,-2250.59 3101.38,-2250.45 3112.99,-2250.31"/>
-<polygon fill="#72818b" stroke="#72818b" points="3113.32,-2252.58 3119.8,-2250.23 3113.27,-2248.03 3113.32,-2252.58"/>
+<path fill="none" stroke="#72818b" d="M3057.13,-2283.96C3075.32,-2284.3 3094.25,-2284.65 3112.52,-2284.99"/>
+<polygon fill="#72818b" stroke="#72818b" points="3112.67,-2287.26 3119.21,-2285.11 3112.76,-2282.71 3112.67,-2287.26"/>
 </g>
 <!-- ex2 -->
 <g id="node&#45;ex2" class="node">
 <title>ex2</title>
 <g id="a_node&#45;ex2"><a xlink:href="coverage.md#node-ex2" xlink:title="Пример. L&#45;тримино: две линии и промежуточные части. Доказано. ">
-<path fill="white" stroke="#228044" stroke-width="3" d="M3295,-2339C3295,-2339 3151,-2339 3151,-2339 3145,-2339 3139,-2333 3139,-2327 3139,-2327 3139,-2299 3139,-2299 3139,-2293 3145,-2287 3151,-2287 3151,-2287 3295,-2287 3295,-2287 3301,-2287 3307,-2293 3307,-2299 3307,-2299 3307,-2327 3307,-2327 3307,-2333 3301,-2339 3295,-2339"/>
-<text text-anchor="start" x="3204.5" y="-2326.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Пример</text>
-<text text-anchor="start" x="3148" y="-2316.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">L&#45;тримино: две линии и</text>
-<text text-anchor="start" x="3150.5" y="-2305.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">промежуточные части</text>
-<text text-anchor="start" x="3201" y="-2295.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
+<path fill="white" stroke="#228044" stroke-width="3" d="M3294.5,-2377C3294.5,-2377 3150.5,-2377 3150.5,-2377 3144.5,-2377 3138.5,-2371 3138.5,-2365 3138.5,-2365 3138.5,-2337 3138.5,-2337 3138.5,-2331 3144.5,-2325 3150.5,-2325 3150.5,-2325 3294.5,-2325 3294.5,-2325 3300.5,-2325 3306.5,-2331 3306.5,-2337 3306.5,-2337 3306.5,-2365 3306.5,-2365 3306.5,-2371 3300.5,-2377 3294.5,-2377"/>
+<text text-anchor="start" x="3204" y="-2364.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Пример</text>
+<text text-anchor="start" x="3147.5" y="-2354.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">L&#45;тримино: две линии и</text>
+<text text-anchor="start" x="3150" y="-2343.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">промежуточные части</text>
+<text text-anchor="start" x="3200.5" y="-2333.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
 <!-- thm:min&#45;dissection&#45;path&#45;&gt;ex2 -->
-<g id="edge128" class="edge">
+<g id="edge129" class="edge">
 <title>thm:min&#45;dissection&#45;path&#45;&gt;ex2</title>
-<path fill="none" stroke="#72818b" d="M3078.02,-2277.87C3096.16,-2282.29 3114.84,-2286.85 3132.49,-2291.16"/>
-<polygon fill="#72818b" stroke="#72818b" points="3132.09,-2293.4 3138.94,-2292.73 3133.17,-2288.98 3132.09,-2293.4"/>
+<path fill="none" stroke="#72818b" d="M3053.26,-2308.09C3079.19,-2314.7 3106.85,-2321.75 3132.08,-2328.19"/>
+<polygon fill="#72818b" stroke="#72818b" points="3131.58,-2330.41 3138.45,-2329.81 3132.71,-2326 3131.58,-2330.41"/>
 </g>
 <!-- table:pearson -->
 <g id="node&#45;table&#45;pearson" class="node">
@@ -2228,7 +2246,7 @@
 </g>
 </g>
 <!-- table:pearson&#45;&gt;study&#45;summary -->
-<g id="edge137" class="edge">
+<g id="edge138" class="edge">
 <title>table:pearson&#45;&gt;study&#45;summary</title>
 <path fill="none" stroke="#72818b" d="M3246.33,-1042.55C3254.92,-1040.85 3263.6,-1039.13 3272.24,-1037.42"/>
 <polygon fill="#72818b" stroke="#72818b" points="3272.9,-1039.61 3278.83,-1036.11 3272.01,-1035.14 3272.9,-1039.61"/>
@@ -2258,7 +2276,7 @@
 </g>
 </g>
 <!-- tab:descriptive&#45;&gt;study&#45;welch -->
-<g id="edge129" class="edge">
+<g id="edge130" class="edge">
 <title>tab:descriptive&#45;&gt;study&#45;welch</title>
 <path fill="none" stroke="#72818b" d="M2677.29,-1026.09C2697.53,-1031.1 2718.79,-1036.37 2739.21,-1041.43"/>
 <polygon fill="#72818b" stroke="#72818b" points="2738.67,-1043.64 2745.52,-1042.99 2739.76,-1039.22 2738.67,-1043.64"/>
@@ -2276,13 +2294,13 @@
 </g>
 </g>
 <!-- tab:descriptive&#45;&gt;tab:ancova -->
-<g id="edge131" class="edge">
+<g id="edge132" class="edge">
 <title>tab:descriptive&#45;&gt;tab:ancova</title>
 <path fill="none" stroke="#72818b" d="M2692.13,-1000C2704.79,-1000 2717.67,-1000 2730.33,-1000"/>
 <polygon fill="#72818b" stroke="#72818b" points="2730.43,-1002.28 2736.93,-1000 2730.43,-997.73 2730.43,-1002.28"/>
 </g>
 <!-- study&#45;welch&#45;&gt;study&#45;summary -->
-<g id="edge134" class="edge">
+<g id="edge135" class="edge">
 <title>study&#45;welch&#45;&gt;study&#45;summary</title>
 <path fill="none" stroke="#72818b" d="M2949.86,-1042.96C2969.01,-1038.65 2989.05,-1034.71 3008,-1032 3095.53,-1019.46 3195.02,-1014.49 3271.93,-1012.64"/>
 <polygon fill="#72818b" stroke="#72818b" points="3272.38,-1014.91 3278.83,-1012.48 3272.28,-1010.36 3272.38,-1014.91"/>
@@ -2300,7 +2318,7 @@
 </g>
 </g>
 <!-- fig11&#45;&gt;study&#45;welch -->
-<g id="edge130" class="edge">
+<g id="edge131" class="edge">
 <title>fig11&#45;&gt;study&#45;welch</title>
 <path fill="none" stroke="#72818b" d="M2695.37,-1069C2706.8,-1069 2718.38,-1069 2729.79,-1069"/>
 <polygon fill="#72818b" stroke="#72818b" points="2729.98,-1071.28 2736.48,-1069 2729.98,-1066.73 2729.98,-1071.28"/>
@@ -2319,13 +2337,13 @@
 </g>
 </g>
 <!-- tab:ancova&#45;&gt;study&#45;sensitivity -->
-<g id="edge132" class="edge">
+<g id="edge133" class="edge">
 <title>tab:ancova&#45;&gt;study&#45;sensitivity</title>
 <path fill="none" stroke="#72818b" d="M2966.11,-980.48C2977.88,-978.45 2989.88,-976.39 3001.75,-974.35"/>
 <polygon fill="#72818b" stroke="#72818b" points="3002.31,-976.56 3008.33,-973.22 3001.54,-972.08 3002.31,-976.56"/>
 </g>
 <!-- tab:ancova&#45;&gt;study&#45;summary -->
-<g id="edge135" class="edge">
+<g id="edge136" class="edge">
 <title>tab:ancova&#45;&gt;study&#45;summary</title>
 <path fill="none" stroke="#72818b" d="M2966.05,-1002.49C3055.14,-1004.44 3179.17,-1007.15 3271.91,-1009.18"/>
 <polygon fill="#72818b" stroke="#72818b" points="3271.99,-1011.46 3278.54,-1009.33 3272.09,-1006.91 3271.99,-1011.46"/>
@@ -2343,13 +2361,13 @@
 </g>
 </g>
 <!-- tab4&#45;&gt;study&#45;sensitivity -->
-<g id="edge133" class="edge">
+<g id="edge134" class="edge">
 <title>tab4&#45;&gt;study&#45;sensitivity</title>
 <path fill="none" stroke="#72818b" d="M2975.25,-940.87C2983.96,-941.57 2992.75,-942.28 3001.48,-942.98"/>
 <polygon fill="#72818b" stroke="#72818b" points="3001.47,-945.27 3008.13,-943.52 3001.84,-940.73 3001.47,-945.27"/>
 </g>
 <!-- study&#45;sensitivity&#45;&gt;study&#45;summary -->
-<g id="edge136" class="edge">
+<g id="edge137" class="edge">
 <title>study&#45;sensitivity&#45;&gt;study&#45;summary</title>
 <path fill="none" stroke="#72818b" d="M3245.54,-978.45C3254.35,-980.36 3263.27,-982.29 3272.14,-984.21"/>
 <polygon fill="#72818b" stroke="#72818b" points="3271.75,-986.45 3278.59,-985.6 3272.72,-982.01 3271.75,-986.45"/>
@@ -2379,7 +2397,7 @@
 </g>
 </g>
 <!-- tree&#45;index&#45;&gt;pron1 -->
-<g id="edge138" class="edge">
+<g id="edge139" class="edge">
 <title>tree&#45;index&#45;&gt;pron1</title>
 <path fill="none" stroke="#72818b" d="M745.85,-171.96C758.42,-167.88 771.09,-163.51 783,-159 798.07,-153.3 800.84,-149.45 816,-144 825.89,-140.44 836.32,-137.05 846.79,-133.88"/>
 <polygon fill="#72818b" stroke="#72818b" points="847.73,-135.97 853.31,-131.93 846.43,-131.61 847.73,-135.97"/>
@@ -2398,7 +2416,7 @@
 </g>
 </g>
 <!-- tree&#45;index&#45;&gt;star&#45;bound -->
-<g id="edge141" class="edge">
+<g id="edge142" class="edge">
 <title>tree&#45;index&#45;&gt;star&#45;bound</title>
 <path fill="none" stroke="#72818b" d="M770.53,-192.45C790,-191.51 810.21,-190.53 829.7,-189.59"/>
 <polygon fill="#72818b" stroke="#72818b" points="829.89,-191.86 836.28,-189.27 829.67,-187.31 829.89,-191.86"/>
@@ -2416,7 +2434,7 @@
 </g>
 </g>
 <!-- tree&#45;index&#45;&gt;lemn01 -->
-<g id="edge142" class="edge">
+<g id="edge143" class="edge">
 <title>tree&#45;index&#45;&gt;lemn01</title>
 <path fill="none" stroke="#72818b" d="M770.53,-222.2C785.89,-225.43 801.72,-228.76 817.29,-232.03"/>
 <polygon fill="#72818b" stroke="#72818b" points="817.11,-234.32 823.94,-233.43 818.05,-229.87 817.11,-234.32"/>
@@ -2434,7 +2452,7 @@
 </g>
 </g>
 <!-- tree&#45;index&#45;&gt;thm:factortree -->
-<g id="edge145" class="edge">
+<g id="edge146" class="edge">
 <title>tree&#45;index&#45;&gt;thm:factortree</title>
 <path fill="none" stroke="#72818b" d="M765.66,-171.9C771.89,-168.16 777.74,-163.88 783,-159 812.69,-131.42 785.76,-100.98 816,-74 819.19,-71.16 822.58,-68.55 826.14,-66.15"/>
 <polygon fill="#72818b" stroke="#72818b" points="827.57,-67.94 831.86,-62.56 825.15,-64.09 827.57,-67.94"/>
@@ -2452,7 +2470,7 @@
 </g>
 </g>
 <!-- pron1&#45;&gt;pron2 -->
-<g id="edge139" class="edge">
+<g id="edge140" class="edge">
 <title>pron1&#45;&gt;pron2</title>
 <path fill="none" stroke="#72818b" d="M1039.84,-109C1063.04,-109 1088.24,-109 1112.47,-109"/>
 <polygon fill="#72818b" stroke="#72818b" points="1112.77,-111.28 1119.27,-109 1112.77,-106.73 1112.77,-111.28"/>
@@ -2470,7 +2488,7 @@
 </g>
 </g>
 <!-- star&#45;bound&#45;&gt;star&#45;maximum -->
-<g id="edge140" class="edge">
+<g id="edge141" class="edge">
 <title>star&#45;bound&#45;&gt;star&#45;maximum</title>
 <path fill="none" stroke="#72818b" d="M1056.53,-184C1076.81,-184 1098.02,-184 1118.36,-184"/>
 <polygon fill="#72818b" stroke="#72818b" points="1118.43,-186.28 1124.93,-184 1118.43,-181.73 1118.43,-186.28"/>
@@ -2498,7 +2516,7 @@
 </g>
 </g>
 <!-- factor&#45;tree&#45;&gt;degree&#45;pairs -->
-<g id="edge148" class="edge">
+<g id="edge149" class="edge">
 <title>factor&#45;tree&#45;&gt;degree&#45;pairs</title>
 <path fill="none" stroke="#72818b" d="M466.73,-111.08C486.67,-111.5 507.87,-111.94 528.56,-112.38"/>
 <polygon fill="#72818b" stroke="#72818b" points="528.71,-114.66 535.26,-112.52 528.81,-110.11 528.71,-114.66"/>
@@ -2516,31 +2534,31 @@
 </g>
 </g>
 <!-- thm:factortree&#45;&gt;tree&#45;table -->
-<g id="edge151" class="edge">
+<g id="edge152" class="edge">
 <title>thm:factortree&#45;&gt;tree&#45;table</title>
 <path fill="none" stroke="#72818b" d="M1061.39,-40C1078.12,-40 1095.38,-40 1112.19,-40"/>
 <polygon fill="#72818b" stroke="#72818b" points="1112.35,-42.28 1118.85,-40 1112.35,-37.73 1112.35,-42.28"/>
 </g>
 <!-- factor&#45;complexity&#45;&gt;thm:factortree -->
-<g id="edge144" class="edge">
+<g id="edge145" class="edge">
 <title>factor&#45;complexity&#45;&gt;thm:factortree</title>
 <path fill="none" stroke="#72818b" d="M483.68,-222.98C491.18,-218.62 498.08,-213.36 504,-207 517.55,-192.45 497.2,-176.26 512,-163 556.97,-122.72 733.18,-178.09 783,-144 811.38,-124.58 789.55,-95.99 816,-74 819.23,-71.32 822.64,-68.85 826.2,-66.57"/>
 <polygon fill="#72818b" stroke="#72818b" points="827.51,-68.44 831.91,-63.14 825.17,-64.53 827.51,-68.44"/>
 </g>
 <!-- factor&#45;complexity&#45;&gt;degree&#45;pairs -->
-<g id="edge149" class="edge">
+<g id="edge150" class="edge">
 <title>factor&#45;complexity&#45;&gt;degree&#45;pairs</title>
 <path fill="none" stroke="#72818b" d="M483.67,-223.44C491.22,-218.99 498.14,-213.57 504,-207 521.32,-187.58 494.53,-168.29 512,-149 517.23,-143.22 523.26,-138.34 529.82,-134.23"/>
 <polygon fill="#72818b" stroke="#72818b" points="530.97,-136.19 535.44,-130.95 528.68,-132.26 530.97,-136.19"/>
 </g>
 <!-- reversed&#45;prefix&#45;&gt;degree&#45;pairs -->
-<g id="edge150" class="edge">
+<g id="edge151" class="edge">
 <title>reversed&#45;prefix&#45;&gt;degree&#45;pairs</title>
 <path fill="none" stroke="#72818b" d="M485.89,-148.99C505.63,-144.99 526.02,-140.85 545.49,-136.9"/>
 <polygon fill="#72818b" stroke="#72818b" points="546.14,-139.09 552.05,-135.57 545.23,-134.64 546.14,-139.09"/>
 </g>
 <!-- degree&#45;pairs&#45;&gt;thm:factortree -->
-<g id="edge143" class="edge">
+<g id="edge144" class="edge">
 <title>degree&#45;pairs&#45;&gt;thm:factortree</title>
 <path fill="none" stroke="#72818b" d="M751.91,-94.42C762.45,-91.77 772.98,-88.95 783,-86 797.97,-81.59 801.1,-78.65 816,-74 822.63,-71.93 829.47,-69.88 836.38,-67.88"/>
 <polygon fill="#72818b" stroke="#72818b" points="837.13,-70.03 842.75,-66.05 835.88,-65.65 837.13,-70.03"/>
@@ -2570,7 +2588,7 @@
 </g>
 </g>
 <!-- newfibword&#45;&gt;newprove -->
-<g id="edge152" class="edge">
+<g id="edge153" class="edge">
 <title>newfibword&#45;&gt;newprove</title>
 <path fill="none" stroke="#72818b" d="M479.3,-46C496.04,-46 513.37,-46 530.33,-46"/>
 <polygon fill="#72818b" stroke="#72818b" points="530.56,-48.28 537.06,-46 530.56,-43.73 530.56,-48.28"/>
@@ -2599,7 +2617,7 @@
 </g>
 </g>
 <!-- albertson&#45;parity&#45;&gt;albertson&#45;leaves -->
-<g id="edge153" class="edge">
+<g id="edge154" class="edge">
 <title>albertson&#45;parity&#45;&gt;albertson&#45;leaves</title>
 <path fill="none" stroke="#72818b" d="M3806.14,-2287C3814.73,-2287 3823.42,-2287 3832.04,-2287"/>
 <polygon fill="#72818b" stroke="#72818b" points="3832.12,-2289.28 3838.62,-2287 3832.12,-2284.73 3832.12,-2289.28"/>
@@ -2642,7 +2660,7 @@
 </g>
 </g>
 <!-- gutman&#45;family&#45;&gt;gutman&#45;specializations -->
-<g id="edge154" class="edge">
+<g id="edge155" class="edge">
 <title>gutman&#45;family&#45;&gt;gutman&#45;specializations</title>
 <path fill="none" stroke="#72818b" d="M3804.16,-1000C3812.81,-1000 3821.55,-1000 3830.23,-1000"/>
 <polygon fill="#72818b" stroke="#72818b" points="3830.35,-1002.28 3836.85,-1000 3830.35,-997.73 3830.35,-1002.28"/>

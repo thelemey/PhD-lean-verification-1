@@ -875,5 +875,13 @@
   "table:pearson": {
     "title": "Надёжность 12-балльного теста в пилотной выборке из 40 учеников",
     "kind": "Таблица"
+  },
+  "square-cut-examples": {
+    "title": "Минимальные разрезы квадратов 2 × 2 и 3 × 3",
+    "at": "\\begin{example}[Квадрат",
+    "kind": "Пример",
+    "uses": [
+      "thm:min-dissection-path"
+    ]
   }
 }

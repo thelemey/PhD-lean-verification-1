@@ -124,3 +124,4 @@ import Thesis.StudyDesign
 import Thesis.ThinkingRanks
 import Thesis.StudyHistogramCounts
 import Thesis.StudyPilot
+import Thesis.PolyominoRectanglePieces

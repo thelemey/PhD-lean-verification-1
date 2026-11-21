@@ -177,7 +177,7 @@ theorem same_geometricPart_of_uncut_positiveSide {cells : List Cell} {cuts : Lis
   have hfinish : cellCenter q.val ∈ path '' I := ⟨1, by norm_num [I], hq⟩
   exact (isPreconnected_Icc.image path hpath.continuousOn).subset_connectedComponentIn hstart hsub hfinish
 
-private theorem centers_straddling_cut {cells : List Cell} {cuts : List Line} {p q : CellIn cells}
+theorem centers_straddling_cut {cells : List Cell} {cuts : List Line} {p q : CellIn cells}
     {C : Set Plane} (hC : IsPreconnected C) (hsub : C ⊆ remaining cells cuts)
     (hp : cellCenter p.val ∈ C) (hq : cellCenter q.val ∈ C)
     {a : Bool} {c : ℤ} (hcut : axisLine a c ∈ cuts)
