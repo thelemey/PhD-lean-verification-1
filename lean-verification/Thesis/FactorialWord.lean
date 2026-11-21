@@ -1,4 +1,6 @@
 import Std.Tactic
+import Mathlib.Data.Nat.Factorization.Basic
+import Mathlib.Data.Nat.Multiplicity
 
 namespace Thesis.FactorialWord
 
@@ -11,32 +13,63 @@ theorem factorial_pos (n : Nat) : 0 < factorial n := by
   | zero => decide
   | succ n ih => exact Nat.mul_pos (by omega) ih
 
-private theorem factorial_dvd_factorial (m n : Nat) (h : m ≤ n) :
-    factorial m ∣ factorial n := by
+theorem factorial_eq_nat (n : Nat) : factorial n = n.factorial := by
   induction n with
-  | zero =>
-    have he : m = 0 := by omega
-    exact he ▸ Nat.dvd_refl _
-  | succ n ih =>
-    by_cases he : m = n + 1
-    · exact he ▸ Nat.dvd_refl _
-    · exact Nat.dvd_mul_left_of_dvd (ih (by omega)) (n + 1)
+  | zero => rfl
+  | succ n ih => rw [factorial, Nat.factorial_succ, ih]
 
-/-- A sufficient uniform threshold for `b ^ k ∣ n!`. -/
+/-- The valuation estimate in lem:trail, by the first term of Legendre's sum. -/
+theorem prime_factorization_factorial_ge_div {p n : Nat} (hp : p.Prime) :
+    n / p ≤ (factorial n).factorization p := by
+  let bound := Nat.log p n + 2
+  have hbound : Nat.log p n < bound := by dsimp [bound]; omega
+  have hmem : 1 ∈ Finset.Ico 1 bound := by
+    rw [Finset.mem_Ico]
+    exact ⟨le_rfl, by dsimp [bound]; omega⟩
+  have h := (hp.pow_dvd_factorial_iff hbound).2
+    (show n / p ≤ ∑ i ∈ Finset.Ico 1 bound, n / p ^ i by
+      simpa only [pow_one] using
+        (Finset.single_le_sum (f := fun i => n / p ^ i) (fun i _ => Nat.zero_le _) hmem))
+  rw [factorial_eq_nat]
+  exact (hp.pow_dvd_iff_le_factorization (Nat.factorial_ne_zero n)).1 h
+
+/-- A sufficient uniform threshold, using the bounds on each prime
+valuation of the base as in lem:trail. -/
 theorem pow_dvd_factorial {b : Nat} (hb : 0 < b) (k n : Nat) (hn : b * k ≤ n) :
     b ^ k ∣ factorial n := by
-  induction k generalizing n with
-  | zero => simp
-  | succ k ih =>
-    let m := b * (k + 1) - 1
-    have hp : 0 < b * (k + 1) := Nat.mul_pos hb (by omega)
-    have eq : m + 1 = b * (k + 1) := by dsimp [m]; omega
-    have hm : b * k ≤ m := by dsimp [m]; rw [Nat.mul_succ]; omega
-    obtain ⟨p, hfac⟩ := ih m hm
-    apply Nat.dvd_trans _ (factorial_dvd_factorial (m + 1) n (by omega))
-    refine ⟨(k + 1) * p, ?_⟩
-    rw [factorial, eq, hfac, Nat.pow_succ]
-    ac_rfl
+  apply (Nat.factorization_le_iff_dvd (pow_ne_zero _ hb.ne') (factorial_pos n).ne').1
+  rw [Nat.factorization_pow]
+  intro p
+  change k * b.factorization p ≤ (factorial n).factorization p
+  by_cases hp : p ∈ b.primeFactors
+  · have hprime := Nat.prime_of_mem_primeFactors hp
+    have he : p ^ b.factorization p ≤ b :=
+      Nat.le_of_dvd hb ((hprime.pow_dvd_iff_le_factorization hb.ne').2 le_rfl)
+    have he' : p * b.factorization p ≤ b := by
+      have hd : b.factorization p ≤ p ^ (b.factorization p - 1) := by
+        have hf : 0 < b.factorization p := by
+          rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
+          exact Nat.pos_of_ne_zero hp
+        have hd : b.factorization p - 1 < 2 ^ (b.factorization p - 1) := Nat.lt_two_pow_self
+        exact (by omega : b.factorization p ≤ 2 ^ (b.factorization p - 1)).trans
+          (Nat.pow_le_pow_left hprime.two_le _)
+      have hf : 0 < b.factorization p := by
+        rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
+        exact Nat.pos_of_ne_zero hp
+      calc
+        _ ≤ p * (p ^ (b.factorization p - 1)) := Nat.mul_le_mul_left _ hd
+        _ = p ^ b.factorization p := by
+          rw [← pow_succ', Nat.sub_add_cancel (by omega : 1 ≤ b.factorization p)]
+        _ ≤ b := he
+    have hmul : k * b.factorization p * p ≤ n := by
+      calc
+        _ = (p * b.factorization p) * k := by ac_rfl
+        _ ≤ b * k := Nat.mul_le_mul_right _ he'
+        _ ≤ n := hn
+    exact ((Nat.le_div_iff_mul_le hprime.pos).2 hmul).trans
+      (prime_factorization_factorial_ge_div hprime)
+  · rw [← Nat.support_factorization, Finsupp.not_mem_support_iff] at hp
+    simp [hp]
 
 /-- The canonical base-`b` digits, least significant first. -/
 def digits (b n : Nat) : List Nat :=
@@ -73,6 +106,90 @@ private theorem zero_prefix {b : Nat} (hb : 1 < b) (k n : Nat)
     have hrem : n % b = 0 := by rw [hmul, Nat.mul_mod_right]
     refine ⟨rest, ?_⟩
     rw [digits_step hb hn, hrem, ← hrest, List.replicate_succ, List.cons_append]
+
+private theorem dvd_of_zero_prefix {b : Nat} (hb : 1 < b) (k n : Nat) (hn : 0 < n)
+    (h : List.replicate k 0 <+: digits b n) : b ^ k ∣ n := by
+  induction k generalizing n with
+  | zero => simp
+  | succ k ih =>
+    rw [List.replicate_succ, digits_step hb hn, List.cons_prefix_cons] at h
+    have hquot : 0 < n / b := by
+      have he := Nat.mod_add_div n b
+      rw [← h.1, zero_add] at he
+      by_cases hzero : n / b = 0
+      · rw [hzero, Nat.mul_zero] at he
+        exact (hn.ne' he.symm).elim
+      · exact Nat.pos_of_ne_zero hzero
+    obtain ⟨c, hc⟩ := ih (n / b) hquot h.2
+    refine ⟨c, ?_⟩
+    calc
+      n = b * (n / b) := by simpa only [← h.1, zero_add] using (Nat.mod_add_div n b).symm
+      _ = b ^ (k + 1) * c := by rw [hc, pow_succ']; ac_rfl
+
+/-- The number of trailing zeros in the canonical writing of a positive integer. -/
+def trailingZeroCount (b n : Nat) : Nat := ((digits b n).takeWhile (· == 0)).length
+
+private theorem le_length_takeWhile_zero {xs : List Nat} {k : Nat} :
+    k ≤ (xs.takeWhile (· == 0)).length ↔ List.replicate k 0 <+: xs := by
+  induction k generalizing xs with
+  | zero => simp
+  | succ k ih =>
+    cases xs with
+    | nil => simp
+    | cons x xs =>
+      by_cases hx : x = 0
+      · subst x
+        simpa [List.replicate_succ, Nat.succ_le_succ_iff] using (ih (xs := xs))
+      · simp [List.replicate_succ, hx, Ne.symm hx]
+
+theorem le_trailingZeroCount_iff_dvd {b n : Nat} (hb : 1 < b) (hn : 0 < n) (k : Nat) :
+    k ≤ trailingZeroCount b n ↔ b ^ k ∣ n :=
+  le_length_takeWhile_zero.trans ⟨dvd_of_zero_prefix hb k n hn, zero_prefix hb k n hn⟩
+
+private theorem factorization_pos_of_mem {b p : Nat} (hp : p ∈ b.primeFactors) :
+    0 < b.factorization p := by
+  rw [← Nat.support_factorization, Finsupp.mem_support_iff] at hp
+  exact Nat.pos_of_ne_zero hp
+
+/-- The prime valuation minimum in the source's proof of lem:trail. -/
+theorem factorial_trailingZeroCount_eq_min {b : Nat} (hb : 1 < b) (n : Nat) :
+    let values := b.primeFactors.image fun p => (factorial n).factorization p / b.factorization p
+    trailingZeroCount b (factorial n) = values.min'
+      ((Nat.nonempty_primeFactors.2 hb).image _) := by
+  intro values
+  have he (k : Nat) : k ≤ trailingZeroCount b (factorial n) ↔
+      ∀ p ∈ b.primeFactors, k ≤ (factorial n).factorization p / b.factorization p := by
+    rw [le_trailingZeroCount_iff_dvd hb (factorial_pos n), ← Nat.factorization_le_iff_dvd
+      (pow_ne_zero _ (by omega : b ≠ 0)) (factorial_pos n).ne', Nat.factorization_pow]
+    constructor
+    · intro h p hp
+      exact (Nat.le_div_iff_mul_le (factorization_pos_of_mem hp)).2 (h p)
+    · intro h p
+      change k * b.factorization p ≤ (factorial n).factorization p
+      by_cases hp : p ∈ b.primeFactors
+      · exact (Nat.le_div_iff_mul_le (factorization_pos_of_mem hp)).1 (h p hp)
+      · rw [← Nat.support_factorization, Finsupp.not_mem_support_iff] at hp
+        simp [hp]
+  have hmin (k : Nat) : k ≤ trailingZeroCount b (factorial n) ↔
+      k ≤ values.min' ((Nat.nonempty_primeFactors.2 hb).image _) := by
+    rw [he, Finset.le_min'_iff]
+    simp only [values, Finset.mem_image]
+    constructor
+    · intro h x hx
+      obtain ⟨p, hp, heq⟩ := hx
+      rw [← heq]
+      exact h p hp
+    · intro h p hp
+      exact h _ ⟨p, hp, rfl⟩
+  exact le_antisymm ((hmin _).1 le_rfl) ((hmin _).2 le_rfl)
+
+theorem factorial_trailingZeroCount_monotone {b : Nat} (hb : 1 < b) :
+    Monotone fun n => trailingZeroCount b (factorial n) := by
+  intro m n h
+  let k := trailingZeroCount b (factorial m)
+  apply (le_trailingZeroCount_iff_dvd hb (factorial_pos n) k).2
+  apply dvd_trans ((le_trailingZeroCount_iff_dvd hb (factorial_pos m) k).1 le_rfl)
+  simpa only [factorial_eq_nat] using Nat.factorial_dvd_factorial h
 
 /-- Lemma `lem:trail`. In least-significant-first order, trailing zeros
 in the usual writing appear as a prefix. -/
