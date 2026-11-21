@@ -139,7 +139,7 @@
 - [FactorialCorrelations.lean](Thesis/FactorialCorrelations.lean) — корреляционное тождество, оценка ошибки и условный предел модуля.
 - [LogOscillationIntegral.lean](Thesis/LogOscillationIntegral.lean) — первообразная, точная оценка ошибки сравнения суммы с интегралом и нормированный остаток.
 - [VanDerCorput.lean](Thesis/VanDerCorput.lean) и [VanDerCorputLimit.lean](Thesis/VanDerCorputLimit.lean) — продолжение нулями, раскрытие квадрата, переход к пределу при фиксированном размере окна и гармоническая оценка.
-- [WeylCriterion.lean](Thesis/WeylCriterion.lean) — используемое направление критерия Вейля через плотность тригонометрических многочленов.
+- [WeylCriterion.lean](Thesis/WeylCriterion.lean) — оба направления критерия Вейля через плотность тригонометрических многочленов и разбиение окружности на полуоткрытые дуги.
 - [FactorialWeyl.lean](Thesis/FactorialWeyl.lean) — экспоненциальные средние, равномерное распределение, бесконечные попадания в интервалы и обе формулы сложности.
 - [FactorialLeadingDigits.lean](Thesis/FactorialLeadingDigits.lean) — арифметический переход от интервального условия к заданным начальным цифрам.
 - [FactorialInfiniteWord.lean](Thesis/FactorialInfiniteWord.lean) — бесконечная конкатенация и полный подсчёт факторов и арифметических факторов.

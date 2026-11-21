@@ -6,10 +6,10 @@
 
 | Статус | Цвет | Узлов | Что проверено |
 |---|---|---:|---|
-| Доказано | Зелёный `#228044` | 86 | Указанные теоремы Lean покрывают формулировку. |
+| Доказано | Зелёный `#228044` | 87 | Указанные теоремы Lean покрывают формулировку. |
 | Определено | Светло-зелёный `#629740` | 14 | В Lean задан объект, используемый в доказательстве. |
 | С уточнением | Золотистый `#A68812` | 2 | Условия или существенный шаг доказательства в Lean уточнены в таблице. |
-| Частично | Оранжевый `#D3791A` | 6 | Проверена часть утверждения или частный случай. |
+| Частично | Оранжевый `#D3791A` | 5 | Проверена часть утверждения или частный случай. |
 | Без проверки Lean | Красный `#C43735` | 21 | В проекте для этого утверждения отсутствует указанное доказательство. |
 
 ## Разделы
@@ -49,7 +49,7 @@
 | <a name="node-pal-spal"></a> **Сравнение числа обычных и рассеянных палиндромов**<br>[§ 2.1 · Лемма 2.1.2](../../corrected_thesis/thesis_corrected.tex#L686) | Без проверки Lean | [Включение факторов в рассеянные палиндромы](#node-lem-pal-subset-spal) | — |
 | <a name="node-mahalingam-increment"></a> **Добавление буквы даёт не более Fₙ новых рассеянных палиндромов**<br>[§ 2.1 · Лемма 2.1.3](../../corrected_thesis/thesis_corrected.tex#L736) | Без проверки Lean | — | — |
 | <a name="node-brinkhuis"></a> **Экспоненциальные оценки числа троичных бесквадратных слов**<br>[§ 2.1 · Предложение 2.1.3](../../corrected_thesis/thesis_corrected.tex#L773) | Без проверки Lean | — | — |
-| <a name="node-weyl"></a> **Критерий Вейля**<br>[§ 2.2 · Теорема 2.2.1](../../corrected_thesis/thesis_corrected.tex#L930) | Частично | — | В Lean доказано используемое в лемме направление от исчезновения средних гармоник к равномерному распределению. В TeX дана эквивалентность. [weylCriterion](../Thesis/WeylCriterion.lean#L233) |
+| <a name="node-weyl"></a> **Критерий Вейля**<br>[§ 2.2 · Теорема 2.2.1](../../corrected_thesis/thesis_corrected.tex#L930) | Доказано | — | Доказана эквивалентность для частот полуинтервалов и средних всех ненулевых гармоник. Обратный переход получен равномерной аппроксимацией непрерывной функции на окружности по полуоткрытым дугам. [weylCriterion](../Thesis/WeylCriterion.lean#L233), [equidistributed_iff_fourier](../Thesis/WeylCriterion.lean#L345) |
 | <a name="node-lem-logfact"></a> **Равномерное распределение log_b(n!) при b > 1**<br>[§ 2.2 · Лемма 2.2.1](../../corrected_thesis/thesis_corrected.tex#L943) | Доказано | [Критерий Вейля](#node-weyl) · [Оценка Коши и два предельных перехода в средних Вейля](#node-weyl-mean) | Доказаны равномерное распределение и попадания в любой полуинтервал положительной длины за любой заданной границей. [factorial_logs_equidistributed](../Thesis/FactorialWeyl.lean#L49), [factorial_logs_hit_interval](../Thesis/FactorialWeyl.lean#L56) |
 | <a name="node-factorial-correlations"></a> **Приближение корреляций степенями с мнимым показателем**<br>[§ 2.2 · Шаг доказательства](../../corrected_thesis/thesis_corrected.tex#L960) | Доказано | — | [factorial_correlation_error](../Thesis/FactorialCorrelations.lean#L116) |
 | <a name="node-oscillation-integral"></a> **Сравнение осциллирующей суммы с интегралом**<br>[§ 2.2 · Шаг доказательства](../../corrected_thesis/thesis_corrected.tex#L964) | Доказано | — | [log_oscillation_sum_integral_error](../Thesis/LogOscillationIntegral.lean#L141) |

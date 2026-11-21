@@ -244,4 +244,111 @@ theorem weylCriterion : WeylCriterion := by
     atTop (𝓝 (ENNReal.ofReal (b - a)).toReal) at ht
   simpa only [empirical_arc ha hb, ENNReal.toReal_ofReal (sub_nonneg.mpr hab.le)] using ht
 
+/-- Equal interval frequencies give convergence for continuous observables.
+The proof approximates an observable uniformly on the circle by its values
+at the left endpoints of a finite partition into half-open arcs. -/
+private theorem integrals_of_equidistributed {x : Nat → ℝ} (hx : Equidistributed x)
+    (f : C(UnitCircle, ℂ)) :
+    Tendsto (fun N => ∫ z, f z ∂(circleEmpirical x N : Measure UnitCircle)) atTop
+      (𝓝 (∫ z, f z ∂(circleUniform : Measure UnitCircle))) := by
+  classical
+  apply Metric.tendsto_atTop.2
+  intro ε hε
+  let g : ℝ → ℂ := fun z => f (z : UnitCircle)
+  have hg : Continuous g := f.continuous.comp (AddCircle.continuous_mk' 1)
+  obtain ⟨δ,hδ,hmod⟩ := Metric.uniformContinuousOn_iff.1
+    (isCompact_Icc.uniformContinuousOn_of_continuous (s := Icc (0:ℝ) 1) hg.continuousOn)
+    (ε/3) (by positivity)
+  obtain ⟨d,hd⟩ := exists_nat_one_div_lt hδ
+  let m := d+1
+  have hm : (0:ℝ) < m := by dsimp [m]; positivity
+  have mesh : 1/(m:ℝ) < δ := by simpa [m] using hd
+  let a (j : Fin m) : ℝ := (j.val : ℝ)/m
+  let b (j : Fin m) : ℝ := ((j.val:ℝ)+1)/m
+  have endpoints (j : Fin m) : 0 ≤ a j ∧ a j < b j ∧ b j ≤ 1 := by
+    have hj : (j.val : ℝ)+1 ≤ m := by exact_mod_cast Nat.succ_le_of_lt j.isLt
+    exact ⟨div_nonneg (Nat.cast_nonneg _) hm.le, (div_lt_div_iff_of_pos_right hm).2 (by linarith),
+      (div_le_iff₀ hm).2 (by linarith)⟩
+  let step : UnitCircle → ℂ := fun z => ∑ j : Fin m, (arc (a j) (b j)).indicator (fun _ => g (a j)) z
+  have approx (z : UnitCircle) : dist (f z) (step z) ≤ ε/3 := by
+    induction z using QuotientAddGroup.induction_on with
+    | _ y =>
+      let r := Int.fract y
+      have hr : 0 ≤ r := Int.fract_nonneg _
+      have hr' : r < 1 := Int.fract_lt_one _
+      let k := ⌊r*m⌋₊
+      have hL : (k:ℝ) ≤ r*m := Nat.floor_le (mul_nonneg hr hm.le)
+      have hU : r*m < (k:ℝ)+1 := Nat.lt_floor_add_one _
+      have hkm : k < m := by exact_mod_cast (show (k:ℝ) < m by nlinarith only [hL, mul_lt_mul_of_pos_right hr' hm])
+      let j : Fin m := ⟨k,hkm⟩
+      have hj : r ∈ Ico (a j) (b j) := ⟨(div_le_iff₀ hm).2 hL, (lt_div_iff₀ hm).2 hU⟩
+      have unique (l : Fin m) (hl : r ∈ Ico (a l) (b l)) : l = j := by
+        apply Fin.ext
+        have h₁ := (div_le_iff₀ hm).1 hl.1
+        have h₂ := (lt_div_iff₀ hm).1 hl.2
+        have hl' : l.val < k+1 := by exact_mod_cast (show (l.val:ℝ) < (k:ℝ)+1 from h₁.trans_lt hU)
+        have hk' : k < l.val+1 := by exact_mod_cast (show (k:ℝ) < (l.val:ℝ)+1 from hL.trans_lt h₂)
+        change l.val = k
+        omega
+      have eval : step (y : UnitCircle) = g (a j) := by
+        unfold step
+        rw [Finset.sum_eq_single j]
+        · apply indicator_of_mem
+          exact (mem_arc (endpoints j).1 (endpoints j).2.2 _).2 hj
+        · intro l _ hne
+          have hn : (y : UnitCircle) ∉ arc (a l) (b l) := fun h =>
+            hne (unique l ((mem_arc (endpoints l).1 (endpoints l).2.2 _).1 h))
+          simp [Set.indicator, hn]
+        · simp
+      rw [eval]
+      have he : (r : UnitCircle) = (y : UnitCircle) := AddCircle.coe_fract y
+      change dist (f (y:UnitCircle)) (g (a j)) ≤ _
+      rw [← he]
+      apply (hmod r ⟨hr,hr'.le⟩ (a j) ⟨(endpoints j).1,(endpoints j).2.1.le.trans (endpoints j).2.2⟩ _).le
+      rw [Real.dist_eq, abs_of_nonneg (sub_nonneg.2 hj.1)]
+      have width : b j = a j + 1/m := by dsimp [a,b]; ring
+      linarith only [hj.2,width,mesh]
+  have measurable (j : Fin m) := measurableSet_arc (endpoints j).1 (endpoints j).2.2
+  have intStep (μ : ProbabilityMeasure UnitCircle) : Integrable step (μ : Measure UnitCircle) := by
+    apply integrable_finset_sum
+    exact fun j _ => (integrable_const _).indicator (measurable j)
+  have integral_step (μ : ProbabilityMeasure UnitCircle) :
+      (∫ z, step z ∂(μ : Measure UnitCircle)) =
+        ∑ j : Fin m, ((μ : Measure UnitCircle) (arc (a j) (b j))).toReal • g (a j) := by
+    rw [show (∫ z, step z ∂(μ : Measure UnitCircle)) = _ from integral_finset_sum _
+      (fun j _ => (integrable_const _).indicator (measurable j))]
+    exact Finset.sum_congr rfl fun j _ => integral_indicator_const _ (measurable j)
+  have lim : Tendsto (fun N => ∫ z, step z ∂(circleEmpirical x N : Measure UnitCircle)) atTop
+      (𝓝 (∫ z, step z ∂(circleUniform : Measure UnitCircle))) := by
+    simp only [integral_step]
+    apply tendsto_finset_sum
+    intro j _
+    rw [circleUniform_arc (endpoints j).1 (endpoints j).2.2, ENNReal.toReal_ofReal (sub_nonneg.2 (endpoints j).2.1.le)]
+    simpa only [empirical_arc (endpoints j).1 (endpoints j).2.2] using
+      ((hx _ _ (endpoints j).1 (endpoints j).2.1 (endpoints j).2.2).comp (tendsto_add_atTop_nat 1)).smul_const (g (a j))
+  have error (μ : ProbabilityMeasure UnitCircle) :
+      dist (∫ z, f z ∂(μ : Measure UnitCircle)) (∫ z, step z ∂(μ : Measure UnitCircle)) ≤ ε/3 := by
+    rw [dist_eq_norm, ← integral_sub
+      (f.continuous.integrable_of_hasCompactSupport (HasCompactSupport.of_compactSpace f)) (intStep μ)]
+    simpa only [measureReal_univ_eq_one, mul_one] using norm_integral_le_of_norm_le_const
+      (μ := (μ : Measure UnitCircle)) (Eventually.of_forall (fun z => by simpa [dist_eq_norm] using approx z))
+  obtain ⟨N,hN⟩ := Metric.tendsto_atTop.1 lim (ε/3) (by positivity)
+  refine ⟨N, fun k hk => ?_⟩
+  apply (dist_triangle4 _ (∫ z, step z ∂(circleEmpirical x k : Measure UnitCircle))
+    (∫ z, step z ∂(circleUniform : Measure UnitCircle)) _).trans_lt
+  have hu := error circleUniform
+  rw [dist_comm] at hu
+  linarith only [error (circleEmpirical x k), hN k hk, hu]
+
+/-- Both directions of the Weyl criterion quoted in chapter 2, in the same
+half-open interval convention as the theorem on factorial logarithms. -/
+theorem equidistributed_iff_fourier (x : Nat → ℝ) :
+    Equidistributed x ↔ ∀ h : ℤ, h ≠ 0 →
+      Tendsto (mean (fun n => oscillation (2*Real.pi*(h:ℝ)*x n))) atTop (𝓝 0) := by
+  refine ⟨?_, weylCriterion x⟩
+  intro hx h hh
+  apply (tendsto_add_atTop_iff_nat 1).1
+  simpa only [integral_circleEmpirical, integral_circleUniform, fourier_frequency, if_neg hh] using
+    integrals_of_equidistributed hx (fourier h)
+
 end Thesis.FactorialWord
