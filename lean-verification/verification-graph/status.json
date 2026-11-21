@@ -991,9 +991,16 @@
       "StudyANCOVATable": [
         "thinking_welch_enclosure",
         "numbers_welch_enclosure"
+      ],
+      "StudyReferenceBounds": [
+        "study_student_p_cutoffs"
+      ],
+      "StudySignificance": [
+        "thinking_study_decisions",
+        "numbers_study_decisions"
       ]
     },
-    "note": "Проверены интервалы для статистик Уэлча по округлённым сводкам. Ранговые тесты и исходные наблюдения в Lean не воспроизведены."
+    "note": "Из сводок доказаны решения двусторонних тестов Уэлча до и после обучения для обоих инструментов при уровне 0,05. Для ранговых тестов нужны индивидуальные наблюдения."
   },
   "tab:ancova": {
     "status": "partial",
@@ -1002,21 +1009,35 @@
         "pooled_cross_of_sampleSD",
         "thinking_ancova_enclosure",
         "numbers_ancova_enclosure"
+      ],
+      "StudyReferenceBounds": [
+        "study_student_p_cutoffs"
+      ],
+      "StudySignificance": [
+        "ancovaSquaredT_eq_fitted_statistic",
+        "study_summary_from_paired_scores"
       ]
     },
-    "note": "Для обоих инструментов проверены границы статистики при общем наклоне. Точные p-значения и диагностика модели требуют парных наблюдений."
+    "note": "Статистика восстановлена из парных приростов и отождествлена со статистикой метода наименьших квадратов. Обе скорректированные вероятности больше 0,05. Точные напечатанные значения p и диагностика остатков отдельно не проверены."
   },
   "study-summary": {
-    "status": "partial",
+    "status": "qualified",
     "lean": {
       "StudyANCOVATable": [
         "thinking_welch_enclosure",
         "numbers_welch_enclosure",
         "thinking_ancova_enclosure",
         "numbers_ancova_enclosure"
+      ],
+      "StudyReferenceBounds": [
+        "study_student_p_cutoffs"
+      ],
+      "StudySignificance": [
+        "ancovaSquaredT_eq_fitted_statistic",
+        "study_summary_from_paired_scores"
       ]
     },
-    "note": "Проверена арифметика выводов из сводок при допуске округления. Проверка исходных измерений и статистических предпосылок остаётся открытой."
+    "note": "Для любых 42 пар наблюдений в каждой группе, согласующихся со сводками, доказаны оба исходных преимущества B, нескорректированное итоговое различие только по числам, близость приростов и оба решения ANCOVA при уровне 0,05. Сами измерения и эмпирические допущения модели по опубликованным таблицам не проверяются."
   },
   "tree-index": {
     "status": "definition",
