@@ -599,13 +599,13 @@
 <!-- B2 -->
 <g id="node&#45;B2" class="node">
 <title>B2</title>
-<g id="a_node&#45;B2"><a xlink:href="coverage.md#node-b2" xlink:title="Lean: Без отметки. | Теорема 3.4.2 | с. 57–58">
+<g id="a_node&#45;B2"><a xlink:href="coverage.md#node-b2" xlink:title="Lean: Доказано. Телескопическая сумма даёт оба точных подсчёта. Проверены строгие оценки, недостижимость и оптимальность границ через плотность иррационального вращения, а также оба предела плотностей. | Теорема 3.4.2 | с. 57–58">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M209,-1096.01C209,-1096.01 41,-1096.01 41,-1096.01 35,-1096.01 29,-1090.01 29,-1084.01 29,-1084.01 29,-1034.01 29,-1034.01 29,-1028.01 35,-1022.01 41,-1022.01 41,-1022.01 209,-1022.01 209,-1022.01 215,-1022.01 221,-1028.01 221,-1034.01 221,-1034.01 221,-1084.01 221,-1084.01 221,-1090.01 215,-1096.01 209,-1096.01"/>
 <text text-anchor="start" x="70.5" y="-1080.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.4.2</text>
 <text text-anchor="start" x="58" y="-1068.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Точный подсчёт букв</text>
 <text text-anchor="start" x="39" y="-1056.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и оптимальное отклонение</text>
 <text text-anchor="start" x="99.5" y="-1044.41" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 57–58</text>
-<text text-anchor="start" x="61.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="70.5" y="-1032.41" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

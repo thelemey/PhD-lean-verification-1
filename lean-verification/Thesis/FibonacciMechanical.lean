@@ -3,8 +3,11 @@ import Thesis.FibonacciCentralPrefixes
 import Thesis.FibonacciBinet
 import Thesis.SturmianMechanical
 import Mathlib.Data.Real.GoldenRatio
+import Mathlib.Topology.Algebra.Group.SubmonoidClosure
+import Mathlib.Topology.Instances.AddCircle.DenseSubgroup
 
-open scoped goldenRatio
+open Filter Set
+open scoped goldenRatio Topology
 
 namespace Thesis.Fibonacci
 
@@ -319,5 +322,129 @@ theorem factorWindow_density_errors (i k : Nat) (hk : 0 < k) :
     |((factorWindow i k).count .a : ℝ) / k - φ⁻¹| < 1 / (k : ℝ) := by
   have h := factorWindow_counts_balanced i k
   exact ⟨by simpa using frequency_error hk h.1, by simpa using frequency_error hk h.2⟩
+
+/-- Exact prefix counts from the telescoping sum in `mainre`. -/
+theorem prefix_counts (n : Nat) :
+    ((factorWindow 0 n).count .b : ℤ) = ⌊((n : ℝ) + 1) * mechanicalSlope⌋ ∧
+    ((factorWindow 0 n).count .a : ℤ) = (n : ℤ) - ⌊((n : ℝ) + 1) * mechanicalSlope⌋ := by
+  have hb := factorWindow_count_b 0 n
+  have hzero : ⌊mechanicalSlope⌋ = 0 := Int.floor_eq_iff.2 (by
+    simpa using ⟨mechanicalSlope_pos.le, mechanicalSlope_lt_one⟩)
+  simp only [Nat.cast_zero, zero_add, one_mul, hzero, sub_zero] at hb
+  rw [show mechanicalSlope + (n : ℝ) * mechanicalSlope =
+    ((n : ℝ) + 1) * mechanicalSlope by ring] at hb
+  refine ⟨hb, ?_⟩
+  have hs := congrArg (fun m : Nat => (m : ℤ)) (factorWindow_count_complement 0 n)
+  push_cast at hs
+  omega
+
+noncomputable def prefixDeviation (n : Nat) : ℝ :=
+  ((factorWindow 0 n).count .b : ℝ) - (n : ℝ) * mechanicalSlope
+
+theorem prefixDeviation_eq_fract (n : Nat) :
+    prefixDeviation n = mechanicalSlope - Int.fract (((n : ℝ) + 1) * mechanicalSlope) := by
+  have hb := congrArg (fun z : ℤ => (z : ℝ)) (prefix_counts n).1
+  push_cast at hb
+  unfold prefixDeviation Int.fract
+  rw [hb]
+  ring
+
+/-- Both strict discrepancy bounds. In particular the endpoints are never attained. -/
+theorem prefix_discrepancy (n : Nat) :
+    (-φ⁻¹ < prefixDeviation n ∧ prefixDeviation n < mechanicalSlope) ∧
+    (-mechanicalSlope < ((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹ ∧
+      ((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹ < φ⁻¹) := by
+  have hirr : Irrational (((n : ℝ) + 1) * mechanicalSlope) := by
+    rw [← Nat.cast_add_one]
+    exact mechanicalSlope_irrational.natCast_mul (Nat.succ_ne_zero n)
+  have hpos := Int.fract_pos.2 (hirr.ne_int _)
+  have hlt := Int.fract_lt_one (((n : ℝ) + 1) * mechanicalSlope)
+  have hb : -φ⁻¹ < prefixDeviation n ∧ prefixDeviation n < mechanicalSlope := by
+    rw [prefixDeviation_eq_fract]
+    constructor <;> linarith [slope_complement]
+  refine ⟨hb, ?_⟩
+  have hs := congrArg (fun m : Nat => (m : ℝ)) (factorWindow_count_complement 0 n)
+  push_cast at hs
+  have he : ((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹ = -prefixDeviation n := by
+    have hprod := congrArg (fun x : ℝ => (n : ℝ) * x) slope_complement
+    unfold prefixDeviation
+    linarith only [hs, hprod]
+  rw [he]
+  exact ⟨by linarith [hb.2], by linarith [hb.1]⟩
+
+/-- The density of an irrational rotation, restricted to positive indices
+and to intervals in a single real fundamental domain. -/
+private theorem fract_succ_mul_hits {α a b : ℝ} (hα : Irrational α)
+    (ha : 0 ≤ a) (hb : b ≤ 1) (hab : a < b) :
+    ∃ n : Nat, Int.fract (((n : ℝ) + 1) * α) ∈ Ioo a b := by
+  letI : Fact ((0 : ℝ) < 1) := ⟨zero_lt_one⟩
+  let q : ℝ → AddCircle (1 : ℝ) := fun x => x
+  have hdZ : DenseRange (fun z : ℤ => z • q α) :=
+    AddCircle.denseRange_zsmul_coe_iff.2 (by simpa using hα)
+  have hdN : DenseRange (fun n : Nat => n • q α) := denseRange_zsmul_iff_nsmul.1 hdZ
+  have hopen : IsOpen (q '' Ioo a b) := QuotientAddGroup.isOpenMap_coe _ isOpen_Ioo
+  obtain ⟨n, x, hx, he⟩ := hdN.exists_mem_open hopen ((nonempty_Ioo.2 hab).image q)
+  have hcoe : q (Int.fract ((n : ℝ) * α)) = n • q α := by
+    dsimp [q]
+    rw [AddCircle.coe_fract, ← AddCircle.coe_nsmul, nsmul_eq_mul]
+  have hleft : x ∈ Ico (0 : ℝ) (0 + 1) := ⟨ha.trans hx.1.le, by simpa using hx.2.trans_le hb⟩
+  have hright : Int.fract ((n : ℝ) * α) ∈ Ico (0 : ℝ) (0 + 1) :=
+    ⟨Int.fract_nonneg _, by simpa using Int.fract_lt_one ((n : ℝ) * α)⟩
+  have hx' := (AddCircle.coe_eq_coe_iff_of_mem_Ico hleft hright).1 (he.trans hcoe.symm)
+  rw [hx'] at hx
+  cases n with
+  | zero => simp at hx; exact (not_lt_of_ge ha hx.1).elim
+  | succ n => exact ⟨n, by simpa only [Nat.cast_succ] using hx⟩
+
+/-- Sharpness of both constants in `mainre`, using the density of the rotation. -/
+theorem prefix_discrepancy_sharp :
+    sInf (range prefixDeviation) = -φ⁻¹ ∧ sSup (range prefixDeviation) = mechanicalSlope := by
+  constructor
+  · refine csInf_eq_of_forall_ge_of_forall_gt_exists_lt (range_nonempty _) ?_ ?_
+    · rintro _ ⟨n, rfl⟩
+      exact (prefix_discrepancy n).1.1.le
+    · intro t ht
+      have hbound : max 0 (mechanicalSlope - t) < 1 := by
+        apply max_lt zero_lt_one
+        linarith [slope_complement]
+      obtain ⟨n, hn⟩ := fract_succ_mul_hits mechanicalSlope_irrational
+        (le_max_left _ _) le_rfl hbound
+      refine ⟨prefixDeviation n, mem_range_self _, ?_⟩
+      rw [prefixDeviation_eq_fract]
+      linarith [(le_max_right 0 (mechanicalSlope - t)).trans_lt hn.1]
+  · refine csSup_eq_of_forall_le_of_forall_lt_exists_gt (range_nonempty _) ?_ ?_
+    · rintro _ ⟨n, rfl⟩
+      exact (prefix_discrepancy n).1.2.le
+    · intro t ht
+      have hbound : 0 < min 1 (mechanicalSlope - t) := lt_min zero_lt_one (sub_pos.2 ht)
+      obtain ⟨n, hn⟩ := fract_succ_mul_hits mechanicalSlope_irrational
+        le_rfl (min_le_left _ _) hbound
+      refine ⟨prefixDeviation n, mem_range_self _, ?_⟩
+      rw [prefixDeviation_eq_fract]
+      linarith [hn.2.trans_le (min_le_right 1 (mechanicalSlope - t))]
+
+private theorem count_density_limit (c : Nat → Nat) (α : ℝ)
+    (h : ∀ n : Nat, |(c n : ℝ) - (n : ℝ) * α| ≤ 1) :
+    Tendsto (fun n : Nat => (c n : ℝ) / n) atTop (𝓝 α) := by
+  apply tendsto_iff_dist_tendsto_zero.2
+  have hbound : ∀ᶠ n : Nat in atTop, dist ((c n : ℝ) / n) α ≤ 1 / (n : ℝ) := by
+    filter_upwards [eventually_ge_atTop (1 : Nat)] with n hn
+    have hn' : (0 : ℝ) < n := by exact_mod_cast (Nat.zero_lt_of_lt hn)
+    have he : (c n : ℝ) / n - α = ((c n : ℝ) - (n : ℝ) * α) / n := by field_simp
+    rw [Real.dist_eq, he, abs_div, abs_of_pos hn', div_le_div_iff_of_pos_right hn']
+    exact h n
+  exact squeeze_zero' (Eventually.of_forall fun _ => dist_nonneg) hbound
+    tendsto_one_div_atTop_nhds_zero_nat
+
+theorem prefix_density_limits :
+    Tendsto (fun n : Nat => ((factorWindow 0 n).count .b : ℝ) / n) atTop (𝓝 mechanicalSlope) ∧
+    Tendsto (fun n : Nat => ((factorWindow 0 n).count .a : ℝ) / n) atTop (𝓝 (φ⁻¹)) := by
+  have hβ : φ⁻¹ < 1 := inv_lt_one_of_one_lt₀ one_lt_gold
+  constructor <;> apply count_density_limit <;> intro n <;> rw [abs_le]
+  · have h := (prefix_discrepancy n).1
+    change -1 ≤ prefixDeviation n ∧ prefixDeviation n ≤ 1
+    exact ⟨by linarith [h.1], by linarith [h.2, mechanicalSlope_lt_one]⟩
+  · have h := (prefix_discrepancy n).2
+    exact ⟨by linarith [h.1, mechanicalSlope_lt_one], by linarith [h.2]⟩
 
 end Thesis.Fibonacci
