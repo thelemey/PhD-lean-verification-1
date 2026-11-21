@@ -793,13 +793,13 @@
 <!-- C10 -->
 <g id="node&#45;C10" class="node">
 <title>C10</title>
-<g id="a_node&#45;C10"><a xlink:href="coverage.md#node-c10" xlink:title="Lean: Частично. Формула Фишлера доказана для характеристического слова. Критерий длин через блоки континуантов сформулирован начиная с явного порога, поэтому узел о полном списке длин отмечен частично. | Теоремы 3.6.12 → 3.6.13 | с. 81">
+<g id="a_node&#45;C10"><a xlink:href="coverage.md#node-c10" xlink:title="Lean: Доказано. Проверены полный список положительных длин по континуантам, включая два начальных блока, и формула Фишлера для характеристического слова. | Теоремы 3.6.12 → 3.6.13 | с. 81">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1003,-780C1003,-780 829,-780 829,-780 823,-780 817,-774 817,-768 817,-768 817,-718 817,-718 817,-712 823,-706 829,-706 829,-706 1003,-706 1003,-706 1009,-706 1015,-712 1015,-718 1015,-718 1015,-768 1015,-768 1015,-774 1009,-780 1003,-780"/>
 <text text-anchor="start" x="829.5" y="-764.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теоремы 3.6.12 → 3.6.13</text>
 <text text-anchor="start" x="855" y="-752.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Список префиксов;</text>
 <text text-anchor="start" x="827" y="-740.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">формула Фишлера через CF</text>
 <text text-anchor="start" x="901" y="-728.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 81</text>
-<text text-anchor="start" x="863" y="-716.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<text text-anchor="start" x="861.5" y="-716.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

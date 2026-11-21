@@ -102,4 +102,26 @@ theorem convergentErrorMagnitude_step {a : ℝ} (ha : Irrational a) (k : Nat) :
   simp only [convergentErrorMagnitude, convergentError_step a ha k, pow_succ]
   ring
 
+/-- The first two absolute errors for a slope between zero and one. -/
+theorem initial_convergentErrorMagnitudes {a : ℝ} (ha : 0 < a) (ha' : a < 1)
+    (hirr : Irrational a) :
+    convergentErrorMagnitude a 0 = a ∧
+      convergentErrorMagnitude a 1 = 1 - (partialQuotient a 0 : ℝ) * a := by
+  have hf : ⌊a⌋ = 0 := Int.floor_eq_zero_iff.2 ⟨ha.le, ha'⟩
+  have hhead : (GenContFract.of a).h = 0 := of_h_eq_floor.trans (by simp [hf])
+  have hn := aux_num_step hirr 0
+  have hd := slope_contsAux_den_step hirr 0
+  change ((GenContFract.of a).contsAux 2).a =
+    (partialQuotient a 0 : ℝ) * (GenContFract.of a).h + 1 at hn
+  rw [hhead, mul_zero, zero_add] at hn
+  change ((GenContFract.of a).contsAux 2).b = (partialQuotient a 0 : ℝ) * 1 + 0 at hd
+  rw [mul_one, add_zero] at hd
+  constructor
+  · change (-1 : ℝ) ^ 0 * (1 * a - (GenContFract.of a).h) = a
+    rw [hhead, sub_zero, pow_zero, one_mul, one_mul]
+  · have heN : ((GenContFract.of a).contsAux 2).a = 1 := hn
+    have heD : ((GenContFract.of a).contsAux 2).b = (partialQuotient a 0 : ℝ) := hd
+    simp only [convergentErrorMagnitude, convergentError, Nat.reduceAdd, pow_one, heN, heD]
+    ring
+
 end Thesis.SturmianDensity

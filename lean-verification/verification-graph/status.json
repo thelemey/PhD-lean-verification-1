@@ -100,11 +100,11 @@
     "lean": {"TernaryRichness": ["rich_word", "palindromic_factor_count", "rich_factor_infiniteWord"]}
   },
   "C10": {
-    "status": "partial",
-    "note": "Формула Фишлера доказана для характеристического слова. Критерий длин через блоки континуантов сформулирован начиная с явного порога, поэтому узел о полном списке длин отмечен частично.",
+    "status": "verified",
+    "note": "Проверены полный список положительных длин по континуантам, включая два начальных блока, и формула Фишлера для характеристического слова.",
     "lean": {
-      "SturmianPalindromicDensity": ["characteristic_palindromicDensity"],
-      "SturmianSemiconvergentRecords": ["characteristic_palPrefix_iff_continuant_block"]
+      "SturmianSemiconvergentRecords": ["characteristic_palPrefix_iff_full_continuant_blocks", "fullPrefixDenominator_step"],
+      "SturmianPalindromicDensity": ["characteristic_palindromicDensity"]
     }
   },
   "C11": {
