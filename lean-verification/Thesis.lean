@@ -8,6 +8,7 @@ import Thesis.ThueMorse
 import Thesis.FactorialWord
 import Thesis.PalindromeDensity
 import Thesis.ThueMorseClassification
+import Thesis.ThueMorseCyclicAlphabet
 import Thesis.FactorTree
 import Thesis.FibonacciIdentities
 import Thesis.PalindromeFactors

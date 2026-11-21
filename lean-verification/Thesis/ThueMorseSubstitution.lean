@@ -20,6 +20,27 @@ def PrimitiveSubstitution {b : Nat} (hb : 0 < b) (σ : A → Fin b → A) : Prop
 def SubstitutionFixedWord {b : Nat} (σ : A → Fin b → A) (w : Nat → A) : Prop :=
   ∀ m (r : Fin b), w (b * m + r) = σ (w m) r
 
+/-- Each finite iterate at the initial letter is the corresponding
+prefix of any fixed word beginning with that letter. -/
+theorem iterateSubstitution_eq_prefix_of_fixedWord {b : Nat} (hb : 0 < b)
+    {σ : A → Fin b → A} {w : Nat → A} (hw : SubstitutionFixedWord σ w)
+    (k : Nat) (i : Fin (b ^ k)) : iterateSubstitution hb σ k (w 0) i = w i.val := by
+  induction k with
+  | zero =>
+    have hi : i.val = 0 := by
+      have ht : i.val < 1 := by simpa only [pow_zero] using i.isLt
+      omega
+    simp [iterateSubstitution, hi]
+  | succ k ih =>
+    have hq : i.val / b < b ^ k :=
+      (Nat.div_lt_iff_lt_mul hb).2 (by simpa only [pow_succ] using i.isLt)
+    let r : Fin b := ⟨i.val % b, Nat.mod_lt _ hb⟩
+    change σ (iterateSubstitution hb σ k (w 0) ⟨i.val / b, hq⟩) r = w i.val
+    rw [ih, ← hw]
+    congr 1
+    change b * (i.val / b) + i.val % b = i.val
+    rw [Nat.add_comm, Nat.mod_add_div]
+
 /-- The substitution ξ_b(a) = a(a+1)…(a+b−1) modulo N. -/
 def digitSubstitution (b N : Nat) (hN : 0 < N) (a : Fin N) (r : Fin b) : Fin N :=
   ⟨(a + r) % N, Nat.mod_lt _ hN⟩
