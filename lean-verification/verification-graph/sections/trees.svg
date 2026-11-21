@@ -11,17 +11,21 @@
 <polygon fill="white" stroke="transparent" points="-20.16,20.16 -20.16,-811.16 1387.16,-811.16 1387.16,20.16 -20.16,20.16"/>
 <text text-anchor="start" x="463.5" y="-764.8" font-family="DejaVu Sans" font-weight="bold" font-size="19.00">Индексы графов и двумерная рекурсия</text>
 <text text-anchor="start" x="487.5" y="-740" font-family="DejaVu Sans" font-size="10.00">Исправленная диссертация · стрелка ведёт от предпосылки к результату</text>
-<polygon fill="none" stroke="#228044" stroke-width="3" points="451,-703.5 451,-727.5 528,-727.5 528,-703.5 451,-703.5"/>
-<text text-anchor="start" x="464.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Доказано</text>
-<polygon fill="none" stroke="#629740" stroke-width="3" points="537,-703.5 537,-727.5 622,-727.5 622,-703.5 537,-703.5"/>
-<text text-anchor="start" x="547" y="-713" font-family="DejaVu Sans" font-size="10.00">Определено</text>
-<polygon fill="none" stroke="#a68812" stroke-width="3" points="631,-703.5 631,-727.5 722,-727.5 722,-703.5 631,-703.5"/>
-<text text-anchor="start" x="639.5" y="-713" font-family="DejaVu Sans" font-size="10.00">С уточнением</text>
-<polygon fill="none" stroke="#d3791a" stroke-width="3" points="731,-703.5 731,-727.5 796,-727.5 796,-703.5 731,-703.5"/>
-<text text-anchor="start" x="738.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Частично</text>
-<polygon fill="none" stroke="#c43735" stroke-width="3" points="805,-703.5 805,-727.5 917,-727.5 917,-703.5 805,-703.5"/>
-<text text-anchor="start" x="812.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Без проверки Lean</text>
-<polygon fill="#ffeb80" stroke="transparent" stroke-width="3" points="449.5,-677 449.5,-696 918.5,-696 918.5,-677 449.5,-677"/>
+<polygon fill="none" stroke="#228044" stroke-width="3" points="350,-703.5 350,-727.5 413,-727.5 413,-703.5 350,-703.5"/>
+<text text-anchor="start" x="356.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Доказано</text>
+<polygon fill="none" stroke="#408439" stroke-width="3" points="422,-703.5 422,-727.5 547,-727.5 547,-703.5 422,-703.5"/>
+<text text-anchor="start" x="428.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Доказано по сводкам</text>
+<polygon fill="none" stroke="#629740" stroke-width="3" points="556,-703.5 556,-727.5 634,-727.5 634,-703.5 556,-703.5"/>
+<text text-anchor="start" x="562.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Определено</text>
+<polygon fill="none" stroke="#a68812" stroke-width="3" points="643,-703.5 643,-727.5 730,-727.5 730,-703.5 643,-703.5"/>
+<text text-anchor="start" x="649.5" y="-713" font-family="DejaVu Sans" font-size="10.00">С уточнением</text>
+<polygon fill="none" stroke="#d3791a" stroke-width="3" points="739,-703.5 739,-727.5 802,-727.5 802,-703.5 739,-703.5"/>
+<text text-anchor="start" x="745.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Частично</text>
+<polygon fill="none" stroke="#c43735" stroke-width="3" points="811,-703.5 811,-727.5 921,-727.5 921,-703.5 811,-703.5"/>
+<text text-anchor="start" x="817.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Без проверки Lean</text>
+<polygon fill="none" stroke="#931b26" stroke-width="3" points="930,-703.5 930,-727.5 1018,-727.5 1018,-703.5 930,-703.5"/>
+<text text-anchor="start" x="936.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Опровергнуто</text>
+<polygon fill="#ffeb80" stroke="transparent" stroke-width="3" points="348.5,-677 348.5,-696 1019.5,-696 1019.5,-677 348.5,-677"/>
 <text text-anchor="start" x="489.5" y="-684" font-family="DejaVu Sans" font-size="10.00">Жёлтый фон — научная новизна или положение, вынесенное на защиту</text>
 <g id="clust1" class="cluster">
 <title>cluster_3.6</title>

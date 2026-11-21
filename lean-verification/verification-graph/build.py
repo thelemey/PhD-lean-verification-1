@@ -17,13 +17,16 @@ TEX = LEAN.parent / "corrected_thesis" / "thesis_corrected.tex"
 TEX_LINK = "../../corrected_thesis/thesis_corrected.tex"
 CLAIM_FILL = "#FFEB80"
 
-# Each entry gives the text label, border colour and meaning of a status.
+# Each status has a label, a border colour, its colour name and its meaning.
 STATUSES = {
-    "verified": ("Доказано", "#228044", "Указанные теоремы Lean покрывают формулировку."),
-    "definition": ("Определено", "#629740", "В Lean задан объект, используемый в доказательстве."),
-    "qualified": ("С уточнением", "#A68812", "Условия или существенный шаг доказательства в Lean уточнены в таблице."),
-    "partial": ("Частично", "#D3791A", "Проверена часть утверждения или частный случай."),
-    "unmarked": ("Без проверки Lean", "#C43735", "В проекте для этого утверждения отсутствует указанное доказательство."),
+    "verified": ("Доказано", "#228044", "Зелёный", "Указанные теоремы Lean покрывают формулировку."),
+    "from_summaries": ("Доказано по сводкам", "#408439", "Травяной зелёный",
+                       "Основной статистический вывод доказан для всех данных, совместимых с опубликованной описательной таблицей."),
+    "definition": ("Определено", "#629740", "Светло-зелёный", "В Lean задан объект, используемый в доказательстве."),
+    "qualified": ("С уточнением", "#A68812", "Золотистый", "Условия или существенный шаг доказательства в Lean уточнены в таблице."),
+    "partial": ("Частично", "#D3791A", "Оранжевый", "Проверена часть утверждения или частный случай."),
+    "unmarked": ("Без проверки Lean", "#C43735", "Красный", "В проекте для этого утверждения отсутствует указанное доказательство."),
+    "refuted": ("Опровергнуто", "#931B26", "Тёмно-красный", "В Lean доказано отрицание исходной формулировки с явным контрпримером."),
 }
 TOPICS = {
     "words": ("Свойства слов и конкатенация факториалов", ("2.1", "2.2")),
@@ -136,7 +139,7 @@ def load_nodes():
         st = node["status"]
         if st not in STATUSES or bool(node["links"]) != (st != "unmarked"):
             raise ValueError(f"{key}: inconsistent status and Lean evidence")
-        if st in {"partial", "qualified"} and not node.get("note"):
+        if st in {"partial", "qualified", "from_summaries", "refuted"} and not node.get("note"):
             raise ValueError(f"{key}: coverage needs an explanation")
         needs = node.get("uses", [])
         if len(needs) != len(set(needs)) or set(needs) - graph.keys():
@@ -161,14 +164,15 @@ def dot_string(text):
 def make_dot(nodes, keys, title, coverage, *, direction, pack=False):
     legend = "".join(
         f'<TD BORDER="3" COLOR="{color}" CELLPADDING="5">{label}</TD>'
-        for label, color, _ in STATUSES.values()
+        for label, color, _, _ in STATUSES.values()
     )
+    columns = len(STATUSES)
     heading = (
         '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="6">'
-        f'<TR><TD COLSPAN="5"><FONT POINT-SIZE="19"><B>{escape(title)}</B></FONT></TD></TR>'
-        '<TR><TD COLSPAN="5">Исправленная диссертация · стрелка ведёт от предпосылки к результату</TD></TR>'
+        f'<TR><TD COLSPAN="{columns}"><FONT POINT-SIZE="19"><B>{escape(title)}</B></FONT></TD></TR>'
+        f'<TR><TD COLSPAN="{columns}">Исправленная диссертация · стрелка ведёт от предпосылки к результату</TD></TR>'
         f'<TR>{legend}</TR>'
-        f'<TR><TD COLSPAN="5" BGCOLOR="{CLAIM_FILL}" CELLPADDING="4">'
+        f'<TR><TD COLSPAN="{columns}" BGCOLOR="{CLAIM_FILL}" CELLPADDING="4">'
         'Жёлтый фон — научная новизна или положение, вынесенное на защиту</TD></TR></TABLE>'
     )
     layout = f"rankdir={direction}, " + ('pack=true, packmode="array3", ' if pack else "")
@@ -188,7 +192,7 @@ def make_dot(nodes, keys, title, coverage, *, direction, pack=False):
                 f'graph [label="§ {section}", labeljust=l, style="rounded", color="#C8D0D5", margin=14];']
         for key in members:
             node = nodes[key]
-            status, color, _ = STATUSES[node["status"]]
+            status, color, _, _ = STATUSES[node["status"]]
             title_lines = wrap(node["title"], 32, break_long_words=False, break_on_hyphens=False)
             claim_tags = tags(node)
             subtitle = " · ".join([node["caption"], *claim_tags])
@@ -243,8 +247,7 @@ def report(nodes):
            f"[Исправленный TeX]({TEX_LINK}) · [Полный граф (SVG)](verification_graph.svg)", "",
            "## Цвет рамки", "",
            "| Статус | Цвет | Всего узлов | Из них жёлтых | Что проверено |", "|---|---|---:|---:|---|"]
-    colors = ("Зелёный", "Светло-зелёный", "Золотистый", "Оранжевый", "Красный")
-    for (key, (name, color, meaning)), shade in zip(STATUSES.items(), colors):
+    for key, (name, color, shade, meaning) in STATUSES.items():
         out.append(f"| {name} | {shade} `{color}` | {counts[key]} | {highlighted[key]} | {meaning} |")
     out += ["", "## Разделы", "", "Каждая схема раздела также показывает его непосредственные предпосылки из других разделов.", ""]
     for slug, (name, sections) in TOPICS.items():

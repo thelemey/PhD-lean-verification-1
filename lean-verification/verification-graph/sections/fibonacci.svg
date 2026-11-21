@@ -9,20 +9,24 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(20.16 840.16)">
 <title>corrected_thesis</title>
 <polygon fill="white" stroke="transparent" points="-20.16,20.16 -20.16,-840.16 2235.16,-840.16 2235.16,20.16 -20.16,20.16"/>
-<text text-anchor="start" x="902.5" y="-793.8" font-family="DejaVu Sans" font-weight="bold" font-size="19.00">Слова, плотности и ряды Фибоначчи</text>
-<text text-anchor="start" x="911" y="-769" font-family="DejaVu Sans" font-size="10.00">Исправленная диссертация · стрелка ведёт от предпосылки к результату</text>
-<polygon fill="none" stroke="#228044" stroke-width="3" points="889,-732.5 889,-756.5 952,-756.5 952,-732.5 889,-732.5"/>
-<text text-anchor="start" x="895.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Доказано</text>
-<polygon fill="none" stroke="#629740" stroke-width="3" points="961,-732.5 961,-756.5 1039,-756.5 1039,-732.5 961,-732.5"/>
-<text text-anchor="start" x="967.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Определено</text>
-<polygon fill="none" stroke="#a68812" stroke-width="3" points="1048,-732.5 1048,-756.5 1135,-756.5 1135,-732.5 1048,-732.5"/>
-<text text-anchor="start" x="1054.5" y="-742" font-family="DejaVu Sans" font-size="10.00">С уточнением</text>
-<polygon fill="none" stroke="#d3791a" stroke-width="3" points="1144,-732.5 1144,-756.5 1207,-756.5 1207,-732.5 1144,-732.5"/>
-<text text-anchor="start" x="1150.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Частично</text>
-<polygon fill="none" stroke="#c43735" stroke-width="3" points="1216,-732.5 1216,-756.5 1326,-756.5 1326,-732.5 1216,-732.5"/>
-<text text-anchor="start" x="1222.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Без проверки Lean</text>
-<polygon fill="#ffeb80" stroke="transparent" stroke-width="3" points="887.5,-706 887.5,-725 1327.5,-725 1327.5,-706 887.5,-706"/>
-<text text-anchor="start" x="913" y="-713" font-family="DejaVu Sans" font-size="10.00">Жёлтый фон — научная новизна или положение, вынесенное на защиту</text>
+<text text-anchor="start" x="903" y="-793.8" font-family="DejaVu Sans" font-weight="bold" font-size="19.00">Слова, плотности и ряды Фибоначчи</text>
+<text text-anchor="start" x="911.5" y="-769" font-family="DejaVu Sans" font-size="10.00">Исправленная диссертация · стрелка ведёт от предпосылки к результату</text>
+<polygon fill="none" stroke="#228044" stroke-width="3" points="774,-732.5 774,-756.5 837,-756.5 837,-732.5 774,-732.5"/>
+<text text-anchor="start" x="780.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Доказано</text>
+<polygon fill="none" stroke="#408439" stroke-width="3" points="846,-732.5 846,-756.5 971,-756.5 971,-732.5 846,-732.5"/>
+<text text-anchor="start" x="852.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Доказано по сводкам</text>
+<polygon fill="none" stroke="#629740" stroke-width="3" points="980,-732.5 980,-756.5 1058,-756.5 1058,-732.5 980,-732.5"/>
+<text text-anchor="start" x="986.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Определено</text>
+<polygon fill="none" stroke="#a68812" stroke-width="3" points="1067,-732.5 1067,-756.5 1154,-756.5 1154,-732.5 1067,-732.5"/>
+<text text-anchor="start" x="1073.5" y="-742" font-family="DejaVu Sans" font-size="10.00">С уточнением</text>
+<polygon fill="none" stroke="#d3791a" stroke-width="3" points="1163,-732.5 1163,-756.5 1226,-756.5 1226,-732.5 1163,-732.5"/>
+<text text-anchor="start" x="1169.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Частично</text>
+<polygon fill="none" stroke="#c43735" stroke-width="3" points="1235,-732.5 1235,-756.5 1345,-756.5 1345,-732.5 1235,-732.5"/>
+<text text-anchor="start" x="1241.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Без проверки Lean</text>
+<polygon fill="none" stroke="#931b26" stroke-width="3" points="1354,-732.5 1354,-756.5 1442,-756.5 1442,-732.5 1354,-732.5"/>
+<text text-anchor="start" x="1360.5" y="-742" font-family="DejaVu Sans" font-size="10.00">Опровергнуто</text>
+<polygon fill="#ffeb80" stroke="transparent" stroke-width="3" points="772.5,-706 772.5,-725 1443.5,-725 1443.5,-706 772.5,-706"/>
+<text text-anchor="start" x="913.5" y="-713" font-family="DejaVu Sans" font-size="10.00">Жёлтый фон — научная новизна или положение, вынесенное на защиту</text>
 <g id="clust1" class="cluster">
 <title>cluster_3.1</title>
 <path fill="white" stroke="#c8d0d5" d="M876,-451C876,-451 1671,-451 1671,-451 1677,-451 1683,-457 1683,-463 1683,-463 1683,-676 1683,-676 1683,-682 1677,-688 1671,-688 1671,-688 876,-688 876,-688 870,-688 864,-682 864,-676 864,-676 864,-463 864,-463 864,-457 870,-451 876,-451"/>

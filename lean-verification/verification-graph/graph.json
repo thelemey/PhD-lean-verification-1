@@ -676,6 +676,14 @@
     ],
     "novelty": 5
   },
+  "side-connected-dissection": {
+    "title": "Формула разрезов для клеток, связанных по сторонам",
+    "at": "Обратно, выбор $S$, равного этим линиям, подходит",
+    "kind": "Шаг доказательства с уточнённой гипотезой",
+    "uses": [
+      "cut-model"
+    ]
+  },
   "tab:descriptive": {
     "title": "Исходные сводки по двум группам и двум тестам",
     "kind": "Таблица"
@@ -845,14 +853,14 @@
     "title": "Домино: один полный разрез",
     "kind": "Пример",
     "uses": [
-      "thm:min-dissection-path"
+      "side-connected-dissection"
     ]
   },
   "ex2": {
     "title": "L-тримино: две линии и промежуточные части",
     "kind": "Пример",
     "uses": [
-      "thm:min-dissection-path"
+      "side-connected-dissection"
     ]
   },
   "tab4": {
@@ -881,7 +889,7 @@
     "at": "\\begin{example}[Квадрат",
     "kind": "Пример",
     "uses": [
-      "thm:min-dissection-path"
+      "side-connected-dissection"
     ]
   }
 }
