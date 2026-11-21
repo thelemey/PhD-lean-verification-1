@@ -127,4 +127,12 @@ theorem volume_badlyApproximableSlopes_zero : volume badlyApproximableSlopes = 0
   exact measure_mono_null hs
     (measure_iUnion_null fun n => volume_badApproximationCore_zero (by positivity))
 
+/-- The bounded-quotient nullity result cited in cor:palSturm (2). -/
+theorem volume_boundedPartialQuotientSlopes_zero :
+    volume {a | a ∈ Ioo (0 : ℝ) 1 ∧
+      ∃ ha : Irrational a, (slopeFractions a ha).BoundedQuotients} = 0 := by
+  apply measure_mono_null _ volume_badlyApproximableSlopes_zero
+  rintro a ⟨ha, hirr, hb⟩
+  exact ⟨ha, (slopeFractions_bounded_iff_badlyApproximable hirr).1 hb⟩
+
 end Thesis.SturmianDensity

@@ -93,3 +93,4 @@ import Thesis.SturmianConvergentErrors
 import Thesis.SturmianSemiconvergentRecords
 import Thesis.SturmianWordDensityConsequences
 import Thesis.SturmianNullConsequences
+import Thesis.SturmianMetricConsequences
