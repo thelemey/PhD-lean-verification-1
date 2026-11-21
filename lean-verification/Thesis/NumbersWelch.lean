@@ -115,4 +115,41 @@ theorem numbers_welch_gains (A B : PairedGroup)
       (by decide +kernel) (by decide +kernel) 0.0129899 0.0129900 0.0131298 0.0131299 (by decide +kernel) (by decide +kernel)
     exact out.rounds 0.91 (by decide +kernel) (by decide +kernel)
 
+/-- Ranges for both endpoints of a genuine 95% interval: c is the
+critical value of the Student distribution at the actual fractional df. -/
+def WelchIntervalBounds (d se v : ℝ) (ll lu ul uu : ℚ) : Prop :=
+  ∃ c, 0 ≤ c ∧ studentTwoSidedP v c = 0.05 ∧ Bounds (d-c*se) ll lu ∧ Bounds (d+c*se) ul uu
+
+private theorem welch_limits {d se v : ℝ} {dl du sl su vl vu ll lu ul uu : ℚ}
+    (diff : Bounds d dl du) (err : Bounds se sl su) (df : Bounds v vl vu)
+    (left : 81 ≤ vl) (right : vu ≤ 83) (spos : 0 ≤ sl)
+    (l₁ : ll ≤ dl-1.991*su) (l₂ : du-1.988*sl ≤ lu)
+    (u₁ : ul ≤ dl+1.988*sl) (u₂ : du+1.991*su ≤ uu) : WelchIntervalBounds d se v ll lu ul uu := by
+  obtain ⟨v₁,v₂⟩ := df.widen left right
+  obtain ⟨c,hc,he,_⟩ := welch_critical95_bounds (by exact_mod_cast v₁) (by exact_mod_cast v₂)
+  have cb : Bounds c 1.988 1.991 := ⟨by exact_mod_cast hc.1,by exact_mod_cast hc.2⟩
+  have w := cb.mul err (by decide +kernel) spos
+  exact ⟨c,(by norm_num : (0:ℝ) ≤ 1.988).trans hc.1,he,(diff.sub w).widen l₁ l₂,(diff.add w).widen u₁ u₂⟩
+
+/-- Independent enclosures for all three 95% intervals on the hundred-point
+scale. Both baseline and post-test exclude zero, while the gain comparison
+contains zero. The hundredths of the original endpoints use more precision
+than the two-decimal means and SDs. -/
+theorem numbers_welch_intervals (A B : PairedGroup)
+    (hA : MatchesTable A.summary numbersControl) (hB : MatchesTable B.summary numbersPuzzles) :
+    let a := A.summary
+    let b := B.summary
+    WelchIntervalBounds (b.pre-a.pre) (welchSE a.preSD b.preSD) (welchDF a.preSD b.preSD)
+      1.7580 1.7928 22.1022 22.1370 ∧
+    WelchIntervalBounds (b.post-a.post) (welchSE a.postSD b.postSD) (welchDF a.postSD b.postSD)
+      3.3771 3.4102 21.5348 21.5679 ∧
+    WelchIntervalBounds (b.gain-a.gain) (welchSE a.gainSD b.gainSD) (welchDF a.gainSD b.gainSD)
+      (-8.3043) (-8.2666) 9.3266 9.3643 := by
+  obtain ⟨x,y,g,_⟩ := numbers_mean_contrasts A.summary B.summary hA hB A.summary_gain B.summary_gain
+  obtain ⟨vx,sx⟩ := pre_bounds hA.preSD hB.preSD
+  obtain ⟨vy,sy⟩ := post_bounds hA.postSD hB.postSD
+  obtain ⟨vg,sg⟩ := gain_bounds hA.gainSD hB.gainSD
+  refine ⟨welch_limits x sx vx ?_ ?_ ?_ ?_ ?_ ?_ ?_,
+    welch_limits y sy vy ?_ ?_ ?_ ?_ ?_ ?_ ?_,welch_limits g sg vg ?_ ?_ ?_ ?_ ?_ ?_ ?_⟩ <;> decide +kernel
+
 end Thesis.StudyANCOVA

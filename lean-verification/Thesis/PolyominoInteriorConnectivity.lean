@@ -166,5 +166,3 @@ theorem preconnected_interior_iff_sideConnected (cells : List Cell) :
     (centers_of_side_path (conn p q)) ▸ in_interior_component q hy hq,isPreconnected_connectedComponentIn⟩
 
 end Thesis.Polyomino
-
-

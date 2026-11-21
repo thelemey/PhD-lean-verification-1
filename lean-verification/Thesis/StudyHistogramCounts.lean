@@ -96,4 +96,3 @@ theorem figure11_raster_counts :
       norm_num [figure11ControlHeights,figure11PuzzleHeights,figure11Control,figure11Puzzles,Matrix.cons_val_succ,abs_le])
 
 end Thesis.StudyANCOVA
-

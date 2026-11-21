@@ -131,4 +131,3 @@ theorem pilot_significance {r t : ℝ} (hr : |r-0.855| ≤ 1/2000) (ht : RoundsT
     (lim.trans_lt (by norm_num)),(prob _ _ _ (by norm_num) (by positivity) c).trans_lt (d.trans_lt (lim.trans_lt (by norm_num)))⟩
 
 end Thesis.StudyANCOVA
-

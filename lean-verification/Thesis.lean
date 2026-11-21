@@ -125,3 +125,4 @@ import Thesis.ThinkingRanks
 import Thesis.StudyHistogramCounts
 import Thesis.StudyPilot
 import Thesis.PolyominoRectanglePieces
+import Thesis.StudyPairedEffects

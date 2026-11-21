@@ -110,13 +110,16 @@ theorem thinking_post_ranks_not_determined :
       twiceU a.post b.post = 2154 ∧ twiceU c.post d.post = 2193 := by
   exact ⟨_,_,_,_,reports false,reports true,by decide +kernel,by decide +kernel⟩
 
-/-- The pooled post-test scores, with A followed by B. -/
-def pooledPost (a b : IntegerPair) (i : Fin 84) : ℤ :=
-  if h : i.val < 42 then a.post ⟨i.val,h⟩ else b.post ⟨i.val-42,by omega⟩
+/-- Pool two score columns, counting every pupil separately. -/
+def poolColumns (a b : IntegerScores) (i : Fin 84) : ℤ :=
+  if h : i.val < 42 then a ⟨i.val,h⟩ else b ⟨i.val-42,by omega⟩
+
+def pooledPost (a b : IntegerPair) := poolColumns a.post b.post
 
 def postRankP (a b : IntegerPair) : ℚ :=
   rankPermutationP (pooledPost a b) 42 (twiceU a.post b.post)
 
+/-- Multiplicities and encoded midranks of the common pooled post-test distribution. -/
 private def pooledWeights : List ℕ :=
   ([(2,8195), (2,8199), (1,8202), (1,8204), (4,8209), (1,8214), (1,8216), (8,8225), (38,8271), (6,8315), (6,8327), (14,8347)] : List (ℕ × ℕ)).flatMap
     (fun block => List.replicate block.1 block.2)
@@ -134,8 +137,8 @@ two-sided distance from the null center, reports matching all the stated
 constraints can even fall on opposite sides of the 5% threshold. -/
 theorem thinking_post_rank_decision_not_determined :
     ∃ a b c d : IntegerPair, MatchesThinkingReport a b ∧ MatchesThinkingReport c d ∧
-      0.0662 < postRankP a b ∧ postRankP a b < 0.0663 ∧
-      0.0430 < postRankP c d ∧ postRankP c d < 0.0431 := by
+      0.0662606 < postRankP a b ∧ postRankP a b < 0.0662607 ∧
+      0.0430124 < postRankP c d ∧ postRankP c d < 0.0430125 := by
   let a := assignment false false
   let b := assignment false true
   let c := assignment true false
@@ -152,6 +155,46 @@ theorem thinking_post_rank_decision_not_determined :
   simp only [postRankP,u₁,u₂,p₁,p₂]
   decide +kernel
 
+def gainRankP (a b : IntegerPair) : ℚ :=
+  rankPermutationP (poolColumns a.gain b.gain) 42 (twiceU a.gain b.gain)
+
+private def gainWeights : List ℕ :=
+  ([(2,8195),(3,8200),(2,8205),(1,8208),(1,8210),(1,8212),(8,8221),(2,8231),
+    (6,8239),(22,8267),(3,8292),(27,8322),(3,8352),(3,8358)] : List (ℕ × ℕ)).flatMap
+    (fun block => List.replicate block.1 block.2)
+
+private theorem packed_gains (swap : Bool) :
+    packedWeights gainWeights = packedWeights ((List.finRange 84).map
+      (rankWeight (poolColumns (assignment swap false).gain (assignment swap true).gain))) := by
+  let xs := (List.finRange 84).map (rankWeight (poolColumns (assignment swap false).gain (assignment swap true).gain))
+  have perm : List.Perm gainWeights xs := by cases swap <;> decide +kernel
+  rw [packedWeights_eq,packedWeights_eq]
+  exact (perm.map _).prod_eq
+
+/-- The same published paired summaries and ceiling counts also leave the
+exact rank probability for the change scores undetermined. -/
+theorem thinking_gain_rank_probability_not_determined :
+    ∃ a b c d : IntegerPair, MatchesThinkingReport a b ∧ MatchesThinkingReport c d ∧
+      0.32606 < gainRankP a b ∧ gainRankP a b < 0.32607 ∧
+      0.30828 < gainRankP c d ∧ gainRankP c d < 0.30829 := by
+  let a := assignment false false
+  let b := assignment false true
+  let c := assignment true false
+  let d := assignment true true
+  have p₁ := rankPermutation_count (poolColumns a.gain b.gain) 215 347419 347848
+    9105669395446119250901617 10237143718387947544397199 (packedWeights gainWeights)
+    (by decide) (by decide) (by decide) (by decide) (packed_gains false) (by decide +kernel) (by decide +kernel)
+  have p₂ := rankPermutation_count (poolColumns c.gain d.gain) 223 347411 347856
+    9090738927740698414618779 10252074186093368380680037 (packedWeights gainWeights)
+    (by decide) (by decide) (by decide) (by decide) (packed_gains true) (by decide +kernel) (by decide +kernel)
+  have eq (s : Fin 84 → ℤ) {x y : ℕ} (h : Nat.dist x (42*42) = Nat.dist y (42*42)) :
+      rankPermutationP s 42 x = rankPermutationP s 42 y := by simp only [rankPermutationP,h]
+  have e₁ : gainRankP a b = rankPermutationP (poolColumns a.gain b.gain) 42 (1764+215) :=
+    eq _ (x:=twiceU a.gain b.gain) (by decide +kernel)
+  have e₂ : gainRankP c d = rankPermutationP (poolColumns c.gain d.gain) 42 (1764+223) :=
+    eq _ (x:=twiceU c.gain d.gain) (by decide +kernel)
+  refine ⟨a,b,c,d,reports false,reports true,?_⟩
+  simp only [e₁,e₂,p₁,p₂]
+  decide +kernel
+
 end Thesis.StudyANCOVA
-
-

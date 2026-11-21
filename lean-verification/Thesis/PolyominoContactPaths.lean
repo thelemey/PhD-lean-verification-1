@@ -118,5 +118,3 @@ theorem geometric_piece_as_union {cells : List Cell} {cuts : List Line} (p : Cel
     exact (in_geometric_piece_iff_reachable p q.val rem hq).2 q.property
 
 end Thesis.Polyomino
-
-

@@ -89,4 +89,3 @@ theorem thinking_welch_gain_interval (A B : IntegerPair)
     abs_le.2 ⟨by linarith only [w₁],by linarith only [w₂]⟩⟩
 
 end Thesis.StudyANCOVA
-

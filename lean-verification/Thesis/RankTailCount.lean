@@ -77,4 +77,3 @@ theorem rankPermutation_count (score : Fin 84 → ℤ) (d lo hi a b packed : ℕ
   rw [size,show tail.card = Nat.choose 84 42+a-b by omega]
 
 end Thesis.StudyANCOVA
-

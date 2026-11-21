@@ -76,4 +76,3 @@ theorem square_examples_cut_counts :
     (rectangle_minimum_geometric_cuts 3 3 (by decide) (by decide)).2⟩
 
 end Thesis.Polyomino
-

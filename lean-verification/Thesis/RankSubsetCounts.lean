@@ -47,4 +47,3 @@ theorem encoded_prefix_card {ι : Type*} [DecidableEq ι] (pool : Finset ι) (w 
   exact lowmod
 
 end Thesis.StudyANCOVA
-

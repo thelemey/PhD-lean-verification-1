@@ -98,4 +98,3 @@ theorem numbers_sensitivity_interpretation (A B : PairedGroup)
     ⟨by linarith only [L],by linarith only [U]⟩,⟨by linarith only [L,sl],by linarith only [U,su]⟩⟩
 
 end Thesis.StudyANCOVA
-

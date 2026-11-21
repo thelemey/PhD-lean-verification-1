@@ -65,4 +65,3 @@ theorem figure11_post_rank_bounds (a b : Fin 42 → ℝ) (bin : ℝ → Fin 11) 
   simpa only [lo,hi] using bounds
 
 end Thesis.StudyANCOVA
-

@@ -48,4 +48,3 @@ def rankPermutationP (score : ι → α) (n statistic : ℕ) : ℚ :=
   (tail.card : ℚ)/selections.card
 
 end Thesis.StudyANCOVA
-
