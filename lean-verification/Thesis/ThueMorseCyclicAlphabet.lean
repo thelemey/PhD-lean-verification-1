@@ -1,5 +1,5 @@
 import Thesis.ThueMorseClassification
-import Thesis.ThueMorseCarries
+import Thesis.ThueMorseBinaryCarries
 import Thesis.ThueMorseSubstitution
 import Mathlib.GroupTheory.Perm.Cycle.Basic
 
@@ -253,6 +253,13 @@ theorem strongBlockRepeat_iff_digitDelta (b k : Nat) (j : ℤ) :
   · rintro ⟨i, m, hm, hw⟩
     exact ⟨i, m, hm, fun t ht => (wordOnCycle_step_iff_digitDelta hσ a₀ b (i + t) m j).2
       (hw (i + t) (by omega) (by omega))⟩
+
+/-- The binary three-block criterion of `lem:arith`. -/
+theorem strongBlockRepeat_binary_iff_digitDelta (j : ℤ) :
+    StrongBlockRepeat (wordOnCycle σ a₀ 2) (σ ^ j) 3 ↔
+      ∃ i m : Nat, 0 < m ∧ ∀ n, i ≤ n → n < i + 2 * m →
+        digitDelta 2 m n ≡ j [ZMOD (Fintype.card A : ℤ)] :=
+  strongBlockRepeat_iff_digitDelta hσ a₀ 2 3 j
 
 /-- The original alphabet and integer twists in the periodic case of tw:main. -/
 theorem wordOnCycle_periodic_case {b : Nat} (hb : 1 < b) (h : Fintype.card A ∣ b - 1) :

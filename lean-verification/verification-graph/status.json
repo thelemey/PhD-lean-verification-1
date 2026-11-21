@@ -186,9 +186,12 @@
     }
   },
   "D2": {
-    "status": "partial",
-    "note": "Редукция окна и двоичное ограничение входят в доказательство необходимости. Весь пакет отдельных лемм 3.8.1–3.8.3 в исходных формулировках не отмечен.",
-    "lean": {"ThueMorse": ["binary_twist_necessary"]}
+    "status": "verified",
+    "note": "Проверены все три леммы. Чётные индексы дают укороченное окно, а нечётная длина блока больше единицы привела бы к двум кратным четырём на расстоянии два.",
+    "lean": {
+      "ThueMorseCyclicAlphabet": ["strongBlockRepeat_binary_iff_digitDelta"],
+      "ThueMorseBinaryCarries": ["binary_digitDelta_even", "binary_digitDelta_succ_sub", "binary_digitDelta_reduce_window", "binary_odd_window"]
+    }
   },
   "D3": {
     "status": "verified",

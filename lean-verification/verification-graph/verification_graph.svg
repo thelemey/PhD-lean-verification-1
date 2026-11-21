@@ -856,13 +856,13 @@
 <!-- D2 -->
 <g id="node&#45;D2" class="node">
 <title>D2</title>
-<g id="a_node&#45;D2"><a xlink:href="coverage.md#node-d2" xlink:title="Lean: Частично. Редукция окна и двоичное ограничение входят в доказательство необходимости. Весь пакет отдельных лемм 3.8.1–3.8.3 в исходных формулировках не отмечен. | Леммы 3.8.1–3.8.3 | с. 91–92">
+<g id="a_node&#45;D2"><a xlink:href="coverage.md#node-d2" xlink:title="Lean: Доказано. Проверены все три леммы. Чётные индексы дают укороченное окно, а нечётная длина блока больше единицы привела бы к двум кратным четырём на расстоянии два. | Леммы 3.8.1–3.8.3 | с. 91–92">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1685.5,-1054C1685.5,-1054 1542.5,-1054 1542.5,-1054 1536.5,-1054 1530.5,-1048 1530.5,-1042 1530.5,-1042 1530.5,-992 1530.5,-992 1530.5,-986 1536.5,-980 1542.5,-980 1542.5,-980 1685.5,-980 1685.5,-980 1691.5,-980 1697.5,-986 1697.5,-992 1697.5,-992 1697.5,-1042 1697.5,-1042 1697.5,-1048 1691.5,-1054 1685.5,-1054"/>
 <text text-anchor="start" x="1546.5" y="-1038.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Леммы 3.8.1–3.8.3</text>
 <text text-anchor="start" x="1557" y="-1026.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Двоичный случай:</text>
 <text text-anchor="start" x="1540.5" y="-1014.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">редукция длины блока</text>
 <text text-anchor="start" x="1588.5" y="-1002.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 91–92</text>
-<text text-anchor="start" x="1561" y="-990.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<text text-anchor="start" x="1559.5" y="-990.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

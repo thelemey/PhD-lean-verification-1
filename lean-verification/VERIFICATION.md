@@ -38,6 +38,7 @@
 - [ThueMorse.lean](Thesis/ThueMorse.lean) — неподвижная точка, периодический случай и бинарный критерий.
 - [ThueMorseCyclicAlphabet.lean](Thesis/ThueMorseCyclicAlphabet.lean) — подстановка на исходном алфавите, блочное определение повтора, перенос классификации на целые степени циклической перестановки.
 - [ThueMorseCarries.lean](Thesis/ThueMorseCarries.lean) — разности сумм цифр, показатели делимости и формулы переносов из леммы 3.8.4.
+- [ThueMorseBinaryCarries.lean](Thesis/ThueMorseBinaryCarries.lean) — выделение чётных индексов окна и ограничение на нечётную длину блока из лемм 3.8.1–3.8.3.
 - [ThueMorseClassification.lean](Thesis/ThueMorseClassification.lean) — критерий существования сильного скрученного повтора для произвольного основания в непериодическом случае.
 - [ThueMorseBlocks.lean](Thesis/ThueMorseBlocks.lean) — разбиение на блоки и диапазон суммы цифр.
 - [ThueMorseRecurrence.lean](Thesis/ThueMorseRecurrence.lean) — граница промежутков 2b^T и исключение финального периода.
