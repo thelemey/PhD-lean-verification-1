@@ -83,7 +83,7 @@ theorem minimum_cuts (cells : List Cell) :
 def rectangle (a b : Nat) : List Cell :=
   (List.range a).flatMap fun (x : Nat) => (List.range b).map fun (y : Nat) => ((x : Int), (y : Int))
 
-private theorem mem_rectangle {a b : Nat} {x y : Int} :
+theorem mem_rectangle {a b : Nat} {x y : Int} :
     (x, y) ∈ rectangle a b ↔ 0 ≤ x ∧ x < a ∧ 0 ≤ y ∧ y < b := by
   simp only [rectangle, List.mem_flatMap, List.mem_map, List.mem_range, Prod.mk.injEq]
   constructor

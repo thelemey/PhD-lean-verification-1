@@ -98,6 +98,54 @@ theorem sharedSide_exists_of_path_crossing {cells : List Cell}
       exact ⟨q, r, (sharedSide_line_of_crossing hs axis c hl hq) ▸ hs⟩
     · exact ih (by omega)
 
+theorem sideConnected_rectangle (a b : Nat) (ha : 0 < a) (hb : 0 < b) :
+    SideConnected (rectangle a b) := by
+  let origin : CellIn (rectangle a b) := ⟨(0, 0), mem_rectangle.2 (by omega)⟩
+  have reach : ∀ p : CellIn (rectangle a b), SamePart [] origin p := by
+    intro p
+    let n := p.val.1.toNat + p.val.2.toNat
+    have h : p.val.1.toNat + p.val.2.toNat = n := rfl
+    clear_value n
+    induction n using Nat.strongRecOn generalizing p with
+    | ind n ih =>
+      rcases p with ⟨⟨x, y⟩, hp⟩
+      obtain ⟨hx0, hxa, hy0, hyb⟩ := mem_rectangle.1 hp
+      change x.toNat + y.toNat = n at h
+      by_cases hx : 0 < x
+      · let q : CellIn (rectangle a b) := ⟨(x - 1, y), mem_rectangle.2 (by omega)⟩
+        have hn : q.val.1.toNat + q.val.2.toNat < n := by
+          change (x - 1).toNat + y.toNat < n
+          omega
+        apply (ih _ hn q rfl).tail
+        refine ⟨Line.vertical x, Or.inl (Or.inl ⟨?_, ?_⟩), by simp⟩
+        · change (x, y) = (x - 1 + 1, y)
+          simp
+        · change Line.vertical x = Line.vertical (x - 1 + 1)
+          simp
+      · by_cases hy : 0 < y
+        · let q : CellIn (rectangle a b) := ⟨(x, y - 1), mem_rectangle.2 (by omega)⟩
+          have hn : q.val.1.toNat + q.val.2.toNat < n := by
+            change x.toNat + (y - 1).toNat < n
+            omega
+          apply (ih _ hn q rfl).tail
+          refine ⟨Line.horizontal y, Or.inl (Or.inr ⟨?_, ?_⟩), by simp⟩
+          · change (x, y) = (x, y - 1 + 1)
+            simp
+          · change Line.horizontal y = Line.horizontal (y - 1 + 1)
+            simp
+        · have heq : (⟨(x, y), hp⟩ : CellIn (rectangle a b)) = origin := by
+            apply Subtype.ext
+            change (x, y) = (0, 0)
+            exact Prod.ext (by omega) (by omega)
+          rw [heq]
+          exact Relation.ReflTransGen.refl
+  intro p q
+  have hs : Symmetric (RemainingAdjacent ([] : List Line) :
+      CellIn (rectangle a b) → CellIn (rectangle a b) → Prop) := by
+    rintro u v ⟨l, h, hcut⟩
+    exact ⟨l, h.symm, hcut⟩
+  exact (Relation.ReflTransGen.symmetric hs (reach p)).trans (reach q)
+
 /-- The minimum in thm:min-dissection-path with separation stated in
 terms of the connected parts remaining after the full grid-line cuts. -/
 theorem minimum_cuts_for_parts (cells : List Cell) :
