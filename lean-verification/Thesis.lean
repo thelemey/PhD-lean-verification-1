@@ -97,3 +97,4 @@ import Thesis.SturmianWordDensityConsequences
 import Thesis.SturmianNullConsequences
 import Thesis.SturmianMetricConsequences
 import Thesis.SturmianPalindromicDensity
+import Thesis.StudyANCOVATable
