@@ -1,4 +1,5 @@
 import Thesis.ThueMorseClassification
+import Thesis.ThueMorseCarries
 import Thesis.ThueMorseSubstitution
 import Mathlib.GroupTheory.Perm.Cycle.Basic
 
@@ -222,6 +223,36 @@ theorem strongBlockRepeat_wordOnCycle_iff (b k : Nat) (j : ℤ) :
     rw [word, word, Nat.add_comm (digitSum b (i + t) % Fintype.card A), Nat.add_mod_mod]
   exact ⟨fun ⟨i, m, hm, h⟩ => ⟨i, m, hm, fun t ht => (hpoint i t m).1 (h t ht)⟩,
     fun ⟨i, m, hm, h⟩ => ⟨i, m, hm, fun t ht => (hpoint i t m).2 (h t ht)⟩⟩
+
+/-- The modulus condition for one comparison inside a repeated block. -/
+theorem wordOnCycle_step_iff_digitDelta (b i m : Nat) (j : ℤ) :
+    wordOnCycle σ a₀ b (i + m) = (σ ^ j) (wordOnCycle σ a₀ b i) ↔
+      digitDelta b m i ≡ j [ZMOD (Fintype.card A : ℤ)] := by
+  unfold wordOnCycle digitDelta
+  rw [← zpow_natCast, ← zpow_natCast, ← Equiv.Perm.mul_apply, ← zpow_add,
+    hσ.zpow_apply_eq_zpow_apply (Finset.mem_univ a₀), Finset.card_univ, add_comm j]
+  constructor
+  · intro h
+    simpa using Int.ModEq.sub_right (digitSum b i : ℤ) h
+  · intro h
+    simpa only [sub_add_cancel, add_comm j] using Int.ModEq.add_right (digitSum b i : ℤ) h
+
+/-- The window criterion of `tw:lem(a)` on the original alphabet. -/
+theorem strongBlockRepeat_iff_digitDelta (b k : Nat) (j : ℤ) :
+    StrongBlockRepeat (wordOnCycle σ a₀ b) (σ ^ j) k ↔
+      ∃ i m : Nat, 0 < m ∧ ∀ n, i ≤ n → n < i + (k - 1) * m →
+        digitDelta b m n ≡ j [ZMOD (Fintype.card A : ℤ)] := by
+  rw [strongBlockRepeat_iff_adjacent]
+  constructor
+  · rintro ⟨i, m, hm, hw⟩
+    refine ⟨i, m, hm, fun n hlo hhi => ?_⟩
+    have he : i + (n - i) = n := by omega
+    have h := hw (n - i) (by omega)
+    rw [he] at h
+    exact (wordOnCycle_step_iff_digitDelta hσ a₀ b n m j).1 h
+  · rintro ⟨i, m, hm, hw⟩
+    exact ⟨i, m, hm, fun t ht => (wordOnCycle_step_iff_digitDelta hσ a₀ b (i + t) m j).2
+      (hw (i + t) (by omega) (by omega))⟩
 
 /-- The original alphabet and integer twists in the periodic case of tw:main. -/
 theorem wordOnCycle_periodic_case {b : Nat} (hb : 1 < b) (h : Fintype.card A ∣ b - 1) :

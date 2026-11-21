@@ -178,11 +178,11 @@
     "lean": {"ThueMorseCyclicAlphabet": ["iterate_cycleSubstitution", "cycleAlphabetEquiv_finiteWord", "wordOnCycle_unique_fixedPoint"]}
   },
   "D1": {
-    "status": "partial",
-    "note": "Проверены переход к сравнению соседних блоков и используемая в классификации арифметика переносов. Все формулы узла с явной функцией показателя делимости не отмечены.",
+    "status": "verified",
+    "note": "Проверены сравнение соседних блоков, формула прибавления единицы, масштабирование и оба случая переноса через показатель делимости для любого целого основания b ≥ 2.",
     "lean": {
-      "ThueMorseCyclicAlphabet": ["strongBlockRepeat_iff_adjacent", "strongBlockRepeat_wordOnCycle_iff"],
-      "ThueMorseClassification": ["repeat_of_critical_bound", "critical_bound_of_repeat"]
+      "ThueMorseCyclicAlphabet": ["strongBlockRepeat_iff_digitDelta"],
+      "ThueMorseCarries": ["digitSum_succ_of_trailingExponent", "digitDelta_succ_sub", "digitDelta_scale", "digitDelta_small_no_carry", "digitDelta_small_carry"]
     }
   },
   "D2": {

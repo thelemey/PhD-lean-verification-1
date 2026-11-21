@@ -843,13 +843,13 @@
 <!-- D1 -->
 <g id="node&#45;D1" class="node">
 <title>D1</title>
-<g id="a_node&#45;D1"><a xlink:href="coverage.md#node-d1" xlink:title="Lean: Частично. Проверены переход к сравнению соседних блоков и используемая в классификации арифметика переносов. Все формулы узла с явной функцией показателя делимости не отмечены. | Лемма 3.8.4 | с. 93–94">
+<g id="a_node&#45;D1"><a xlink:href="coverage.md#node-d1" xlink:title="Lean: Доказано. Проверены сравнение соседних блоков, формула прибавления единицы, масштабирование и оба случая переноса через показатель делимости для любого целого основания b ≥ 2. | Лемма 3.8.4 | с. 93–94">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1891.5,-1054C1891.5,-1054 1722.5,-1054 1722.5,-1054 1716.5,-1054 1710.5,-1048 1710.5,-1042 1710.5,-1042 1710.5,-992 1710.5,-992 1710.5,-986 1716.5,-980 1722.5,-980 1722.5,-980 1891.5,-980 1891.5,-980 1897.5,-980 1903.5,-986 1903.5,-992 1903.5,-992 1903.5,-1042 1903.5,-1042 1903.5,-1048 1897.5,-1054 1891.5,-1054"/>
 <text text-anchor="start" x="1758.5" y="-1038.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.8.4</text>
 <text text-anchor="start" x="1720.5" y="-1026.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Повторы ↔ постоянство cₘ;</text>
 <text text-anchor="start" x="1732.5" y="-1014.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">арифметика переносов</text>
 <text text-anchor="start" x="1781.5" y="-1002.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 93–94</text>
-<text text-anchor="start" x="1754" y="-990.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<text text-anchor="start" x="1752.5" y="-990.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
