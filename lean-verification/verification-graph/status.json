@@ -195,8 +195,8 @@
   },
   "D3": {
     "status": "verified",
-    "note": "Бинарный критерий избегания доказан на исходном алфавите для любого целого показателя перестановки.",
-    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_binary_avoidance"]}
+    "note": "Бинарный критерий доказан на исходном алфавите для любого целого показателя перестановки. Использованы сведение к нечётному блоку и свидетель с началом 2^N−2 из TeX.",
+    "lean": {"ThueMorseCyclicAlphabet": ["wordOnCycle_binary_avoidance"], "ThueMorseBinaryCarries": ["binary_window_twist", "binary_delta_witness"]}
   },
   "E5": {
     "status": "qualified",

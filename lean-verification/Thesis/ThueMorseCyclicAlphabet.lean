@@ -285,15 +285,15 @@ theorem wordOnCycle_twisted_critical_exponent {b k : Nat} (hb : 1 < b) (hk : 2 �
 theorem wordOnCycle_binary_avoidance (hN : 2 ≤ Fintype.card A) (j : ℤ) :
     ¬ StrongBlockRepeat (wordOnCycle σ a₀ 2) (σ ^ j) 3 ↔
       ¬ j ≡ 1 [ZMOD (Fintype.card A : ℤ)] := by
-  have hpos : 0 < Fintype.card A := by omega
-  have hj := twistResidue_lt hpos j
-  have h1 : (1 : ℤ) % (Fintype.card A : ℤ) = 1 :=
-    Int.emod_eq_of_lt (by decide) (by exact_mod_cast hN)
-  rw [strongBlockRepeat_wordOnCycle_iff hσ a₀, binary_twist_iff hN, Nat.mod_eq_of_lt hj]
-  change (¬ twistResidue (Fintype.card A) j = 1) ↔ ¬ j % (Fintype.card A : ℤ) = 1 % _
-  rw [h1, ← twistResidue_cast hpos]
-  exact not_congr (by exact_mod_cast (Iff.rfl :
-    twistResidue (Fintype.card A) j = 1 ↔ twistResidue (Fintype.card A) j = 1))
+  apply not_congr
+  rw [strongBlockRepeat_binary_iff_digitDelta hσ a₀]
+  constructor
+  · rintro ⟨i, m, hm, hw⟩
+    exact binary_window_twist hN m i hm hw
+  · intro hj
+    refine ⟨2 ^ Fintype.card A - 2, 1, by decide, ?_⟩
+    intro n hlo hhi
+    exact (binary_delta_witness hN n hlo (by simpa using hhi)).trans hj.symm
 
 /-- The full binary threshold in tw:cor, for every admissible k. -/
 theorem wordOnCycle_binary_threshold (hN : 2 ≤ Fintype.card A) {k : Nat}

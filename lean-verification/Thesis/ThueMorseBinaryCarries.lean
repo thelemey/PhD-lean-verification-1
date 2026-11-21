@@ -71,4 +71,38 @@ theorem binary_odd_window {N i m : Nat} {j : ℤ} (hN : 2 ≤ N) (hm : m % 2 = 1
     rw [Nat.dvd_iff_mod_eq_zero] at h₁ h₂
     omega
 
+/-- Repeatedly halving an even block reduces a constant window to the odd case. -/
+theorem binary_window_twist {N : Nat} {j : ℤ} (hN : 2 ≤ N) (m i : Nat) (hm : 0 < m)
+    (h : ∀ n, i ≤ n → n < i + 2 * m → digitDelta 2 m n ≡ j [ZMOD (N : ℤ)]) :
+    j ≡ 1 [ZMOD (N : ℤ)] := by
+  induction m using Nat.strongRecOn generalizing i with
+  | ind m ih =>
+    by_cases he : m % 2 = 0
+    · have hm' : m = 2 * (m / 2) := by omega
+      have h' : ∀ n, i ≤ n → n < i + 2 * (2 * (m / 2)) →
+          digitDelta 2 (2 * (m / 2)) n ≡ j [ZMOD (N : ℤ)] := by simpa only [← hm'] using h
+      exact ih (m / 2) (by omega) ((i + 1) / 2) (by omega) (binary_digitDelta_reduce_window h')
+    · exact (binary_odd_window hN (by omega) h).2
+
+/-- The two comparisons starting at (2^N-2) both have twist one. -/
+theorem binary_delta_witness {N : Nat} (hN : 2 ≤ N) :
+    ∀ n, 2 ^ N - 2 ≤ n → n < 2 ^ N - 2 + 2 → digitDelta 2 1 n ≡ 1 [ZMOD (N : ℤ)] := by
+  let i := 2 ^ N - 2
+  have hNpos : 0 < N := by omega
+  have hpow : 1 ≤ 2 ^ (N - 1) := Nat.two_pow_pos (N - 1)
+  have he : 2 ^ N = 2 ^ (N - 1) * 2 := by
+    rw [← pow_succ, Nat.sub_add_cancel hNpos]
+  have hi : i + 2 = 2 ^ N := by dsimp [i]; omega
+  have hodd : ¬ 2 ∣ i + 1 := by rw [Nat.dvd_iff_mod_eq_zero]; omega
+  intro n hlo hhi
+  change i ≤ n at hlo
+  change n < i + 2 at hhi
+  have hn : n = i ∨ n = i + 1 := by omega
+  rcases hn with rfl | rfl
+  · rw [binary_delta_one, multiplicity_eq_zero.2 hodd, Nat.cast_zero, sub_zero]
+  · rw [binary_delta_one, show i + 1 + 1 = 2 ^ N by omega,
+      multiplicity_pow_self (by decide : (2 : Nat) ≠ 0) (by simp : ¬ IsUnit (2 : Nat))]
+    have hzero : (N : ℤ) ≡ 0 [ZMOD (N : ℤ)] := by simp [Int.ModEq]
+    simpa only [sub_zero] using (Int.ModEq.refl (1 : ℤ)).sub hzero
+
 end Thesis.ThueMorse
