@@ -1009,12 +1009,12 @@
 <!-- G2 -->
 <g id="node&#45;G2" class="node">
 <title>G2</title>
-<g id="a_node&#45;G2"><a xlink:href="coverage.md#node-g2" xlink:title="Lean: Без отметки. | Предл. 5.1.2 | с. 126">
+<g id="a_node&#45;G2"><a xlink:href="coverage.md#node-g2" xlink:title="Lean: Доказано. Для пути на n ≥ 3 вершинах индекс равен 6; у дерева, не являющегося путём, максимальная степень не меньше трёх, и оценка G1 даёт индекс не меньше 24. | Предл. 5.1.2 | с. 126">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M2698.5,-892C2698.5,-892 2557.5,-892 2557.5,-892 2551.5,-892 2545.5,-886 2545.5,-880 2545.5,-880 2545.5,-842 2545.5,-842 2545.5,-836 2551.5,-830 2557.5,-830 2557.5,-830 2698.5,-830 2698.5,-830 2704.5,-830 2710.5,-836 2710.5,-842 2710.5,-842 2710.5,-880 2710.5,-880 2710.5,-886 2704.5,-892 2698.5,-892"/>
 <text text-anchor="start" x="2579" y="-876.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 5.1.2</text>
 <text text-anchor="start" x="2555.5" y="-864.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Путь минимизирует irr₂</text>
 <text text-anchor="start" x="2609.5" y="-852.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 126</text>
-<text text-anchor="start" x="2564.5" y="-840.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="2573.5" y="-840.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

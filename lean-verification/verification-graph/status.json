@@ -273,6 +273,11 @@
     "note": "Доказана нижняя оценка суммированием по путям от вершины максимальной степени, строгий случай второй ветвящейся вершины и критерий равенства: путь либо дерево с единственной вершиной степени больше двух.",
     "lean": {"TreeIrregularityLower": ["quadraticIrregularity_lower_bound", "quadraticIrregularity_strict_of_second_branch", "quadraticIrregularity_eq_of_unbranched_legs", "quadraticIrregularity_lower_eq_iff_path_or_unique_branch"]}
   },
+  "G2": {
+    "status": "verified",
+    "note": "Для пути на n ≥ 3 вершинах индекс равен 6; у дерева, не являющегося путём, максимальная степень не меньше трёх, и оценка G1 даёт индекс не меньше 24.",
+    "lean": {"TreeIrregularityPath": ["pathGraph_quadraticIrregularity", "quadraticIrregularity_ge_twentyFour_of_not_path", "quadraticIrregularity_pathGraph_lt"]}
+  },
   "N2": {
     "status": "verified",
     "note": "Проверено исправленное предложение: среди деревьев на n ≥ 3 вершинах звезда имеет индекс n(n−1)(n−2), а у любого дерева, не являющегося звездой, индекс строго меньше.",
