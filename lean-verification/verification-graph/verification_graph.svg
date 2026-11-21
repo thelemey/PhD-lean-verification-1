@@ -1034,25 +1034,25 @@
 <!-- N2 -->
 <g id="node&#45;N2" class="node">
 <title>N2</title>
-<g id="a_node&#45;N2"><a xlink:href="coverage.md#node-n2" xlink:title="Lean: Без отметки. | Утверждение истинно: каждое ребро даёт не более Δ²−1, а для незвезды Δ≤n−2. Требуется заменить гипотезу предложением. Это замечание к статусу, не контрпример. | с. 126–127, заключение">
+<g id="a_node&#45;N2"><a xlink:href="coverage.md#node-n2" xlink:title="Lean: Доказано. Проверено исправленное предложение: среди деревьев на n ≥ 3 вершинах звезда имеет индекс n(n−1)(n−2), а у любого дерева, не являющегося звездой, индекс строго меньше. | Утверждение истинно: каждое ребро даёт не более Δ²−1, а для незвезды Δ≤n−2. Требуется заменить гипотезу предложением. Это замечание к статусу, не контрпример. | с. 126–127, заключение">
 <path fill="#e9ddf6" stroke="#8054a6" stroke-width="1.15" d="M2520,-898C2520,-898 2282,-898 2282,-898 2276,-898 2270,-892 2270,-886 2270,-886 2270,-836 2270,-836 2270,-830 2276,-824 2282,-824 2282,-824 2520,-824 2520,-824 2526,-824 2532,-830 2532,-836 2532,-836 2532,-886 2532,-886 2532,-892 2526,-898 2520,-898"/>
 <text text-anchor="start" x="2355" y="-882.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н] Гипотеза 1</text>
 <text text-anchor="start" x="2317.5" y="-870.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Звезда максимизирует irr₂</text>
 <text text-anchor="start" x="2280" y="-858.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[Н: уже есть простое доказательство]</text>
 <text text-anchor="start" x="2326.5" y="-846.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 126–127, заключение</text>
-<text text-anchor="start" x="2337.5" y="-834.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="2346.5" y="-834.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
 <!-- G4 -->
 <g id="node&#45;G4" class="node">
 <title>G4</title>
-<g id="a_node&#45;G4"><a xlink:href="coverage.md#node-g4" xlink:title="Lean: Без отметки. | Рассуждение рецензента">
+<g id="a_node&#45;G4"><a xlink:href="coverage.md#node-g4" xlink:title="Lean: Доказано. Для незвезды максимальная степень не больше n−2. Вклад ребра не больше Δ²−1, затем оценка суммируется по n−1 рёбрам. | Рассуждение рецензента">
 <ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="2401" cy="-969.01" rx="135.53" ry="41.02"/>
 <text text-anchor="start" x="2315" y="-983.21" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Рассуждение рецензента</text>
 <text text-anchor="start" x="2348" y="-972.21" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Незвезда: Δ≤n−2;</text>
 <text text-anchor="start" x="2347" y="-961.21" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">|d(u)²−d(v)²|≤Δ²−1</text>
-<text text-anchor="start" x="2342.5" y="-950.21" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#4a5563">Lean: Без отметки</text>
+<text text-anchor="start" x="2351" y="-950.21" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>

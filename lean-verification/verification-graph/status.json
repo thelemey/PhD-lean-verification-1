@@ -267,5 +267,15 @@
     "status": "qualified",
     "note": "Формула доказана для полимино, связного по общим сторонам, включая прямоугольник. Для касания только в вершине проверен контрпример.",
     "lean": {"PolyominoGeometry": ["minimum_geometric_cuts", "rectangle_minimum_geometric_cuts", "corner_contact_counterexample"]}
+  },
+  "N2": {
+    "status": "verified",
+    "note": "Проверено исправленное предложение: среди деревьев на n ≥ 3 вершинах звезда имеет индекс n(n−1)(n−2), а у любого дерева, не являющегося звездой, индекс строго меньше.",
+    "lean": {"TreeIrregularity": ["starGraph_isTree", "starGraph_quadraticIrregularity", "quadraticIrregularity_lt_starGraph"]}
+  },
+  "G4": {
+    "status": "verified",
+    "note": "Для незвезды максимальная степень не больше n−2. Вклад ребра не больше Δ²−1, затем оценка суммируется по n−1 рёбрам.",
+    "lean": {"TreeIrregularity": ["maxDegree_le_of_not_star", "quadraticEdgeWeight_le_maxDegree", "quadraticIrregularity_le_of_tree"]}
   }
 }

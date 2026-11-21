@@ -85,8 +85,8 @@
 | <a name="node-g1"></a> **G1** Предл. 5.1.1 | Без отметки | — |
 | <a name="node-g2"></a> **G2** Предл. 5.1.2 | Без отметки | — |
 | <a name="node-g3"></a> **G3** Теорема 5.1.3 | Доказано | Проверены число вершин и все четыре индекса для дерева в SimpleGraph. [`characteristic_factorGraph_indices`](../Thesis/FactorTreeGraphIndices.lean#L70) |
-| <a name="node-n2"></a> **N2** Гипотеза 1 | Без отметки | — |
-| <a name="node-g4"></a> **G4** Рассуждение рецензента | Без отметки | — |
+| <a name="node-n2"></a> **N2** Гипотеза 1 | Доказано | Проверено исправленное предложение: среди деревьев на n ≥ 3 вершинах звезда имеет индекс n(n−1)(n−2), а у любого дерева, не являющегося звездой, индекс строго меньше. [`starGraph_isTree`](../Thesis/TreeIrregularity.lean#L69), [`starGraph_quadraticIrregularity`](../Thesis/TreeIrregularity.lean#L147), [`quadraticIrregularity_lt_starGraph`](../Thesis/TreeIrregularity.lean#L172) |
+| <a name="node-g4"></a> **G4** Рассуждение рецензента | Доказано | Для незвезды максимальная степень не больше n−2. Вклад ребра не больше Δ²−1, затем оценка суммируется по n−1 рёбрам. [`maxDegree_le_of_not_star`](../Thesis/TreeIrregularity.lean#L110), [`quadraticEdgeWeight_le_maxDegree`](../Thesis/TreeIrregularity.lean#L119), [`quadraticIrregularity_le_of_tree`](../Thesis/TreeIrregularity.lean#L135) |
 
 ## 3.7–3.8  Метрика
 
