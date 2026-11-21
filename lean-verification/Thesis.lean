@@ -110,5 +110,6 @@ import Thesis.SturmianNullConsequences
 import Thesis.SturmianMetricConsequences
 import Thesis.SturmianPalindromicDensity
 import Thesis.StudyCriticalValues
+import Thesis.StudyPairedGains
 import Thesis.TernaryLetterCounts
 import Thesis.SturmianStandardLimit

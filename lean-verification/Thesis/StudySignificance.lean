@@ -29,7 +29,7 @@ noncomputable def numbersPuzzles : GroupSummary := ⟨59.74, 77.83, 18.10, 22.11
 /-- Welch–Satterthwaite degrees of freedom for two groups of 42. -/
 noncomputable def welchDF (a b : ℝ) : ℝ := 41 * (a ^ 2 + b ^ 2) ^ 2 / (a ^ 4 + b ^ 4)
 
-private theorem welchDF_bounds {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
+theorem welchDF_bounds {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     (hab : 6*a ≤ 7*b) (hba : 6*b ≤ 7*a) : 80 ≤ welchDF a b ∧ welchDF a b ≤ 82 := by
   have h₁ := pow_le_pow_left₀ (by positivity : 0 ≤ 6*a) hab 2
   have h₂ := pow_le_pow_left₀ (by positivity : 0 ≤ 6*b) hba 2
@@ -65,7 +65,7 @@ noncomputable def ancovaSquaredT (A B : GroupSummary) : ℝ :=
 noncomputable def ancovaP (A B : GroupSummary) : ℝ :=
   studentTwoSidedP 81 (Real.sqrt (ancovaSquaredT A B))
 
-private theorem p_gt_five_percent {ν t₂ : ℝ} (hν : 80 ≤ ν) (hν' : ν ≤ 82)
+theorem p_gt_five_percent {ν t₂ : ℝ} (hν : 80 ≤ ν) (hν' : ν ≤ 82)
     (ht : t₂ < (1.8 : ℝ)^2) : 0.05 < studentTwoSidedP ν (Real.sqrt t₂) := by
   apply (study_student_p_cutoffs hν hν').1
   rw [abs_of_nonneg (Real.sqrt_nonneg _)]
