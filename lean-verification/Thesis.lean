@@ -123,3 +123,4 @@ import Thesis.PolyominoInteriorConnectivity
 import Thesis.StudyDesign
 import Thesis.ThinkingRanks
 import Thesis.StudyHistogramCounts
+import Thesis.StudyPilot

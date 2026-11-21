@@ -116,15 +116,47 @@
 <path fill="none" stroke="#72818b" d="M186.08,-224.99C211.46,-213.87 241.44,-200.74 267.52,-189.31"/>
 <polygon fill="#72818b" stroke="#72818b" points="268.68,-191.29 273.72,-186.6 266.85,-187.12 268.68,-191.29"/>
 </g>
+<!-- table:pearson -->
+<g id="node&#45;table&#45;pearson" class="node">
+<title>table:pearson</title>
+<g id="a_node&#45;table&#45;pearson"><a xlink:href="../coverage.md#node-table-pearson" xlink:title="Таблица. Надёжность 12&#45;балльного теста в пилотной выборке из 40 учеников. Частично. В отдельном пилоте из двух средних и парного t следуют точный средний сдвиг 41/40 и сумма квадратов разностей 131. Для парного t и теста корреляции проверено p &lt; 0,001. Из положительной корреляции и изменения среднего следует строгое неравенство ICC(2,1) &lt; r. Сами r, ICC и точные границы ДИ по исходным парам не воспроизведены.">
+<path fill="white" stroke="#d3791a" stroke-width="3" d="M1206,-186.5C1206,-186.5 992,-186.5 992,-186.5 986,-186.5 980,-180.5 980,-174.5 980,-174.5 980,-146.5 980,-146.5 980,-140.5 986,-134.5 992,-134.5 992,-134.5 1206,-134.5 1206,-134.5 1212,-134.5 1218,-140.5 1218,-146.5 1218,-146.5 1218,-174.5 1218,-174.5 1218,-180.5 1212,-186.5 1206,-186.5"/>
+<text text-anchor="start" x="1079" y="-174.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
+<text text-anchor="start" x="989" y="-163.7" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Надёжность 12&#45;балльного теста в</text>
+<text text-anchor="start" x="990" y="-152.7" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">пилотной выборке из 40 учеников</text>
+<text text-anchor="start" x="1076.5" y="-143.3" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+</a>
+</g>
+</g>
+<!-- study&#45;summary -->
+<g id="node&#45;study&#45;summary" class="node">
+<title>study&#45;summary</title>
+<g id="a_node&#45;study&#45;summary"><a xlink:href="../coverage.md#node-study-summary" xlink:title="Эмпирический вывод. После поправки на исходный уровень различие между группами статистически незначимо по обоим тестам. С уточнением. Для любых 42 пар наблюдений в каждой группе, согласующихся со сводками, доказаны оба исходных преимущества B, нескорректированное итоговое различие только по числам, близость приростов и оба решения ANCOVA при уровне 0,05. Сами измерения и эмпирические допущения модели по опубликованным таблицам не проверяются. При одном целом классе на метод любой коэффициент метода можно компенсировать классным эффектом, сохранив прогнозы и минимум суммы квадратов ANCOVA.">
+<path fill="#ffeb80" stroke="#a68812" stroke-width="3" d="M1062.5,-96C1062.5,-96 841.5,-96 841.5,-96 835.5,-96 829.5,-90 829.5,-84 829.5,-84 829.5,-34 829.5,-34 829.5,-28 835.5,-22 841.5,-22 841.5,-22 1062.5,-22 1062.5,-22 1068.5,-22 1074.5,-28 1074.5,-34 1074.5,-34 1074.5,-84 1074.5,-84 1074.5,-90 1068.5,-96 1062.5,-96"/>
+<text text-anchor="start" x="872.5" y="-83.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Эмпирический вывод · Новизна 7</text>
+<text text-anchor="start" x="858.5" y="-73.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">После поправки на исходный</text>
+<text text-anchor="start" x="838.5" y="-62.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">уровень различие между группами</text>
+<text text-anchor="start" x="838.5" y="-51.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">статистически незначимо по обоим</text>
+<text text-anchor="start" x="929.5" y="-40.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">тестам</text>
+<text text-anchor="start" x="919" y="-30.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">С уточнением</text>
+</a>
+</g>
+</g>
+<!-- table:pearson&#45;&gt;study&#45;summary -->
+<g id="edge13" class="edge">
+<title>table:pearson&#45;&gt;study&#45;summary</title>
+<path fill="none" stroke="#72818b" d="M1061.91,-134.39C1046.47,-123.94 1028.17,-111.56 1010.97,-99.92"/>
+<polygon fill="#72818b" stroke="#72818b" points="1011.85,-97.76 1005.19,-96 1009.29,-101.53 1011.85,-97.76"/>
+</g>
 <!-- tab:descriptive -->
 <g id="node&#45;tab&#45;descriptive" class="node">
 <title>tab:descriptive</title>
 <g id="a_node&#45;tab&#45;descriptive"><a xlink:href="../coverage.md#node-tab-descriptive" xlink:title="Таблица. Исходные сводки по двум группам и двум тестам. Частично. Для 12&#45;балльного теста из округления средних и стандартных отклонений доказаны точные суммы, суммы квадратов до и после обучения и по два кандидата для сумм квадратов приростов. Исходные наблюдения не опубликованы.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M1133,-362C1133,-362 915,-362 915,-362 909,-362 903,-356 903,-350 903,-350 903,-322 903,-322 903,-316 909,-310 915,-310 915,-310 1133,-310 1133,-310 1139,-310 1145,-316 1145,-322 1145,-322 1145,-350 1145,-350 1145,-356 1139,-362 1133,-362"/>
-<text text-anchor="start" x="1004" y="-349.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
-<text text-anchor="start" x="912" y="-339.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Исходные сводки по двум группам</text>
-<text text-anchor="start" x="978" y="-328.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">и двум тестам</text>
-<text text-anchor="start" x="1001.5" y="-318.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<path fill="white" stroke="#d3791a" stroke-width="3" d="M985,-362C985,-362 767,-362 767,-362 761,-362 755,-356 755,-350 755,-350 755,-322 755,-322 755,-316 761,-310 767,-310 767,-310 985,-310 985,-310 991,-310 997,-316 997,-322 997,-322 997,-350 997,-350 997,-356 991,-362 985,-362"/>
+<text text-anchor="start" x="856" y="-349.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
+<text text-anchor="start" x="764" y="-339.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Исходные сводки по двум группам</text>
+<text text-anchor="start" x="830" y="-328.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">и двум тестам</text>
+<text text-anchor="start" x="853.5" y="-318.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
 </a>
 </g>
 </g>
@@ -132,124 +164,110 @@
 <g id="node&#45;study&#45;welch" class="node">
 <title>study&#45;welch</title>
 <g id="a_node&#45;study&#45;welch"><a xlink:href="../coverage.md#node-study-welch" xlink:title="Анализ данных. Нескорректированное сравнение итогов по Уэлчу. Частично. Для теста на мышление из описательной таблицы воспроизведены оба сравнения Уэлча, включая дробные степени свободы, p = 0,035 и 0,101, 95% ДИ и d Коэна. По обоим инструментам проверены решения до и после обучения, два межгрупповых сравнения приростов и четыре парных теста. Ранговые тесты требуют индивидуальных наблюдений. Для шкалы 0–100 из описательных сводок получены p до обучения от 0,02177 до 0,02208, после от 0,00763 до 0,00778, одностороннее округление 0,004 и d = 0,51 и 0,60. Для прироста по тесту на мышление воспроизведены точная разность −2/42, p = 0,95 и 95% ДИ [−1,61; 1,52]. Для прироста на шкале 0–100 из дополнительных опубликованных 0,52 следует p = 0,91. Для рангового сравнения итогов теста на мышление проверено ограничение сводок. Два допустимых целочисленных примера с теми же описательными ячейками, парными t и числами максимальных баллов дают при точном двустороннем перестановочном тесте p около 0,06626 и 0,04301.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M739,-277C739,-277 533,-277 533,-277 527,-277 521,-271 521,-265 521,-265 521,-237 521,-237 521,-231 527,-225 533,-225 533,-225 739,-225 739,-225 745,-225 751,-231 751,-237 751,-237 751,-265 751,-265 751,-271 745,-277 739,-277"/>
-<text text-anchor="start" x="599.5" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Анализ данных</text>
-<text text-anchor="start" x="530" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Нескорректированное сравнение</text>
-<text text-anchor="start" x="584.5" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">итогов по Уэлчу</text>
-<text text-anchor="start" x="613.5" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<path fill="white" stroke="#d3791a" stroke-width="3" d="M1250,-277C1250,-277 1044,-277 1044,-277 1038,-277 1032,-271 1032,-265 1032,-265 1032,-237 1032,-237 1032,-231 1038,-225 1044,-225 1044,-225 1250,-225 1250,-225 1256,-225 1262,-231 1262,-237 1262,-237 1262,-265 1262,-265 1262,-271 1256,-277 1250,-277"/>
+<text text-anchor="start" x="1110.5" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Анализ данных</text>
+<text text-anchor="start" x="1041" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Нескорректированное сравнение</text>
+<text text-anchor="start" x="1095.5" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">итогов по Уэлчу</text>
+<text text-anchor="start" x="1124.5" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
 </a>
 </g>
 </g>
 <!-- tab:descriptive&#45;&gt;study&#45;welch -->
 <g id="edge5" class="edge">
 <title>tab:descriptive&#45;&gt;study&#45;welch</title>
-<path fill="none" stroke="#72818b" d="M907.06,-309.98C859.76,-299.87 805.16,-288.19 757.42,-277.97"/>
-<polygon fill="#72818b" stroke="#72818b" points="757.86,-275.74 751.03,-276.61 756.91,-280.19 757.86,-275.74"/>
+<path fill="none" stroke="#72818b" d="M957.68,-309.98C989.53,-300.23 1026.12,-289.02 1058.59,-279.08"/>
+<polygon fill="#72818b" stroke="#72818b" points="1059.47,-281.19 1065.02,-277.11 1058.14,-276.84 1059.47,-281.19"/>
 </g>
 <!-- tab:ancova -->
 <g id="node&#45;tab&#45;ancova" class="node">
 <title>tab:ancova</title>
 <g id="a_node&#45;tab&#45;ancova"><a xlink:href="../coverage.md#node-tab-ancova" xlink:title="Таблица. Разность между группами после поправки на исходный уровень. Частично. Для теста на мышление описательная таблица и два парных t дают всю строку ANCOVA, p = 0,61 для взаимодействия группы с исходным баллом и обе корреляции. Для шкалы 0–100 из одной описательной таблицы следуют 6,2158 ≤ B−A ≤ 6,2401 и 0,1081 ≤ p ≤ 0,10995; из опубликованных контраста и ДИ следует p = 0,109 с точностью до 0,001. Для взаимодействия во втором тесте описательные сводки дают p ≥ 0,92. Для проверки распределения остатков нужны исходные наблюдения. Третья цифра не определяется одной описательной таблицей: доказано существование допустимых наборов с округлениями p до 0,108 и 0,110.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M1249.5,-277C1249.5,-277 1044.5,-277 1044.5,-277 1038.5,-277 1032.5,-271 1032.5,-265 1032.5,-265 1032.5,-237 1032.5,-237 1032.5,-231 1038.5,-225 1044.5,-225 1044.5,-225 1249.5,-225 1249.5,-225 1255.5,-225 1261.5,-231 1261.5,-237 1261.5,-237 1261.5,-265 1261.5,-265 1261.5,-271 1255.5,-277 1249.5,-277"/>
-<text text-anchor="start" x="1127" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
-<text text-anchor="start" x="1041.5" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Разность между группами после</text>
-<text text-anchor="start" x="1047.5" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">поправки на исходный уровень</text>
-<text text-anchor="start" x="1124.5" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<path fill="white" stroke="#d3791a" stroke-width="3" d="M1002.5,-277C1002.5,-277 797.5,-277 797.5,-277 791.5,-277 785.5,-271 785.5,-265 785.5,-265 785.5,-237 785.5,-237 785.5,-231 791.5,-225 797.5,-225 797.5,-225 1002.5,-225 1002.5,-225 1008.5,-225 1014.5,-231 1014.5,-237 1014.5,-237 1014.5,-265 1014.5,-265 1014.5,-271 1008.5,-277 1002.5,-277"/>
+<text text-anchor="start" x="880" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
+<text text-anchor="start" x="794.5" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Разность между группами после</text>
+<text text-anchor="start" x="800.5" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">поправки на исходный уровень</text>
+<text text-anchor="start" x="877.5" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
 </a>
 </g>
 </g>
 <!-- tab:descriptive&#45;&gt;tab:ancova -->
 <g id="edge7" class="edge">
 <title>tab:descriptive&#45;&gt;tab:ancova</title>
-<path fill="none" stroke="#72818b" d="M1061.24,-309.87C1074.85,-300.69 1090.34,-290.23 1104.38,-280.76"/>
-<polygon fill="#72818b" stroke="#72818b" points="1105.77,-282.56 1109.89,-277.04 1103.23,-278.79 1105.77,-282.56"/>
-</g>
-<!-- study&#45;summary -->
-<g id="node&#45;study&#45;summary" class="node">
-<title>study&#45;summary</title>
-<g id="a_node&#45;study&#45;summary"><a xlink:href="../coverage.md#node-study-summary" xlink:title="Эмпирический вывод. После поправки на исходный уровень различие между группами статистически незначимо по обоим тестам. С уточнением. Для любых 42 пар наблюдений в каждой группе, согласующихся со сводками, доказаны оба исходных преимущества B, нескорректированное итоговое различие только по числам, близость приростов и оба решения ANCOVA при уровне 0,05. Сами измерения и эмпирические допущения модели по опубликованным таблицам не проверяются. При одном целом классе на метод любой коэффициент метода можно компенсировать классным эффектом, сохранив прогнозы и минимум суммы квадратов ANCOVA.">
-<path fill="#ffeb80" stroke="#a68812" stroke-width="3" d="M1031.5,-96C1031.5,-96 810.5,-96 810.5,-96 804.5,-96 798.5,-90 798.5,-84 798.5,-84 798.5,-34 798.5,-34 798.5,-28 804.5,-22 810.5,-22 810.5,-22 1031.5,-22 1031.5,-22 1037.5,-22 1043.5,-28 1043.5,-34 1043.5,-34 1043.5,-84 1043.5,-84 1043.5,-90 1037.5,-96 1031.5,-96"/>
-<text text-anchor="start" x="841.5" y="-83.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Эмпирический вывод · Новизна 7</text>
-<text text-anchor="start" x="827.5" y="-73.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">После поправки на исходный</text>
-<text text-anchor="start" x="807.5" y="-62.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">уровень различие между группами</text>
-<text text-anchor="start" x="807.5" y="-51.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">статистически незначимо по обоим</text>
-<text text-anchor="start" x="898.5" y="-40.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">тестам</text>
-<text text-anchor="start" x="888" y="-30.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">С уточнением</text>
-</a>
-</g>
+<path fill="none" stroke="#72818b" d="M883.33,-309.65C885.7,-301.44 888.37,-292.24 890.85,-283.63"/>
+<polygon fill="#72818b" stroke="#72818b" points="893.09,-284.07 892.71,-277.2 888.72,-282.81 893.09,-284.07"/>
 </g>
 <!-- study&#45;welch&#45;&gt;study&#45;summary -->
 <g id="edge10" class="edge">
 <title>study&#45;welch&#45;&gt;study&#45;summary</title>
-<path fill="none" stroke="#72818b" d="M662.42,-224.94C692.62,-197.14 744.29,-152.05 794,-120.5 805.89,-112.95 818.87,-105.73 831.84,-99.08"/>
-<polygon fill="#72818b" stroke="#72818b" points="833.03,-101.03 837.8,-96.07 830.97,-96.97 833.03,-101.03"/>
+<path fill="none" stroke="#72818b" d="M1041.8,-224.98C1010.7,-215.53 982.21,-204.11 972,-192 951.39,-167.56 947.18,-131.13 947.69,-102.73"/>
+<polygon fill="#72818b" stroke="#72818b" points="949.97,-102.63 947.89,-96.07 945.42,-102.49 949.97,-102.63"/>
 </g>
 <!-- fig11 -->
 <g id="node&#45;fig11" class="node">
 <title>fig11</title>
 <g id="a_node&#45;fig11"><a xlink:href="../coverage.md#node-fig11" xlink:title="Рисунок. Распределения итоговых баллов по шкале 0–100. Частично. Высоты обоих рядов столбцов воспроизводятся из fig11.pdf скриптом read_figure11.py. При допуске один пиксель и 42 учениках Lean однозначно восстанавливает частоты. Они дают 1081 ≤ U_B ≤ 1345 при нулевом центре 882. Внутрибиновый порядок и точное p в рисунке отсутствуют.">
-<path fill="white" stroke="#d3791a" stroke-width="3" d="M757,-362C757,-362 533,-362 533,-362 527,-362 521,-356 521,-350 521,-350 521,-322 521,-322 521,-316 527,-310 533,-310 533,-310 757,-310 757,-310 763,-310 769,-316 769,-322 769,-322 769,-350 769,-350 769,-356 763,-362 757,-362"/>
-<text text-anchor="start" x="625.5" y="-349.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Рисунок</text>
-<text text-anchor="start" x="530" y="-339.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Распределения итоговых баллов по</text>
-<text text-anchor="start" x="604" y="-328.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">шкале 0–100</text>
-<text text-anchor="start" x="622.5" y="-318.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
+<path fill="white" stroke="#d3791a" stroke-width="3" d="M1250,-362C1250,-362 1026,-362 1026,-362 1020,-362 1014,-356 1014,-350 1014,-350 1014,-322 1014,-322 1014,-316 1020,-310 1026,-310 1026,-310 1250,-310 1250,-310 1256,-310 1262,-316 1262,-322 1262,-322 1262,-350 1262,-350 1262,-356 1256,-362 1250,-362"/>
+<text text-anchor="start" x="1118.5" y="-349.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Рисунок</text>
+<text text-anchor="start" x="1023" y="-339.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Распределения итоговых баллов по</text>
+<text text-anchor="start" x="1097" y="-328.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">шкале 0–100</text>
+<text text-anchor="start" x="1115.5" y="-318.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Частично</text>
 </a>
 </g>
 </g>
 <!-- fig11&#45;&gt;study&#45;welch -->
 <g id="edge6" class="edge">
 <title>fig11&#45;&gt;study&#45;welch</title>
-<path fill="none" stroke="#72818b" d="M642.25,-309.65C641.37,-301.52 640.38,-292.42 639.46,-283.89"/>
-<polygon fill="#72818b" stroke="#72818b" points="641.69,-283.42 638.73,-277.2 637.17,-283.91 641.69,-283.42"/>
+<path fill="none" stroke="#72818b" d="M1140.75,-309.65C1141.63,-301.52 1142.62,-292.42 1143.54,-283.89"/>
+<polygon fill="#72818b" stroke="#72818b" points="1145.83,-283.91 1144.27,-277.2 1141.31,-283.42 1145.83,-283.91"/>
 </g>
 <!-- study&#45;sensitivity -->
 <g id="node&#45;study&#45;sensitivity" class="node">
 <title>study&#45;sensitivity</title>
 <g id="a_node&#45;study&#45;sensitivity"><a xlink:href="../coverage.md#node-study-sensitivity" xlink:title="Чувствительность плана. Оба наблюдаемых эффекта ниже опубликованных порогов обнаружения. Доказано. По обеим шкалам оценка ANCOVA меньше каждого из двух порогов таблицы. 95%&#45;й ДИ содержит ноль и половину остаточного стандартного отклонения. Для шкалы 0–12 проверены округления SD = 2,78 и d = 0,37.">
-<path fill="white" stroke="#228044" stroke-width="3" d="M1027.5,-192C1027.5,-192 814.5,-192 814.5,-192 808.5,-192 802.5,-186 802.5,-180 802.5,-180 802.5,-141 802.5,-141 802.5,-135 808.5,-129 814.5,-129 814.5,-129 1027.5,-129 1027.5,-129 1033.5,-129 1039.5,-135 1039.5,-141 1039.5,-141 1039.5,-180 1039.5,-180 1039.5,-186 1033.5,-192 1027.5,-192"/>
-<text text-anchor="start" x="861.5" y="-179.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Чувствительность плана</text>
-<text text-anchor="start" x="811.5" y="-169.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Оба наблюдаемых эффекта ниже</text>
-<text text-anchor="start" x="840.5" y="-158.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">опубликованных порогов</text>
-<text text-anchor="start" x="878" y="-147.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">обнаружения</text>
-<text text-anchor="start" x="899" y="-137.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
+<path fill="white" stroke="#228044" stroke-width="3" d="M912.5,-192C912.5,-192 699.5,-192 699.5,-192 693.5,-192 687.5,-186 687.5,-180 687.5,-180 687.5,-141 687.5,-141 687.5,-135 693.5,-129 699.5,-129 699.5,-129 912.5,-129 912.5,-129 918.5,-129 924.5,-135 924.5,-141 924.5,-141 924.5,-180 924.5,-180 924.5,-186 918.5,-192 912.5,-192"/>
+<text text-anchor="start" x="746.5" y="-179.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Чувствительность плана</text>
+<text text-anchor="start" x="696.5" y="-169.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Оба наблюдаемых эффекта ниже</text>
+<text text-anchor="start" x="725.5" y="-158.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">опубликованных порогов</text>
+<text text-anchor="start" x="763" y="-147.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">обнаружения</text>
+<text text-anchor="start" x="784" y="-137.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Доказано</text>
 </a>
 </g>
 </g>
 <!-- tab:ancova&#45;&gt;study&#45;sensitivity -->
 <g id="edge8" class="edge">
 <title>tab:ancova&#45;&gt;study&#45;sensitivity</title>
-<path fill="none" stroke="#72818b" d="M1083.14,-224.99C1058.98,-215.53 1031.08,-204.61 1005.32,-194.52"/>
-<polygon fill="#72818b" stroke="#72818b" points="1006.05,-192.36 999.17,-192.11 1004.39,-196.6 1006.05,-192.36"/>
+<path fill="none" stroke="#72818b" d="M873.31,-224.88C863.99,-216.09 853.33,-206.06 843.3,-196.62"/>
+<polygon fill="#72818b" stroke="#72818b" points="844.72,-194.83 838.43,-192.03 841.6,-198.15 844.72,-194.83"/>
 </g>
 <!-- tab:ancova&#45;&gt;study&#45;summary -->
 <g id="edge11" class="edge">
 <title>tab:ancova&#45;&gt;study&#45;summary</title>
-<path fill="none" stroke="#72818b" d="M1132.89,-224.97C1115.84,-196.58 1084.82,-150.36 1048,-120.5 1038.39,-112.71 1027.61,-105.63 1016.49,-99.29"/>
-<polygon fill="#72818b" stroke="#72818b" points="1017.44,-97.21 1010.66,-96.04 1015.23,-101.19 1017.44,-97.21"/>
+<path fill="none" stroke="#72818b" d="M916.96,-224.99C922.92,-215.11 929.09,-203.4 933,-192 942.89,-163.13 947.64,-128.99 949.91,-102.66"/>
+<polygon fill="#72818b" stroke="#72818b" points="952.18,-102.81 950.44,-96.14 947.64,-102.44 952.18,-102.81"/>
 </g>
 <!-- tab4 -->
 <g id="node&#45;tab4" class="node">
 <title>tab4</title>
 <g id="a_node&#45;tab4"><a xlink:href="../coverage.md#node-tab4" xlink:title="Таблица. Пороги обнаружения при мощности 80% и 90%. Без проверки Lean. Заданы опубликованные пороги. В тексте нет формулы расчёта мощности.">
-<path fill="white" stroke="#c43735" stroke-width="3" d="M1003.5,-277C1003.5,-277 780.5,-277 780.5,-277 774.5,-277 768.5,-271 768.5,-265 768.5,-265 768.5,-237 768.5,-237 768.5,-231 774.5,-225 780.5,-225 780.5,-225 1003.5,-225 1003.5,-225 1009.5,-225 1015.5,-231 1015.5,-237 1015.5,-237 1015.5,-265 1015.5,-265 1015.5,-271 1009.5,-277 1003.5,-277"/>
-<text text-anchor="start" x="872" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
-<text text-anchor="start" x="777.5" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Пороги обнаружения при мощности</text>
-<text text-anchor="start" x="858" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">80% и 90%</text>
-<text text-anchor="start" x="848" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Без проверки Lean</text>
+<path fill="white" stroke="#c43735" stroke-width="3" d="M756.5,-277C756.5,-277 533.5,-277 533.5,-277 527.5,-277 521.5,-271 521.5,-265 521.5,-265 521.5,-237 521.5,-237 521.5,-231 527.5,-225 533.5,-225 533.5,-225 756.5,-225 756.5,-225 762.5,-225 768.5,-231 768.5,-237 768.5,-237 768.5,-265 768.5,-265 768.5,-271 762.5,-277 756.5,-277"/>
+<text text-anchor="start" x="625" y="-264.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Таблица</text>
+<text text-anchor="start" x="530.5" y="-254.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">Пороги обнаружения при мощности</text>
+<text text-anchor="start" x="611" y="-243.2" font-family="DejaVu Sans" font-weight="bold" font-size="11.00" fill="#202a32">80% и 90%</text>
+<text text-anchor="start" x="601" y="-233.8" font-family="DejaVu Sans" font-size="9.00" fill="#202a32">Без проверки Lean</text>
 </a>
 </g>
 </g>
 <!-- tab4&#45;&gt;study&#45;sensitivity -->
 <g id="edge9" class="edge">
 <title>tab4&#45;&gt;study&#45;sensitivity</title>
-<path fill="none" stroke="#72818b" d="M900.23,-224.88C902.93,-216.65 905.98,-207.34 908.9,-198.43"/>
-<polygon fill="#72818b" stroke="#72818b" points="911.13,-198.92 910.99,-192.03 906.81,-197.5 911.13,-198.92"/>
+<path fill="none" stroke="#72818b" d="M690.71,-224.88C707.41,-215.69 726.59,-205.15 744.45,-195.33"/>
+<polygon fill="#72818b" stroke="#72818b" points="745.85,-197.16 750.45,-192.03 743.66,-193.17 745.85,-197.16"/>
 </g>
 <!-- study&#45;sensitivity&#45;&gt;study&#45;summary -->
 <g id="edge12" class="edge">
 <title>study&#45;sensitivity&#45;&gt;study&#45;summary</title>
-<path fill="none" stroke="#72818b" d="M921,-128.83C921,-120.64 921,-111.64 921,-102.92"/>
-<polygon fill="#72818b" stroke="#72818b" points="923.28,-102.83 921,-96.33 918.73,-102.83 923.28,-102.83"/>
+<path fill="none" stroke="#72818b" d="M851,-128.83C864.38,-119.71 879.25,-109.58 893.38,-99.95"/>
+<polygon fill="#72818b" stroke="#72818b" points="894.86,-101.69 898.95,-96.15 892.3,-97.93 894.86,-101.69"/>
 </g>
 </g>
 </svg>

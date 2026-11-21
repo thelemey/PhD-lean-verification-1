@@ -703,7 +703,8 @@
     "uses": [
       "study-welch",
       "tab:ancova",
-      "study-sensitivity"
+      "study-sensitivity",
+      "table:pearson"
     ],
     "novelty": 7
   },
@@ -870,5 +871,9 @@
   "fig11": {
     "title": "Распределения итоговых баллов по шкале 0–100",
     "kind": "Рисунок"
+  },
+  "table:pearson": {
+    "title": "Надёжность 12-балльного теста в пилотной выборке из 40 учеников",
+    "kind": "Таблица"
   }
 }
