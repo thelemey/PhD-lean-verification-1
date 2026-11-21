@@ -39,6 +39,7 @@ import Thesis.MBonacciValues
 import Thesis.SturmianDiophantine
 import Thesis.SturmianDensitySpectrum
 import Thesis.SturmianDensityMeasure
+import Thesis.BadlyApproximableNull
 import Thesis.ThueMorseBlocks
 import Thesis.ThueMorseRecurrence
 import Thesis.ThueMorseSubstitution
