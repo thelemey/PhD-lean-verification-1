@@ -1,0 +1,833 @@
+{
+  "pro.5.3": {
+    "title": "Число палиндромных факторов не превосходит длину"
+  },
+  "mahalingam-bounds": {
+    "title": "Оценки P(w) ≤ |w| ≤ SP(w)",
+    "at": "\\begin{proposition}[Махалингам~\\cite{Mahalingam}]"
+  },
+  "lem:pal_subset_spal": {
+    "title": "Включение факторов в рассеянные палиндромы"
+  },
+  "pal_spal": {
+    "title": "Сравнение числа обычных и рассеянных палиндромов",
+    "uses": [
+      "lem:pal_subset_spal"
+    ]
+  },
+  "mahalingam-increment": {
+    "title": "Добавление буквы даёт не более Fₙ новых рассеянных палиндромов",
+    "at": "\\begin{lemma}[~\\cite{Mahalingam}]"
+  },
+  "brinkhuis": {
+    "title": "Экспоненциальные оценки числа троичных бесквадратных слов",
+    "at": "\\begin{proposition}[Оценки для"
+  },
+  "weyl": {
+    "title": "Критерий Вейля",
+    "at": "\\begin{theorem}[Критерий Вейля"
+  },
+  "lem:logfact": {
+    "title": "Равномерное распределение log_b(n!) при b > 1",
+    "uses": [
+      "weyl",
+      "weyl-mean"
+    ]
+  },
+  "factorial-correlations": {
+    "title": "Приближение корреляций степенями с мнимым показателем",
+    "at": "=n^{\\mathrm i\\tau r}+O_{b,h,r}",
+    "kind": "Шаг доказательства"
+  },
+  "oscillation-integral": {
+    "title": "Сравнение осциллирующей суммы с интегралом",
+    "at": "сравнение суммы с интегралом даёт",
+    "kind": "Шаг доказательства"
+  },
+  "correlation-limit": {
+    "title": "Предел модуля нормированной корреляционной суммы",
+    "at": "\\frac{|C_N(r)|}{N}",
+    "kind": "Шаг доказательства",
+    "uses": [
+      "factorial-correlations",
+      "oscillation-integral"
+    ]
+  },
+  "weyl-mean": {
+    "title": "Оценка Коши и два предельных перехода в средних Вейля",
+    "at": "Разделив на $H^2N^2$",
+    "kind": "Шаг доказательства",
+    "uses": [
+      "correlation-limit"
+    ]
+  },
+  "lem:lead": {
+    "title": "Любой ненулевой ведущий блок встречается бесконечно часто",
+    "uses": [
+      "lem:logfact"
+    ]
+  },
+  "lem:trail": {
+    "title": "Число концевых нулей n! стремится к бесконечности"
+  },
+  "p03": {
+    "title": "Факторная и арифметическая сложности произвольного слова"
+  },
+  "mainthm01": {
+    "title": "Конкатенация факториалов имеет обе сложности bᵏ",
+    "uses": [
+      "lem:lead",
+      "lem:trail",
+      "p03"
+    ],
+    "novelty": 6,
+    "defense": 4
+  },
+  "fib-binomial": {
+    "title": "Две биномиальные суммы для Fₙ и Fₙ₊₁",
+    "at": "F_n = \\sum_{k=0}^{\\left\\lfloor",
+    "kind": "Формула"
+  },
+  "defn1pil": {
+    "title": "Существование и единственность рекурсии порядка k+p−1"
+  },
+  "lemgenn1": {
+    "title": "Производящая функция нормированной рекурсии",
+    "uses": [
+      "defn1pil"
+    ]
+  },
+  "thmconsn1": {
+    "title": "Критический и асимптотический показатели штурмова слова",
+    "uses": [
+      "sturmian-powers"
+    ]
+  },
+  "sturmian-powers": {
+    "title": "Классификация примитивных корней кубов в штурмовом языке",
+    "at": "\\item если примитивное слово $v$",
+    "kind": "Внешний результат"
+  },
+  "fibonacci-exponent": {
+    "title": "Для слова Фибоначчи E = E* = 2+φ",
+    "at": "Поэтому $E(\\mathbf f)=E^*(\\mathbf",
+    "kind": "Следствие в тексте",
+    "uses": [
+      "thmconsn1",
+      "lem:fibA"
+    ]
+  },
+  "lem:fibA": {
+    "title": "Тождества Бине и пределы отношений чисел Фибоначчи"
+  },
+  "re.1": {
+    "title": "Рекурсивные слова Фибоначчи и их предел",
+    "kind": "Определение"
+  },
+  "fib-pal-factors": {
+    "title": "Палиндромные факторы слова Фибоначчи",
+    "at": "\\begin{proposition}[Палиндромные",
+    "uses": [
+      "lem:palFib",
+      "pal-complexity",
+      "sturmian-rich"
+    ]
+  },
+  "prop:mech": {
+    "title": "Механическое слово наклона 1/φ²",
+    "uses": [
+      "re.1"
+    ]
+  },
+  "mainre": {
+    "title": "Точные количества букв и оптимальные границы отклонений",
+    "uses": [
+      "prop:mech"
+    ]
+  },
+  "prop:balance": {
+    "title": "Сбалансированность и плотности в любом факторе",
+    "uses": [
+      "prop:mech"
+    ]
+  },
+  "pal-complexity": {
+    "title": "Штурмовость по палиндромной сложности каждой длины",
+    "at": "Пусть $w$ --- бесконечное слово."
+  },
+  "lem:mechanical": {
+    "title": "Позиции нулей и единиц по Битти",
+    "uses": [
+      "prop:mech"
+    ]
+  },
+  "thm:density": {
+    "title": "Плотности префиксов и остатки O(1)",
+    "uses": [
+      "mainre"
+    ]
+  },
+  "lem:local": {
+    "title": "Запрещённые блоки и список факторов длины три",
+    "uses": [
+      "lem:mechanical"
+    ]
+  },
+  "sec2:proposition1": {
+    "title": "Ряд букв слова Фибоначчи, нерациональность и трансцендентность",
+    "uses": [
+      "lem:mechanical"
+    ]
+  },
+  "defnewwordn1": {
+    "title": "Рекурсия конечных слов uₙ",
+    "uses": [
+      "re.1"
+    ]
+  },
+  "pro1defnewwordn1": {
+    "title": "Длина uₙ и числа букв",
+    "uses": [
+      "defnewwordn1"
+    ]
+  },
+  "defnewwordn2": {
+    "title": "Обрамление qₘ = auₘb",
+    "uses": [
+      "defnewwordn1"
+    ]
+  },
+  "pro1defnewwordn2": {
+    "title": "Длина qₘ и числа букв",
+    "uses": [
+      "pro1defnewwordn1",
+      "defnewwordn2"
+    ]
+  },
+  "thm1Asymptotic": {
+    "title": "Точные плотности обрамлённых слов и скорость сходимости",
+    "uses": [
+      "pro1defnewwordn2",
+      "lem:fibA"
+    ],
+    "novelty": 3
+  },
+  "unframed-error": {
+    "title": "Знак и скорость погрешности без обрамления",
+    "at": "Для необрамлённых слов имеем",
+    "kind": "Следствие в тексте",
+    "uses": [
+      "pro1defnewwordn1",
+      "lem:fibA"
+    ]
+  },
+  "tab002densitiesASm": {
+    "title": "Числовая таблица плотностей и предельная строка",
+    "kind": "Таблица",
+    "uses": [
+      "thm1Asymptotic",
+      "unframed-error"
+    ],
+    "novelty": 3
+  },
+  "lem:telesc": {
+    "title": "Телескопическая разность отношений Фибоначчи",
+    "uses": [
+      "cassini"
+    ]
+  },
+  "cassini": {
+    "title": "Тождество Кассини для чисел Фибоначчи",
+    "at": "F_{n-1}F_{n+1}-F_n^2=(-1)^n",
+    "kind": "Классическое тождество"
+  },
+  "thm:millin": {
+    "title": "Ряд Миллина, частичная сумма и остаток",
+    "uses": [
+      "lem:telesc",
+      "lem:fibA"
+    ],
+    "novelty": 5
+  },
+  "lem:docagne": {
+    "title": "Тождество д’Оканя и разность отношений",
+    "uses": [
+      "binet"
+    ]
+  },
+  "binet": {
+    "title": "Формула Бине для обычных чисел Фибоначчи",
+    "at": "По формуле Бине левая часть равна",
+    "kind": "Классическое тождество"
+  },
+  "prop:symm": {
+    "title": "Симметрия двух конечных сумм",
+    "uses": [
+      "lem:docagne"
+    ],
+    "novelty": 5
+  },
+  "prop:sum2r": {
+    "title": "Ряд Фибоначчи с чётным сдвигом",
+    "uses": [
+      "lem:docagne",
+      "lem:fibA"
+    ],
+    "novelty": 5
+  },
+  "eqqintron1": {
+    "title": "Палиндромная плотность через limsup длин префиксов",
+    "kind": "Определение"
+  },
+  "deffSturmiann1": {
+    "title": "Механическое задание характеристического слова"
+  },
+  "proirrationaln1": {
+    "title": "Стандартные слова сходятся к характеристическому",
+    "uses": [
+      "deffSturmiann1"
+    ]
+  },
+  "ThmplinDENSN1": {
+    "title": "Оценка Фишлера для любого непериодического слова",
+    "uses": [
+      "eqqintron1"
+    ]
+  },
+  "lem:palFib": {
+    "title": "Центральные слова — палиндромные префиксы",
+    "uses": [
+      "re.1"
+    ]
+  },
+  "fib-pal-complete": {
+    "title": "Полнота списка длин Fₙ₊₂−2",
+    "at": "На самом деле числа $F_{n+2}-2$",
+    "kind": "Цитируемый результат",
+    "uses": [
+      "re.1"
+    ]
+  },
+  "thm:palFib": {
+    "title": "Палиндромная плотность слова Фибоначчи равна 1/φ",
+    "uses": [
+      "lem:palFib",
+      "lem:fibA",
+      "ThmplinDENSN1"
+    ]
+  },
+  "ternary-word": {
+    "title": "Рекурсия y₀ = 01, y₁ = 02",
+    "at": "y_0=01,\\qquad y_1=02,\\qquad",
+    "kind": "Определение"
+  },
+  "lemmanovelwordn1": {
+    "title": "Длина и три счётчика букв конечного yₙ",
+    "uses": [
+      "ternary-word",
+      "lem:fibA"
+    ]
+  },
+  "eq1densityn1": {
+    "title": "Три плотности в конечных словах yₙ и их пределы",
+    "uses": [
+      "lemmanovelwordn1",
+      "lem:fibA"
+    ]
+  },
+  "lem:Ystructure": {
+    "title": "Вложенность yₙ при n ≥ 1 и кодирование предела",
+    "uses": [
+      "ternary-word",
+      "re.1"
+    ]
+  },
+  "thm:Yinf": {
+    "title": "Три предельные плотности букв бесконечного слова y",
+    "uses": [
+      "lem:Ystructure",
+      "mainre"
+    ]
+  },
+  "lem:interleave": {
+    "title": "Длины префиксов после вставки разделителя"
+  },
+  "prop:insertion": {
+    "title": "Вставка разделителя сохраняет палиндромную плотность",
+    "uses": [
+      "lem:interleave",
+      "eqqintron1"
+    ],
+    "novelty": 4,
+    "defense": 2
+  },
+  "thm:Ypal": {
+    "title": "Длины 2Fₖ−3 и палиндромная плотность слова y",
+    "uses": [
+      "lem:Ystructure",
+      "lem:interleave",
+      "fib-pal-complete",
+      "prop:insertion",
+      "thm:palFib"
+    ]
+  },
+  "prop:mk": {
+    "title": "Счётчики букв центральных префиксов y и их усечений",
+    "uses": [
+      "thm:Ypal",
+      "pro1defnewwordn1",
+      "lem:fibA",
+      "thm:Yinf"
+    ]
+  },
+  "rich-heredity": {
+    "title": "Каждый фактор богатого слова богат",
+    "at": "(Друбе--Жюстен--Пирийо~\\cite{Droubay}:",
+    "kind": "Цитируемый результат"
+  },
+  "lem:insertcount": {
+    "title": "Вставка разделителей даёт 2P+1 палиндромов"
+  },
+  "thm:Yrich": {
+    "title": "Богатство всех yₙ и каждого фактора предела",
+    "uses": [
+      "lem:Ystructure",
+      "lem:insertcount",
+      "rich-heredity",
+      "sturmian-rich",
+      "lemmanovelwordn1"
+    ],
+    "novelty": 4,
+    "defense": 2
+  },
+  "sturmian-rich": {
+    "title": "Богатство конечных факторов штурмовых слов",
+    "at": "Конечные факторы штурмовых слов",
+    "kind": "Цитируемый результат"
+  },
+  "rich-interleave": {
+    "title": "Богатство бесконечного слова сохраняется при вставке",
+    "at": "Для каждого штурмова (более общо,",
+    "uses": [
+      "lem:insertcount",
+      "rich-heredity",
+      "sturmian-rich"
+    ]
+  },
+  "ct:palprefSturm": {
+    "title": "Все палиндромные префиксы по континуантам",
+    "uses": [
+      "deffSturmiann1",
+      "proirrationaln1"
+    ]
+  },
+  "thm:palSturm": {
+    "title": "Формула Фишлера для характеристического слова",
+    "uses": [
+      "ct:palprefSturm",
+      "eqqintron1"
+    ]
+  },
+  "prop:dichotomy": {
+    "title": "Дихотомия плотности и плохая приближаемость",
+    "uses": [
+      "thm:palSturm"
+    ],
+    "novelty": 4,
+    "defense": 2
+  },
+  "cor:palSturm": {
+    "title": "Границы, спектр, мера и явные значения плотности",
+    "uses": [
+      "prop:dichotomy",
+      "prop:insertion",
+      "ThmplinDENSN1",
+      "metric-bad",
+      "thm:palSturm",
+      "sturmian-spectrum"
+    ],
+    "novelty": 4,
+    "defense": 2
+  },
+  "metric-bad": {
+    "title": "Нулевая мера и размерность 1 множества Bad",
+    "at": "(3) Предложение~\\ref{prop:dichotomy},",
+    "kind": "Хинчин и Ярник"
+  },
+  "sturmian-spectrum": {
+    "title": "Критерий максимума и разрыв в спектре плотностей",
+    "at": "(4) По~\\cite[теорема~1.4]{Fischler}",
+    "kind": "Спектр Фишлера"
+  },
+  "prop:mbonacci": {
+    "title": "Палиндромная плотность m-боначчи равна 1/βₘ",
+    "uses": [
+      "mbonacci-prefixes",
+      "eqqintron1"
+    ],
+    "novelty": 4,
+    "defense": 2
+  },
+  "mbonacci-prefixes": {
+    "title": "Рекурсия длин при циклической директиве",
+    "at": "Для этого направляющего слова",
+    "kind": "Шаг доказательства"
+  },
+  "sec:dSL": {
+    "title": "Символико-решёточная метрика на A^ℤ"
+  },
+  "propositionn1": {
+    "title": "Топология произведения, компактность и оценка для Φ",
+    "uses": [
+      "sec:dSL"
+    ],
+    "novelty": 5
+  },
+  "def:strong_repetition": {
+    "title": "Сильный (k,δ)-повтор"
+  },
+  "def:psiAsigma": {
+    "title": "Подстановка циклического сдвига"
+  },
+  "prop:gTM": {
+    "title": "Двоичная сумма цифр задаёт неподвижное слово",
+    "uses": [
+      "def:psiAsigma"
+    ],
+    "novelty": 1
+  },
+  "lem:arith": {
+    "title": "Куб как сравнение на окне длины 2m",
+    "uses": [
+      "prop:gTM",
+      "def:strong_repetition"
+    ]
+  },
+  "lem:half": {
+    "title": "Чётные индексы и разность соседних переносов"
+  },
+  "lem:odd": {
+    "title": "Нечётная длина блока вынуждает m = 1 и j ≡ 1",
+    "uses": [
+      "lem:half"
+    ]
+  },
+  "avoidance": {
+    "title": "Двоичный критерий избегания скрученного куба",
+    "uses": [
+      "lem:arith",
+      "lem:half",
+      "lem:odd"
+    ],
+    "novelty": 1,
+    "defense": 1
+  },
+  "complexity-observation": {
+    "title": "Числа факторов при N = 2, 3, 4 и k ≤ 40",
+    "at": "\\begin{observation}[Факторная",
+    "uses": [
+      "prop:gTM"
+    ]
+  },
+  "tromp-shallit": {
+    "title": "Полная функция сложности s₂(n) mod N",
+    "at": "Полная функция сложности слова",
+    "kind": "Тромп и Шаллит"
+  },
+  "complexity-comparison": {
+    "title": "Наблюдаемые значения как иллюстрация формулы Тромпа и Шаллита",
+    "at": "Поэтому эта закономерность рассматривается как иллюстрация",
+    "kind": "Сопоставление",
+    "uses": [
+      "complexity-observation",
+      "tromp-shallit"
+    ]
+  },
+  "base-substitution": {
+    "title": "Подстановка ξ_b постоянной длины b",
+    "at": "$\\xi_b(t)=t\\,(t+1)\\cdots(t+b-1)$ и",
+    "kind": "Определение"
+  },
+  "tw:gTM": {
+    "title": "Сумма цифр s_b(n) задаёт слово W⁽ᵇ⁾",
+    "uses": [
+      "base-substitution"
+    ]
+  },
+  "tw:lem": {
+    "title": "Критерий окна, масштабирование и переносы в основании b",
+    "uses": [
+      "tw:gTM",
+      "def:strong_repetition"
+    ]
+  },
+  "tw:main": {
+    "title": "Периодический случай и точный порог κ(N,b,j)",
+    "uses": [
+      "tw:lem",
+      "tw:gTM"
+    ],
+    "novelty": 1,
+    "defense": 1
+  },
+  "tw:cor": {
+    "title": "Отсутствие финального периода и двоичные пороги 2 и 4",
+    "uses": [
+      "tw:main"
+    ]
+  },
+  "eq:blocks": {
+    "title": "Слово разбивается на выровненные блоки подстановки",
+    "kind": "Формула",
+    "uses": [
+      "tw:gTM"
+    ]
+  },
+  "thm:dynWb": {
+    "title": "Динамика при N ∤ (b−1): минимальность, энтропия, частоты, строгая эргодичность",
+    "uses": [
+      "dyn-primitive",
+      "dyn-minimal",
+      "dyn-entropy",
+      "dyn-letters",
+      "dyn-ergodic"
+    ],
+    "novelty": 1,
+    "defense": 1
+  },
+  "dyn-primitive": {
+    "title": "Примитивность подстановки с порогом N−1",
+    "at": "\\item[(1)] $\\xi_b$ примитивен:",
+    "uses": [
+      "eq:blocks"
+    ],
+    "part": 1
+  },
+  "dyn-minimal": {
+    "title": "Равномерная рекуррентность и минимальность",
+    "at": "\\item[(2)] $W$ равномерно",
+    "uses": [
+      "dyn-primitive",
+      "eq:blocks"
+    ],
+    "part": 2
+  },
+  "dyn-entropy": {
+    "title": "Границы сложности и нулевая энтропия",
+    "at": "\\item[(3)] $W$ не является",
+    "uses": [
+      "eq:blocks",
+      "tw:cor",
+      "morse-hedlund"
+    ],
+    "part": 3
+  },
+  "dyn-letters": {
+    "title": "Равномерная частота 1/N каждой буквы",
+    "at": "\\item[(4)] Для каждой буквы $c$,",
+    "uses": [
+      "eq:blocks"
+    ],
+    "part": 4
+  },
+  "dyn-ergodic": {
+    "title": "Строгая эргодичность и частоты факторов",
+    "at": "\\item[(5)] $(X_W,S)$ строго",
+    "uses": [
+      "dyn-primitive",
+      "michel"
+    ],
+    "part": 5
+  },
+  "morse-hedlund": {
+    "title": "Непериодичность даёт p(k) ≥ k+1",
+    "at": "со смещением $<b^e$, так что",
+    "kind": "Морс и Хедлунд"
+  },
+  "michel": {
+    "title": "Единственность меры для примитивной подстановки постоянной длины",
+    "at": "(5) По (1), $\\xi_b$ является",
+    "kind": "Теорема Мишеля"
+  },
+  "subshift-avoidance": {
+    "title": "Исключение длинных повторов во всём подсдвиге",
+    "at": "Каждый $x\\in X_W$ является сильно",
+    "uses": [
+      "dyn-minimal",
+      "tw:main"
+    ]
+  },
+  "prop:dSLshift": {
+    "title": "Сдвиг 2-липшицев в метрике d_SL",
+    "uses": [
+      "sec:dSL"
+    ],
+    "novelty": 5
+  },
+  "cut-model": {
+    "title": "Полные линии разреза и внутренние рёбра",
+    "at": "\\emph{Полимино} $P$ --- это",
+    "kind": "Определение"
+  },
+  "thm:min-dissection-path": {
+    "title": "Минимум разрезов равен λ(P), включая прямоугольники",
+    "uses": [
+      "cut-model"
+    ],
+    "novelty": 5
+  },
+  "tab:descriptive": {
+    "title": "Исходные сводки по двум группам и двум тестам",
+    "kind": "Таблица"
+  },
+  "study-welch": {
+    "title": "Нескорректированное сравнение итогов по Уэлчу",
+    "at": "\\textbf{Нескорректированное",
+    "kind": "Анализ данных",
+    "uses": [
+      "tab:descriptive"
+    ]
+  },
+  "tab:ancova": {
+    "title": "Разность между группами после поправки на исходный уровень",
+    "kind": "Таблица",
+    "uses": [
+      "tab:descriptive"
+    ]
+  },
+  "study-summary": {
+    "title": "После поправки на исходный уровень различие между группами статистически незначимо по обоим тестам",
+    "at": "\\textbf{Резюме и ограничения",
+    "kind": "Эмпирический вывод",
+    "uses": [
+      "study-welch",
+      "tab:ancova"
+    ],
+    "novelty": 7
+  },
+  "tree-index": {
+    "title": "Квадратичный индекс как сумма |dᵤ²−dᵥ²|",
+    "at": "\\operatorname{irr}_2(G)=\\sum_{uv\\in",
+    "kind": "Определение"
+  },
+  "pron1": {
+    "title": "Нижняя граница Δ(Δ²−1) и критерий равенства",
+    "uses": [
+      "tree-index"
+    ]
+  },
+  "pron2": {
+    "title": "Путь строго минимизирует квадратичный индекс при n ≥ 5",
+    "uses": [
+      "pron1"
+    ]
+  },
+  "star-maximum": {
+    "title": "Звезда строго максимизирует квадратичный индекс",
+    "at": "\\begin{proposition*}[Максимальность",
+    "uses": [
+      "star-bound"
+    ]
+  },
+  "star-bound": {
+    "title": "Верхняя оценка через максимальную степень и число рёбер",
+    "at": "Если $T$ не является звездой, его",
+    "kind": "Шаг доказательства",
+    "uses": [
+      "tree-index"
+    ]
+  },
+  "lemn01": {
+    "title": "Изменение квадратичного индекса при добавлении ребра",
+    "uses": [
+      "tree-index"
+    ]
+  },
+  "factor-tree": {
+    "title": "Дерево факторов глубины n",
+    "at": "Пусть $\\mathbf u$ --- бесконечное"
+  },
+  "thm:factortree": {
+    "title": "Число вершин и четыре индекса дерева факторов",
+    "uses": [
+      "degree-pairs",
+      "factor-complexity",
+      "tree-index"
+    ],
+    "novelty": 2,
+    "defense": 3
+  },
+  "factor-complexity": {
+    "title": "Сложность k+1 и единственность специального фактора",
+    "at": "Мы используем два классических",
+    "kind": "Факт F1",
+    "uses": [
+      "deffSturmiann1"
+    ]
+  },
+  "reversed-prefix": {
+    "title": "Правый специальный фактор есть обращение префикса",
+    "at": "(F2) $r_k$ есть обращение префикса",
+    "kind": "Факт F2",
+    "uses": [
+      "deffSturmiann1"
+    ]
+  },
+  "degree-pairs": {
+    "title": "Подсчёт рёбер по парам степеней",
+    "at": "Для $M_2$ имеется $d-1$ рёбер типа",
+    "kind": "Шаг доказательства",
+    "uses": [
+      "factor-tree",
+      "factor-complexity",
+      "reversed-prefix"
+    ]
+  },
+  "tree-table": {
+    "title": "Четыре значения длины первой серии при n = 8",
+    "at": "\\caption{Дерево $T_8$ для",
+    "kind": "Таблица",
+    "uses": [
+      "thm:factortree"
+    ]
+  },
+  "newfibword": {
+    "title": "Двумерная рекурсия слов T(u,v)"
+  },
+  "newprove": {
+    "title": "Биномиальные подсчёты, точные плотности и логарифмический предел",
+    "uses": [
+      "newfibword"
+    ],
+    "novelty": 5
+  },
+  "albertson-parity": {
+    "title": "Чётность индекса Альбертсона",
+    "at": "Он является чётным целым числом",
+    "kind": "Факт в тексте"
+  },
+  "albertson-leaves": {
+    "title": "Нижняя оценка индекса Альбертсона по числу листьев",
+    "at": "Пусть $T$ --- дерево с $n\\ge3$",
+    "uses": [
+      "albertson-parity"
+    ]
+  },
+  "weighted-irregularity": {
+    "title": "Дистанционно-взвешенная нерегулярность, дисперсия и предел",
+    "at": "(i) $A_0(G)=nM_1(G)-4m^2=n^2\\operatorname{Var}(\\text{degrees})$."
+  },
+  "gutman-family": {
+    "title": "Дистанционно-взвешенный индекс Гутмана",
+    "at": "положим $\\operatorname{Gut}_\\alpha(G)",
+    "kind": "Определение в TeX"
+  },
+  "gutman-specializations": {
+    "title": "Значения семейства Гутмана при α = 1, 0, −1",
+    "at": "\\operatorname{Gut}_0(G)=\\sum_",
+    "kind": "Формулы",
+    "uses": [
+      "gutman-family"
+    ]
+  }
+}
