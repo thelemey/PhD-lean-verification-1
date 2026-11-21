@@ -17,6 +17,28 @@ private theorem sq_of_rounding {t r : ℝ} (hr : 1/200 ≤ r) (h : RoundsTo t r)
   exact ⟨pow_le_pow_left₀ (by linarith) (by linarith) 2,
     pow_le_pow_left₀ (by linarith) (by linarith) 2⟩
 
+/-- The paired statistics resolve the rounded gain sums of squares separately in each group. -/
+theorem thinking_gain_squares (A B : IntegerPair)
+    (hA : MatchesTable A.paired.summary thinkingControl)
+    (hB : MatchesTable B.paired.summary thinkingPuzzles)
+    (htA : RoundsTo (pairedT (realScores A.gain)) 9.92)
+    (htB : RoundsTo (pairedT (realScores B.gain)) 9.97) :
+    squareTotal A.gain = 1831 ∧ squareTotal B.gain = 1795 := by
+  obtain ⟨_,_,⟨ga,va⟩,_,_,⟨gb,vb⟩⟩ := thinking_integer_moments A B hA hB
+  have ta' := (sq_of_rounding (by norm_num) htA).2
+  have tb' := (sq_of_rounding (by norm_num) htB).1
+  rw [pairedT_sq_of_moments, ga] at ta'
+  rw [pairedT_sq_of_moments, gb] at tb'
+  have va' : squareTotal A.gain = 1831 := by
+    rcases va with h | h
+    · norm_num [h, momentSS] at ta'
+    · exact h
+  have vb' : squareTotal B.gain = 1795 := by
+    rcases vb with h | h
+    · exact h
+    · norm_num [h, momentSS] at tb'
+  exact ⟨va',vb'⟩
+
 /-- The separately printed paired tests (9.92 and 9.97) resolve the two
 rounding ambiguities for the gain sums of squares. Combined with the
 descriptive table they determine the sufficient statistics for ANCOVA. -/
@@ -31,18 +53,7 @@ theorem thinking_pooled_moments (A B : IntegerPair)
     withinSS a.preSD b.preSD = 8656/21 ∧ withinSS a.postSD b.postSD = 13151/21 ∧
     withinSS a.gainSD b.gainSD = 22321/21 := by
   obtain ⟨⟨sa,qa⟩,⟨ta,ra⟩,⟨ga,va⟩,⟨sb,qb⟩,⟨tb,rb⟩,⟨gb,vb⟩⟩ := thinking_integer_moments A B hA hB
-  have ta' := (sq_of_rounding (by norm_num) htA).2
-  have tb' := (sq_of_rounding (by norm_num) htB).1
-  rw [pairedT_sq_of_moments, ga] at ta'
-  rw [pairedT_sq_of_moments, gb] at tb'
-  have va' : squareTotal A.gain = 1831 := by
-    rcases va with h | h
-    · norm_num [h, momentSS] at ta'
-    · exact h
-  have vb' : squareTotal B.gain = 1795 := by
-    rcases vb with h | h
-    · exact h
-    · norm_num [h, momentSS] at tb'
+  obtain ⟨va',vb'⟩ := thinking_gain_squares A B hA hB htA htB
   dsimp only [PairedGroup.summary]
   rw [gain_cast, gain_cast]
   change mean (realScores A.pre) = _ ∧ mean (realScores B.pre) = _ ∧

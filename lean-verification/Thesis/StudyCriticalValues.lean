@@ -1,4 +1,5 @@
 import Thesis.StudentOddDegrees
+import Thesis.StudentDegreesComparison
 import Thesis.ThinkingANCOVA
 
 open Real Set MeasureTheory intervalIntegral
@@ -8,32 +9,33 @@ namespace Thesis.StudyANCOVA
 private def cubic (x : ℚ) := x - x^3/3
 private def quintic (x : ℚ) := cubic x + x^5/5
 
-/-- For the 81 residual degrees of freedom the scale is exactly 9. Each
-comparison below is a decision on rationals after substituting the proved
-bounds for arctan and π in the reduction of the Student integral. -/
-private theorem reference81 (t l u : ℚ) (ht : 0 ≤ t) (hl : l ≤ 1) (hu : u ≤ 1)
-    (lower : studentReduction (t/9) (quintic (t/9)) 40 ≤
-      (1-l) * studentReduction 0 (3.141592/2) 40)
-    (upper : (1-u) * studentReduction 0 (3.141593/2) 40 ≤
-      studentReduction (t/9) (cubic (t/9)) 40) :
-    (l : ℝ) ≤ studentTwoSidedP 81 (t : ℝ) ∧ studentTwoSidedP 81 (t : ℝ) ≤ (u : ℝ) := by
-  let M := studentReduction (0:ℝ) (π/2) 40
-  let A := studentReduction ((t:ℝ)/9) (arctan ((t:ℝ)/9)) 40
-  have ht' : 0 ≤ (t:ℝ) := by exact_mod_cast ht
+/-- Exact-rational enclosure for a Student comparison at a rational
+multiple of its scale, for any odd degrees of freedom. -/
+theorem odd_reference_scaled (n : ℕ) {d : ℝ} (hd : 0 < d) (hs : d^2 = 2*n+1)
+    (x l u : ℚ) (hx : 0 ≤ x) (hl : l ≤ 1) (hu : u ≤ 1)
+    (lower : studentReduction x (quintic x) n ≤ (1-l)*studentReduction 0 (3.141592/2) n)
+    (upper : (1-u)*studentReduction 0 (3.141593/2) n ≤ studentReduction x (cubic x) n) :
+    (l:ℝ) ≤ studentTwoSidedP (2*n+1) (d*(x:ℝ)) ∧
+      studentTwoSidedP (2*n+1) (d*(x:ℝ)) ≤ (u:ℝ) := by
+  let M := studentReduction (0:ℝ) (π/2) n
+  let A := studentReduction (x:ℝ) (arctan (x:ℝ)) n
+  have hx' : 0 ≤ (x:ℝ) := by exact_mod_cast hx
   have hl' : (l:ℝ) ≤ 1 := by exact_mod_cast hl
   have hu' : (u:ℝ) ≤ 1 := by exact_mod_cast hu
-  have loπ := reduction_mono_base 40 0 (show (3.141592:ℝ)/2 ≤ π/2 by linarith only [pi_gt_d6])
-  have hiπ := reduction_mono_base 40 0 (show π/2 ≤ (3.141593:ℝ)/2 by linarith only [pi_lt_d6])
+  have loπ := reduction_mono_base n 0 (show (3.141592:ℝ)/2 ≤ π/2 by linarith only [pi_gt_d6])
+  have hiπ := reduction_mono_base n 0 (show π/2 ≤ (3.141593:ℝ)/2 by linarith only [pi_lt_d6])
   change _ ≤ M at loπ
   change M ≤ _ at hiπ
-  have massPos : 0 < M := by
-    have h : (0:ℚ) < studentReduction 0 (3.141592/2) 40 := by decide +kernel
-    have h' : (0:ℝ) < ((studentReduction (0:ℚ) (3.141592/2) 40 : ℚ):ℝ) := by exact_mod_cast h
-    push_cast [ratCast_reduction] at h'
-    exact h'.trans_le loπ
-  obtain ⟨loA,hiA⟩ := arctan_cubic_quintic (show 0 ≤ (t:ℝ)/9 by positivity)
-  have lowA := reduction_mono_base 40 ((t:ℝ)/9) loA
-  have highA := reduction_mono_base 40 ((t:ℝ)/9) hiA
+  have positive (k : ℕ) : 0 < studentReduction (0:ℝ) (π/2) k := by
+    induction k with
+    | zero => exact half_pos pi_pos
+    | succ k ih =>
+      simp only [studentReduction, zero_div, add_zero]
+      positivity
+  have massPos : 0 < M := positive n
+  obtain ⟨loA,hiA⟩ := arctan_cubic_quintic hx'
+  have lowA := reduction_mono_base n (x:ℝ) loA
+  have highA := reduction_mono_base n (x:ℝ) hiA
   change _ ≤ A at lowA
   change A ≤ _ at highA
   have ha : A ≤ (1-(l:ℝ))*M := by
@@ -48,28 +50,28 @@ private theorem reference81 (t l u : ℚ) (ht : 0 ≤ t) (hl : l ≤ 1) (hu : u 
     have h := (Rat.cast_le (K := ℝ)).2 upper
     simpa only [ratCast_reduction, Rat.cast_mul, Rat.cast_sub, Rat.cast_one, Rat.cast_zero,
       Rat.cast_div, Rat.cast_ofNat, Rat.cast_pow, cubic, Rat.cast_ofScientific] using h
-  have he := studentTwoSidedP_odd 40 (d := 9) (by norm_num) (by norm_num) (t:ℝ)
-  norm_num only [Nat.cast_ofNat, show (2*40+1:ℝ)=81 by norm_num, abs_of_nonneg ht'] at he
-  change studentTwoSidedP 81 (t:ℝ) = 1-A/M at he
+  have he := studentTwoSidedP_odd n hd hs (d*(x:ℝ))
+  rw [abs_of_nonneg (mul_nonneg hd.le hx'), mul_div_cancel_left₀ _ hd.ne'] at he
+  change studentTwoSidedP _ _ = 1-A/M at he
   rw [he]
   exact ⟨by linarith only [(div_le_iff₀ massPos).2 ha], by linarith only [(le_div_iff₀ massPos).2 hb]⟩
 
-private theorem strictAnti_reference81 : StrictAntiOn (studentTwoSidedP 81) (Ici (0:ℝ)) := by
-  intro x hx y hy hxy
-  have area := studentTail_split (ν := 81) (by norm_num) (by norm_num) hxy.le
-  have hc := continuous_studentKernel (ν := 81) (by norm_num)
-  have hpos := intervalIntegral_pos_of_pos (hc.intervalIntegrable (μ := volume) x y)
-    (studentKernel_pos (ν := 81) (by norm_num)) hxy
-  have hm : 0 < studentTail 81 0 := by
-    have h := studentTail_split (ν := 81) (by norm_num) (by norm_num) (show (0:ℝ) ≤ 1 by norm_num)
-    linarith only [h, studentTail_nonneg (ν := 81) (by norm_num) 1,
-      intervalIntegral_pos_of_pos (hc.intervalIntegrable (μ := volume) 0 1)
-        (studentKernel_pos (ν := 81) (by norm_num)) (by norm_num : (0:ℝ)<1)]
-  change 0 ≤ x at hx
-  change 0 ≤ y at hy
-  unfold studentTwoSidedP
-  simp only [abs_of_nonneg hx, abs_of_nonneg hy]
-  exact div_lt_div_of_pos_right (by linarith) hm
+/-- For the 81 residual degrees of freedom the scale is exactly 9. Each
+comparison below is a decision on rationals after substituting the proved
+bounds for arctan and π in the reduction of the Student integral. -/
+private theorem reference81 (t l u : ℚ) (ht : 0 ≤ t) (hl : l ≤ 1) (hu : u ≤ 1)
+    (lower : studentReduction (t/9) (quintic (t/9)) 40 ≤
+      (1-l) * studentReduction 0 (3.141592/2) 40)
+    (upper : (1-u) * studentReduction 0 (3.141593/2) 40 ≤
+      studentReduction (t/9) (cubic (t/9)) 40) :
+    (l : ℝ) ≤ studentTwoSidedP 81 (t : ℝ) ∧ studentTwoSidedP 81 (t : ℝ) ≤ (u : ℝ) := by
+  have h := odd_reference_scaled 40 (d := 9) (by norm_num) (by norm_num) (t/9) l u
+    (div_nonneg ht (by norm_num)) hl hu lower upper
+  norm_num only [Nat.cast_ofNat, Rat.cast_div, Rat.cast_ofNat, show (2*40+1:ℝ)=81 by norm_num] at h
+  rwa [show 9*((t:ℝ)/9) = (t:ℝ) by ring] at h
+
+private theorem strictAnti_reference81 : StrictAntiOn (studentTwoSidedP 81) (Ici (0:ℝ)) :=
+  studentProbability_strictAnti (by norm_num)
 
 private theorem critical95_straddle :
     0.05 < studentTwoSidedP 81 1.989 ∧ studentTwoSidedP 81 1.991 < 0.05 := by
@@ -85,15 +87,7 @@ and lies between the displayed rational endpoints. -/
 theorem critical95_df81 :
     ∃! c : ℝ, 0 ≤ c ∧ studentTwoSidedP 81 c = 0.05 := by
   obtain ⟨hlo,hhi⟩ := critical95_straddle
-  have continuous_red (k : ℕ) : Continuous (fun x : ℝ => studentReduction x (arctan x) k) :=
-    continuous_iff_continuousAt.2 fun x => (hasDerivAt_reduction k x).continuousAt
-  have eqn : studentTwoSidedP 81 = fun x : ℝ => 1 -
-      studentReduction (|x|/9) (arctan (|x|/9)) 40 / studentReduction 0 (π/2) 40 := by
-    funext x
-    simpa only [Nat.cast_ofNat, show (2*40+1:ℝ)=81 by norm_num] using studentTwoSidedP_odd 40 (d := 9) (by norm_num) (by norm_num) x
-  have cont : Continuous (studentTwoSidedP 81) := by
-    rw [eqn]
-    exact continuous_const.sub (((continuous_red 40).comp (continuous_abs.div_const 9)).div_const _)
+  have cont := continuous_studentProbability (v := 81) (by norm_num)
   have hmem : (0.05:ℝ) ∈ Icc (studentTwoSidedP 81 1.991) (studentTwoSidedP 81 1.989) :=
     ⟨by linarith, by linarith⟩
   obtain ⟨c,hc,he⟩ := isPreconnected_Icc.intermediate_value

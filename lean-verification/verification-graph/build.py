@@ -229,6 +229,7 @@ def introduction_items(title):
 
 def report(nodes):
     counts = Counter(n["status"] for n in nodes.values())
+    highlighted = Counter(n["status"] for n in nodes.values() if tags(n))
     edges = sum(len(n.get("uses", [])) for n in nodes.values())
     out = ["# Граф зависимостей исправленной диссертации", "",
            f"В графе {len(nodes)} узлов и {edges} непосредственных зависимостей. "
@@ -241,10 +242,10 @@ def report(nodes):
            "более общей предпосылки, это указано в таблице. Номера новизны и защиты следуют введению. "
            f"[Исправленный TeX]({TEX_LINK}) · [Полный граф (SVG)](verification_graph.svg)", "",
            "## Цвет рамки", "",
-           "| Статус | Цвет | Узлов | Что проверено |", "|---|---|---:|---|"]
+           "| Статус | Цвет | Всего узлов | Из них жёлтых | Что проверено |", "|---|---|---:|---:|---|"]
     colors = ("Зелёный", "Светло-зелёный", "Золотистый", "Оранжевый", "Красный")
     for (key, (name, color, meaning)), shade in zip(STATUSES.items(), colors):
-        out.append(f"| {name} | {shade} `{color}` | {counts[key]} | {meaning} |")
+        out.append(f"| {name} | {shade} `{color}` | {counts[key]} | {highlighted[key]} | {meaning} |")
     out += ["", "## Разделы", "", "Каждая схема раздела также показывает его непосредственные предпосылки из других разделов.", ""]
     for slug, (name, sections) in TOPICS.items():
         out.append(f"- § {', '.join(sections)}. [{name}](sections/{slug}.svg)")

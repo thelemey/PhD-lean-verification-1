@@ -113,3 +113,4 @@ import Thesis.StudyCriticalValues
 import Thesis.StudyPairedGains
 import Thesis.TernaryLetterCounts
 import Thesis.SturmianStandardLimit
+import Thesis.ThinkingWelch
