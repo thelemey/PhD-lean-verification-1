@@ -1013,7 +1013,7 @@
   },
   "thm:min-dissection-path": {
     "status": "qualified",
-    "note": "Формула доказана при связности по сторонам и при связной внутренности геометрической фигуры. Для произвольного объединения установлен точный критерий достаточности внутренних линий. У двух квадратов, соприкасающихся только углами, λ=0, а минимум равен 1. Буквальное определение из §4.2 допускает этот пример.",
+    "note": "Формула доказана при связности по сторонам и при связной внутренности геометрической фигуры. Для произвольного объединения дан конечный критерий: каждая общая сторона разрезана и через каждое диагональное касание проходит хотя бы одна выбранная линия. У двух квадратов, соприкасающихся только углами, λ=0, а минимум равен 1. Буквальное определение из §4.2 допускает этот пример.",
     "lean": {
       "PolyominoGeometry": [
         "minimum_geometric_cuts",
@@ -1028,6 +1028,11 @@
         "geometricallySeparated_iff_sides_and_contacts",
         "line_count_attained_iff",
         "corner_contact_minimum_one"
+      ],
+      "PolyominoGridContacts": [
+        "diagonal_square_intersection",
+        "geometricallySeparated_iff_coversContacts",
+        "line_count_attained_iff_coversContacts"
       ]
     }
   },
@@ -1287,5 +1292,34 @@
   },
   "gutman-specializations": {
     "status": "unmarked"
+  },
+  "unit-edge-remark": {
+    "status": "verified",
+    "lean": {
+      "PolyominoUnitEdges": [
+        "minimum_unit_edge_cuts",
+        "unit_edges_eq_cells_sub_one_iff_tree",
+        "two_by_two_cut_models"
+      ]
+    },
+    "note": "Для непустой фигуры, связной по сторонам, доказан критерий N−1. Квадрат 2×2 требует четырёх единичных разрезов или двух полных линий."
+  },
+  "ex1": {
+    "status": "verified",
+    "lean": {
+      "PolyominoCutExamples": [
+        "domino_one_cut"
+      ]
+    }
+  },
+  "ex2": {
+    "status": "verified",
+    "lean": {
+      "PolyominoCutExamples": [
+        "remaining_append",
+        "l_tromino_first_cut",
+        "l_tromino_two_cuts"
+      ]
+    }
   }
 }
