@@ -43,9 +43,12 @@
     "lean": {"Fibonacci": ["word_length", "word_count_a", "word_count_b", "framed_length", "framed_count_a", "framed_count_b"]}
   },
   "B6": {
-    "status": "partial",
-    "note": "Проверены тождества Бине и оценка отношений, используемая в дальнейших доказательствах. Весь набор пределов из узла отдельно не отмечен.",
-    "lean": {"FibonacciBinet": ["binet", "fib_next_sub_phi_mul", "previousRatio_binet"]}
+    "status": "verified",
+    "note": "Проверены тождества Бине и все три предела отношений из lem:fibA.",
+    "lean": {
+      "FibonacciBinet": ["binet", "fib_next_sub_phi_mul", "previousRatio_binet"],
+      "FibonacciTableLimit": ["golden_fibonacci_ratio_limits"]
+    }
   },
   "B7": {
     "status": "verified",

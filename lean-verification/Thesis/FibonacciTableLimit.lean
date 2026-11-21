@@ -111,6 +111,23 @@ theorem golden_unframed_density_limits :
     linarith [gold_add_goldConj]
   exact ⟨ha, by simpa only [hcomp, unframed_complement] using ha.const_sub (1 : ℝ)⟩
 
+/-- The three ratio limits in lem:fibA. -/
+theorem golden_fibonacci_ratio_limits :
+    Tendsto (fun n : Nat => (fib n : ℝ) / fib (n + 1)) atTop (𝓝 (1 / φ)) ∧
+    Tendsto (fun n : Nat => (fib (n - 1) : ℝ) / fib (n + 1)) atTop (𝓝 ((φ⁻¹) ^ 2)) ∧
+    Tendsto (fun n : Nat => (fib (n + 1) : ℝ) / fib n) atTop (𝓝 φ) := by
+  have ha := golden_unframed_density_limits.1
+  have hb := golden_unframed_density_limits.2
+  have h₁ : Tendsto (fun n : Nat => (fib n : ℝ) / fib (n + 1)) atTop (𝓝 (1 / φ)) := by
+    apply (tendsto_add_atTop_iff_nat 1).1
+    simpa only [word_count_a, word_length] using ha
+  refine ⟨h₁, ?_, ?_⟩
+  · apply (tendsto_add_atTop_iff_nat 1).1
+    simpa only [word_count_b, word_length, Nat.add_sub_cancel] using hb
+  · have hp : 0 < φ := zero_lt_one.trans one_lt_gold
+    simpa only [inv_div, one_div, inv_inv] using
+      h₁.inv₀ (one_div_ne_zero hp.ne')
+
 /-- The strict half-millionth intervals for the last line of
 tab002densitiesASm, certifying the printed rounding in all four columns. -/
 theorem density_table_limit_rounding :

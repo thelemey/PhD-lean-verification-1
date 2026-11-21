@@ -651,13 +651,13 @@
 <!-- B6 -->
 <g id="node&#45;B6" class="node">
 <title>B6</title>
-<g id="a_node&#45;B6"><a xlink:href="coverage.md#node-b6" xlink:title="Lean: Частично. Проверены тождества Бине и оценка отношений, используемая в дальнейших доказательствах. Весь набор пределов из узла отдельно не отмечен. | Лемма 3.1.2 | с. 52">
+<g id="a_node&#45;B6"><a xlink:href="coverage.md#node-b6" xlink:title="Lean: Доказано. Проверены тождества Бине и все три предела отношений из lem:fibA. | Лемма 3.1.2 | с. 52">
 <path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M185.5,-1228.04C185.5,-1228.04 26.5,-1228.04 26.5,-1228.04 20.5,-1228.04 14.5,-1222.04 14.5,-1216.04 14.5,-1216.04 14.5,-1166.04 14.5,-1166.04 14.5,-1160.04 20.5,-1154.04 26.5,-1154.04 26.5,-1154.04 185.5,-1154.04 185.5,-1154.04 191.5,-1154.04 197.5,-1160.04 197.5,-1166.04 197.5,-1166.04 197.5,-1216.04 197.5,-1216.04 197.5,-1222.04 191.5,-1228.04 185.5,-1228.04"/>
 <text text-anchor="start" x="57.5" y="-1212.44" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.1.2</text>
 <text text-anchor="start" x="54" y="-1200.44" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Тождества Бине</text>
 <text text-anchor="start" x="24.5" y="-1188.44" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">и предельные отношения</text>
 <text text-anchor="start" x="91" y="-1176.44" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 52</text>
-<text text-anchor="start" x="53" y="-1164.44" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<text text-anchor="start" x="51.5" y="-1164.44" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
