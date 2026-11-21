@@ -972,12 +972,21 @@
   },
   "thm:min-dissection-path": {
     "status": "qualified",
-    "note": "Формула доказана для полимино, связного по общим сторонам, включая прямоугольник. Для касания только в вершине проверен контрпример.",
+    "note": "Формула доказана при связности по сторонам и при связной внутренности геометрической фигуры. Для произвольного объединения установлен точный критерий достаточности внутренних линий. У двух квадратов, соприкасающихся только углами, λ=0, а минимум равен 1. Буквальное определение из §4.2 допускает этот пример.",
     "lean": {
       "PolyominoGeometry": [
         "minimum_geometric_cuts",
         "rectangle_minimum_geometric_cuts",
         "corner_contact_counterexample"
+      ],
+      "PolyominoInterior": [
+        "sharedSide_of_preconnected_interior",
+        "minimum_geometric_cuts_of_preconnected_interior"
+      ],
+      "PolyominoContacts": [
+        "geometricallySeparated_iff_sides_and_contacts",
+        "line_count_attained_iff",
+        "corner_contact_minimum_one"
       ]
     }
   },

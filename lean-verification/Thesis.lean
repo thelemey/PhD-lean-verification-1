@@ -1,7 +1,7 @@
 import Thesis.Palindrome
 import Thesis.Polyomino
 import Thesis.PolyominoPieces
-import Thesis.PolyominoGeometry
+import Thesis.PolyominoContacts
 import Thesis.Fibonacci
 import Thesis.GeneralizedFibonacciSeries
 import Thesis.LatticeWord

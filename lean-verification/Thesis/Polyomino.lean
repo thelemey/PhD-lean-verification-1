@@ -43,6 +43,8 @@ private theorem uniqueLines_nodup (ls : List Line) : (uniqueLines ls).Nodup := b
 
 def internalLines (cells : List Cell) : List Line := uniqueLines (sideLines cells)
 
+theorem internalLines_nodup (cells : List Cell) : (internalLines cells).Nodup := uniqueLines_nodup _
+
 /-- The remaining cell-adjacency graph has singleton components precisely
 when every shared side is cut. Each side lies on a unique grid line. -/
 def Separates (cells : List Cell) (cuts : List Line) : Prop :=

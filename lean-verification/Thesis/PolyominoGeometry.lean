@@ -219,32 +219,40 @@ theorem same_geometricPart_iff_uncut_side {cells : List Cell} {cuts : List Line}
   · exact ⟨fun hv => forward h (reverse hv),
       fun hcut => reverse (same_geometricPart_of_uncut_positiveSide h hcut)⟩
 
-/-- The source's criterion for full cuts, on the actual union of squares.
-For sufficiency, a side path in the original polyomino supplies an
-internal cut between any two distinct cell centers. -/
-theorem geometricallySeparated_iff {cells : List Cell} (hconn : SideConnected cells)
+/-- Every separating family must cut each internal side, even if some
+components of the original union meet only at a vertex. -/
+theorem separates_of_geometricallySeparated {cells : List Cell} {cuts : List Line}
+    (h : GeometricallySeparated cells cuts) : Separates cells cuts := by
+  intro p hp
+  constructor
+  · intro hq
+    by_contra hc
+    let q : CellIn cells := ⟨(p.1 + 1, p.2), hq⟩
+    have hside : SharedSide p q.val (.vertical (p.1 + 1)) := Or.inl (Or.inl ⟨rfl, rfl⟩)
+    have hsame := (same_geometricPart_iff_uncut_side
+      (p := ⟨p, hp⟩) (q := q) hside).2 hc
+    have he := congrArg (fun x : CellIn cells => x.val.1) (h _ _ hsame)
+    change p.1 = p.1 + 1 at he
+    omega
+  · intro hq
+    by_contra hc
+    let q : CellIn cells := ⟨(p.1, p.2 + 1), hq⟩
+    have hside : SharedSide p q.val (.horizontal (p.2 + 1)) := Or.inl (Or.inr ⟨rfl, rfl⟩)
+    have hsame := (same_geometricPart_iff_uncut_side
+      (p := ⟨p, hp⟩) (q := q) hside).2 hc
+    have he := congrArg (fun x : CellIn cells => x.val.2) (h _ _ hsame)
+    change p.2 = p.2 + 1 at he
+    omega
+
+/-- The sufficiency step in the line-count proof. Each grid line between
+two centers must support a shared edge somewhere in the polyomino. -/
+theorem geometricallySeparated_iff_of_crossings {cells : List Cell}
+    (crossing : ∀ (u v : CellIn cells) (a : Bool) (c : ℤ),
+      axisCoord u.val a < c → c ≤ axisCoord v.val a →
+      ∃ x y : CellIn cells, SharedSide x.val y.val (axisLine a c))
     (cuts : List Line) : GeometricallySeparated cells cuts ↔ Separates cells cuts := by
   constructor
-  · intro h p hp
-    constructor
-    · intro hq
-      by_contra hc
-      let q : CellIn cells := ⟨(p.1 + 1, p.2), hq⟩
-      have hside : SharedSide p q.val (.vertical (p.1 + 1)) := Or.inl (Or.inl ⟨rfl, rfl⟩)
-      have hsame := (same_geometricPart_iff_uncut_side
-        (p := ⟨p, hp⟩) (q := q) hside).2 hc
-      have he := congrArg (fun x : CellIn cells => x.val.1) (h _ _ hsame)
-      change p.1 = p.1 + 1 at he
-      omega
-    · intro hq
-      by_contra hc
-      let q : CellIn cells := ⟨(p.1, p.2 + 1), hq⟩
-      have hside : SharedSide p q.val (.horizontal (p.2 + 1)) := Or.inl (Or.inr ⟨rfl, rfl⟩)
-      have hsame := (same_geometricPart_iff_uncut_side
-        (p := ⟨p, hp⟩) (q := q) hside).2 hc
-      have he := congrArg (fun x : CellIn cells => x.val.2) (h _ _ hsame)
-      change p.2 = p.2 + 1 at he
-      omega
+  · exact separates_of_geometricallySeparated
   · intro h p q hq
     let C := connectedComponentIn (remaining cells cuts) (cellCenter p.val)
     have hC : IsPreconnected C := isPreconnected_connectedComponentIn
@@ -256,7 +264,7 @@ theorem geometricallySeparated_iff {cells : List Cell} (hconn : SideConnected ce
       let c := axisCoord u.val a + 1
       have hlo : axisCoord u.val a < c := by dsimp [c]; omega
       have hhi : c ≤ axisCoord v.val a := by dsimp [c]; omega
-      obtain ⟨x, y, hside⟩ := sharedSide_exists_of_path_crossing (hconn u v) a c hlo hhi
+      obtain ⟨x, y, hside⟩ := crossing u v a c hlo hhi
       exact centers_straddling_cut hC hsub hu hv (cut_of_sharedSide h hside) hlo hhi
     have eq_coord (a : Bool) : axisCoord p.val a = axisCoord q.val a := by
       apply le_antisymm
@@ -264,6 +272,12 @@ theorem geometricallySeparated_iff {cells : List Cell} (hconn : SideConnected ce
       · exact le_of_not_gt (no_ascending hp hq a)
     apply Subtype.ext
     exact Prod.ext (eq_coord false) (eq_coord true)
+
+/-- A side-connected polyomino satisfies the required crossing condition. -/
+theorem geometricallySeparated_iff {cells : List Cell} (hconn : SideConnected cells)
+    (cuts : List Line) : GeometricallySeparated cells cuts ↔ Separates cells cuts :=
+  geometricallySeparated_iff_of_crossings
+    (fun p q => sharedSide_exists_of_path_crossing (hconn p q)) cuts
 
 theorem minimum_geometric_cuts {cells : List Cell} (hconn : SideConnected cells) :
     (∃ cuts, GeometricallySeparated cells cuts ∧ cuts.length = (internalLines cells).length) ∧
