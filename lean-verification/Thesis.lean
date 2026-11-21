@@ -91,3 +91,4 @@ import Thesis.RotationRecordEnumeration
 import Thesis.SturmianConvergentErrors
 import Thesis.SturmianSemiconvergentRecords
 import Thesis.SturmianWordDensityConsequences
+import Thesis.SturmianNullConsequences
