@@ -248,4 +248,52 @@ theorem rectangle_minimum_geometric_cuts (a b : Nat) (ha : 0 < a) (hb : 0 < b) :
   simpa only [rectangle_minimum_cuts a b ha hb] using
     minimum_geometric_cuts (sideConnected_rectangle a b ha hb)
 
+private def cornerPair : List Cell := [(0, 0), (1, 1)]
+
+/-- If "connected union" allows contact at a corner only, the source's
+line-count criterion fails. There are no shared sides but the two squares
+belong to a single connected component before any cuts. -/
+theorem corner_contact_counterexample :
+    IsConnected (remaining cornerPair []) ∧ internalLines cornerPair = [] ∧
+      ¬ GeometricallySeparated cornerPair [] := by
+  let p : CellIn cornerPair := ⟨(0, 0), by decide⟩
+  let q : CellIn cornerPair := ⟨(1, 1), by decide⟩
+  let z : Plane := fun _ => 1
+  let F := remaining cornerPair []
+  have hzP : z ∈ cellSquare p.val := by
+    intro a
+    cases a <;> norm_num [z, p, axisCoord]
+  have hzQ : z ∈ cellSquare q.val := by
+    intro a
+    cases a <;> norm_num [z, q, axisCoord]
+  have hzF : z ∈ F := ⟨⟨p, hzP⟩, by simp⟩
+  have hzP' := mem_connectedComponent_of_cellSquare p hzP hzF
+  have hzQ' := mem_connectedComponent_of_cellSquare q hzQ hzF
+  have he : connectedComponentIn F (cellCenter p.val) = connectedComponentIn F (cellCenter q.val) :=
+    (connectedComponentIn_eq hzP').trans (connectedComponentIn_eq hzQ').symm
+  have hp := cellCenter_mem_remaining [] p
+  have hq := cellCenter_mem_remaining [] q
+  have heq : connectedComponentIn F (cellCenter p.val) = F := by
+    apply (connectedComponentIn_subset _ _).antisymm
+    intro x hx
+    obtain ⟨r, hr⟩ := hx.1
+    have hmem := mem_connectedComponent_of_cellSquare r hr hx
+    have hcases : r.val = (0, 0) ∨ r.val = (1, 1) := by
+      simpa only [cornerPair, List.mem_cons, List.not_mem_nil, or_false] using r.property
+    rcases hcases with h | h
+    · have h' : r = p := Subtype.ext h
+      exact h' ▸ hmem
+    · have h' : r = q := Subtype.ext h
+      exact he ▸ (h' ▸ hmem)
+  have hF : IsConnected F := by
+    rw [← heq]
+    exact isConnected_connectedComponentIn_iff.2 hp
+  refine ⟨hF, by decide, ?_⟩
+  intro h
+  have hsame : cellCenter q.val ∈ connectedComponentIn F (cellCenter p.val) :=
+    he ▸ mem_connectedComponentIn hq
+  have hcoord := congrArg (fun r : CellIn cornerPair => r.val.1) (h p q hsame)
+  change (0 : ℤ) = 1 at hcoord
+  omega
+
 end Thesis.Polyomino
