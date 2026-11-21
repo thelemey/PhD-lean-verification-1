@@ -84,6 +84,7 @@ import Thesis.PalindromicClosure
 import Thesis.EpisturmianPrefixes
 import Thesis.EpisturmianRecurrence
 import Thesis.MBonacciClosureDensity
+import Thesis.MBonacciPalindromicDensity
 import Thesis.FibonacciCentralPrefixes
 import Thesis.PalindromePrefixBlocks
 import Thesis.SturmianPrefixRatios
@@ -95,3 +96,4 @@ import Thesis.SturmianSemiconvergentRecords
 import Thesis.SturmianWordDensityConsequences
 import Thesis.SturmianNullConsequences
 import Thesis.SturmianMetricConsequences
+import Thesis.SturmianPalindromicDensity
