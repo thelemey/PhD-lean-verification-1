@@ -1,5 +1,6 @@
 import Thesis.Palindrome
 import Thesis.Polyomino
+import Thesis.PolyominoPieces
 import Thesis.Fibonacci
 import Thesis.LatticeWord
 import Thesis.ThueMorse
