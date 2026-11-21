@@ -67,6 +67,7 @@ import Thesis.FactorTreeDegrees
 import Thesis.FactorTreeTable
 import Thesis.SturmianMechanical
 import Thesis.SturmianFactorTree
+import Thesis.FactorTreeGraphIndices
 import Thesis.SturmianFactorTreeExamples
 import Thesis.OrbitAverageLimits
 import Thesis.WordInvariantMeasures
