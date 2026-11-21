@@ -108,4 +108,27 @@ theorem central_palPrefix (n : Nat) : PalPrefix infiniteWord (fib (n + 3) - 2) :
       List.getElem_reverse, Option.some.injEq] using he
   exact hh.symm
 
+/-- The letter following the central prefix is the first of its alternating ending. -/
+theorem infiniteWord_after_central (n : Nat) :
+    infiniteWord (central n).length = if n % 2 = 0 then .a else .b := by
+  have hlen : (central n).length < (word (n + 1)).length := by
+    rw [word_succ_eq_central_ending, List.length_append, ending_length]
+    omega
+  have hread := prefixLimit_eq_getElem word word_covers word_prefix_step hlen
+  change infiniteWord (central n).length = _ at hread
+  have he := congrArg (fun w : List Letter => w[(central n).length]?)
+    (word_succ_eq_central_ending n)
+  dsimp only at he
+  rw [List.getElem?_eq_getElem hlen, List.getElem?_append_right (le_refl _),
+    Nat.sub_self, ← List.head?_eq_getElem?] at he
+  have hhead (k : Nat) : (ending k).head? = some (if k % 2 = 0 then Letter.a else Letter.b) := by
+    induction k using Nat.twoStepInduction with
+    | zero => rfl
+    | one => rfl
+    | more k ih _ =>
+      have hmod : (k + 2) % 2 = k % 2 := by omega
+      simpa only [ending, hmod] using ih
+  exact hread.trans (Option.some.inj (he.trans (hhead n)))
+
+
 end Thesis.Fibonacci

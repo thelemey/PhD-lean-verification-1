@@ -65,12 +65,9 @@
     "note": "Узел относится к общей теореме Фишлера для произвольного непериодического слова. В C11 проверена оценка для характеристических штурмовых слов."
   },
   "C3": {
-    "status": "partial",
-    "note": "Есть точное значение 1/φ для стандартного двухбуквенного эпиштурмова слова и явные центральные префиксы рекурсивного слова Фибоначчи. Узел о плотности рекурсивного слова по доказательству TeX целиком не отмечен.",
-    "lean": {
-      "MBonacciPalindromicDensity": ["standardWord_palindromicDensity_fibonacci"],
-      "FibonacciCentralPrefixes": ["central_palPrefix"]
-    }
+    "status": "qualified",
+    "note": "Плотность рекурсивного слова Фибоначчи равна 1/φ. Предел отношений рассчитан по полному списку префиксов, приведённому в замечании TeX. Общая оценка Фишлера из C2 отдельно не доказана.",
+    "lean": {"FibonacciPalindromeDensity": ["infiniteWord_palindromicDensity"]}
   },
   "C4": {
     "status": "qualified",
@@ -91,9 +88,9 @@
     "lean": {"PalindromicDensityReal": ["palindromicDensity_insert"]}
   },
   "C7": {
-    "status": "partial",
-    "note": "Проверено преобразование длин при вставке. Полный список длин 2Fₖ−3 и численное значение плотности именно для трёхбуквенного слова остаются без полной отметки.",
-    "lean": {"Palindrome": ["palPrefix_insert_iff"], "PalindromicDensityReal": ["palindromicDensity_insert"]}
+    "status": "verified",
+    "note": "Проверены полный список длин 2Fₖ−3 и плотность 1/φ для трёхбуквенного слова по соответствию префиксов и инвариантности при вставке.",
+    "lean": {"FibonacciPalindromeDensity": ["ternary_palPrefix_iff", "ternary_palindromicDensity"]}
   },
   "C8": {
     "status": "verified",
@@ -124,8 +121,8 @@
   },
   "C12": {
     "status": "partial",
-    "note": "Проверены богатство конечных слов Фибоначчи и его наследование факторами. Общий результат о штурмовых факторах и полный список префиксов рекурсивного слова Фибоначчи здесь не отмечены.",
-    "lean": {"FibonacciRichness": ["rich_word", "rich_factor"]}
+    "note": "Проверены полный список палиндромных префиксов слова Фибоначчи и богатство его конечных факторов. Богатство всех штурмовых факторов в общем случае остаётся открытым для этой формализации.",
+    "lean": {"FibonacciCompletePrefixes": ["infiniteWord_palPrefix_iff"], "FibonacciRichness": ["rich_word", "rich_factor"]}
   },
   "D0": {
     "status": "verified",

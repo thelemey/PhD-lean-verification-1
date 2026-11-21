@@ -49,6 +49,16 @@ private theorem stage_cover (directive : Nat → α) (n : Nat) :
 noncomputable def word (directive : Nat → α) : Nat → α :=
   prefixLimit (fun n => stage directive (n + 1)) (stage_cover directive)
 
+theorem word_at_stage_length (directive : Nat → α) (n : Nat) :
+    word directive (stage directive n).length = directive n := by
+  have hpre := stage_with_next_prefix directive n
+  have hidx : (stage directive n).length < (stage directive n ++ [directive n]).length := by simp
+  have hread := prefixLimit_eq_getElem (fun j => stage directive (j + 1)) (stage_cover directive)
+    (fun j => stage_prefix_step directive (j + 1)) (hidx.trans_le hpre.length_le)
+  change word directive (stage directive n).length = _ at hread
+  rw [hread, ← hpre.getElem hidx]
+  simp [List.getElem_append_right (le_refl _)]
+
 theorem prefix_eq_of_length_eq {u v : List α} (h : u <+: v) (hlen : u.length = v.length) :
     u = v := by
   obtain ⟨r, rfl⟩ := h

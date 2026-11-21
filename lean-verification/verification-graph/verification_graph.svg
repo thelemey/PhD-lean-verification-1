@@ -177,8 +177,8 @@
 <g id="edge&#45;C1&#45;C3" class="edge">
 <title>C1&#45;&gt;C3</title>
 <g id="a_edge&#45;C1&#45;C3"><a xlink:title="Даёт верхнюю оценку limsup отношений длин.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1060.92,-1021.83C1051.29,-1010.59 1040.32,-998.23 1030.07,-987.07"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1031.5,-985.27 1025.42,-982.04 1028.16,-988.36 1031.5,-985.27"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1056.14,-1021.83C1044.93,-1010.49 1032.2,-998.01 1020.39,-986.77"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1021.67,-984.85 1015.39,-982.04 1018.54,-988.16 1021.67,-984.85"/>
 </a>
 </g>
 </g>
@@ -186,8 +186,8 @@
 <g id="edge&#45;C2&#45;C3" class="edge">
 <title>C2&#45;&gt;C3</title>
 <g id="a_edge&#45;C2&#45;C3"><a xlink:title="Даёт противоположную оценку.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M931.43,-1021.83C941.5,-1010.59 952.57,-998.23 962.57,-987.07"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="964.44,-988.4 967.08,-982.04 961.05,-985.36 964.44,-988.4"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M926.65,-1021.83C935.16,-1010.69 944.51,-998.45 952.97,-987.37"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="954.91,-988.58 957.05,-982.04 951.3,-985.82 954.91,-988.58"/>
 </a>
 </g>
 </g>
@@ -205,8 +205,8 @@
 <g id="edge&#45;C4&#45;C7" class="edge">
 <title>C4&#45;&gt;C7</title>
 <g id="a_edge&#45;C4&#45;C7"><a xlink:title="Структура бесконечного слова y.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1293.15,-913.91C1263.37,-901.39 1235.01,-889.47 1222.28,-883.99"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1223,-881.82 1216.14,-881.29 1221.18,-885.99 1223,-881.82"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1288.1,-913.93C1268.23,-906.04 1253,-900 1253,-900 1253,-900 1222.14,-889.03 1208.2,-883.72"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1209.02,-881.59 1202.14,-881.29 1207.33,-885.82 1209.02,-881.59"/>
 </a>
 </g>
 </g>
@@ -214,8 +214,8 @@
 <g id="edge&#45;C4&#45;C9" class="edge">
 <title>C4&#45;&gt;C9</title>
 <g id="a_edge&#45;C4&#45;C9"><a xlink:title="Представление yₙ через слова Фибоначчи.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1406.34,-913.91C1418.01,-898.5 1429,-884 1429,-884 1429,-884 1429,-810 1429,-810 1429,-810 1269.05,-778.3 1170.86,-758.84"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1171.01,-756.55 1164.19,-757.52 1170.12,-761.01 1171.01,-756.55"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1398.69,-913.91C1407.09,-898.5 1415,-884 1415,-884 1415,-884 1415,-810 1415,-810 1415,-810 1264.71,-778.91 1170.45,-759.4"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1170.87,-757.17 1164.04,-758.08 1169.95,-761.62 1170.87,-757.17"/>
 </a>
 </g>
 </g>
@@ -223,8 +223,8 @@
 <g id="edge&#45;C5&#45;C6" class="edge">
 <title>C5&#45;&gt;C6</title>
 <g id="a_edge&#45;C5&#45;C6"><a xlink:title="Аффинная замена длин сохраняет limsup отношений.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1096.49,-913.75C1083.37,-905.33 1069.34,-896.33 1055.99,-887.77"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1057.02,-885.73 1050.32,-884.13 1054.57,-889.56 1057.02,-885.73"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1091.52,-913.75C1077.12,-905.26 1061.7,-896.17 1047.06,-887.54"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1048.04,-885.47 1041.28,-884.13 1045.73,-889.39 1048.04,-885.47"/>
 </a>
 </g>
 </g>
@@ -232,8 +232,8 @@
 <g id="edge&#45;C5&#45;C7" class="edge">
 <title>C5&#45;&gt;C7</title>
 <g id="a_edge&#45;C5&#45;C7"><a xlink:title="Преобразование полного списка длин.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1149.8,-913.75C1149.15,-906.39 1148.46,-898.57 1147.79,-891"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1150.03,-890.41 1147.19,-884.13 1145.49,-890.81 1150.03,-890.41"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1144.83,-913.75C1143.13,-906.24 1141.33,-898.25 1139.59,-890.54"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1141.8,-889.97 1138.15,-884.13 1137.36,-890.97 1141.8,-889.97"/>
 </a>
 </g>
 </g>
@@ -242,8 +242,8 @@
 <g id="edge&#45;C8&#45;C9" class="edge">
 <title>C8&#45;&gt;C9</title>
 <g id="a_edge&#45;C8&#45;C9"><a xlink:title="Удвоение числа палиндромов в слове с разделителями.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1240.71,-809.9C1217.72,-799.43 1192.71,-788.04 1170.06,-777.72"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1170.9,-775.61 1164.04,-774.98 1169.01,-779.75 1170.9,-775.61"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1231.67,-809.9C1211.69,-800.19 1190.09,-789.7 1170.13,-780.01"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1171.11,-777.95 1164.27,-777.16 1169.12,-782.05 1171.11,-777.95"/>
 </a>
 </g>
 </g>
@@ -261,8 +261,8 @@
 <g id="edge&#45;C12&#45;C7" class="edge">
 <title>C12&#45;&gt;C7</title>
 <g id="a_edge&#45;C12&#45;C7"><a xlink:title="Полный список палиндромных префиксов f.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1291.31,-1019.32C1275.13,-1003.13 1260,-988 1260,-988 1260,-988 1241,-900 1241,-900 1241,-900 1230.99,-894.63 1217.4,-887.35"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1218.17,-885.18 1211.37,-884.12 1216.02,-889.19 1218.17,-885.18"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1291.31,-1019.32C1275.13,-1003.13 1260,-988 1260,-988 1260,-988 1241,-900 1241,-900 1241,-900 1226.78,-893.34 1208.51,-884.78"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1209.03,-882.51 1202.18,-881.81 1207.1,-886.63 1209.03,-882.51"/>
 </a>
 </g>
 </g>
@@ -270,8 +270,8 @@
 <g id="edge&#45;C12&#45;C9" class="edge">
 <title>C12&#45;&gt;C9</title>
 <g id="a_edge&#45;C12&#45;C9"><a xlink:title="Богатство исходных штурмовых факторов.">
-<path fill="none" stroke="#647488" stroke-width="1.05" d="M1297.05,-1018.91C1283.54,-1002.88 1271,-988 1271,-988 1271,-988 1271,-900 1271,-900 1271,-900 1418,-884 1418,-884 1418,-884 1418,-810 1418,-810 1418,-810 1265.88,-778.82 1170.75,-759.32"/>
-<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1171.11,-757.07 1164.29,-758 1170.2,-761.53 1171.11,-757.07"/>
+<path fill="none" stroke="#647488" stroke-width="1.05" d="M1297.05,-1018.91C1283.54,-1002.88 1271,-988 1271,-988 1271,-988 1271,-900 1271,-900 1271,-900 1404,-884 1404,-884 1404,-884 1404,-810 1404,-810 1404,-810 1261.99,-779.57 1170.83,-760.03"/>
+<polygon fill="#647488" stroke="#647488" stroke-width="1.05" points="1171.19,-757.79 1164.36,-758.65 1170.23,-762.23 1171.19,-757.79"/>
 </a>
 </g>
 </g>
@@ -703,12 +703,12 @@
 <!-- C3 -->
 <g id="node&#45;C3" class="node">
 <title>C3</title>
-<g id="a_node&#45;C3"><a xlink:href="coverage.md#node-c3" xlink:title="Lean: Частично. Есть точное значение 1/φ для стандартного двухбуквенного эпиштурмова слова и явные центральные префиксы рекурсивного слова Фибоначчи. Узел о плотности рекурсивного слова по доказательству TeX целиком не отмечен. | Теорема 3.6.3 | с. 75">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1046.5,-982C1046.5,-982 941.5,-982 941.5,-982 935.5,-982 929.5,-976 929.5,-970 929.5,-970 929.5,-932 929.5,-932 929.5,-926 935.5,-920 941.5,-920 941.5,-920 1046.5,-920 1046.5,-920 1052.5,-920 1058.5,-926 1058.5,-932 1058.5,-932 1058.5,-970 1058.5,-970 1058.5,-976 1052.5,-982 1046.5,-982"/>
-<text text-anchor="start" x="939.5" y="-966.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.3</text>
-<text text-anchor="start" x="955.5" y="-954.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(f)=1/φ</text>
-<text text-anchor="start" x="979" y="-942.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 75</text>
-<text text-anchor="start" x="941" y="-930.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<g id="a_node&#45;C3"><a xlink:href="coverage.md#node-c3" xlink:title="Lean: С уточнением. Плотность рекурсивного слова Фибоначчи равна 1/φ. Предел отношений рассчитан по полному списку префиксов, приведённому в замечании TeX. Общая оценка Фишлера из C2 отдельно не доказана. | Теорема 3.6.3 | с. 75">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1046.5,-982C1046.5,-982 913.5,-982 913.5,-982 907.5,-982 901.5,-976 901.5,-970 901.5,-970 901.5,-932 901.5,-932 901.5,-926 907.5,-920 913.5,-920 913.5,-920 1046.5,-920 1046.5,-920 1052.5,-920 1058.5,-926 1058.5,-932 1058.5,-932 1058.5,-970 1058.5,-970 1058.5,-976 1052.5,-982 1046.5,-982"/>
+<text text-anchor="start" x="925.5" y="-966.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.3</text>
+<text text-anchor="start" x="941.5" y="-954.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(f)=1/φ</text>
+<text text-anchor="start" x="965" y="-942.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 75</text>
+<text text-anchor="start" x="911.5" y="-930.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#613c88">Lean: С уточнением</text>
 </a>
 </g>
 </g>
@@ -742,25 +742,25 @@
 <g id="node&#45;C6" class="node">
 <title>C6</title>
 <g id="a_node&#45;C6"><a xlink:href="coverage.md#node-c6" xlink:title="Lean: Доказано. Доказано равенство вещественных палиндромных плотностей после вставки, включая случай конечного числа префиксов. | Предл. 3.6.7 | с. 78–79">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1046.5,-884C1046.5,-884 941.5,-884 941.5,-884 935.5,-884 929.5,-878 929.5,-872 929.5,-872 929.5,-822 929.5,-822 929.5,-816 935.5,-810 941.5,-810 941.5,-810 1046.5,-810 1046.5,-810 1052.5,-810 1058.5,-816 1058.5,-822 1058.5,-822 1058.5,-872 1058.5,-872 1058.5,-878 1052.5,-884 1046.5,-884"/>
-<text text-anchor="start" x="945" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.6.7</text>
-<text text-anchor="start" x="951.5" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Вставка нуля</text>
-<text text-anchor="start" x="942.5" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">сохраняет densₚ</text>
-<text text-anchor="start" x="968.5" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 78–79</text>
-<text text-anchor="start" x="939.5" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1032.5,-884C1032.5,-884 927.5,-884 927.5,-884 921.5,-884 915.5,-878 915.5,-872 915.5,-872 915.5,-822 915.5,-822 915.5,-816 921.5,-810 927.5,-810 927.5,-810 1032.5,-810 1032.5,-810 1038.5,-810 1044.5,-816 1044.5,-822 1044.5,-822 1044.5,-872 1044.5,-872 1044.5,-878 1038.5,-884 1032.5,-884"/>
+<text text-anchor="start" x="931" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Предл. 3.6.7</text>
+<text text-anchor="start" x="937.5" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Вставка нуля</text>
+<text text-anchor="start" x="928.5" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">сохраняет densₚ</text>
+<text text-anchor="start" x="954.5" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 78–79</text>
+<text text-anchor="start" x="925.5" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
 <!-- C7 -->
 <g id="node&#45;C7" class="node">
 <title>C7</title>
-<g id="a_node&#45;C7"><a xlink:href="coverage.md#node-c7" xlink:title="Lean: Частично. Проверено преобразование длин при вставке. Полный список длин 2Fₖ−3 и численное значение плотности именно для трёхбуквенного слова остаются без полной отметки. | Теорема 3.6.8 | с. 79">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1204,-884C1204,-884 1084,-884 1084,-884 1078,-884 1072,-878 1072,-872 1072,-872 1072,-822 1072,-822 1072,-816 1078,-810 1084,-810 1084,-810 1204,-810 1204,-810 1210,-810 1216,-816 1216,-822 1216,-822 1216,-872 1216,-872 1216,-878 1210,-884 1204,-884"/>
-<text text-anchor="start" x="1089.5" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.8</text>
-<text text-anchor="start" x="1082" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Префиксы y: 2Fₖ−3;</text>
-<text text-anchor="start" x="1104.5" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(y)=1/φ</text>
-<text text-anchor="start" x="1129" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79</text>
-<text text-anchor="start" x="1091" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#85480c">Lean: Частично</text>
+<g id="a_node&#45;C7"><a xlink:href="coverage.md#node-c7" xlink:title="Lean: Доказано. Проверены полный список длин 2Fₖ−3 и плотность 1/φ для трёхбуквенного слова по соответствию префиксов и инвариантности при вставке. | Теорема 3.6.8 | с. 79">
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1190,-884C1190,-884 1070,-884 1070,-884 1064,-884 1058,-878 1058,-872 1058,-872 1058,-822 1058,-822 1058,-816 1064,-810 1070,-810 1070,-810 1190,-810 1190,-810 1196,-810 1202,-816 1202,-822 1202,-822 1202,-872 1202,-872 1202,-878 1196,-884 1190,-884"/>
+<text text-anchor="start" x="1075.5" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Теорема 3.6.8</text>
+<text text-anchor="start" x="1068" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Префиксы y: 2Fₖ−3;</text>
+<text text-anchor="start" x="1090.5" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">densₚ(y)=1/φ</text>
+<text text-anchor="start" x="1115" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79</text>
+<text text-anchor="start" x="1075.5" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
@@ -768,12 +768,12 @@
 <g id="node&#45;C8" class="node">
 <title>C8</title>
 <g id="a_node&#45;C8"><a xlink:href="coverage.md#node-c8" xlink:title="Lean: Доказано. Проверено соответствие палиндромных факторов и формула 2P+1 для числа палиндромов при вставке с двумя граничными разделителями. | Лемма 3.6.4 | с. 79–80">
-<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1399,-884C1399,-884 1241,-884 1241,-884 1235,-884 1229,-878 1229,-872 1229,-872 1229,-822 1229,-822 1229,-816 1235,-810 1241,-810 1241,-810 1399,-810 1399,-810 1405,-810 1411,-816 1411,-822 1411,-822 1411,-872 1411,-872 1411,-878 1405,-884 1399,-884"/>
-<text text-anchor="start" x="1271.5" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.6.4</text>
-<text text-anchor="start" x="1249.5" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Подсчёт палиндромов</text>
-<text text-anchor="start" x="1239" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">при вставке разделителя</text>
-<text text-anchor="start" x="1294.5" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79–80</text>
-<text text-anchor="start" x="1265.5" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
+<path fill="#e7f2e9" stroke="#338153" stroke-width="1.15" d="M1385,-884C1385,-884 1227,-884 1227,-884 1221,-884 1215,-878 1215,-872 1215,-872 1215,-822 1215,-822 1215,-816 1221,-810 1227,-810 1227,-810 1385,-810 1385,-810 1391,-810 1397,-816 1397,-822 1397,-822 1397,-872 1397,-872 1397,-878 1391,-884 1385,-884"/>
+<text text-anchor="start" x="1257.5" y="-868.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">[0] Лемма 3.6.4</text>
+<text text-anchor="start" x="1235.5" y="-856.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">Подсчёт палиндромов</text>
+<text text-anchor="start" x="1225" y="-844.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">при вставке разделителя</text>
+<text text-anchor="start" x="1280.5" y="-832.4" font-family="DejaVu Sans" font-size="12.00" fill="#17212b">с. 79–80</text>
+<text text-anchor="start" x="1251.5" y="-820.4" font-family="DejaVu Sans" font-weight="bold" font-size="12.00" fill="#065f46">Lean: Доказано</text>
 </a>
 </g>
 </g>
@@ -819,7 +819,7 @@
 <!-- C12 -->
 <g id="node&#45;C12" class="node">
 <title>C12</title>
-<g id="a_node&#45;C12"><a xlink:href="coverage.md#node-c12" xlink:title="Lean: Частично. Проверены богатство конечных слов Фибоначчи и его наследование факторами. Общий результат о штурмовых факторах и полный список префиксов рекурсивного слова Фибоначчи здесь не отмечены. | Полнота списка префиксов берётся из классической литературы, а не из одной леммы 3.6.1.">
+<g id="a_node&#45;C12"><a xlink:href="coverage.md#node-c12" xlink:title="Lean: Частично. Проверены полный список палиндромных префиксов слова Фибоначчи и богатство его конечных факторов. Богатство всех штурмовых факторов в общем случае остаётся открытым для этой формализации. | Полнота списка префиксов берётся из классической литературы, а не из одной леммы 3.6.1.">
 <ellipse fill="#eef1f5" stroke="#748193" stroke-width="1.15" cx="1330" cy="-1059.01" rx="149.81" ry="41.02"/>
 <text text-anchor="start" x="1257.5" y="-1073.21" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">[И] Классические факты</text>
 <text text-anchor="start" x="1236" y="-1062.21" font-family="DejaVu Sans" font-size="11.00" fill="#17212b">Все палиндромные префиксы f;</text>

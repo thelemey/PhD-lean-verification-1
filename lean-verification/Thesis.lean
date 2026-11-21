@@ -91,6 +91,7 @@ import Thesis.EpisturmianRecurrence
 import Thesis.MBonacciClosureDensity
 import Thesis.MBonacciPalindromicDensity
 import Thesis.FibonacciCentralPrefixes
+import Thesis.FibonacciPalindromeDensity
 import Thesis.PalindromePrefixBlocks
 import Thesis.SturmianPrefixRatios
 import Thesis.SturmianPalindromeRecords
