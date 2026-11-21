@@ -1,4 +1,5 @@
 import Thesis.FibonacciRichness
+import Thesis.FibonacciCentralPrefixes
 import Thesis.TernaryWord
 import Thesis.WordPrefixLimits
 
@@ -32,6 +33,39 @@ private theorem word_covers_index : ∀ n, n < (word (n + 1)).length
 /-- The infinite ternary word, the limit of the nested positive stages. -/
 def infiniteWord : Nat → Option Fibonacci.Letter :=
   prefixLimit (fun n => word (n + 1)) word_covers_index
+
+/-- The identity of infinite words in lem:Ystructure. The alphabet of
+Fibonacci.infiniteWord is already renamed through the two some symbols. -/
+theorem infiniteWord_eq_insertSeparator :
+    infiniteWord = insertSeparator Fibonacci.infiniteWord := by
+  have even (j : Nat) : infiniteWord (2 * j) = none := by
+    have h := Fibonacci.word_covers j
+    have he := word_succ_eq_interleave j
+    have hlen : 2 * j < (word (j + 1)).length := by
+      rw [he, length_interleave]
+      omega
+    have hh := prefixLimit_eq_getElem (fun n => word (n + 1)) word_covers_index
+      (fun n => word_prefix_succ (n + 1) (Nat.succ_pos n)) hlen
+    change infiniteWord (2 * j) = _ at hh
+    exact hh.trans (by simpa only [he] using getElem_interleave_even (Fibonacci.word j) j h)
+  have odd (j : Nat) : infiniteWord (2 * j + 1) = some (Fibonacci.infiniteWord j) := by
+    have h := Fibonacci.word_covers j
+    have he := word_succ_eq_interleave j
+    have hlen : 2 * j + 1 < (word (j + 1)).length := by
+      rw [he, length_interleave]
+      omega
+    have hh := prefixLimit_eq_getElem (fun n => word (n + 1)) word_covers_index
+      (fun n => word_prefix_succ (n + 1) (Nat.succ_pos n)) hlen
+    change infiniteWord (2 * j + 1) = _ at hh
+    exact hh.trans (by simpa only [he] using getElem_interleave_odd (Fibonacci.word j) j h)
+  funext i
+  by_cases h : i % 2 = 0
+  · rw [show i = 2 * (i / 2) by omega, even]
+    simp [insertSeparator]
+  · rw [show i = 2 * (i / 2) + 1 by omega, odd]
+    simp [insertSeparator]
+    congr 1
+    omega
 
 theorem factor_infiniteWord_iff (v : List (Option Fibonacci.Letter)) :
     (∃ i : Nat, v = List.ofFn (fun j : Fin v.length => infiniteWord (i + j.val))) ↔

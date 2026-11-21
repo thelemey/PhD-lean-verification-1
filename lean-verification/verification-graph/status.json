@@ -70,9 +70,12 @@
     }
   },
   "C4": {
-    "status": "partial",
-    "note": "Проверены кодирование конечных слов и вложенность с n ≥ 1. Равенство бесконечных слов целиком в этом узле не отмечено.",
-    "lean": {"TernaryWord": ["word_succ_eq_interleave", "word_prefix_succ"], "TernaryRichness": ["infiniteWord"]}
+    "status": "qualified",
+    "note": "Проверены кодирование конечных слов и равенство бесконечных слов. Вложенность начинается с n = 1, а y₀ не является префиксом y₁.",
+    "lean": {
+      "TernaryWord": ["word_succ_eq_interleave", "word_prefix_succ", "word_zero_not_prefix_one"],
+      "TernaryRichness": ["infiniteWord_eq_insertSeparator"]
+    }
   },
   "C5": {
     "status": "verified",

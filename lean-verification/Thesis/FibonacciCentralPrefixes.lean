@@ -79,7 +79,7 @@ private theorem word_length_pos : ∀ n, 0 < (word n).length
     rw [word, List.length_append]
     exact Nat.add_pos_left (word_length_pos (n + 1)) _
 
-private theorem word_covers : ∀ n, n < (word n).length
+theorem word_covers : ∀ n, n < (word n).length
   | 0 => by decide
   | 1 => by decide
   | n + 2 => by

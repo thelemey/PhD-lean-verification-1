@@ -26,6 +26,10 @@ theorem word_prefix_succ (n : Nat) (hn : 0 < n) : word n <+: word (n + 1) := by
     change word (n + 1) <+: word (n + 1) ++ word n
     exact List.prefix_append _ _
 
+/-- The nesting begins with y₁. The initial stage y₀ is a separate word. -/
+theorem word_zero_not_prefix_one : ¬ word 0 <+: word 1 := by
+  simp [word]
+
 theorem length_word (n : Nat) : (word n).length = 2 * Fibonacci.fib (n + 1) := by
   cases n with
   | zero => rfl

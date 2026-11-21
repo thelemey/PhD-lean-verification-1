@@ -362,6 +362,32 @@ theorem length_interleave (w : List α) : (interleave w).length = 2 * w.length :
     simp only [interleave, List.length_cons, ih]
     omega
 
+theorem getElem_interleave_even (w : List α) (j : Nat) (hj : j < w.length) :
+    (interleave w)[2 * j]'(by rw [length_interleave]; omega) = none := by
+  induction w generalizing j with
+  | nil => simp at hj
+  | cons a w ih =>
+    cases j with
+    | zero => rfl
+    | succ j =>
+      simp only [List.length_cons] at hj
+      have he : 2 * (j + 1) = 2 * j + 1 + 1 := by omega
+      simp only [interleave, he, List.getElem_cons_succ]
+      exact ih j (by omega)
+
+theorem getElem_interleave_odd (w : List α) (j : Nat) (hj : j < w.length) :
+    (interleave w)[2 * j + 1]'(by rw [length_interleave]; omega) = some w[j] := by
+  induction w generalizing j with
+  | nil => simp at hj
+  | cons a w ih =>
+    cases j with
+    | zero => rfl
+    | succ j =>
+      simp only [List.length_cons] at hj
+      have he : 2 * (j + 1) + 1 = (2 * j + 1) + 1 + 1 := by omega
+      simp only [interleave, he, List.getElem_cons_succ]
+      exact ih j (by omega)
+
 theorem length_framed (w : List α) : (framed w).length = 1 + 2 * w.length := by
   simp [framed, length_interleave]
   omega
