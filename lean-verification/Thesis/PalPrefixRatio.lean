@@ -8,7 +8,7 @@ open Filter Topology
 
 namespace Thesis
 
-private theorem consecutive_of_enumeration {w : Nat → α} {lengths : Nat → Nat}
+theorem consecutive_of_enumeration {w : Nat → α} {lengths : Nat → Nat}
     (hmono : StrictMono lengths) (henum : ∀ n, PalPrefix w n ↔ ∃ i, lengths i = n)
     (i : Nat) (hi : 0 < lengths i) :
     ConsecutivePalPrefixes w (lengths i) (lengths (i + 1)) := by

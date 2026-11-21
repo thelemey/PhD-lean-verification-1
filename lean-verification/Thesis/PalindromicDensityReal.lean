@@ -126,6 +126,29 @@ theorem palindromicDensity_eq_reciprocal_limsup {w : Nat → α} {L : Nat → Na
   exact palindromicDensity_eq_of_cut (liminf_inverseRatios_nonneg hL)
     fun _ _ hq => belowPalDensity_iff_of_ratio_liminf hL henum hq
 
+/-- Lower bounds on all sufficiently late inverse ratios give a lower bound
+on the density, without requiring an explicit enumeration. -/
+theorem le_palindromicDensity_of_late_inverse_ratios {w : Nat → α} {d : ℝ}
+    (hinf : {n | PalPrefix w n}.Infinite)
+    (h : ∀ c < d, ∃ K : Nat, ∀ u v, K ≤ u → ConsecutivePalPrefixes w u v → c ≤ (u : ℝ) / v) :
+    d ≤ palindromicDensity w := by
+  let L := Nat.nth (PalPrefix w)
+  have hL := Nat.nth_strictMono hinf
+  have henum (n : Nat) : PalPrefix w n ↔ ∃ i, L i = n := by
+    change n ∈ {n | PalPrefix w n} ↔ _
+    rw [← Nat.range_nth_of_infinite hinf]
+    rfl
+  simp only [palindromicDensity, if_pos hinf, reciprocal_limsup_eq_liminf hL]
+  apply le_of_forall_lt
+  intro c hc
+  obtain ⟨c', hcc', hc'd⟩ := exists_between hc
+  obtain ⟨K, hK⟩ := h c' hc'd
+  apply hcc'.trans_le
+  apply le_liminf_of_le (isCoboundedUnder_ge_of_le atTop fun i => (inverseRatios_bounds hL i).2)
+  filter_upwards [hL.tendsto_atTop.eventually (eventually_ge_atTop (max 1 K))] with i hi
+  exact hK _ _ ((le_max_right _ _).trans hi)
+    (consecutive_of_enumeration hL henum i ((le_max_left _ _).trans hi))
+
 /-- Insertion preserves the real-valued density, including the finite case. -/
 theorem palindromicDensity_insert (w : Nat → α) :
     palindromicDensity (insertSeparator w) = palindromicDensity w :=

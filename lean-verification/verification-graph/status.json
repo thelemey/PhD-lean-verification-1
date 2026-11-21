@@ -114,8 +114,8 @@
   },
   "C3": {
     "status": "qualified",
-    "note": "Плотность рекурсивного слова Фибоначчи равна 1/φ. Предел отношений рассчитан по полному списку префиксов, приведённому в замечании TeX. Общая оценка Фишлера из C2 отдельно не доказана.",
-    "lean": {"FibonacciPalindromeDensity": ["infiniteWord_palindromicDensity"]}
+    "note": "Доказана нижняя оценка плотности из TeX через сравнение с двумя соседними центральными префиксами. Для обратной оценки использован полный список префиксов из замечания TeX. Общая оценка Фишлера из C2 остаётся открытой.",
+    "lean": {"FibonacciPalindromeDensity": ["inverse_prefix_ratio_ge_central", "one_div_gold_le_palindromicDensity", "infiniteWord_palindromicDensity"]}
   },
   "C4": {
     "status": "qualified",

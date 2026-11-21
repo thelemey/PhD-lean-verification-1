@@ -42,12 +42,65 @@ private theorem central_inverse_ratios_tendsto :
   have hp' : (fib (n + 4) : ℝ) - 2 ≠ 0 := (sub_pos.2 h₄R).ne'
   field_simp [hp, hp']
 
-/-- The density in thm:palFib, from the complete central-prefix list and
-the limiting ratios of its consecutive lengths. -/
-theorem infiniteWord_palindromicDensity : palindromicDensity infiniteWord = 1 / φ :=
-  palindromicDensity_eq_of_cut (by positivity) fun _ _ hq =>
+/-- Between two known central lengths, the next palindromic prefix
+cannot come later than the next central prefix. This uses only the
+central prefixes constructed in `lem:palFib`. -/
+theorem inverse_prefix_ratio_ge_central {u v k : Nat}
+    (huv : ConsecutivePalPrefixes infiniteWord u v)
+    (hlo : fib (k + 3) - 2 ≤ u) (hhi : u < fib (k + 4) - 2) :
+    ((fib (k + 3) - 2 : Nat) : ℝ) / ((fib (k + 4) - 2 : Nat) : ℝ) ≤
+      (u : ℝ) / v := by
+  have hnext := central_palPrefix (k + 1)
+  change PalPrefix infiniteWord (fib (k + 4) - 2) at hnext
+  have hv : v ≤ fib (k + 4) - 2 := by
+    by_contra! hv
+    exact huv.2.2.2.2 _ hhi hv hnext
+  exact div_le_div_of_nonneg_left (by positivity)
+    (by exact_mod_cast (huv.1.trans huv.2.1))
+    (by exact_mod_cast hv) |>.trans
+      (div_le_div_of_nonneg_right (by exact_mod_cast hlo) (by positivity))
+
+/-- The eventual lower bound on inverse ratios in the direct half of
+`thm:palFib`, obtained by bracketing a length between central lengths. -/
+theorem eventually_inverse_prefix_ratios_ge {c : ℝ} (hc : c < 1 / φ) :
+    ∃ K : Nat, ∀ u v, K ≤ u → ConsecutivePalPrefixes infiniteWord u v → c ≤ (u : ℝ) / v := by
+  let a := fun k : Nat => fib (k + 3) - 2
+  have hlt := central_inverse_ratios_tendsto.eventually (lt_mem_nhds hc)
+  obtain ⟨N, hN⟩ := eventually_atTop.1 hlt
+  refine ⟨a N, fun u v hu huv => ?_⟩
+  have hgt : ∃ j, u < a j := by
+    obtain ⟨j, hj⟩ := (central_length_strictMono.tendsto_atTop.eventually
+      (eventually_gt_atTop u)).exists
+    exact ⟨j, hj⟩
+  obtain ⟨k, hk⟩ := Nat.exists_eq_succ_of_ne_zero (n := Nat.find hgt) (by
+    intro he
+    have h := Nat.find_spec hgt
+    rw [he] at h
+    have h0 : a 0 = 0 := by decide
+    omega)
+  have hlo : a k ≤ u := by
+    have hmin := Nat.find_min hgt (m := k) (by omega)
+    omega
+  have hhi : u < a (k + 1) := by simpa only [hk] using Nat.find_spec hgt
+  have hkN : N ≤ k := by
+    by_contra! hn
+    exact (not_lt_of_ge hu) (hhi.trans_le (central_length_strictMono.monotone (by omega : k + 1 ≤ N)))
+  exact (hN k hkN).le.trans (inverse_prefix_ratio_ge_central huv hlo hhi)
+
+/-- The lower bound on density proved directly in `thm:palFib`. -/
+theorem one_div_gold_le_palindromicDensity : 1 / φ ≤ palindromicDensity infiniteWord := by
+  apply le_palindromicDensity_of_late_inverse_ratios
+  · exact (Set.infinite_range_of_injective central_length_strictMono.injective).mono
+      (by rintro _ ⟨k, rfl⟩; exact central_palPrefix k)
+  · exact fun _ => eventually_inverse_prefix_ratios_ge
+
+/-- The density in `thm:palFib`. The reverse inequality uses the complete
+prefix list stated in the preceding remark. -/
+theorem infiniteWord_palindromicDensity : palindromicDensity infiniteWord = 1 / φ := by
+  refine le_antisymm ?_ one_div_gold_le_palindromicDensity
+  exact (palindromicDensity_eq_of_cut (by positivity) fun _ _ hq =>
     belowPalDensity_iff_of_ratio_limit central_length_strictMono infiniteWord_palPrefix_iff
-      central_inverse_ratios_tendsto hq
+      central_inverse_ratios_tendsto hq).le
 
 end Thesis.Fibonacci
 
