@@ -2,12 +2,13 @@ import Thesis.FibonacciRichness
 import Thesis.FibonacciCentralPrefixes
 import Thesis.FibonacciBinet
 import Thesis.SturmianMechanical
+import Mathlib.Analysis.Asymptotics.Defs
 import Mathlib.Data.Real.GoldenRatio
 import Mathlib.Topology.Algebra.Group.SubmonoidClosure
 import Mathlib.Topology.Instances.AddCircle.DenseSubgroup
 
 open Filter Set
-open scoped goldenRatio Topology
+open scoped goldenRatio Topology Asymptotics
 
 namespace Thesis.Fibonacci
 
@@ -436,15 +437,25 @@ private theorem count_density_limit (c : Nat → Nat) (α : ℝ)
   exact squeeze_zero' (Eventually.of_forall fun _ => dist_nonneg) hbound
     tendsto_one_div_atTop_nhds_zero_nat
 
+private theorem prefix_errors_le_one (n : Nat) :
+    |prefixDeviation n| ≤ 1 ∧ |((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹| ≤ 1 := by
+  have hβ : φ⁻¹ < 1 := inv_lt_one_of_one_lt₀ one_lt_gold
+  obtain ⟨⟨h₁, h₂⟩, h₃, h₄⟩ := prefix_discrepancy n
+  constructor <;> rw [abs_le] <;> constructor <;> linarith [mechanicalSlope_lt_one]
+
 theorem prefix_density_limits :
     Tendsto (fun n : Nat => ((factorWindow 0 n).count .b : ℝ) / n) atTop (𝓝 mechanicalSlope) ∧
-    Tendsto (fun n : Nat => ((factorWindow 0 n).count .a : ℝ) / n) atTop (𝓝 (φ⁻¹)) := by
-  have hβ : φ⁻¹ < 1 := inv_lt_one_of_one_lt₀ one_lt_gold
-  constructor <;> apply count_density_limit <;> intro n <;> rw [abs_le]
-  · have h := (prefix_discrepancy n).1
-    change -1 ≤ prefixDeviation n ∧ prefixDeviation n ≤ 1
-    exact ⟨by linarith [h.1], by linarith [h.2, mechanicalSlope_lt_one]⟩
-  · have h := (prefix_discrepancy n).2
-    exact ⟨by linarith [h.1, mechanicalSlope_lt_one], by linarith [h.2]⟩
+    Tendsto (fun n : Nat => ((factorWindow 0 n).count .a : ℝ) / n) atTop (𝓝 (φ⁻¹)) :=
+  ⟨count_density_limit _ _ fun n => (prefix_errors_le_one n).1,
+    count_density_limit _ _ fun n => (prefix_errors_le_one n).2⟩
+
+/-- The two bounded remainders in `thm:density`. -/
+theorem prefix_count_errors_isBigO :
+    prefixDeviation =O[atTop] (fun _ : Nat => (1 : ℝ)) ∧
+    (fun n : Nat => ((factorWindow 0 n).count .a : ℝ) - (n : ℝ) * φ⁻¹)
+      =O[atTop] (fun _ : Nat => (1 : ℝ)) := by
+  constructor <;> apply Asymptotics.isBigO_of_le <;> intro n
+  · simpa [Real.norm_eq_abs] using (prefix_errors_le_one n).1
+  · simpa [Real.norm_eq_abs] using (prefix_errors_le_one n).2
 
 end Thesis.Fibonacci
