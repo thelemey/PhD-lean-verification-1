@@ -35,7 +35,7 @@
 | Узел | Статус Lean | Покрытие и ссылки |
 |---|---|---|
 | <a name="node-b0"></a> **B0** Рекурсия слова Фибоначчи | Определение | Заданы конечные рекурсивные слова и их бесконечный предел. [`word`](../Thesis/Fibonacci.lean#L13), [`infiniteWord`](../Thesis/FibonacciCentralPrefixes.lean#L92) |
-| <a name="node-b1"></a> **B1** Предл. 3.4.1 | Без отметки | — |
+| <a name="node-b1"></a> **B1** Предл. 3.4.1 | Доказано | Доказано равенство рекурсивного слова и характеристического механического слова наклона 1/φ², включая формулу для буквы. Предложение в TeX приведено со ссылкой на Lothaire. [`infiniteWord_eq_mechanicalWord`](../Thesis/FibonacciMechanical.lean#L189), [`infiniteWord_letter_floor`](../Thesis/FibonacciMechanical.lean#L214) |
 | <a name="node-b2"></a> **B2** Теорема 3.4.2 | Без отметки | — |
 | <a name="node-b3"></a> **B3** Предл. 3.4.3 | Без отметки | — |
 | <a name="node-b4"></a> **B4** Леммы 3.5.1 → 3.5.2 | Без отметки | — |

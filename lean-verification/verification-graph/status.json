@@ -37,6 +37,16 @@
     "note": "Заданы конечные рекурсивные слова и их бесконечный предел.",
     "lean": {"Fibonacci": ["word"], "FibonacciCentralPrefixes": ["infiniteWord"]}
   },
+  "B1": {
+    "status": "verified",
+    "note": "Доказано равенство рекурсивного слова и характеристического механического слова наклона 1/φ², включая формулу для буквы. Предложение в TeX приведено со ссылкой на Lothaire.",
+    "lean": {
+      "FibonacciMechanical": [
+        "infiniteWord_eq_mechanicalWord",
+        "infiniteWord_letter_floor"
+      ]
+    }
+  },
   "B5": {
     "status": "verified",
     "note": "Проверены длины и оба подсчёта букв для исходных и обрамлённых конечных слов.",
